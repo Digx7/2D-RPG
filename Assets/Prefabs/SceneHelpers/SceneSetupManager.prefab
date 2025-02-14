@@ -50,4 +50,10 @@ MonoBehaviour:
   changeSongOnSceneStart: 1
   requestJumpToSongChannel: {fileID: 11400000, guid: c0ab9c0a3239601448462bd578abfeb8, type: 2}
   songToJumpTo: {fileID: 11400000, guid: 659cc30cb8ee8e44cbd39a264b9ae0ba, type: 2}
+  context:
+    SpawnPointID: 0
+  updateContextChannel: {fileID: 11400000, guid: 6c4dbd924ed83aa449be46d600421f47, type: 2}
   triggerOnStart: 1
+  onSetup:
+    m_PersistentCalls:
+      m_Calls: []

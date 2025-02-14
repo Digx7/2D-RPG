@@ -33,6 +33,11 @@ public class OptionsMenuWidget : UIMenu
 
     public void OnClickBack()
     {
+        StartCoroutine(Delay(BackButton, 0.1f));
+    }
+
+    private void BackButton()
+    {
         onOptionsMenuQuitChannel.Raise();
         requestUnLoadUIWidgetChannel.Raise(ownUIWidgetData);
     }

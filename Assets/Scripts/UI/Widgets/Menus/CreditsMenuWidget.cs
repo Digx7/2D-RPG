@@ -19,6 +19,11 @@ public class CreditsMenuWidget : UIMenu
 
     public void OnClickBack()
     {
+        StartCoroutine(Delay(BackButton, 0.1f));
+    }
+
+    private void BackButton()
+    {
         requestLoadUIWidgetChannel.Raise(mainMenuWidgetData);
         requestUnLoadUIWidgetChannel.Raise(ownUIWidgetData);
     }

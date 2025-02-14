@@ -19,11 +19,21 @@ public class QuitMenuWidget : UIMenu
 
     public void OnClickNo()
     {
+        StartCoroutine(Delay(NoButton, 0.1f));
+    }
+
+    private void NoButton()
+    {
         requestLoadUIWidgetChannel.Raise(mainMenuWidgetData);
         requestUnLoadUIWidgetChannel.Raise(ownUIWidgetData);
     }
 
     public void OnClickYes()
+    {
+        StartCoroutine(Delay(YesButton, 0.1f));
+    }
+
+    private void YesButton()
     {
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

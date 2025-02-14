@@ -8,9 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : Singleton<SceneManager>
 {
-    [SerializeField] StringChannel changeSceneChannel;
-    [SerializeField] StringChannel addSceneChannel;
-    [SerializeField] StringChannel removeSceneChannel;
+    [SerializeField] private SceneChannel changeSceneChannel;
+    [SerializeField] private SceneChannel  addSceneChannel;
+    [SerializeField] private SceneChannel  removeSceneChannel;
+    [SerializeField] private SceneContextChannel  updateSceneContextChannel;
     
     // CHANELS =================================
 
@@ -44,15 +45,22 @@ public class SceneManager : Singleton<SceneManager>
 
     // CHANNEL RESPONES =================================
 
-    private void OnChangeScene(string name)
+    private void OnChangeScene(SceneData data)
     {
-        LoadScene(name);
+        UpdateContext(data.context);
+        LoadScene(data.sceneName);
     }
 
-    private void OnAddScene(string name)
+    private void OnAddScene(SceneData data)
     {
         LoadSceneMode mode = LoadSceneMode.Additive;
-        LoadScene(name, mode);
+        UpdateContext(data.context);
+        LoadScene(data.sceneName, mode);
+    }
+
+    private void UpdateContext(SceneContext newContext)
+    {
+        updateSceneContextChannel.Raise(newContext);
     }
 
     private void OnAcitveSceneChanged(Scene current, Scene next)
@@ -64,11 +72,12 @@ public class SceneManager : Singleton<SceneManager>
 
     private void LoadScene(string name, LoadSceneMode mode = LoadSceneMode.Single)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(name, mode);
+        // UnityEngine.SceneManagement.SceneManager.LoadScene(name, mode);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(name, mode);
     }
 
-    private void UnloadScene(string name)
+    private void UnloadScene(SceneData data)
     {
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(name);
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(data.sceneName);
     }
 }

@@ -62,8 +62,9 @@ public class GameMode : MonoBehaviour
 
     protected virtual void TryToFindPlayerSpawnHelper()
     {
-        PlayerSpawnHelper playerSpawnHelper = FindFirstObjectByType<PlayerSpawnHelper>();
-        if(playerSpawnHelper != null) playerSpawnHelper.SpawnPlayer();
+        // We are making us of the SceneSetupManagers
+        // PlayerSpawnHelper playerSpawnHelper = FindFirstObjectByType<PlayerSpawnHelper>();
+        // if(playerSpawnHelper != null) playerSpawnHelper.SpawnPlayer();
     }
 
     protected virtual void SpawnPlayerCharacter(PlayerSpawnInfo newPlayerSpawnInfo)

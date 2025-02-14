@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using System.Collections;
 
 public class SplashScreenMenuWidget : UIMenu
 {
@@ -18,6 +20,11 @@ public class SplashScreenMenuWidget : UIMenu
     }
 
     public void OnClickStart()
+    {
+        StartCoroutine(Delay(StartButton, 0.1f));
+    }
+
+    private void StartButton()
     {
         requestLoadUIWidgetChannel.Raise(mainMenuWidgetData);
         requestUnLoadUIWidgetChannel.Raise(ownUIWidgetData);
