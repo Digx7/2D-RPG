@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &509663176715536189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8614063639047305177}
+  - component: {fileID: 2052107522102424502}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8614063639047305177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509663176715536189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2052107522102424502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509663176715536189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8507e47050a144c9513dc151776e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allGameModes:
+  - name: MainMenu
+    obj: {fileID: 8659514848704239082, guid: 7beb41524a063d04ebf97b3e5a4e6b13, type: 3}
+  - name: GamePlay
+    obj: {fileID: 2664540852246214789, guid: 9469eec85833da94193b3f3958183d68, type: 3}
+  nextGameModeToLoad:
+    name: 
+    obj: {fileID: 0}
+  masterMixer: {fileID: 24100000, guid: a8754a9f6bb814e448e7785346402d9b, type: 2}
+  playerPrefAudioValueToAppliedValue:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -80
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.12661347
+      value: -15.415185
+      inSlope: 55.586838
+      outSlope: 55.586838
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.14504614
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  onSaveLoadedChannel: {fileID: 11400000, guid: 00d7efb67653dff4fb63edd86a6dd55c, type: 2}
+  onOptionsChangedChannel: {fileID: 11400000, guid: 27a7436a7c745d54187d3ba38fccaaea, type: 2}
+  requestChangeGameModeChannel: {fileID: 11400000, guid: 98c5b39363b3b43418389630f708f5fe, type: 2}
+  onGameModeTeardownFinishedChannel: {fileID: 11400000, guid: dd4abbcae653d2a488202097ded104df, type: 2}
+  onGameModeSetupFinishedChannel: {fileID: 11400000, guid: 242e7bddcd5d89b4bbd51151efc4f7b0, type: 2}
+  requestGameModeTearDownChannel: {fileID: 11400000, guid: f485a4babbc7fbf4e8185870298fcf5f, type: 2}

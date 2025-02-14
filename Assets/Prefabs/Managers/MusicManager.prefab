@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7651661884095257363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7318686259001696686}
+  - component: {fileID: 666800700631846348}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7318686259001696686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651661884095257363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &666800700631846348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651661884095257363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af77d91803b63b4e9af61e573c2cc8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songQueue: []
+  songPrefab: {fileID: 2956900965804647756, guid: bea67e2790d6a0f42aab15a325018767, type: 3}
+  activeSong: {fileID: 0}
+  requestJumpToSongChannel: {fileID: 11400000, guid: c0ab9c0a3239601448462bd578abfeb8, type: 2}
+  onJumpToSongChannel: {fileID: 11400000, guid: 36788e4b8d4ace54fb7e86187b5de93b, type: 2}
+  requestQueueSongChannel: {fileID: 11400000, guid: 46ea38b380e2ef34ba97fed1f2aa2e6f, type: 2}
+  onQueueSongChannel: {fileID: 11400000, guid: 0710b4f3afb19a242b4f9ed39413275a, type: 2}
+  requestSkipSongChannel: {fileID: 11400000, guid: 67ae23d6d6a680145af2fb3fd5bf6927, type: 2}
+  onSkipSongChannel: {fileID: 11400000, guid: d452ab54f5380354187157e3c0aaa836, type: 2}
+  requestPauseOrResumeSongChannel: {fileID: 11400000, guid: e0b6cf23e585c8b48aa7d3e6d30a22b5, type: 2}
+  onPauseOrResumeSongChannel: {fileID: 11400000, guid: 35688becc42d4544f96c1bc8ce379f7f, type: 2}
+  requestAddSongLayerChannel: {fileID: 11400000, guid: 89d1ceda760b5ec46af0339a7b715a4d, type: 2}
+  onAddSongLayerChannel: {fileID: 11400000, guid: 959e693b69a98a340a6839d2bf52f3ba, type: 2}
+  requestRemoveSongLayerChannel: {fileID: 11400000, guid: 96f690cb1288dd648a421bf8a236cc90, type: 2}
+  onRemoveSongLayerChannel: {fileID: 11400000, guid: 3879f0f697f2b3742a8cfd6a9ba59563, type: 2}

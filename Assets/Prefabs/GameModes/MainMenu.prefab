@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8659514848704239082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2078200481294921643}
+  - component: {fileID: 3289067258162601637}
+  m_Layer: 0
+  m_Name: MainMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2078200481294921643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659514848704239082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3289067258162601637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659514848704239082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56ff1aa01e4c0446a3439a5e8201a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPlayerOnSetup: 0
+  playerCharacterPreFab: {fileID: 2707968005197875816, guid: 8efe1f92813e8f649a967195902fd696, type: 3}
+  playerControllerPreFab: {fileID: 2707968005197875816, guid: 8efe1f92813e8f649a967195902fd696, type: 3}
+  cameraManagerPreFab: {fileID: 167596003869953699, guid: c5e69b92bfa9c334fbbeb69a29a9cc93, type: 3}
+  requestGameModeTearDownChannel: {fileID: 11400000, guid: f485a4babbc7fbf4e8185870298fcf5f, type: 2}
+  onGameModeTearDownFinsishedChannel: {fileID: 11400000, guid: dd4abbcae653d2a488202097ded104df, type: 2}
+  onGameModeSetupFinishedChannel: {fileID: 11400000, guid: 242e7bddcd5d89b4bbd51151efc4f7b0, type: 2}
+  requestSpawnPlayerChannel: {fileID: 11400000, guid: 0552dee96b05be743b569078468665c9, type: 2}
+  onPlayerCharacterFinishedSetupChannel: {fileID: 11400000, guid: ec85a42ea4285fd48a9789e68c7f4a7a, type: 2}
+  onPlayerControllerFinishedSetupChannel: {fileID: 11400000, guid: 96878672e2f978f468a283d7b6daee5c, type: 2}
+  onOptionsMenuQuitChannel: {fileID: 11400000, guid: 99c78e6d0ecbf2045b522eee27e99138, type: 2}
+  requestLoadUIWidgetChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
+  requestClearAllUIWidgetChannel: {fileID: 11400000, guid: 878845f27c6dbd648b1baea5a8a6723f, type: 2}
+  requestLoadSaveDataChannel: {fileID: 11400000, guid: cb3cc0c6649d25e40aee501ded5c9d1d, type: 2}
+  mainMenuWidgetData: {fileID: 11400000, guid: ded42b706e85a2f41835bfbacdce83d1, type: 2}
+  splashScreenWidgetData: {fileID: 11400000, guid: eb5d981c78bb91640a45f943f700280f, type: 2}

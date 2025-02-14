@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6581d8fe637a5749bb7079d79d9f809, type: 3}
+  m_Name: Testing Expanse
+  m_EditorClassIdentifier: 
+  title: Testing Expanse
+  info: This wide expanse of gray and blue is said to be the default of all possible
+    worlds.  Maybe one day the creator will fill it with more life.
+  profilePic: {fileID: 21300000, guid: a9306e5e4eb989845bd37580183fb5af, type: 3}
+  detailPic: {fileID: 21300000, guid: 5b6eaab00884b504b89473b3ed9a438f, type: 3}
