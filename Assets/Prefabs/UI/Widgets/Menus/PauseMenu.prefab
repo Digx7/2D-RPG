@@ -188,10 +188,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0740ca98c49ba4646890b08e29965ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequestUnloadWidgetDataChannel: {fileID: 0}
-  mainMenuScene: MainMenu
+  RequestUnloadWidgetDataChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
+  mainMenuScene:
+    sceneName: MainMenu
+    context:
+      SpawnPointID: 0
   optionsMenuWidgetData: {fileID: 11400000, guid: af002535ef531ba4fbe9388c7faf5892, type: 2}
-  requestChangeSceneChannel: {fileID: 11400000, guid: c2b143e2c53059e41863bec9247a6d46, type: 2}
+  requestChangeSceneChannel: {fileID: 11400000, guid: eae9b91340e852542ab08639eae95686, type: 2}
   requestLoadUIWidgetChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
   requestUnLoadUIWidgetChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
 --- !u!1 &4243290417768565307

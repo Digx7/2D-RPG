@@ -47,8 +47,10 @@ MonoBehaviour:
   allGameModes:
   - name: MainMenu
     obj: {fileID: 8659514848704239082, guid: 7beb41524a063d04ebf97b3e5a4e6b13, type: 3}
-  - name: GamePlay
-    obj: {fileID: 2664540852246214789, guid: 9469eec85833da94193b3f3958183d68, type: 3}
+  - name: Exploration
+    obj: {fileID: 8534556649999809342, guid: ed9791a2357819d478307bc216b52101, type: 3}
+  - name: Combat
+    obj: {fileID: 2407505284750698644, guid: 5353aaa71250be64e950f0bf427bacf8, type: 3}
   nextGameModeToLoad:
     name: 
     obj: {fileID: 0}
@@ -86,7 +88,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  onSaveLoadedChannel: {fileID: 11400000, guid: 00d7efb67653dff4fb63edd86a6dd55c, type: 2}
   onOptionsChangedChannel: {fileID: 11400000, guid: 27a7436a7c745d54187d3ba38fccaaea, type: 2}
   requestChangeGameModeChannel: {fileID: 11400000, guid: 98c5b39363b3b43418389630f708f5fe, type: 2}
   onGameModeTeardownFinishedChannel: {fileID: 11400000, guid: dd4abbcae653d2a488202097ded104df, type: 2}

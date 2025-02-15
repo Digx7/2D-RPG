@@ -1,4 +1,8 @@
 using UnityEngine;
+using UnityEngine.Events;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement2D : MonoBehaviour
@@ -6,10 +10,18 @@ public class Movement2D : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public float jumpBufferCheckDistance = 2f;
-    public float groundedDistanceCheck = 2f;
+    public float groundedCheckDistance = 2f;
+    public ContactFilter2D jumpBufferContactFilter;
+    public ContactFilter2D groundedContactFilter;
+    public BooleanEvent OnAirborn;
+    public BooleanEvent OnFalling;
 
     private Rigidbody2D rb;
     private Vector2 desiredMoveDirection;
+
+    private bool isAirborn = false;
+    private bool isFalling = false;
+
     public void setDesiredMoveDirection(Vector2 newDirection)
     {
         desiredMoveDirection = newDirection;
@@ -30,52 +42,92 @@ public class Movement2D : MonoBehaviour
     public void FixedUpdate()
     {
         if(wantsToJump) Jump();
+        RefreshAirBornState();
         Move();
     }
 
     private void Move()
     {
-        // TODO
+        Vector3 startingVelocity = rb.linearVelocity;
+
+        Vector3 finalVelocity = new Vector3(desiredMoveDirection.x, 0, 0);
+        finalVelocity = finalVelocity * moveSpeed * Time.deltaTime;
+
+        finalVelocity = transform.TransformDirection(finalVelocity);
+
+        finalVelocity.y = startingVelocity.y;
+
+
+        rb.linearVelocity = finalVelocity;
     }
 
     private void Jump()
     {
-        if(!isNearGround())
+        if(!checkIfCloseEnoughForJumpBuffer())
         {
-            Debug.Log("Movement3D: Jump failed, not near ground");
+            Debug.Log("Movement2D: Jump failed, not near ground");
             wantsToJump = false;
         }
-        else if (isGrounded())
+        else if (checkIfIsGrounded())
         {
-            Debug.Log("Movement3D: Jumping");
+            Debug.Log("Movement2D: Jumping");
             wantsToJump = false;
             Vector2 liftForce = new Vector3(0, jumpForce);
+
+
+            Vector3 velocity = rb.linearVelocity;
+            velocity.y = 0;
+            rb.linearVelocity = velocity;
 
             rb.AddForce(liftForce, ForceMode2D.Impulse);
             return;
         }
-        Debug.Log("Movement3D: Jump waiting until closer to ground");
+        Debug.Log("Movement2D: Jump waiting until closer to ground");
     }
 
-    private bool isNearGround()
+    private void RefreshAirBornState()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, jumpBufferCheckDistance))
+        bool ogIsAirborn = isAirborn;
+        bool ogIsFalling = isFalling;
+
+        isAirborn = !checkIfIsGrounded();
+        if(isAirborn && rb.linearVelocity.y < 0) isFalling = true;
+        else isFalling = false;
+
+        if(ogIsAirborn != isAirborn) OnAirborn.Invoke(isAirborn);
+        if(ogIsFalling != isFalling) OnFalling.Invoke(isAirborn);
+    }
+
+    private bool checkIfCloseEnoughForJumpBuffer()
+    {
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y);
+        Vector2 direction = transform.TransformDirection(Vector2.down);
+        
+        List<RaycastHit2D> hits = new List<RaycastHit2D>();
+        Physics2D.Raycast(origin, direction, jumpBufferContactFilter, hits, jumpBufferCheckDistance);
+
+        if(hits.Count > 0)
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow); 
+            // Debug.Log("Movement2D: isNearGround() hit something");
             return true;
         }
         return false;
     }  
 
-    private bool isGrounded()
+    private bool checkIfIsGrounded()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, groundedDistanceCheck))
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y);
+        Vector2 direction = transform.TransformDirection(Vector2.down);
+        
+        List<RaycastHit2D> hits = new List<RaycastHit2D>();
+        Physics2D.Raycast(origin, direction, groundedContactFilter, hits, groundedCheckDistance);
+        
+        if(hits.Count > 0)
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow); 
+            // Debug.Log("Movement2D: isGrounded() hit something");
             return true;
         }
+
         return false;
     }
     

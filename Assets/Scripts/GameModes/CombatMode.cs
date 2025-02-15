@@ -11,8 +11,6 @@ public class CombatMode : GameMode
         // add code here
         
         base.Setup();
-
-        requestLoadSaveDataChannel.Raise();
     }
 
     public override void Teardown()
