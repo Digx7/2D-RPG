@@ -242,7 +242,6 @@ public class PlayerController : GameController
 
     public void OnAbility1(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("PlayerController: Ability 1");
 
         // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
         switch (callbackContext.phase)
@@ -258,8 +257,7 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                Debug.Log("PlayerController: Pressed Ability 1");
-                playerCombatUnit.UseAbility1();
+                playerCombatUnit.UseAbility(0);
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here
@@ -272,7 +270,6 @@ public class PlayerController : GameController
 
     public void OnAbility2(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("PlayerController: Ability 2");
 
         // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
         switch (callbackContext.phase)
@@ -288,7 +285,35 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                playerCombatUnit.UseAbility2();
+                playerCombatUnit.UseAbility(1);
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility3(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                playerCombatUnit.UseAbility(2);
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here

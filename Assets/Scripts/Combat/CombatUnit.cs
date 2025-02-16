@@ -8,11 +8,20 @@ using System.Collections.Generic;
 public class CombatUnit : MonoBehaviour
 {
     public string UnitName;
+    public List<AbilityData> abilities;
+    public CombatFaction CombatFaction;
+    public Animator animator;
+    public string HurtAnimationName;
+    public string HealAnimationName;
+    public string DeathAnimationName;
+    public string ReviveAnimationName;
     public Channel onEndUnitTurnChannel;
     public UnityEvent onStartTurn;
     public UnityEvent onEndTurn;
+    public UnityEvent onDeath;
 
     private bool isTurn = false;
+    public bool IsDead {get; private set;} = false;
 
     private void OnEnable()
     {
@@ -25,6 +34,7 @@ public class CombatUnit : MonoBehaviour
     public void Prompt()
     {
         // Done to avoid an infinite call stack
+
         StartCoroutine(onPrompt());
     }
 
@@ -39,22 +49,41 @@ public class CombatUnit : MonoBehaviour
         onEndTurn.Invoke();
     }
 
-    public void UseAbility1()
+    public void UseAbility(int index)
     {
-        if(!isTurn) return;
+        if(IsDead) return;
         
-        Debug.Log("CombatUnit: " + UnitName + " uses ability 1");
+        if(index >= abilities.Count) return;
 
-        EndTurn();
+        Debug.Log("CombatUnit: " + UnitName + " uses ability " + (index + 1));
+
+        abilities[index].SpawnAbility(transform, this);
     }
 
-    public void UseAbility2()
+    public void OnHurt()
     {
-        if(!isTurn) return;
-        
-        Debug.Log("CombatUnit: " + UnitName + " uses ability 1");
+        if(HurtAnimationName != "")animator.Play(HurtAnimationName);
+    }
 
-        EndTurn();
+    public void OnHeal()
+    {
+        if(HealAnimationName != "")animator.Play(HealAnimationName);
+    }
+
+    public void OnDeath()
+    {
+        if(DeathAnimationName != "")animator.Play(DeathAnimationName);
+        IsDead = true;
+    }
+
+    public void OnRevive()
+    {
+        if(ReviveAnimationName != "")animator.Play(ReviveAnimationName);
+    }
+
+    public void DestroyUnit()
+    {
+        Destroy(gameObject, 5f);
     }
 
     IEnumerator onPrompt()
@@ -64,8 +93,18 @@ public class CombatUnit : MonoBehaviour
         
         Debug.Log("CombatUnit: It is the " + UnitName + "s turn");
 
-        isTurn = true;
-        onStartTurn.Invoke();
+        if(IsDead) EndTurn();
+        else
+        {
+            isTurn = true;
+            onStartTurn.Invoke();
+        }
     }
 
+}
+
+[System.Serializable]
+public enum CombatFaction
+{
+    PLAYER, GOBLIN, ROBOT
 }

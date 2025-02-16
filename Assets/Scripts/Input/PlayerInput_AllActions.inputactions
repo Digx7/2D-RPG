@@ -260,6 +260,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_3",
+                    "type": "Button",
+                    "id": "7db81d3c-4a17-455e-9c95-cc19f9b80eaa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -277,21 +286,10 @@
                 {
                     "name": "",
                     "id": "1301078a-7db8-4301-a599-c6cf085614e3",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";GamePad",
-                    "action": "Ability_1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7b662154-6212-47f4-95ca-ca598289a506",
-                    "path": "<Keyboard>/c",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "Ability_1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -315,6 +313,28 @@
                     "processors": "",
                     "groups": ";GamePad",
                     "action": "Ability_2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6285ef6-37c1-4f3a-8653-b25e349ef32b",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6695b3af-6790-438c-b633-90bb43f752ce",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GamePad",
+                    "action": "Ability_3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

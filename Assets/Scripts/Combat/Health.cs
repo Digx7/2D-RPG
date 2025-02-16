@@ -36,9 +36,24 @@ public class Health : MonoBehaviour
 
         CurrentHealth -= damageResult.trueDamage;
 
-        if(damageResult.trueDamage > incomingDamage.amount) damageResult.weakOrRessistant = WeakOrRessistant.WEAK;
-        else if(damageResult.trueDamage > incomingDamage.amount) damageResult.weakOrRessistant = WeakOrRessistant.RESSISTANT;
-        else damageResult.weakOrRessistant = WeakOrRessistant.NORMAL;
+        if(damageResult.trueDamage > incomingDamage.amount) 
+        {
+            damageResult.weakOrRessistant = WeakOrRessistant.WEAK;
+
+            Debug.Log("Health: took " + damageResult.trueDamage + " " + incomingDamage.damageType + " damage\nIts super effective\nCurrentHealth: " + CurrentHealth);
+        }
+        else if(damageResult.trueDamage > incomingDamage.amount) 
+        {
+            damageResult.weakOrRessistant = WeakOrRessistant.RESSISTANT;
+
+            Debug.Log("Health: took " + damageResult.trueDamage + " " + incomingDamage.damageType + " damage\nIts NOT effective\nCurrentHealth: " + CurrentHealth);
+        }
+        else 
+        {
+            damageResult.weakOrRessistant = WeakOrRessistant.NORMAL;
+
+            Debug.Log("Health: took " + damageResult.trueDamage + " " + incomingDamage.damageType + " damage\nIts normal\nCurrentHealth: " + CurrentHealth);
+        }
 
         OnDamage.Invoke(damageResult);
 
@@ -64,6 +79,8 @@ public class Health : MonoBehaviour
         if(healResult.trueDamage > incomingHeal.amount) healResult.weakOrRessistant = WeakOrRessistant.WEAK;
         else if(healResult.trueDamage > incomingHeal.amount) healResult.weakOrRessistant = WeakOrRessistant.RESSISTANT;
         else healResult.weakOrRessistant = WeakOrRessistant.NORMAL;
+
+        Debug.Log("Health: Healed " + healResult.trueDamage + "\nCurrentHealth: " + CurrentHealth);
 
         OnHeal.Invoke(healResult);
 

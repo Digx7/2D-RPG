@@ -58,6 +58,11 @@ public class CombatManager : Singleton<CombatManager>
     {
         Debug.Log("CombatManager: Ending Combat");
         
+        foreach (CombatUnit unit in combatUnits)
+        {
+            if(unit.IsDead) unit.DestroyUnit();
+        }
+
         onCombatEndChannel.Raise();
         onCombatEnd.Invoke();
     }
@@ -90,8 +95,14 @@ public class CombatManager : Singleton<CombatManager>
 
     public bool isBattleOver()
     {
-        if(roundNumber > 3) return true;
-        else return false;
+        // TODO trigger if only one faction is left standing
+
+        foreach (CombatUnit unit in combatUnits)
+        {
+            if(unit.IsDead) return true;
+        }
+
+        return false;
     }
 
 }

@@ -346,6 +346,15 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability_3"",
+                    ""type"": ""Button"",
+                    ""id"": ""7db81d3c-4a17-455e-9c95-cc19f9b80eaa"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -363,21 +372,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""1301078a-7db8-4301-a599-c6cf085614e3"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";GamePad"",
-                    ""action"": ""Ability_1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7b662154-6212-47f4-95ca-ca598289a506"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
                     ""action"": ""Ability_1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -401,6 +399,28 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": "";GamePad"",
                     ""action"": ""Ability_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6285ef6-37c1-4f3a-8653-b25e349ef32b"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Ability_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6695b3af-6790-438c-b633-90bb43f752ce"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";GamePad"",
+                    ""action"": ""Ability_3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -756,6 +776,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Ability_1 = m_Combat.FindAction("Ability_1", throwIfNotFound: true);
         m_Combat_Ability_2 = m_Combat.FindAction("Ability_2", throwIfNotFound: true);
+        m_Combat_Ability_3 = m_Combat.FindAction("Ability_3", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -1003,6 +1024,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private List<ICombatActions> m_CombatActionsCallbackInterfaces = new List<ICombatActions>();
     private readonly InputAction m_Combat_Ability_1;
     private readonly InputAction m_Combat_Ability_2;
+    private readonly InputAction m_Combat_Ability_3;
     /// <summary>
     /// Provides access to input actions defined in input action map "Combat".
     /// </summary>
@@ -1022,6 +1044,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// Provides access to the underlying input action "Combat/Ability_2".
         /// </summary>
         public InputAction @Ability_2 => m_Wrapper.m_Combat_Ability_2;
+        /// <summary>
+        /// Provides access to the underlying input action "Combat/Ability_3".
+        /// </summary>
+        public InputAction @Ability_3 => m_Wrapper.m_Combat_Ability_3;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1054,6 +1080,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Ability_2.started += instance.OnAbility_2;
             @Ability_2.performed += instance.OnAbility_2;
             @Ability_2.canceled += instance.OnAbility_2;
+            @Ability_3.started += instance.OnAbility_3;
+            @Ability_3.performed += instance.OnAbility_3;
+            @Ability_3.canceled += instance.OnAbility_3;
         }
 
         /// <summary>
@@ -1071,6 +1100,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Ability_2.started -= instance.OnAbility_2;
             @Ability_2.performed -= instance.OnAbility_2;
             @Ability_2.canceled -= instance.OnAbility_2;
+            @Ability_3.started -= instance.OnAbility_3;
+            @Ability_3.performed -= instance.OnAbility_3;
+            @Ability_3.canceled -= instance.OnAbility_3;
         }
 
         /// <summary>
@@ -1396,6 +1428,13 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAbility_2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Ability_3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAbility_3(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

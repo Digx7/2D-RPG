@@ -12,6 +12,6 @@ public class GoblinAI : MonoBehaviour
     public void OnTurn()
     {
         Debug.Log("GoblinAI: Using ability 1 on gobins turn");
-        combatUnit.UseAbility1();
+        combatUnit.UseAbility(0);
     }
 }
