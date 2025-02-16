@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 2590475560418533705}
   - component: {fileID: 235150269458573661}
   - component: {fileID: 4714412151015465676}
+  - component: {fileID: 6329130107479357747}
   - component: {fileID: 4098708374794177520}
   - component: {fileID: 8511550985800388582}
   m_Layer: 0
@@ -233,6 +234,36 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onEndTurn:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6329130107479357747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839096609123802247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d4bc7ba337b2d47a79be16b0219659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Modifiers:
+  - damageType: 0
+    multiplier: 2
+  - damageType: 1
+    multiplier: 0.5
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRevive:
     m_PersistentCalls:
       m_Calls: []
 --- !u!70 &4098708374794177520

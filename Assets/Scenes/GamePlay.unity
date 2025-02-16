@@ -3935,6 +3935,7 @@ GameObject:
   - component: {fileID: 823422964}
   - component: {fileID: 823422963}
   - component: {fileID: 823422965}
+  - component: {fileID: 823422966}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4002,6 +4003,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2be30b3fd0a6040a13eac532ec9e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &823422966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823422962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d4bc7ba337b2d47a79be16b0219659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Modifiers:
+  - damageType: 2
+    multiplier: 2
+  - damageType: 3
+    multiplier: 0.5
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRevive:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &901099019
 PrefabInstance:
   m_ObjectHideFlags: 0
