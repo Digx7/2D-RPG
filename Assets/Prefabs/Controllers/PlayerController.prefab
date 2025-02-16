@@ -54,6 +54,8 @@ MonoBehaviour:
   RequestLoadUIWidgetData: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
   activeTimeLoreWidgetData: {fileID: 11400000, guid: 3ed8c7f6340570a4196bbebf2f3e0e76, type: 2}
   pauseMenuWidgetData: {fileID: 11400000, guid: 5dca4f619f5187a4090b83b4e7b856f6, type: 2}
+  onCombatStartChannel: {fileID: 11400000, guid: 021fa70ec378f2449ab92383d92bf9f9, type: 2}
+  onCombatEndChannel: {fileID: 11400000, guid: af10a3019b9b35f4d9e8b2a031f1ffe7, type: 2}
 --- !u!114 &5268471269457950749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,8 +253,40 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 77417fb6-08d0-4637-8367-392ad60ec303
     m_ActionName: 'GamePlay/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6651588715944437}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAbility1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 15add5ee-b8bf-45a5-a068-c44575c308c4
+    m_ActionName: 'Combat/Ability_1[/Keyboard/1]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6651588715944437}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAbility2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 26f8df33-4f0d-4226-bbcb-f4dcd11c66ad
+    m_ActionName: 'Combat/Ability_2[/Keyboard/2]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: GamePlay
+  m_DefaultActionMap: Exploration
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

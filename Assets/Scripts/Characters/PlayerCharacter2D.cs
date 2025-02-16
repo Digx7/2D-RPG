@@ -83,6 +83,11 @@ public class PlayerCharacter2D : PlayerCharacter
         animator.SetBool("IsFalling", value);
     }
 
+    public void UpdateAnimatorInCombat(bool value)
+    {
+        animator.SetBool("InCombat", value);
+    }
+
     public override void Jump()
     {
         Debug.Log("PlayerCharacter3D: Jump()");

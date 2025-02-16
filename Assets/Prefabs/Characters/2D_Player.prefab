@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 4490187693441939366}
   - component: {fileID: 2590475560418533705}
   - component: {fileID: 235150269458573661}
+  - component: {fileID: 4714412151015465676}
   - component: {fileID: 4098708374794177520}
   - component: {fileID: 8511550985800388582}
   m_Layer: 0
@@ -212,6 +213,26 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnFalling:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4714412151015465676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839096609123802247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938b3c5bffcd37845ab30f476796bfc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitName: Adventurer
+  onEndUnitTurnChannel: {fileID: 11400000, guid: 50a88c07cfb6cec4880f8f792271c736, type: 2}
+  onStartTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndTurn:
     m_PersistentCalls:
       m_Calls: []
 --- !u!70 &4098708374794177520

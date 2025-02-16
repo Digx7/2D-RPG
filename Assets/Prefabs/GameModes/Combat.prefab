@@ -57,4 +57,5 @@ MonoBehaviour:
   onOptionsMenuQuitChannel: {fileID: 11400000, guid: 99c78e6d0ecbf2045b522eee27e99138, type: 2}
   requestLoadUIWidgetChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
   requestLoadSaveDataChannel: {fileID: 11400000, guid: cb3cc0c6649d25e40aee501ded5c9d1d, type: 2}
+  requestCombatStartChannel: {fileID: 11400000, guid: d9837cbd911a5d242a36b06d20a0ea1a, type: 2}
   pauseMenuWidgetData: {fileID: 11400000, guid: 5dca4f619f5187a4090b83b4e7b856f6, type: 2}

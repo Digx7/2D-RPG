@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6083008725176274970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6021093782979726708}
+  - component: {fileID: 8121864153301687654}
+  - component: {fileID: 5865026927750615007}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6021093782979726708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083008725176274970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.58, y: 2.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8121864153301687654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083008725176274970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cf9661f9e7c834797c2d410c957f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestCombatStartChannel: {fileID: 11400000, guid: d9837cbd911a5d242a36b06d20a0ea1a, type: 2}
+  onCombatStartChannel: {fileID: 11400000, guid: 021fa70ec378f2449ab92383d92bf9f9, type: 2}
+  onCombatEndChannel: {fileID: 11400000, guid: af10a3019b9b35f4d9e8b2a031f1ffe7, type: 2}
+  onEndUnitTurnChannel: {fileID: 11400000, guid: 50a88c07cfb6cec4880f8f792271c736, type: 2}
+  onNewRoundStartChannel: {fileID: 11400000, guid: 7b60cec205ba8c346b8eb60ca9e2d6b1, type: 2}
+  onCombatStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onCombatEnd:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5865026927750615007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083008725176274970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cd1f6a504ff6946a8d7885552e096a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onNewRoundStartChannel: {fileID: 11400000, guid: 7b60cec205ba8c346b8eb60ca9e2d6b1, type: 2}

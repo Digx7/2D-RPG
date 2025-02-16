@@ -1,8 +1,8 @@
 {
-    "name": "PlayerInput",
+    "name": "PlayerInput_AllActions",
     "maps": [
         {
-            "name": "GamePlay",
+            "name": "Exploration",
             "id": "ab3eac7e-e2ec-4e04-8f5f-9c1f9c270a9a",
             "actions": [
                 {
@@ -234,6 +234,87 @@
                     "processors": "",
                     "groups": ";GamePad",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Combat",
+            "id": "048e5f62-c012-4b2c-809b-846176554a0c",
+            "actions": [
+                {
+                    "name": "Ability_1",
+                    "type": "Button",
+                    "id": "15add5ee-b8bf-45a5-a068-c44575c308c4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_2",
+                    "type": "Button",
+                    "id": "26f8df33-4f0d-4226-bbcb-f4dcd11c66ad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c2c30d16-b21c-4ad0-b8b5-76f6860c112c",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1301078a-7db8-4301-a599-c6cf085614e3",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GamePad",
+                    "action": "Ability_1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b662154-6212-47f4-95ca-ca598289a506",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ability_1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c02bf22-2a50-430d-b705-0b9a7e43e00c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71140789-03fe-4dc8-8a8f-facc5938d871",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GamePad",
+                    "action": "Ability_2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
