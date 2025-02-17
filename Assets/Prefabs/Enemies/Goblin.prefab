@@ -140,6 +140,7 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: f0f06b2a0fd0eb14f83900ffac560c49, type: 2}
   - {fileID: 11400000, guid: f7e6a45fc735d534f828f1f7895fffd0, type: 2}
+  - {fileID: 11400000, guid: 631ea22eaeaccc649b604489b0888e5e, type: 2}
   combatFaction: 1
   animator: {fileID: 4571397052271655777}
   HurtAnimationName: Goblin_Hurt

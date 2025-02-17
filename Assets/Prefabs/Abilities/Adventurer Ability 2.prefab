@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Heal
   LifeTime: 1
+  AnimationName: Adventurer_Items
   HealAmount:
     damageType: 4
     amount: 25

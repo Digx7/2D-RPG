@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Grub
   LifeTime: 1
+  AnimationName: Goblin_Attack_2
   HealAmount:
     damageType: 5
     amount: 20
