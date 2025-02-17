@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : GameController
 {
@@ -11,16 +14,23 @@ public class PlayerController : GameController
     [SerializeField] private Channel onCombatEndChannel;
     private PlayerCharacter possessedPlayer;
     private PlayerInput playerInput;
-    private CombatUnit playerCombatUnit;
+    private List<CombatUnit> playerCombatUnits;
 
     // OVERRIDE FUNCTIONS ==============================================
 
+    public override void Setup(int newID = 1, Character characterToPossess = null)
+    {
+        playerCombatUnits = new List<CombatUnit>();
+        
+        base.Setup(newID, characterToPossess);
+    }
+    
     public override bool PossessCharacter(Character newCharacter)
     {
         if(newCharacter != null)
         {
             possessedPlayer = newCharacter as PlayerCharacter;
-            playerCombatUnit = possessedPlayer.gameObject.GetComponent<CombatUnit>();
+            // playerCombatUnit = possessedPlayer.gameObject.GetComponent<CombatUnit>();
         } 
 
         return base.PossessCharacter(newCharacter);
@@ -31,7 +41,7 @@ public class PlayerController : GameController
         if(newCharacter != null)
         {
             possessedPlayer = newCharacter as PlayerCharacter;
-            playerCombatUnit = possessedPlayer.gameObject.GetComponent<CombatUnit>();
+            // playerCombatUnit = possessedPlayer.gameObject.GetComponent<CombatUnit>();
         }
 
         base.ForcePossessCharacter(newCharacter);
@@ -61,6 +71,16 @@ public class PlayerController : GameController
     {
         Debug.Log("PlayerController: On Combat Start");
 
+        // Clears any remaining playercombat unit references
+        playerCombatUnits.Clear();
+
+        // Gets all new playercombat unit references
+        CombatUnit[] combatUnits = FindObjectsByType<CombatUnit>(FindObjectsSortMode.None);
+        for (int i = 0; i < combatUnits.Length; i++)
+        {
+            if(combatUnits[i].combatFaction == CombatFaction.PLAYER) playerCombatUnits.Add(combatUnits[i]);
+        }
+
         // Switches action map
         playerInput.SwitchCurrentActionMap("Combat");
 
@@ -74,6 +94,9 @@ public class PlayerController : GameController
     public void OnCombatEnd()
     {
         Debug.Log("PlayerController: On Combat End");
+
+        // Clears any remaining playercombat unit references
+        playerCombatUnits.Clear();
 
         // Switches action map
         playerInput.SwitchCurrentActionMap("Exploration");
@@ -257,7 +280,10 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                playerCombatUnit.UseAbility(0);
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(0);
+                }
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here
@@ -285,7 +311,10 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                playerCombatUnit.UseAbility(1);
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(1);
+                }
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here
@@ -313,7 +342,10 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                playerCombatUnit.UseAbility(2);
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(2);
+                }
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here

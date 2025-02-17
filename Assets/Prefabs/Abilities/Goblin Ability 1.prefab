@@ -50,7 +50,7 @@ MonoBehaviour:
   damageToDo:
     damageType: 1
     amount: 50
-  originOffset: {x: -1, y: 0}
+  originOffset: {x: -1, y: -0.25}
   direction: {x: -1, y: 0}
   checkDistance: 20
   checkContactFilter:

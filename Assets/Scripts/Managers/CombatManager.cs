@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Audio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 public class CombatManager : Singleton<CombatManager>
@@ -77,13 +78,7 @@ public class CombatManager : Singleton<CombatManager>
     {
         Debug.Log("CombatManger: A Unit has ended its turn");
         
-        if(isBattleOver())
-        {
-            EndCombat();
-            return;
-        }
-
-        prompter.PromptNextUnit();
+        StartCoroutine(EndUnitTurn());
     }
 
     public void OnNewRoundStart()
@@ -97,12 +92,54 @@ public class CombatManager : Singleton<CombatManager>
     {
         // TODO trigger if only one faction is left standing
 
+        if(IsPlayerFactionDead()) return true;
+
+        if(OnlyOneFactionLives()) return true;
+        else return false;
+    }
+
+    private bool OnlyOneFactionLives()
+    {
+        List<CombatFaction> livingFactions = new List<CombatFaction>();
+
         foreach (CombatUnit unit in combatUnits)
         {
-            if(unit.IsDead) return true;
+            if(unit.IsDead == false && !livingFactions.Contains(unit.combatFaction))
+            {
+                livingFactions.Add(unit.combatFaction);
+            }
         }
 
-        return false;
+        if(livingFactions.Count <= 1) return true;
+        else return false;
+    }
+
+    private bool IsPlayerFactionDead()
+    {
+        return IsFactionDead(CombatFaction.PLAYER);
+    }
+
+    private bool IsFactionDead(CombatFaction factionToCheck)
+    {
+        foreach (CombatUnit unit in combatUnits)
+        {
+            if(unit.combatFaction == factionToCheck && unit.IsDead == false) return false;
+        }
+        return true;
+    }
+
+
+    IEnumerator EndUnitTurn()
+    {
+        yield return null;
+        
+        if(isBattleOver())
+        {
+            EndCombat();
+            yield break;
+        }
+
+        prompter.PromptNextUnit();
     }
 
 }

@@ -42,11 +42,11 @@ public class PlayerCharacter2D : PlayerCharacter
     {
         if(moveDirection.x >= 0.1 || moveDirection.x <= -0.1)
         {
-            animator.SetBool("IsRunning", true);
+            if(animator != null) animator.SetBool("IsRunning", true);
         }
         else 
         {
-            animator.SetBool("IsRunning", false);
+            if(animator != null) animator.SetBool("IsRunning", false);
         }
     }
 
@@ -75,17 +75,17 @@ public class PlayerCharacter2D : PlayerCharacter
 
     public void UpdateAnimatorAirborn(bool value)
     {
-        animator.SetBool("IsAirborn", value);
+        if(animator != null) animator.SetBool("IsAirborn", value);
     }
 
     public void UpdateAnimatorFalling(bool value)
     {
-        animator.SetBool("IsFalling", value);
+        if(animator != null) animator.SetBool("IsFalling", value);
     }
 
     public void UpdateAnimatorInCombat(bool value)
     {
-        animator.SetBool("InCombat", value);
+        if(animator != null) animator.SetBool("InCombat", value);
     }
 
     public override void Jump()

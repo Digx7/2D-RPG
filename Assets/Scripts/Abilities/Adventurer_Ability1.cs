@@ -24,6 +24,8 @@ public class Adventurer_Ability1 : Ability
 
         if(hits.Count > 0)
         {
+            Debug.Log("Adventurer Ability " + AbilityName + ": hit " + hits.Count + " targets");
+            
             foreach (RaycastHit2D hit in hits)
             {
                 hit.transform.gameObject.TryGetComponent<Health>(out Health targetHealth);
@@ -31,6 +33,10 @@ public class Adventurer_Ability1 : Ability
                 {
                     targetHealth.Damage(damageToDo);
                     Debug.Log("Adventurer Ability " + AbilityName + ": target found");
+                }
+                else
+                {
+                    Debug.Log("Adventurer Ability " + AbilityName + ": target with no health component " + hit.transform.gameObject.name);
                 }
             }
         }

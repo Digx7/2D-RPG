@@ -24,6 +24,8 @@ public class Goblin_Ability1 : Ability
 
         if(hits.Count > 0)
         {
+            Debug.Log("Goblin Ability " + AbilityName + ": hit " + hits.Count + " targets");
+            
             foreach (RaycastHit2D hit in hits)
             {
                 hit.transform.gameObject.TryGetComponent<Health>(out Health targetHealth);
@@ -31,6 +33,10 @@ public class Goblin_Ability1 : Ability
                 {
                     targetHealth.Damage(damageToDo);
                     Debug.Log("Goblin Ability " + AbilityName + ": target found");
+                }
+                else
+                {
+                    Debug.Log("Goblin Ability " + AbilityName + ": target with no health component " + hit.transform.gameObject.name);
                 }
             }
         }

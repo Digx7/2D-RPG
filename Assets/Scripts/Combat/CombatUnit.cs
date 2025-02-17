@@ -9,7 +9,7 @@ public class CombatUnit : MonoBehaviour
 {
     public string UnitName;
     public List<AbilityData> abilities;
-    public CombatFaction CombatFaction;
+    public CombatFaction combatFaction;
     public Animator animator;
     public string HurtAnimationName;
     public string HealAnimationName;
@@ -19,8 +19,10 @@ public class CombatUnit : MonoBehaviour
     public UnityEvent onStartTurn;
     public UnityEvent onEndTurn;
     public UnityEvent onDeath;
+    public UnityEvent onDestroy;
 
     private bool isTurn = false;
+    private bool isUsingAbility = false;
     public bool IsDead {get; private set;} = false;
 
     private void OnEnable()
@@ -45,6 +47,7 @@ public class CombatUnit : MonoBehaviour
         Debug.Log("CombatUnit: " + UnitName + " ending turn");
 
         isTurn = false;
+        isUsingAbility = false;
         onEndUnitTurnChannel.Raise();
         onEndTurn.Invoke();
     }
@@ -52,37 +55,47 @@ public class CombatUnit : MonoBehaviour
     public void UseAbility(int index)
     {
         if(IsDead) return;
+
+        if(!isTurn) return;
+
+        if(isUsingAbility) return;
         
         if(index >= abilities.Count) return;
 
         Debug.Log("CombatUnit: " + UnitName + " uses ability " + (index + 1));
 
         abilities[index].SpawnAbility(transform, this);
+        isUsingAbility = true;
     }
 
     public void OnHurt()
     {
-        if(HurtAnimationName != "")animator.Play(HurtAnimationName);
+        if(IsDead) return;
+
+        if(HurtAnimationName != "" && animator != null)animator.Play(HurtAnimationName);
     }
 
     public void OnHeal()
     {
-        if(HealAnimationName != "")animator.Play(HealAnimationName);
+        if(IsDead) return;
+        
+        if(HealAnimationName != "" && animator != null)animator.Play(HealAnimationName);
     }
 
     public void OnDeath()
     {
-        if(DeathAnimationName != "")animator.Play(DeathAnimationName);
+        if(DeathAnimationName != "" && animator != null)animator.Play(DeathAnimationName);
         IsDead = true;
     }
 
     public void OnRevive()
     {
-        if(ReviveAnimationName != "")animator.Play(ReviveAnimationName);
+        if(ReviveAnimationName != "" && animator != null)animator.Play(ReviveAnimationName);
     }
 
     public void DestroyUnit()
     {
+        onDestroy.Invoke();
         Destroy(gameObject, 5f);
     }
 
@@ -93,10 +106,11 @@ public class CombatUnit : MonoBehaviour
         
         Debug.Log("CombatUnit: It is the " + UnitName + "s turn");
 
+        isTurn = true;
+
         if(IsDead) EndTurn();
         else
         {
-            isTurn = true;
             onStartTurn.Invoke();
         }
     }
@@ -106,5 +120,5 @@ public class CombatUnit : MonoBehaviour
 [System.Serializable]
 public enum CombatFaction
 {
-    PLAYER, GOBLIN, ROBOT
+    PLAYER, GOBLIN, ROBOT, ENVIROMENT
 }
