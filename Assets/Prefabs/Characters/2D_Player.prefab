@@ -321,7 +321,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb97fb75873d61c4d869a831e35d2cb6, type: 2}
   - {fileID: 11400000, guid: 1ad095de379d8a04c9461683d33e81b2, type: 2}
   - {fileID: 11400000, guid: 781b460f2a7ab9a449a4a465cf03bf68, type: 2}
-  CombatFaction: 0
+  combatFaction: 0
   animator: {fileID: 5114435388740637882}
   HurtAnimationName: Adventurer_Hurt
   HealAnimationName: 
@@ -359,6 +359,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestroy:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &6329130107479357747

@@ -115,7 +115,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 187
+        width: 150
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -135,9 +135,9 @@ TextureImporter:
       name: Death_1
       rect:
         serializedVersion: 2
-        x: 187
+        x: 150
         y: 0
-        width: 187
+        width: 150
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -157,9 +157,9 @@ TextureImporter:
       name: Death_2
       rect:
         serializedVersion: 2
-        x: 374
+        x: 300
         y: 0
-        width: 187
+        width: 150
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,9 +179,9 @@ TextureImporter:
       name: Death_3
       rect:
         serializedVersion: 2
-        x: 561
+        x: 450
         y: 0
-        width: 187
+        width: 150
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,6 +193,28 @@ TextureImporter:
       bones: []
       spriteID: f8273716a3cfac1439ebe33a62a00305
       internalID: -1161877736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53a997ebb1c6fe4cbba0c34ad784b26
+      internalID: -129090754
       vertices: []
       indices: 
       edges: []
@@ -215,6 +237,7 @@ TextureImporter:
       Death_1: -230591764
       Death_2: -380048029
       Death_3: -1161877736
+      Death_4: -129090754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

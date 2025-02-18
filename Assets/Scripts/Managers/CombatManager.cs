@@ -92,7 +92,11 @@ public class CombatManager : Singleton<CombatManager>
     {
         // TODO trigger if only one faction is left standing
 
-        if(IsPlayerFactionDead()) return true;
+        if(IsPlayerFactionDead()) 
+        {
+            Debug.Log("CombatManager: Player Faction is the only one Left");
+            return true;
+        }
 
         if(OnlyOneFactionLives()) return true;
         else return false;
@@ -104,13 +108,18 @@ public class CombatManager : Singleton<CombatManager>
 
         foreach (CombatUnit unit in combatUnits)
         {
-            if(unit.IsDead == false && !livingFactions.Contains(unit.combatFaction))
+            if(!unit.IsDead && !livingFactions.Contains(unit.combatFaction))
             {
                 livingFactions.Add(unit.combatFaction);
             }
         }
 
-        if(livingFactions.Count <= 1) return true;
+        if(livingFactions.Count <= 1) 
+        {
+            Debug.Log("CombatManager: Only the faction " + livingFactions[0] + " remains\n" + "Number of living factions " + livingFactions.Count);
+            
+            return true;
+        }
         else return false;
     }
 

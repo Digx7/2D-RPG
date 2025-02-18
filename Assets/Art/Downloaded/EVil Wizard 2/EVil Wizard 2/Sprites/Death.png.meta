@@ -115,7 +115,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 218
+        width: 250
         height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -135,9 +135,9 @@ TextureImporter:
       name: Death_1
       rect:
         serializedVersion: 2
-        x: 218
+        x: 250
         y: 0
-        width: 218
+        width: 250
         height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -157,9 +157,9 @@ TextureImporter:
       name: Death_2
       rect:
         serializedVersion: 2
-        x: 436
+        x: 500
         y: 0
-        width: 218
+        width: 250
         height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,9 +179,9 @@ TextureImporter:
       name: Death_3
       rect:
         serializedVersion: 2
-        x: 654
+        x: 750
         y: 0
-        width: 218
+        width: 250
         height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -201,9 +201,9 @@ TextureImporter:
       name: Death_4
       rect:
         serializedVersion: 2
-        x: 872
+        x: 1000
         y: 0
-        width: 218
+        width: 250
         height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -223,9 +223,9 @@ TextureImporter:
       name: Death_5
       rect:
         serializedVersion: 2
-        x: 1090
+        x: 1250
         y: 0
-        width: 218
+        width: 250
         height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -245,9 +245,9 @@ TextureImporter:
       name: Death_6
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 1500
         y: 0
-        width: 218
+        width: 250
         height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -259,28 +259,6 @@ TextureImporter:
       bones: []
       spriteID: f468c67bcbadb654d821681213544764
       internalID: 547069975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Death_7
-      rect:
-        serializedVersion: 2
-        x: 1526
-        y: 0
-        width: 218
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77dcc7f6ca8f37b4385fc07d0dd9d560
-      internalID: -2122172088
       vertices: []
       indices: 
       edges: []
@@ -306,7 +284,6 @@ TextureImporter:
       Death_4: -1076427030
       Death_5: -112400171
       Death_6: 547069975
-      Death_7: -2122172088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
