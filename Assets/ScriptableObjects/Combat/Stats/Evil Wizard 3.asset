@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
-  m_Name: EvilWizard3 Ability 1
+  m_Script: {fileID: 11500000, guid: 6fcbe6a014759694492107c2d2d28230, type: 3}
+  m_Name: Evil Wizard 3
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1941498291919481024, guid: feeaa8aa758b5de47988b11889ea6777, type: 3}
+  data:
+    Speed: 2
+    Str: 10
+    Dex: 10
+    Int: 10
+    Wis: 10

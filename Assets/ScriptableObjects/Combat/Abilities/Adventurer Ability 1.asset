@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
-  m_Name: Goblin Ability 1
+  m_Name: Adventurer Ability 1
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 3055968082967222287, guid: b0c21b17332846e44b294315a8406646, type: 3}
+  AbilityName: Slash
+  EnergyCost: 2
+  abilityPrefab: {fileID: 3912092619085005372, guid: f0c801910aff8624da90800f98134f20, type: 3}

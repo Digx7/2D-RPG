@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
-  m_Name: Mushroom Ability 2
+  m_Name: Flying Eye Ability 3
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1941498291919481024, guid: d27597421e0d51142a8d6ce2e58a36fa, type: 3}
+  AbilityName: Evil1
+  EnergyCost: 2
+  abilityPrefab: {fileID: 1941498291919481024, guid: dc2e3cfd97e7d9e4faef653cd97b9de7, type: 3}

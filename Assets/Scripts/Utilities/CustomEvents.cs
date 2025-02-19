@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CustomEvents : MonoBehaviour
 {
@@ -44,3 +47,6 @@ public class SceneEvent : UnityEvent<SceneData> {}
 
 [System.Serializable]
 public class SceneContextEvent : UnityEvent<SceneContext> {}
+
+[System.Serializable]
+public class SpriteListEvent : UnityEvent<List<Sprite>> {}

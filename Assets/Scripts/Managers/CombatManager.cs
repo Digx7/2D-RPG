@@ -72,6 +72,8 @@ public class CombatManager : Singleton<CombatManager>
     {
         combatUnits.Clear();
         combatUnits.AddRange(FindObjectsByType<CombatUnit>(FindObjectsSortMode.None));
+
+        combatUnits.Sort((x,y) => x.Stats.data.Speed.CompareTo(y.Stats.data.Speed));
     }
 
     public void OnEndUnitTurn()

@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
-  m_Name: Skeleton Ability 2
+  m_Name: Mushroom Ability 2
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1941498291919481024, guid: 545f9909baca88f439f5659f1d49cf28, type: 3}
+  AbilityName: Evil1
+  EnergyCost: 2
+  abilityPrefab: {fileID: 1941498291919481024, guid: d27597421e0d51142a8d6ce2e58a36fa, type: 3}

@@ -69,3 +69,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onNewRoundStartChannel: {fileID: 11400000, guid: 7b60cec205ba8c346b8eb60ca9e2d6b1, type: 2}
+  onNewTurnChannel: {fileID: 11400000, guid: 50e519fff4ea31042b4b5a6d64bad7f4, type: 2}
+  onCombatIconsUpdate: {fileID: 11400000, guid: db5da0630fc68b34c9f210a528e8adac, type: 2}

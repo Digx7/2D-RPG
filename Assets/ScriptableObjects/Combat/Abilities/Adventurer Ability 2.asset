@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
-  m_Name: Flying Eye Ability 1
+  m_Name: Adventurer Ability 2
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1941498291919481024, guid: 77c72eb072aa33c4a8e13c4242be960c, type: 3}
+  AbilityName: Heal
+  EnergyCost: 1
+  abilityPrefab: {fileID: 358148318359097031, guid: e57b8821ef40e9d468fb994e1245a87d, type: 3}

@@ -137,11 +137,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitName: Mushroom 1
+  CurrentEnergy: 0
+  MaxEnergy: 2
+  Stats: {fileID: 11400000, guid: 0493ebac3af4ecc4689714b21ec0c221, type: 2}
   abilities:
   - {fileID: 11400000, guid: 3d46dd701b2249241ad8be04f0943c18, type: 2}
   - {fileID: 11400000, guid: 6f7538c1af671e740b2c147504d92d78, type: 2}
   - {fileID: 11400000, guid: f45fc68d59937554e8e1f060f784e76d, type: 2}
   combatFaction: 1
+  TurnOrderIcon: {fileID: 1922394724, guid: 0fa26d244976c824a82a6ebf1f979ccd, type: 3}
   animator: {fileID: 4571397052271655777}
   HurtAnimationName: Mushroom_Hurt
   HealAnimationName: 

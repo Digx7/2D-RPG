@@ -7,6 +7,8 @@ using System.Collections.Generic;
 public class Prompter : MonoBehaviour
 {
     [SerializeField] private Channel onNewRoundStartChannel;
+    [SerializeField] private Channel onNewTurnChannel;
+    [SerializeField] private SpriteListChannel onCombatIconsUpdate;
 
     private List<CombatUnit> combatUnits;
     private int combatUnitIndex = 0;
@@ -27,11 +29,16 @@ public class Prompter : MonoBehaviour
     public void UpdateCombatUnitList(List<CombatUnit> newList) 
     {
         combatUnits = newList;
+        List<Sprite> turnIconList = new List<Sprite>();
 
         foreach (CombatUnit unit in combatUnits)
         {
             Debug.Log("Prompter: added unit " + unit.UnitName);
+
+            turnIconList.Add(unit.TurnOrderIcon);
         }
+
+        onCombatIconsUpdate.Raise(turnIconList);
     }
 
     public void PromptNextUnit()
@@ -47,6 +54,7 @@ public class Prompter : MonoBehaviour
 
         combatUnits[combatUnitIndex].Prompt();
         combatUnitIndex++;
+        onNewTurnChannel.Raise();
 
         // Debug.Log("Prompter: Increased combat unit index to " + combatUnitIndex);
     }

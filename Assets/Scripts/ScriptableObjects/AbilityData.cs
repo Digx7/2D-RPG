@@ -5,6 +5,8 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "NewAbilityData", menuName = "ScriptableObjects/Abilities/Data", order = 1)]
 public class AbilityData : ScriptableObject
 {
+    public string AbilityName;
+    public int EnergyCost = 1;
     public GameObject abilityPrefab;
 
     private GameObject instantiatedObj;

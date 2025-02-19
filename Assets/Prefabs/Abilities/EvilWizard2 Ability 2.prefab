@@ -47,10 +47,11 @@ MonoBehaviour:
   AbilityName: evil 2
   LifeTime: 1
   AnimationName: EvilWizard2_Attack2
+  ForceEndTurn: 0
   damageToDo:
     damageType: 0
     amount: 20
-  originOffset: {x: -0.5, y: 0}
+  originOffset: {x: -1, y: 0}
   direction: {x: -1, y: 0}
   checkDistance: 20
   checkContactFilter:

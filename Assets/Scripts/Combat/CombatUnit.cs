@@ -8,8 +8,12 @@ using System.Collections.Generic;
 public class CombatUnit : MonoBehaviour
 {
     public string UnitName;
+    public int CurrentEnergy;
+    public int MaxEnergy = 2;
+    public UnitStats Stats;
     public List<AbilityData> abilities;
     public CombatFaction combatFaction;
+    public Sprite TurnOrderIcon;
     public Animator animator;
     public string HurtAnimationName;
     public string HealAnimationName;
@@ -24,6 +28,10 @@ public class CombatUnit : MonoBehaviour
     private bool isTurn = false;
     private bool isUsingAbility = false;
     public bool IsDead {get; private set;} = false;
+    public bool IsWeak {get; private set;} = false;
+    public void SetWeak(){IsWeak = true;}
+    public bool IsStrong {get; private set;} = false;
+    public void SetStrong(){IsStrong = true;}
 
     private void OnEnable()
     {
@@ -40,11 +48,23 @@ public class CombatUnit : MonoBehaviour
         StartCoroutine(onPrompt());
     }
 
+    public void EndTurnIfEnergyIsOut()
+    {
+        if(!isTurn) return;
+
+        isUsingAbility = false;
+
+        if(CurrentEnergy <= 0) EndTurn();
+    }
+
     public void EndTurn()
     {
         if(!isTurn) return;
 
         Debug.Log("CombatUnit: " + UnitName + " ending turn");
+
+        IsWeak = false;
+        IsStrong = false;
 
         isTurn = false;
         isUsingAbility = false;
@@ -62,10 +82,17 @@ public class CombatUnit : MonoBehaviour
         
         if(index >= abilities.Count) return;
 
-        Debug.Log("CombatUnit: " + UnitName + " uses ability " + (index + 1));
+        Debug.Log("CombatUnit: " + UnitName + " tries to use ability " + (index + 1) + " " + abilities[index].AbilityName);
 
-        abilities[index].SpawnAbility(transform, this);
-        isUsingAbility = true;
+        if(abilities[index].EnergyCost <= CurrentEnergy)
+        {
+            abilities[index].SpawnAbility(transform, this);
+            isUsingAbility = true;
+
+            CurrentEnergy -= abilities[index].EnergyCost;
+
+            Debug.Log("CombatUnit: " + UnitName + " spends " + abilities[index].EnergyCost + " energy leaving it with " + CurrentEnergy + " energy");
+        }
     }
 
     public void OnHurt()
@@ -103,14 +130,18 @@ public class CombatUnit : MonoBehaviour
     {
         // waits until next frame to avoid an infinite call stack
         yield return null;
-        
-        Debug.Log("CombatUnit: It is the " + UnitName + "s turn");
 
         isTurn = true;
 
         if(IsDead) EndTurn();
         else
         {
+            CurrentEnergy = MaxEnergy;
+            if(IsWeak) CurrentEnergy -= 1;
+            if(IsStrong) CurrentEnergy += 1;
+            
+            Debug.Log("CombatUnit: It is the " + UnitName + "s turn\nEnergy: " + CurrentEnergy);
+
             onStartTurn.Invoke();
         }
     }

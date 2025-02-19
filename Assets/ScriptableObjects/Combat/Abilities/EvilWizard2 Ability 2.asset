@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
-  m_Name: Adventurer Ability 3
+  m_Name: EvilWizard2 Ability 2
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 358148318359097031, guid: 7c39b36dd1dd363489a4c7ae11c168ad, type: 3}
+  AbilityName: Evil2
+  EnergyCost: 2
+  abilityPrefab: {fileID: 1941498291919481024, guid: 3eaf42dd0d6b21a4198d2ce531673c3e, type: 3}

@@ -9,6 +9,7 @@ public class Ability : MonoBehaviour
     public string AbilityName;
     public float LifeTime = 1f;
     public string AnimationName;
+    public bool ForceEndTurn = false;
     protected CombatUnit m_caster;
     
     public virtual void Use()
@@ -24,7 +25,8 @@ public class Ability : MonoBehaviour
 
     public virtual void Teardown()
     {
-        m_caster.EndTurn();
+        if(ForceEndTurn)m_caster.EndTurn();
+        else m_caster.EndTurnIfEnergyIsOut();
     }
 
     IEnumerator Timer()
