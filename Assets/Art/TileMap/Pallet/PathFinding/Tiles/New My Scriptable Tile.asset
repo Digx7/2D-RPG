@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f857d29b63acc46ae6c3b9f4d0d564, type: 3}
+  m_Name: New My Scriptable Tile
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 316902542, guid: 05c9e5f24785ff14b86811a9756e4a38, type: 3}
+  m_Prefab: {fileID: 0}
