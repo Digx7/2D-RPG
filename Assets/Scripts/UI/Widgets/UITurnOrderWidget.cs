@@ -31,6 +31,7 @@ public class UITurnOrderWidget : UIWidget
 
     public void SetIcons(List<Sprite> newIconList)
     {
+        Debug.Log("UITurnOrderWidget: SetIcons()");
         iconList = newIconList;
         StartCoroutine(Refresh());
     }
@@ -46,9 +47,11 @@ public class UITurnOrderWidget : UIWidget
 
     IEnumerator Refresh()
     {
+        Debug.Log("UITurnOrderWidget: Starting Refresh Corouinte");
         Clear();
         yield return null;
         RenderIcons();
+        Debug.Log("UITurnOrderWidget: Ending Refresh Corouinte");
     }
 
     private void Clear()

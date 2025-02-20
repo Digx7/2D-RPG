@@ -12,6 +12,9 @@ public class CombatManager : Singleton<CombatManager>
     [SerializeField] private Channel onCombatEndChannel;
     [SerializeField] private Channel onEndUnitTurnChannel;
     [SerializeField] private Channel onNewRoundStartChannel;
+    [SerializeField] private UIWidgetDataChannel onRequestLoadUIChannel;
+    [SerializeField] private UIWidgetDataChannel onRequestUnloadUIChannel;
+    [SerializeField] private List<UIWidgetData> combatWidgetDatas;
     public UnityEvent onCombatStart;
     public UnityEvent onCombatEnd;
     private Prompter prompter;
@@ -45,11 +48,20 @@ public class CombatManager : Singleton<CombatManager>
     {
         Debug.Log("CombatManager: Starting Combat");
         
+        // loads combat ui
+        if(combatWidgetDatas.Count > 0)
+        {
+            foreach (UIWidgetData data in combatWidgetDatas)
+            {
+                onRequestLoadUIChannel.Raise(data);
+            }
+        }
+
         SetupAllCombatUnits();
         prompter.UpdateCombatUnitList(combatUnits);
         roundNumber = 1;
 
-        prompter.PromptNextUnit();
+        prompter.PromptFirstUnit();
 
         onCombatStartChannel.Raise();
         onCombatStart.Invoke();
@@ -59,6 +71,15 @@ public class CombatManager : Singleton<CombatManager>
     {
         Debug.Log("CombatManager: Ending Combat");
         
+        // loads combat ui
+        if(combatWidgetDatas.Count > 0)
+        {
+            foreach (UIWidgetData data in combatWidgetDatas)
+            {
+                onRequestUnloadUIChannel.Raise(data);
+            }
+        }
+
         foreach (CombatUnit unit in combatUnits)
         {
             if(unit.IsDead) unit.DestroyUnit();
@@ -73,7 +94,7 @@ public class CombatManager : Singleton<CombatManager>
         combatUnits.Clear();
         combatUnits.AddRange(FindObjectsByType<CombatUnit>(FindObjectsSortMode.None));
 
-        combatUnits.Sort((x,y) => x.Stats.data.Speed.CompareTo(y.Stats.data.Speed));
+        // combatUnits.Sort((x,y) => x.Stats.data.Speed.CompareTo(y.Stats.data.Speed));
     }
 
     public void OnEndUnitTurn()

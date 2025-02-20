@@ -50,6 +50,9 @@ MonoBehaviour:
   onCombatEndChannel: {fileID: 11400000, guid: af10a3019b9b35f4d9e8b2a031f1ffe7, type: 2}
   onEndUnitTurnChannel: {fileID: 11400000, guid: 50a88c07cfb6cec4880f8f792271c736, type: 2}
   onNewRoundStartChannel: {fileID: 11400000, guid: 7b60cec205ba8c346b8eb60ca9e2d6b1, type: 2}
+  onRequestUIChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
+  combatWidgetDatas:
+  - {fileID: 11400000, guid: 339445b7d87c20a4c94736ff46358a4c, type: 2}
   onCombatStart:
     m_PersistentCalls:
       m_Calls: []

@@ -28,6 +28,7 @@ public class Prompter : MonoBehaviour
 
     public void UpdateCombatUnitList(List<CombatUnit> newList) 
     {
+        Debug.Log("Prompter: UpdateCombatUnitList");
         combatUnits = newList;
         List<Sprite> turnIconList = new List<Sprite>();
 
@@ -39,6 +40,12 @@ public class Prompter : MonoBehaviour
         }
 
         onCombatIconsUpdate.Raise(turnIconList);
+    }
+
+    public void PromptFirstUnit()
+    {
+        combatUnits[combatUnitIndex].Prompt();
+        combatUnitIndex++;
     }
 
     public void PromptNextUnit()
