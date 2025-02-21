@@ -5,20 +5,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Utils;
 
-[RequireComponent(typeof(Tilemap))]
+
 public class TileMapNavMesh : MonoBehaviour
 {
-    [SerializeField] private List<TileNavMeshPoint> points;
+    [SerializeField] private List<TileNavMeshNode> points;
     [SerializeField] private BoundsInt area;
-    private Tilemap tilemap;
+    public Tilemap tilemap;
 
     public Vector3Int TestStartSpot;
     public Vector3Int TestEndSpot;
 
-    public void Awake()
-    {
-        tilemap = GetComponent<Tilemap>();
-    }
+    
 
     public void Start()
     {
@@ -27,11 +24,11 @@ public class TileMapNavMesh : MonoBehaviour
         tilemap.color = color;
 
 
-        List<TileNavMeshPoint> path = new List<TileNavMeshPoint>();
+        List<TileNavMeshNode> path = new List<TileNavMeshNode>();
         if(GetPath(TestStartSpot, TestEndSpot, ref path))
         {
             Debug.Log("Found Path and traversing");
-            foreach (TileNavMeshPoint point in path)
+            foreach (TileNavMeshNode point in path)
             {
                 Debug.Log("" + point.position);
             }
@@ -45,8 +42,7 @@ public class TileMapNavMesh : MonoBehaviour
     [ContextMenu("Bake")]
     public void Bake()
     {
-        points.Clear();
-        tilemap = GetComponent<Tilemap>();
+        ClearAllPoints();
 
         GatherAllPoints();
         LinkAllPoints();
@@ -69,14 +65,14 @@ public class TileMapNavMesh : MonoBehaviour
         Debug.Log("TileMapNavMesh: cleared points");
     }
 
-    public TileNavMeshPoint GetPointAt(Vector3Int location)
+    public TileNavMeshNode GetPointAt(Vector3Int location)
     {
         for (int i = 0; i < points.Count; i++)
         {
             if(location == points[i].position) return points[i];
         }
 
-        return null;
+        return points[0];
     }
 
     private void GatherAllPoints()
@@ -88,8 +84,8 @@ public class TileMapNavMesh : MonoBehaviour
                 Vector3Int location = new Vector3Int(x,y,0);
                 if(tilemap.HasTile(location))
                 {
-                    TileNavMeshPoint tileNavMeshPoint = new TileNavMeshPoint(location);
-                    points.Add(tileNavMeshPoint);
+                    TileNavMeshNode TileNavMeshNode = new TileNavMeshNode(location);
+                    points.Add(TileNavMeshNode);
                 }
             }
         }
@@ -134,9 +130,9 @@ public class TileMapNavMesh : MonoBehaviour
         return false;
     }
 
-    public List<TileNavMeshPoint> GetNeighbors(Vector3Int location)
+    public List<TileNavMeshNode> GetNeighbors(Vector3Int location)
     {
-        List<TileNavMeshPoint> neighbors = new List<TileNavMeshPoint>();
+        List<TileNavMeshNode> neighbors = new List<TileNavMeshNode>();
         
         Vector3Int left = location + Vector3Int.left;
         Vector3Int upLeft = location + Vector3Int.up + Vector3Int.left;
@@ -160,32 +156,32 @@ public class TileMapNavMesh : MonoBehaviour
     }
 
 
-    public bool GetPath(Vector3Int startLocation, Vector3Int endLocation, ref List<TileNavMeshPoint> path)
+    public bool GetPath(Vector3Int startLocation, Vector3Int endLocation, ref List<TileNavMeshNode> path)
     {
         if(!IsValidLocation(startLocation) || !IsValidLocation(endLocation)) return false;
 
         path.Clear();
 
-        TileNavMeshPoint startPoint = GetPointAt(startLocation);
-        TileNavMeshPoint endPoint = GetPointAt(endLocation);
+        TileNavMeshNode startPoint = GetPointAt(startLocation);
+        TileNavMeshNode endPoint = GetPointAt(endLocation);
 
         // A star
-        PriorityQueue<TileNavMeshPoint, int> frontier = new PriorityQueue<TileNavMeshPoint, int>();
+        PriorityQueue<TileNavMeshNode, int> frontier = new PriorityQueue<TileNavMeshNode, int>();
         frontier.Enqueue(startPoint, 0);
-        Dictionary<TileNavMeshPoint, TileNavMeshPoint> cameFrom = new Dictionary<TileNavMeshPoint, TileNavMeshPoint>();
-        Dictionary<TileNavMeshPoint, int> costSoFar = new Dictionary<TileNavMeshPoint, int>();
-        cameFrom[startPoint] = null;
+        Dictionary<TileNavMeshNode, TileNavMeshNode> cameFrom = new Dictionary<TileNavMeshNode, TileNavMeshNode>();
+        Dictionary<TileNavMeshNode, int> costSoFar = new Dictionary<TileNavMeshNode, int>();
+        cameFrom[startPoint] = startPoint;
         costSoFar[startPoint] = 0;
 
         while(frontier.Count  != 0)
         {
-            TileNavMeshPoint current = frontier.Dequeue();
+            TileNavMeshNode current = frontier.Dequeue();
 
             if (current == endPoint)
                 break;
             
-            List<TileNavMeshPoint> neighbors = GetNeighbors(current.position);
-            foreach (TileNavMeshPoint next in neighbors)
+            List<TileNavMeshNode> neighbors = GetNeighbors(current.position);
+            foreach (TileNavMeshNode next in neighbors)
             {
                 int newCost = costSoFar[current] + (int)Vector3Int.Distance(current.position, next.position);
                 if(!costSoFar.ContainsKey(next) || newCost < costSoFar[next])
@@ -202,7 +198,7 @@ public class TileMapNavMesh : MonoBehaviour
         // runs backwards to get path
         if(cameFrom.ContainsKey(endPoint))
         {
-            TileNavMeshPoint x = endPoint;
+            TileNavMeshNode x = endPoint;
 
             path.Add(x);
 
@@ -218,5 +214,18 @@ public class TileMapNavMesh : MonoBehaviour
         else return false;
 
         
+    }
+
+    public Vector3 TileLocationToWorldPosition(Vector3Int location)
+    {
+        Vector3 result = Vector3.zero;
+        Grid grid = tilemap.layoutGrid;
+
+        result = grid.transform.position + location;
+        result.x *= grid.cellSize.x;
+        result.y *= grid.cellSize.y;
+        result.z *= grid.cellSize.z;
+
+        return result;
     }
 }

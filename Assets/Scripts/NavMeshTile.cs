@@ -9,6 +9,7 @@ public class NavMeshTile : TileBase
 {
     public Sprite m_Sprite;
     public GameObject m_Prefab;
+    public NavMeshTileType m_type;
 
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
@@ -18,3 +19,5 @@ public class NavMeshTile : TileBase
         base.GetTileData(position, tilemap, ref tileData);
     }
 }
+
+public enum NavMeshTileType {FLOOR, DIFFICULT_TERRAIN, HAZARD};
