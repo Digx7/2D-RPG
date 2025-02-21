@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: New Animated Tile
+  m_Script: {fileID: 11500000, guid: cf12781dac15147429937d173a2e4633, type: 3}
+  m_Name: Floor
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
-  m_AnimationStartTime: 0
-  m_AnimationStartFrame: 0
-  m_TileColliderType: 0
-  m_TileAnimationFlags: 0
+  m_Sprite: {fileID: -1873922000, guid: 05c9e5f24785ff14b86811a9756e4a38, type: 3}
+  m_Prefab: {fileID: 0}
