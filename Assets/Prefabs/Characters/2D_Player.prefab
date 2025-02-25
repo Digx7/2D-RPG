@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 5428203290920772710}
   - component: {fileID: 8345451772507016486}
   - component: {fileID: 3136504266543106113}
+  - component: {fileID: 5949256613466332729}
   m_Layer: 5
   m_Name: Energy
   m_TagString: Untagged
@@ -186,6 +187,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5949256613466332729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215405998390550703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2af8c32581bd6d4783bbfe67ea0288d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countTextMeshPro: {fileID: 8199982093385604804}
+  startingEnergy: 2
 --- !u!1 &621468232453114355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4722312872718510417}
   - component: {fileID: 3621011088204116439}
+  - component: {fileID: 8452462159316251654}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -1566,10 +1582,24 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.521
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8452462159316251654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015176946705202998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4245f3fa16874c40aa44b29fa3a0f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 6329130107479357747}
+  slider: {fileID: 3621011088204116439}
 --- !u!1 &6532294559691173352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Adventurer
   CurrentEnergy: 0
-  MaxEnergy: 2
+  DefaultEnergy: 2
   Stats: {fileID: 0}
   abilities:
   - {fileID: 11400000, guid: eb97fb75873d61c4d869a831e35d2cb6, type: 2}
@@ -1984,6 +2014,21 @@ MonoBehaviour:
   onDestroy:
     m_PersistentCalls:
       m_Calls: []
+  OnEnergyUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5949256613466332729}
+        m_TargetAssemblyTypeName: EnergyElement, Assembly-CSharp
+        m_MethodName: SetEnergy
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6329130107479357747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1999,7 +2044,7 @@ MonoBehaviour:
   MaxHealth: 100
   Modifiers:
   - damageType: 0
-    multiplier: 2
+    multiplier: 0.5
   - damageType: 1
     multiplier: 0.5
   OnDamage:
@@ -2008,7 +2053,7 @@ MonoBehaviour:
       - m_Target: {fileID: 4714412151015465676}
         m_TargetAssemblyTypeName: CombatUnit, Assembly-CSharp
         m_MethodName: OnHurt
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2035,7 +2080,7 @@ MonoBehaviour:
       - m_Target: {fileID: 4714412151015465676}
         m_TargetAssemblyTypeName: CombatUnit, Assembly-CSharp
         m_MethodName: OnHeal
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

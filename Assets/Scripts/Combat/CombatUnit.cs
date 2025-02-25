@@ -9,7 +9,7 @@ public class CombatUnit : MonoBehaviour
 {
     public string UnitName;
     public int CurrentEnergy;
-    public int MaxEnergy = 2;
+    public int DefaultEnergy = 2;
     public UnitStats Stats;
     public List<AbilityData> abilities;
     public CombatFaction combatFaction;
@@ -24,17 +24,20 @@ public class CombatUnit : MonoBehaviour
     public UnityEvent onEndTurn;
     public UnityEvent onDeath;
     public UnityEvent onDestroy;
+    public IntEvent OnEnergyUpdate;
 
     private bool isTurn = false;
     private bool isUsingAbility = false;
     public bool IsDead {get; private set;} = false;
-    public bool IsWeak {get; private set;} = false;
-    public void SetWeak(){IsWeak = true;}
-    public bool IsStrong {get; private set;} = false;
-    public void SetStrong(){IsStrong = true;}
+    // public bool IsWeak {get; private set;} = false;
+    // public void SetWeak(){IsWeak = true;}
+    // public bool IsStrong {get; private set;} = false;
+    // public void SetStrong(){IsStrong = true;}
 
     private void OnEnable()
     {
+        CurrentEnergy = DefaultEnergy;
+        OnEnergyUpdate.Invoke(CurrentEnergy);
     }
 
     private void OnDisable()
@@ -63,8 +66,10 @@ public class CombatUnit : MonoBehaviour
 
         Debug.Log("CombatUnit: " + UnitName + " ending turn");
 
-        IsWeak = false;
-        IsStrong = false;
+        // IsWeak = false;
+        // IsStrong = false;
+        CurrentEnergy = DefaultEnergy;
+        OnEnergyUpdate.Invoke(CurrentEnergy);
 
         isTurn = false;
         isUsingAbility = false;
@@ -90,19 +95,32 @@ public class CombatUnit : MonoBehaviour
             isUsingAbility = true;
 
             CurrentEnergy -= abilities[index].EnergyCost;
+            OnEnergyUpdate.Invoke(CurrentEnergy);
 
             Debug.Log("CombatUnit: " + UnitName + " spends " + abilities[index].EnergyCost + " energy leaving it with " + CurrentEnergy + " energy");
         }
     }
 
-    public void OnHurt()
+    public void OnHurt(DamageResult damageResult)
     {
         if(IsDead) return;
 
         if(HurtAnimationName != "" && animator != null)animator.Play(HurtAnimationName);
+
+        if(damageResult.weakOrRessistant == WeakOrRessistant.WEAK)
+        {
+            CurrentEnergy -= 1;
+            if(CurrentEnergy < 0) CurrentEnergy = 0;
+            OnEnergyUpdate.Invoke(CurrentEnergy);
+        }
+        else if(damageResult.weakOrRessistant == WeakOrRessistant.RESSISTANT)
+        {
+            CurrentEnergy += 1;
+            OnEnergyUpdate.Invoke(CurrentEnergy);
+        }
     }
 
-    public void OnHeal()
+    public void OnHeal(DamageResult damageResult)
     {
         if(IsDead) return;
         
@@ -136,9 +154,9 @@ public class CombatUnit : MonoBehaviour
         if(IsDead) EndTurn();
         else
         {
-            CurrentEnergy = MaxEnergy;
-            if(IsWeak) CurrentEnergy -= 1;
-            if(IsStrong) CurrentEnergy += 1;
+            // CurrentEnergy = DefaultEnergy;
+            // if(IsWeak) CurrentEnergy -= 1;
+            // if(IsStrong) CurrentEnergy += 1;
             
             Debug.Log("CombatUnit: It is the " + UnitName + "s turn\nEnergy: " + CurrentEnergy);
 

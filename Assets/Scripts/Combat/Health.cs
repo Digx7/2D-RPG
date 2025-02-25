@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
         }
 
         CurrentHealth -= damageResult.trueDamage;
+        if(CurrentHealth < 0) CurrentHealth = 0;
 
         if(damageResult.trueDamage > incomingDamage.amount) 
         {
@@ -42,7 +43,7 @@ public class Health : MonoBehaviour
 
             Debug.Log("Health: took " + damageResult.trueDamage + " " + incomingDamage.damageType + " damage\nIts super effective\nCurrentHealth: " + CurrentHealth);
         }
-        else if(damageResult.trueDamage > incomingDamage.amount) 
+        else if(damageResult.trueDamage < incomingDamage.amount) 
         {
             damageResult.weakOrRessistant = WeakOrRessistant.RESSISTANT;
 
@@ -75,6 +76,8 @@ public class Health : MonoBehaviour
         }
 
         CurrentHealth += healResult.trueDamage;
+
+        if(CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;
 
         if(healResult.trueDamage > incomingHeal.amount) healResult.weakOrRessistant = WeakOrRessistant.WEAK;
         else if(healResult.trueDamage > incomingHeal.amount) healResult.weakOrRessistant = WeakOrRessistant.RESSISTANT;
