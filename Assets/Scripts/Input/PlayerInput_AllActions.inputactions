@@ -269,6 +269,87 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_4",
+                    "type": "Button",
+                    "id": "f144c2e7-196b-4fce-84c5-c1973079faab",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_5",
+                    "type": "Button",
+                    "id": "7d9786d4-b1b3-420b-af56-54a2caa591e3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_6",
+                    "type": "Button",
+                    "id": "3826061a-0bc3-4a85-845f-67194a990904",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_7",
+                    "type": "Button",
+                    "id": "086f83c1-511f-4d04-afa8-6b2139193abb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_8",
+                    "type": "Button",
+                    "id": "257752d2-02f0-44ec-b302-34779b5c4268",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_9",
+                    "type": "Button",
+                    "id": "50a9d096-6c41-4115-8b7a-f56cdce8e541",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_10",
+                    "type": "Button",
+                    "id": "10c0a953-da0d-4707-9944-840112077522",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_11",
+                    "type": "Button",
+                    "id": "74cd115a-a27f-4f75-a7dd-7a0996743d06",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ability_12",
+                    "type": "Button",
+                    "id": "63d3aa24-f75d-4fde-8fc2-03c970f1f2f6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -279,17 +360,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard and Mouse",
-                    "action": "Ability_1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1301078a-7db8-4301-a599-c6cf085614e3",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";GamePad",
                     "action": "Ability_1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -307,17 +377,6 @@
                 },
                 {
                     "name": "",
-                    "id": "71140789-03fe-4dc8-8a8f-facc5938d871",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";GamePad",
-                    "action": "Ability_2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "a6285ef6-37c1-4f3a-8653-b25e349ef32b",
                     "path": "<Keyboard>/3",
                     "interactions": "",
@@ -329,12 +388,100 @@
                 },
                 {
                     "name": "",
-                    "id": "6695b3af-6790-438c-b633-90bb43f752ce",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "15a52129-2e97-4448-8b4f-c914bc02db6e",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";GamePad",
-                    "action": "Ability_3",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "493d11c8-8443-4965-8a5e-2cfd0f2019ba",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1668132-b4c7-4ba3-a35c-2be89469f3c5",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75951b36-44cd-4cca-861c-97462e27c971",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_7",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50ddeb44-5568-4dd0-ba06-9b4889c40d1d",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_8",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec2f4d12-bf5c-4a82-8e04-31ab08603f18",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_9",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89e6bae5-345c-4866-bae4-d04c90d50b51",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_10",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d7a4004-4791-4b3c-adea-c56bed0920af",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_11",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f56e7912-bd06-49e4-880c-d9fa80ee3d7f",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Ability_12",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -356,6 +356,285 @@ public class PlayerController : GameController
         }
     }
 
+    public void OnAbility4(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(3);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility5(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(4);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility6(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(5);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility7(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(6);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility8(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(7);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility9(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(8);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility10(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(9);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility11(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(10);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnAbility12(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.UseAbility(11);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
     // Universal Inputs ---------------------------
 
     public void OnLore(InputAction.CallbackContext callbackContext)

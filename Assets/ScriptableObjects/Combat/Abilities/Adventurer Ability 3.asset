@@ -15,4 +15,7 @@ MonoBehaviour:
   AbilityName: Move
   EnergyCost: 1
   AbilityIcon: {fileID: 21300000, guid: 7b39484981f299146bd5f69ee0021b0c, type: 3}
+  Description: 'Cost 1 Energy
+
+    Moves up to 5 distance'
   abilityPrefab: {fileID: 358148318359097031, guid: 7c39b36dd1dd363489a4c7ae11c168ad, type: 3}

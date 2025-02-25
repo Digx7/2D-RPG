@@ -15,4 +15,9 @@ MonoBehaviour:
   AbilityName: Heal
   EnergyCost: 1
   AbilityIcon: {fileID: 21300000, guid: 91b2b6f4f455be548aa99ffcf95c76e6, type: 3}
+  Description: 'Heal 25
+
+    Cost 1 Energy
+
+    Heals self and all nearby units'
   abilityPrefab: {fileID: 358148318359097031, guid: e57b8821ef40e9d468fb994e1245a87d, type: 3}

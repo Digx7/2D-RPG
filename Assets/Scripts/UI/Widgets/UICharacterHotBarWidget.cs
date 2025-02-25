@@ -2,12 +2,16 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class UICharacterHotBarWidget : UIWidget
 {
 
     public GameObject actionElementPrefab;
     public Transform actionElementParent;
+    public GameObject toolTip;
+    public TextMeshProUGUI toolTipAbilityName;
+    public TextMeshProUGUI toolTipAbilityDescription;
     public AbilityDataListChannel abilityDataListChannel;
     
     public override void Setup(UIWidgetData newUIWidgetData)
@@ -30,18 +34,31 @@ public class UICharacterHotBarWidget : UIWidget
         for (int i = 0; i < abilities.Count; i++)
         {
             string button = "" + (i + 1);
-            string cost = "" + abilities[i].EnergyCost;
-            SpawnActionElement(abilities[i].AbilityIcon, button, cost);
+            SpawnActionElement(abilities[i], button);
         }
     }
 
-    public void SpawnActionElement(Sprite sprite, string button, string cost)
+    public void SpawnActionElement(AbilityData abilityData, string button)
     {
         GameObject obj = Instantiate(actionElementPrefab, actionElementParent);
         CharacterHotBarElement characterHotBarElement = obj.GetComponent<CharacterHotBarElement>();
 
-        characterHotBarElement.SetImage(sprite);
+        characterHotBarElement.SetAbility(abilityData);
         characterHotBarElement.SetButton(button);
-        characterHotBarElement.SetCost(cost);
+
+        characterHotBarElement.OnPointerEnter.AddListener(OnPointerEnterAction);
+        characterHotBarElement.OnPointerExit.AddListener(OnPointerExit);
+    }
+
+    public void OnPointerEnterAction(AbilityData abilityData)
+    {
+        toolTip.SetActive(true);
+        toolTipAbilityName.text = abilityData.AbilityName;
+        toolTipAbilityDescription.text = abilityData.Description;
+    }
+
+    public void OnPointerExit(AbilityData abilityData)
+    {
+        toolTip.SetActive(false);
     }
 }

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
   m_Name: EndTurn Ability
   m_EditorClassIdentifier: 
-  AbilityName: EndTurn
+  AbilityName: End Turn
   EnergyCost: 0
-  AbilityIcon: {fileID: 21300000, guid: af8c9e7a22dafc94882e34173e3d6440, type: 3}
+  AbilityIcon: {fileID: 21300000, guid: 55856b67e0ef67a4abbf2acbc32c8f7f, type: 3}
+  Description: 'Cost 0
+
+    Ends Turn'
   abilityPrefab: {fileID: 4406510644390687505, guid: 485bb6f554a0dab41a6bfb516087b485, type: 3}

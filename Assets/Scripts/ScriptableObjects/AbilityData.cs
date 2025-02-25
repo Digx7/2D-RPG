@@ -9,6 +9,9 @@ public class AbilityData : ScriptableObject
     public string AbilityName;
     public int EnergyCost = 1;
     public Sprite AbilityIcon;
+
+    [TextArea]
+    public string Description;
     public GameObject abilityPrefab;
 
     private GameObject instantiatedObj;
