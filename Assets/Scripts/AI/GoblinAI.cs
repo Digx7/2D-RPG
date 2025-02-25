@@ -21,7 +21,8 @@ public class GoblinAI : MonoBehaviour
     IEnumerator Think()
     {
         yield return new WaitForSeconds(thinkTime);
-        Debug.Log("GoblinAI: Using ability 1 on gobins turn");
-        combatUnit.UseAbility(0);
+        if(combatUnit.CurrentEnergy == 2)
+            combatUnit.UseAbility(0);
+        else combatUnit.UseAbility(1);
     }
 }

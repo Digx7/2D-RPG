@@ -138,11 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Skeleton 1
   CurrentEnergy: 0
-  MaxEnergy: 2
+  DefaultEnergy: 2
   Stats: {fileID: 11400000, guid: 0493ebac3af4ecc4689714b21ec0c221, type: 2}
   abilities:
   - {fileID: 11400000, guid: 00f0f5d4cfd6faa47bc55d333b2e057c, type: 2}
-  - {fileID: 11400000, guid: 654f7002985db7143bc5aac01dd2253f, type: 2}
+  - {fileID: 11400000, guid: 28bbc9db94a063d4592aacd65b33ae89, type: 2}
   - {fileID: 11400000, guid: 6e9c13eac98cb42498bec2d195c48365, type: 2}
   combatFaction: 1
   TurnOrderIcon: {fileID: 1922394724, guid: 0fa26d244976c824a82a6ebf1f979ccd, type: 3}
@@ -212,6 +212,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnEnergyUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8862562227824767301
 MonoBehaviour:
   m_ObjectHideFlags: 0
