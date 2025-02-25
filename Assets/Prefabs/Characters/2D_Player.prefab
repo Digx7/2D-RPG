@@ -450,9 +450,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3782831375156283001}
-  - component: {fileID: 485992550715722217}
+  - component: {fileID: 6421868231635089800}
   m_Layer: 0
-  m_Name: LoadHotbar
+  m_Name: HotBarManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,7 +473,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4490187693441939366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &485992550715722217
+--- !u!114 &6421868231635089800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -482,57 +482,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3022959514851413358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2fa4d267a11034c9d4fa0ec34381a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b5f059868140c46b516d438796cc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  channelToRaise: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
-  data: {fileID: 11400000, guid: c2b543ff253b84e4e8b180cf593cf508, type: 2}
---- !u!1 &4058821945999728710
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7357315740208640918}
-  - component: {fileID: 9033066698849297456}
-  m_Layer: 0
-  m_Name: UNLoadHotbar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7357315740208640918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4058821945999728710}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4490187693441939366}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9033066698849297456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4058821945999728710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2fa4d267a11034c9d4fa0ec34381a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  channelToRaise: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
-  data: {fileID: 11400000, guid: c2b543ff253b84e4e8b180cf593cf508, type: 2}
+  combatUnit: {fileID: 4714412151015465676}
+  CharacterHotbarWidget: {fileID: 11400000, guid: c2b543ff253b84e4e8b180cf593cf508, type: 2}
+  requestLoadUIChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
+  requestUnLoadUIChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
+  abilitiesListChannel: {fileID: 11400000, guid: 2bdd837513142ed4092038aa522f3878, type: 2}
 --- !u!1 &4406845818231183219
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +818,6 @@ Transform:
   - {fileID: 8972531824800065879}
   - {fileID: 4488342679486138011}
   - {fileID: 3782831375156283001}
-  - {fileID: 7357315740208640918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2590475560418533705
@@ -975,9 +931,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 485992550715722217}
-        m_TargetAssemblyTypeName: UIDataChannelRaiser, Assembly-CSharp
-        m_MethodName: Raise
+      - m_Target: {fileID: 6421868231635089800}
+        m_TargetAssemblyTypeName: CharacterHotBarRequester, Assembly-CSharp
+        m_MethodName: OnStartTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1002,9 +958,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9033066698849297456}
-        m_TargetAssemblyTypeName: UIDataChannelRaiser, Assembly-CSharp
-        m_MethodName: Raise
+      - m_Target: {fileID: 6421868231635089800}
+        m_TargetAssemblyTypeName: CharacterHotBarRequester, Assembly-CSharp
+        m_MethodName: OnEndTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ public class AbilityData : ScriptableObject
 {
     public string AbilityName;
     public int EnergyCost = 1;
+    public Sprite AbilityIcon;
     public GameObject abilityPrefab;
 
     private GameObject instantiatedObj;
@@ -34,3 +36,9 @@ public class AbilityData : ScriptableObject
         ability.Teardown();
     }
 }
+
+[System.Serializable]
+public class AbilityDataEvent : UnityEvent<AbilityData> {}
+
+[System.Serializable]
+public class AbilityDataListEvent : UnityEvent<List<AbilityData>> {}

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Evil1
   EnergyCost: 2
+  AbilityIcon: {fileID: 21300000, guid: af8c9e7a22dafc94882e34173e3d6440, type: 3}
   abilityPrefab: {fileID: 1941498291919481024, guid: dc2e3cfd97e7d9e4faef653cd97b9de7, type: 3}

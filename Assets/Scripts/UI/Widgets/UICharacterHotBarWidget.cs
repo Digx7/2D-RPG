@@ -8,17 +8,31 @@ public class UICharacterHotBarWidget : UIWidget
 
     public GameObject actionElementPrefab;
     public Transform actionElementParent;
+    public AbilityDataListChannel abilityDataListChannel;
     
     public override void Setup(UIWidgetData newUIWidgetData)
     {
+        abilityDataListChannel.channelEvent.AddListener(Render);
+        
         base.Setup(newUIWidgetData);
 
     }
 
     public override void Teardown()
     {
-        
+        abilityDataListChannel.channelEvent.RemoveListener(Render);
+
         base.Teardown();
+    }
+
+    public void Render(List<AbilityData> abilities)
+    {
+        for (int i = 0; i < abilities.Count; i++)
+        {
+            string button = "" + (i + 1);
+            string cost = "" + abilities[i].EnergyCost;
+            SpawnActionElement(abilities[i].AbilityIcon, button, cost);
+        }
     }
 
     public void SpawnActionElement(Sprite sprite, string button, string cost)
