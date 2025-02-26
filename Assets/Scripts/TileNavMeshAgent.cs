@@ -8,26 +8,34 @@ using Utils;
 
 public class TileNavMeshAgent : MonoBehaviour
 {
-    public TileMapNavMesh tileMapNavMesh;
     public float speed = 1f;
-    [SerializeField] private Vector3Int m_endLocation;
+    public Vector3Int location;
+    public string NavMeshName;
+    private TileMapNavMesh tileMapNavMesh;
 
-    public void Update()
+    public void Start()
     {
-        // if(Input.GetMouseButtonDown(0))
-        // {
-        //     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //     mousePosition.z = 0;
-            
-        //     if(tileMapNavMesh.WorldPositionToTileLocation(mousePosition, ref m_endLocation))
-        //     {
-        //         TryToMove(m_endLocation);
-        //     }
-        // }
+        LookForNavMesh();
+        RefreshLocation();
+    }
+
+    public void LookForNavMesh()
+    {
+        foreach (TileMapNavMesh navMesh in GameObject.FindObjectsByType<TileMapNavMesh>(FindObjectsSortMode.None))
+        {
+            if(navMesh.gameObject.name == NavMeshName) tileMapNavMesh = navMesh;
+        }
+
+        if(tileMapNavMesh == null)
+        {
+            Debug.Log("TileNavMeshAgent: No Nav Mesh titled " + NavMeshName + " found \nCheck the spelling of the nav mesh names");
+        }
     }
     
     public void TryToMove(Vector3Int endLocation)
     {
+        if(tileMapNavMesh == null) return;
+        
         Debug.Log("TileNavMeshAgent: TryToMove()");
 
         List<TileNavMeshNode> path = new List<TileNavMeshNode>();
@@ -51,6 +59,17 @@ public class TileNavMeshAgent : MonoBehaviour
         }
     }
 
+    public void RefreshLocation()
+    {
+        if(tileMapNavMesh == null) LookForNavMesh();
+
+        if(tileMapNavMesh != null)
+        {
+            tileMapNavMesh.WorldPositionToTileLocation(transform.position, ref location);
+            transform.position = tileMapNavMesh.TileLocationToWorldPosition(location);
+        }
+    }
+
     IEnumerator Move(List<TileNavMeshNode> path)
     {
         Debug.Log("TileNavMeshAgent: Move()");
@@ -71,6 +90,7 @@ public class TileNavMeshAgent : MonoBehaviour
             {
                 index++;
                 timer = 0;
+                location = path[index].position;
             }
             yield return null;
         }

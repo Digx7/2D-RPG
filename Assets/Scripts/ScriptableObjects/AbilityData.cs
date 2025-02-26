@@ -13,6 +13,7 @@ public class AbilityData : ScriptableObject
     [TextArea]
     public string Description;
     public GameObject abilityPrefab;
+    public GameObject previewPrefab;
 
     private GameObject instantiatedObj;
 
@@ -37,6 +38,24 @@ public class AbilityData : ScriptableObject
     {
         Ability ability = instantiatedObj.GetComponent<Ability>();
         ability.Teardown();
+    }
+
+    public void SpawnPreview(Transform parent, CombatUnit caster)
+    {
+        if(parent != null)
+        {
+            instantiatedObj = Instantiate(previewPrefab, parent);
+        }
+
+        AbilityPreview abilityPreview = instantiatedObj.GetComponent<AbilityPreview>();
+        abilityPreview.Setup(caster);
+        abilityPreview.Use();
+    }
+
+    public void DespawnPreview()
+    {
+        AbilityPreview abilityPreview = instantiatedObj.GetComponent<AbilityPreview>();
+        abilityPreview.Teardown();
     }
 }
 

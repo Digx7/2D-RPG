@@ -21,3 +21,4 @@ MonoBehaviour:
 
     Heals self and all nearby units'
   abilityPrefab: {fileID: 358148318359097031, guid: e57b8821ef40e9d468fb994e1245a87d, type: 3}
+  previewPrefab: {fileID: 7553639000339606807, guid: 97a7f261d5451b04fbc8ccf0f5f7a4d5, type: 3}

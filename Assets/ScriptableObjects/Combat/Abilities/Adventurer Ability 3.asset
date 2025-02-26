@@ -19,3 +19,4 @@ MonoBehaviour:
 
     Moves up to 5 distance'
   abilityPrefab: {fileID: 358148318359097031, guid: 7c39b36dd1dd363489a4c7ae11c168ad, type: 3}
+  previewPrefab: {fileID: 7090164341912964269, guid: 35019c3d94a43324cbd9214fc990781c, type: 3}

@@ -15,4 +15,6 @@ MonoBehaviour:
   AbilityName: Evil1
   EnergyCost: 2
   AbilityIcon: {fileID: 21300000, guid: af8c9e7a22dafc94882e34173e3d6440, type: 3}
+  Description: 
   abilityPrefab: {fileID: 1941498291919481024, guid: a7882b6eaa3a26e4794c33d7288cd46f, type: 3}
+  previewPrefab: {fileID: 7748631129555967816, guid: ef489401b772cff429e000a0da1bc4f9, type: 3}

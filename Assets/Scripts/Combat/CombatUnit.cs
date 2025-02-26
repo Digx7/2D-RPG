@@ -28,6 +28,9 @@ public class CombatUnit : MonoBehaviour
 
     private bool isTurn = false;
     private bool isUsingAbility = false;
+    private bool isPreviewingAbility = false;
+    private int previewIndex = -1;
+    // private var abilityContext = null;
     public bool IsDead {get; private set;} = false;
     // public bool IsWeak {get; private set;} = false;
     // public void SetWeak(){IsWeak = true;}
@@ -77,6 +80,43 @@ public class CombatUnit : MonoBehaviour
         onEndTurn.Invoke();
     }
 
+    public void PreviewAbility(int index)
+    {
+        if(IsDead) return;
+
+        if(!isTurn) return;
+
+        if(isUsingAbility) return;
+        
+        if(index >= abilities.Count) return; 
+        
+        if(isPreviewingAbility) return;
+
+        Debug.Log("CombatUnit: " + UnitName + " is previewing ability " + (index + 1) + " " + abilities[index].AbilityName);
+
+        abilities[index].SpawnPreview(transform, this);
+
+        isPreviewingAbility = true;
+        previewIndex = index;
+    }
+
+    public void StopPreviewing()
+    {
+        isPreviewingAbility = false;
+        if(previewIndex != -1) abilities[previewIndex].DespawnPreview();
+
+        previewIndex = -1;
+    }
+
+    public void ConfirmAbility()
+    {
+        if(previewIndex != -1) 
+        {
+            UseAbility(previewIndex);
+            previewIndex = -1;
+        }
+    }
+
     public void UseAbility(int index)
     {
         if(IsDead) return;
@@ -86,12 +126,15 @@ public class CombatUnit : MonoBehaviour
         if(isUsingAbility) return;
         
         if(index >= abilities.Count) return;
+        
+        if(isPreviewingAbility) StopPreviewing();
 
         Debug.Log("CombatUnit: " + UnitName + " tries to use ability " + (index + 1) + " " + abilities[index].AbilityName);
 
         if(abilities[index].EnergyCost <= CurrentEnergy)
         {
             abilities[index].SpawnAbility(transform, this);
+            // abilities[index].SpawnAbility(transform, this, abilityContext);
             isUsingAbility = true;
 
             CurrentEnergy -= abilities[index].EnergyCost;

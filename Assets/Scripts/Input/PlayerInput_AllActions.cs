@@ -436,6 +436,24 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm_Ability"",
+                    ""type"": ""Button"",
+                    ""id"": ""748a1006-1d3e-4bc8-a971-8ac95bedfed6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back_Ability"",
+                    ""type"": ""Button"",
+                    ""id"": ""e29ff61a-89e6-47b6-b6e8-b8091b3dd110"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -568,6 +586,28 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
                     ""action"": ""Ability_12"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a799d8a-0577-4dca-9e2f-5672e8987128"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Confirm_Ability"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68703785-2336-4e71-add8-0531cfe7f244"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Back_Ability"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -933,6 +973,8 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Combat_Ability_10 = m_Combat.FindAction("Ability_10", throwIfNotFound: true);
         m_Combat_Ability_11 = m_Combat.FindAction("Ability_11", throwIfNotFound: true);
         m_Combat_Ability_12 = m_Combat.FindAction("Ability_12", throwIfNotFound: true);
+        m_Combat_Confirm_Ability = m_Combat.FindAction("Confirm_Ability", throwIfNotFound: true);
+        m_Combat_Back_Ability = m_Combat.FindAction("Back_Ability", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -1190,6 +1232,8 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_Combat_Ability_10;
     private readonly InputAction m_Combat_Ability_11;
     private readonly InputAction m_Combat_Ability_12;
+    private readonly InputAction m_Combat_Confirm_Ability;
+    private readonly InputAction m_Combat_Back_Ability;
     /// <summary>
     /// Provides access to input actions defined in input action map "Combat".
     /// </summary>
@@ -1249,6 +1293,14 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// Provides access to the underlying input action "Combat/Ability_12".
         /// </summary>
         public InputAction @Ability_12 => m_Wrapper.m_Combat_Ability_12;
+        /// <summary>
+        /// Provides access to the underlying input action "Combat/Confirm_Ability".
+        /// </summary>
+        public InputAction @Confirm_Ability => m_Wrapper.m_Combat_Confirm_Ability;
+        /// <summary>
+        /// Provides access to the underlying input action "Combat/Back_Ability".
+        /// </summary>
+        public InputAction @Back_Ability => m_Wrapper.m_Combat_Back_Ability;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1311,6 +1363,12 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Ability_12.started += instance.OnAbility_12;
             @Ability_12.performed += instance.OnAbility_12;
             @Ability_12.canceled += instance.OnAbility_12;
+            @Confirm_Ability.started += instance.OnConfirm_Ability;
+            @Confirm_Ability.performed += instance.OnConfirm_Ability;
+            @Confirm_Ability.canceled += instance.OnConfirm_Ability;
+            @Back_Ability.started += instance.OnBack_Ability;
+            @Back_Ability.performed += instance.OnBack_Ability;
+            @Back_Ability.canceled += instance.OnBack_Ability;
         }
 
         /// <summary>
@@ -1358,6 +1416,12 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Ability_12.started -= instance.OnAbility_12;
             @Ability_12.performed -= instance.OnAbility_12;
             @Ability_12.canceled -= instance.OnAbility_12;
+            @Confirm_Ability.started -= instance.OnConfirm_Ability;
+            @Confirm_Ability.performed -= instance.OnConfirm_Ability;
+            @Confirm_Ability.canceled -= instance.OnConfirm_Ability;
+            @Back_Ability.started -= instance.OnBack_Ability;
+            @Back_Ability.performed -= instance.OnBack_Ability;
+            @Back_Ability.canceled -= instance.OnBack_Ability;
         }
 
         /// <summary>
@@ -1753,6 +1817,20 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAbility_12(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Confirm_Ability" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnConfirm_Ability(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Back_Ability" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBack_Ability(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

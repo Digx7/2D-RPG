@@ -398,9 +398,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1113969432240989168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 197.81999, y: -20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7117897323816654354
@@ -522,9 +522,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1113969432240989168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 295.8, y: -20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4431082438624094355
@@ -737,9 +737,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1113969432240989168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 246.81, y: -20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4792052688731221748
@@ -792,10 +792,10 @@ GameObject:
   - component: {fileID: 2590475560418533705}
   - component: {fileID: 235150269458573661}
   - component: {fileID: 4714412151015465676}
+  - component: {fileID: 8839921623085788326}
   - component: {fileID: 6329130107479357747}
   - component: {fileID: 8511550985800388582}
   - component: {fileID: 7756884689940558974}
-  - component: {fileID: 8839921623085788326}
   m_Layer: 0
   m_Name: 2D_Player
   m_TagString: Player
@@ -904,7 +904,7 @@ MonoBehaviour:
   UnitName: Adventurer
   CurrentEnergy: 0
   DefaultEnergy: 2
-  Stats: {fileID: 0}
+  Stats: {fileID: 11400000, guid: 50400bde98bc82e4ca30bcc1afba83bc, type: 2}
   abilities:
   - {fileID: 11400000, guid: eb97fb75873d61c4d869a831e35d2cb6, type: 2}
   - {fileID: 11400000, guid: 1ad095de379d8a04c9461683d33e81b2, type: 2}
@@ -936,6 +936,18 @@ MonoBehaviour:
       - m_Target: {fileID: 6421868231635089800}
         m_TargetAssemblyTypeName: CharacterHotBarRequester, Assembly-CSharp
         m_MethodName: OnStartTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8839921623085788326}
+        m_TargetAssemblyTypeName: TileNavMeshAgent, Assembly-CSharp
+        m_MethodName: RefreshLocation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1005,6 +1017,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8839921623085788326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839096609123802247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518879bec58b43543b2324850d13a3cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  location: {x: 0, y: 0, z: 0}
+  NavMeshName: GroundNavMesh
 --- !u!114 &6329130107479357747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,21 +1198,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.41}
   m_Size: {x: 0.81, y: 1.6}
   m_Direction: 0
---- !u!114 &8839921623085788326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7839096609123802247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 518879bec58b43543b2324850d13a3cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileMapNavMesh: {fileID: 0}
-  speed: 20
-  m_endLocation: {x: 0, y: 0, z: 0}
 --- !u!1001 &2358480944242684793
 PrefabInstance:
   m_ObjectHideFlags: 0

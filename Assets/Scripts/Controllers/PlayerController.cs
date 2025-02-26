@@ -282,7 +282,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(0);
+                    unit.PreviewAbility(0);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -313,7 +313,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(1);
+                    unit.PreviewAbility(1);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -344,7 +344,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(2);
+                    unit.PreviewAbility(2);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -375,7 +375,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(3);
+                    unit.PreviewAbility(3);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -406,7 +406,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(4);
+                    unit.PreviewAbility(4);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -437,7 +437,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(5);
+                    unit.PreviewAbility(5);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -468,7 +468,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(6);
+                    unit.PreviewAbility(6);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -499,7 +499,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(7);
+                    unit.PreviewAbility(7);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -530,7 +530,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(8);
+                    unit.PreviewAbility(8);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -561,7 +561,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(9);
+                    unit.PreviewAbility(9);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -592,7 +592,7 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(10);
+                    unit.PreviewAbility(10);
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -623,7 +623,69 @@ public class PlayerController : GameController
                 // Add Code here
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.UseAbility(11);
+                    unit.PreviewAbility(11);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnConfirmAbility(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.ConfirmAbility();
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnBackAbility(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.StopPreviewing();
                 }
                 break;
             case InputActionPhase.Canceled:

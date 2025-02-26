@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 8862562227824767301}
   - component: {fileID: 2470944350707784549}
   - component: {fileID: 1183567424147958556}
+  - component: {fileID: -8539600455975577223}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -352,6 +353,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.02, y: 3.13}
   m_EdgeRadius: 0
+--- !u!114 &-8539600455975577223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470456916750989321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518879bec58b43543b2324850d13a3cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  location: {x: 0, y: 0, z: 0}
+  NavMeshName: GroundNavMesh
 --- !u!1 &6546761078774728078
 GameObject:
   m_ObjectHideFlags: 0
