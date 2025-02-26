@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 150859509830767730}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,7 +151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.60999966}
   m_SizeDelta: {x: 1920, y: 959.6667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8586059855360577972
@@ -467,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 3022959514851413358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.60999966, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -795,6 +795,7 @@ GameObject:
   - component: {fileID: 6329130107479357747}
   - component: {fileID: 8511550985800388582}
   - component: {fileID: 7756884689940558974}
+  - component: {fileID: 8839921623085788326}
   m_Layer: 0
   m_Name: 2D_Player
   m_TagString: Player
@@ -1167,9 +1168,24 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.27}
+  m_Offset: {x: 0, y: 0.41}
   m_Size: {x: 0.81, y: 1.6}
   m_Direction: 0
+--- !u!114 &8839921623085788326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839096609123802247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518879bec58b43543b2324850d13a3cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMapNavMesh: {fileID: 0}
+  speed: 20
+  m_endLocation: {x: 0, y: 0, z: 0}
 --- !u!1001 &2358480944242684793
 PrefabInstance:
   m_ObjectHideFlags: 0
