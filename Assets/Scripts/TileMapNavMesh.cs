@@ -24,19 +24,19 @@ public class TileMapNavMesh : MonoBehaviour
         tilemap.color = color;
 
 
-        List<TileNavMeshNode> path = new List<TileNavMeshNode>();
-        if(GetPath(TestStartSpot, TestEndSpot, ref path))
-        {
-            Debug.Log("Found Path and traversing");
-            foreach (TileNavMeshNode point in path)
-            {
-                Debug.Log("" + point.position);
-            }
-        }
-        else
-        {
-            Debug.Log("Failed to find path");
-        }
+        // List<TileNavMeshNode> path = new List<TileNavMeshNode>();
+        // if(GetPath(TestStartSpot, TestEndSpot, ref path))
+        // {
+        //     Debug.Log("Found Path and traversing");
+        //     foreach (TileNavMeshNode point in path)
+        //     {
+        //         Debug.Log("" + point.position);
+        //     }
+        // }
+        // else
+        // {
+        //     Debug.Log("Failed to find path");
+        // }
     }
 
     [ContextMenu("Bake")]
@@ -135,22 +135,22 @@ public class TileMapNavMesh : MonoBehaviour
         List<TileNavMeshNode> neighbors = new List<TileNavMeshNode>();
         
         Vector3Int left = location + Vector3Int.left;
-        Vector3Int upLeft = location + Vector3Int.up + Vector3Int.left;
+        // Vector3Int upLeft = location + Vector3Int.up + Vector3Int.left;
         Vector3Int up = location + Vector3Int.up;
-        Vector3Int upRight = location + Vector3Int.up + Vector3Int.right;
+        // Vector3Int upRight = location + Vector3Int.up + Vector3Int.right;
         Vector3Int right = location + Vector3Int.right;
-        Vector3Int downRight = location + Vector3Int.down + Vector3Int.right;
+        // Vector3Int downRight = location + Vector3Int.down + Vector3Int.right;
         Vector3Int down = location + Vector3Int.down;
-        Vector3Int downLeft = location + Vector3Int.down + Vector3Int.left;
+        // Vector3Int downLeft = location + Vector3Int.down + Vector3Int.left;
 
         if(IsValidLocation(left)) neighbors.Add(GetPointAt(left));
-        if(IsValidLocation(upLeft)) neighbors.Add(GetPointAt(upLeft));
+        // if(IsValidLocation(upLeft)) neighbors.Add(GetPointAt(upLeft));
         if(IsValidLocation(up)) neighbors.Add(GetPointAt(up));
-        if(IsValidLocation(upRight)) neighbors.Add(GetPointAt(upRight));
+        // if(IsValidLocation(upRight)) neighbors.Add(GetPointAt(upRight));
         if(IsValidLocation(right)) neighbors.Add(GetPointAt(right));
-        if(IsValidLocation(downRight)) neighbors.Add(GetPointAt(downRight));
+        // if(IsValidLocation(downRight)) neighbors.Add(GetPointAt(downRight));
         if(IsValidLocation(down)) neighbors.Add(GetPointAt(down));
-        if(IsValidLocation(downLeft)) neighbors.Add(GetPointAt(downLeft));
+        // if(IsValidLocation(downLeft)) neighbors.Add(GetPointAt(downLeft));
 
         return neighbors;
     }
@@ -158,7 +158,11 @@ public class TileMapNavMesh : MonoBehaviour
 
     public bool GetPath(Vector3Int startLocation, Vector3Int endLocation, ref List<TileNavMeshNode> path)
     {
-        if(!IsValidLocation(startLocation) || !IsValidLocation(endLocation)) return false;
+        if(!IsValidLocation(startLocation) || !IsValidLocation(endLocation)) 
+        {
+            Debug.Log("TileMapNavMesh: Failed to find path because the start or end location are out of bounds");
+            return false;
+        }
 
         path.Clear();
 
@@ -211,21 +215,43 @@ public class TileMapNavMesh : MonoBehaviour
             path.Reverse();
             return true;
         }
-        else return false;
+        else 
+        {
+            Debug.Log("TileMapNavMesh: Failed to find path because destination is unreachable");
+            return false;
+        }
 
         
     }
 
     public Vector3 TileLocationToWorldPosition(Vector3Int location)
     {
-        Vector3 result = Vector3.zero;
-        Grid grid = tilemap.layoutGrid;
+        
 
-        result = grid.transform.position + location;
-        result.x *= grid.cellSize.x;
-        result.y *= grid.cellSize.y;
-        result.z *= grid.cellSize.z;
+        Vector3 result = location;
+
+        result.x += 0.5f;
+        result.y += 0.5f;
+        // result.z += 0.5f;
+
+        // Debug.Log("TileMapNavMesh: Tile -> World: " + location + " -> " + result);
 
         return result;
+    }
+
+    public bool WorldPositionToTileLocation(Vector3 worldPosition, ref Vector3Int result)
+    {
+        
+
+        // result = Vector3Int.RoundToInt(worldPosition);
+
+        result.x = (int)worldPosition.x;
+        result.y = (int)worldPosition.y;
+        result.z = 0;
+        // result.z = (int)worldPosition.z;
+
+        Debug.Log("TileMapNavMesh: World -> Tile: " + worldPosition + " -> " + result);
+
+        return IsValidLocation(result);
     }
 }
