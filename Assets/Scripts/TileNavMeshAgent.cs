@@ -10,29 +10,20 @@ public class TileNavMeshAgent : MonoBehaviour
 {
     public TileMapNavMesh tileMapNavMesh;
     public float speed = 1f;
-    // [SerializeField] private Vector3Int m_startLocation;
     [SerializeField] private Vector3Int m_endLocation;
-
-    private Camera cam;
-
-    public void Start()
-    {
-        // TryToMove(m_endLocation);
-        cam = Camera.main;
-    }
 
     public void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;
+        // if(Input.GetMouseButtonDown(0))
+        // {
+        //     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //     mousePosition.z = 0;
             
-            if(tileMapNavMesh.WorldPositionToTileLocation(mousePosition, ref m_endLocation))
-            {
-                TryToMove(m_endLocation);
-            }
-        }
+        //     if(tileMapNavMesh.WorldPositionToTileLocation(mousePosition, ref m_endLocation))
+        //     {
+        //         TryToMove(m_endLocation);
+        //     }
+        // }
     }
     
     public void TryToMove(Vector3Int endLocation)
@@ -63,17 +54,12 @@ public class TileNavMeshAgent : MonoBehaviour
     IEnumerator Move(List<TileNavMeshNode> path)
     {
         Debug.Log("TileNavMeshAgent: Move()");
-        // yield return new WaitForSeconds(1f);
         
         int index = 0;
         float timer = 0f;
 
         while(index < (path.Count - 1))
         {
-            // Debug.Log("TileNavMeshAgent: Moved to a new spot");
-            // transform.position = tileMapNavMesh.TileLocationToWorldPosition(path[index].position);
-            // index++;
-            // yield return new WaitForSeconds(1f/speed);
 
             Vector3 a = tileMapNavMesh.TileLocationToWorldPosition(path[index].position);
             Vector3 b = tileMapNavMesh.TileLocationToWorldPosition(path[index + 1].position);

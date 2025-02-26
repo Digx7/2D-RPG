@@ -12,9 +12,6 @@ public class TileMapNavMesh : MonoBehaviour
     [SerializeField] private BoundsInt area;
     public Tilemap tilemap;
 
-    public Vector3Int TestStartSpot;
-    public Vector3Int TestEndSpot;
-
     
 
     public void Start()
@@ -22,21 +19,6 @@ public class TileMapNavMesh : MonoBehaviour
         Color color = tilemap.color;
         color.a = 0f;
         tilemap.color = color;
-
-
-        // List<TileNavMeshNode> path = new List<TileNavMeshNode>();
-        // if(GetPath(TestStartSpot, TestEndSpot, ref path))
-        // {
-        //     Debug.Log("Found Path and traversing");
-        //     foreach (TileNavMeshNode point in path)
-        //     {
-        //         Debug.Log("" + point.position);
-        //     }
-        // }
-        // else
-        // {
-        //     Debug.Log("Failed to find path");
-        // }
     }
 
     [ContextMenu("Bake")]
@@ -232,23 +214,16 @@ public class TileMapNavMesh : MonoBehaviour
 
         result.x += 0.5f;
         result.y += 0.5f;
-        // result.z += 0.5f;
-
-        // Debug.Log("TileMapNavMesh: Tile -> World: " + location + " -> " + result);
 
         return result;
     }
 
     public bool WorldPositionToTileLocation(Vector3 worldPosition, ref Vector3Int result)
     {
-        
-
-        // result = Vector3Int.RoundToInt(worldPosition);
 
         result.x = (int)worldPosition.x;
         result.y = (int)worldPosition.y;
         result.z = 0;
-        // result.z = (int)worldPosition.z;
 
         Debug.Log("TileMapNavMesh: World -> Tile: " + worldPosition + " -> " + result);
 
