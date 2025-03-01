@@ -71,8 +71,8 @@ public class CombatUnit : MonoBehaviour
 
         // IsWeak = false;
         // IsStrong = false;
-        CurrentEnergy = DefaultEnergy;
-        OnEnergyUpdate.Invoke(CurrentEnergy);
+        // CurrentEnergy = DefaultEnergy;
+        // OnEnergyUpdate.Invoke(CurrentEnergy);
 
         isTurn = false;
         isUsingAbility = false;
@@ -90,14 +90,17 @@ public class CombatUnit : MonoBehaviour
         
         if(index >= abilities.Count) return; 
         
-        if(isPreviewingAbility) return;
+        if(isPreviewingAbility) StopPreviewing();
 
-        Debug.Log("CombatUnit: " + UnitName + " is previewing ability " + (index + 1) + " " + abilities[index].AbilityName);
+        if(abilities[index].EnergyCost <= CurrentEnergy)
+        {
+            Debug.Log("CombatUnit: " + UnitName + " is previewing ability " + (index + 1) + " " + abilities[index].AbilityName);
 
-        abilities[index].SpawnPreview(transform, this);
+            abilities[index].SpawnPreview(transform, this);
 
-        isPreviewingAbility = true;
-        previewIndex = index;
+            isPreviewingAbility = true;
+            previewIndex = index;
+        }       
     }
 
     public void StopPreviewing()
@@ -161,7 +164,7 @@ public class CombatUnit : MonoBehaviour
         }
         else if(damageResult.weakOrRessistant == WeakOrRessistant.RESSISTANT)
         {
-            CurrentEnergy += 1;
+            CurrentEnergy += 1 * Stats.data.EnergyGain;
             OnEnergyUpdate.Invoke(CurrentEnergy);
         }
     }
@@ -204,6 +207,9 @@ public class CombatUnit : MonoBehaviour
             // if(IsWeak) CurrentEnergy -= 1;
             // if(IsStrong) CurrentEnergy += 1;
             
+            CurrentEnergy += Stats.data.EnergyGain;
+            OnEnergyUpdate.Invoke(CurrentEnergy);
+
             Debug.Log("CombatUnit: It is the " + UnitName + "s turn\nEnergy: " + CurrentEnergy);
 
             onStartTurn.Invoke();

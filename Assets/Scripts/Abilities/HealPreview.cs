@@ -15,7 +15,7 @@ public class HealPreview : AbilityPreview
     
     public override void Setup(CombatUnit newCaster)
     {
-        m_caster = newCaster;
+        base.Setup(newCaster);
 
         UITileMapDrawer[] uITileMapDrawers = GameObject.FindObjectsByType<UITileMapDrawer>(FindObjectsSortMode.None);
 
@@ -27,7 +27,7 @@ public class HealPreview : AbilityPreview
         TileNavMeshAgent tileNavMeshAgent = m_caster.gameObject.GetComponent<TileNavMeshAgent>();
         m_location = tileNavMeshAgent.location;
 
-        RenderUI();
+        // RenderUI();
     }
 
     protected override void RenderUI()

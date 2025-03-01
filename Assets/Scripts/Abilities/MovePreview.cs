@@ -16,7 +16,7 @@ public class MovePreview : AbilityPreview
     
     public override void Setup(CombatUnit newCaster)
     {
-        m_caster = newCaster;
+        base.Setup(newCaster);
 
         UITileMapDrawer[] uITileMapDrawers = GameObject.FindObjectsByType<UITileMapDrawer>(FindObjectsSortMode.None);
 
@@ -29,7 +29,7 @@ public class MovePreview : AbilityPreview
         m_location = tileNavMeshAgent.location;
         m_speed = m_caster.Stats.data.Speed;
 
-        RenderUI();
+        // RenderUI();
     }
 
     public override bool Validate(AbilityUsageContext abilityUsageContext)

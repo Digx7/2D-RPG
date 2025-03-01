@@ -12,7 +12,7 @@ public class AbilityPreview : MonoBehaviour
     public virtual void Setup(CombatUnit newCaster)
     {
         m_caster = newCaster;
-        RenderUI();
+        // RenderUI();
     }
 
     public virtual void Use()

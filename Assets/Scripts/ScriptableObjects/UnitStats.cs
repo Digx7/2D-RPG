@@ -12,8 +12,5 @@ public class UnitStats : ScriptableObject
 public struct UnitStatsData
 {
     public int Speed;
-    public int Str;
-    public int Dex;
-    public int Int;
-    public int Wis;
+    public int EnergyGain;
 }
