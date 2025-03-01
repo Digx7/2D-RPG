@@ -454,6 +454,15 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""9ab26c88-1457-4aa8-b62e-bf7054814b1c"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -608,6 +617,17 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
                     ""action"": ""Back_Ability"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae020f22-8cc6-4aac-92ab-05eb41746eb3"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -975,6 +995,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Combat_Ability_12 = m_Combat.FindAction("Ability_12", throwIfNotFound: true);
         m_Combat_Confirm_Ability = m_Combat.FindAction("Confirm_Ability", throwIfNotFound: true);
         m_Combat_Back_Ability = m_Combat.FindAction("Back_Ability", throwIfNotFound: true);
+        m_Combat_MousePosition = m_Combat.FindAction("MousePosition", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -1234,6 +1255,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_Combat_Ability_12;
     private readonly InputAction m_Combat_Confirm_Ability;
     private readonly InputAction m_Combat_Back_Ability;
+    private readonly InputAction m_Combat_MousePosition;
     /// <summary>
     /// Provides access to input actions defined in input action map "Combat".
     /// </summary>
@@ -1302,6 +1324,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// </summary>
         public InputAction @Back_Ability => m_Wrapper.m_Combat_Back_Ability;
         /// <summary>
+        /// Provides access to the underlying input action "Combat/MousePosition".
+        /// </summary>
+        public InputAction @MousePosition => m_Wrapper.m_Combat_MousePosition;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
@@ -1369,6 +1395,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Back_Ability.started += instance.OnBack_Ability;
             @Back_Ability.performed += instance.OnBack_Ability;
             @Back_Ability.canceled += instance.OnBack_Ability;
+            @MousePosition.started += instance.OnMousePosition;
+            @MousePosition.performed += instance.OnMousePosition;
+            @MousePosition.canceled += instance.OnMousePosition;
         }
 
         /// <summary>
@@ -1422,6 +1451,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Back_Ability.started -= instance.OnBack_Ability;
             @Back_Ability.performed -= instance.OnBack_Ability;
             @Back_Ability.canceled -= instance.OnBack_Ability;
+            @MousePosition.started -= instance.OnMousePosition;
+            @MousePosition.performed -= instance.OnMousePosition;
+            @MousePosition.canceled -= instance.OnMousePosition;
         }
 
         /// <summary>
@@ -1831,6 +1863,13 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnBack_Ability(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MousePosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMousePosition(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

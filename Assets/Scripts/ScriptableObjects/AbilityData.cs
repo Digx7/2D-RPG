@@ -22,7 +22,7 @@ public class AbilityData : ScriptableObject
         return instantiatedObj;
     }
 
-    public void SpawnAbility(Transform parent, CombatUnit caster)
+    public void SpawnAbility(Transform parent, CombatUnit caster, AbilityUsageContext abilityUsageContext)
     {
         if(parent != null)
         {
@@ -30,7 +30,7 @@ public class AbilityData : ScriptableObject
         }
 
         Ability ability = instantiatedObj.GetComponent<Ability>();
-        ability.Setup(caster);
+        ability.Setup(caster, abilityUsageContext);
         ability.Use();
     }
 
@@ -57,6 +57,12 @@ public class AbilityData : ScriptableObject
         AbilityPreview abilityPreview = instantiatedObj.GetComponent<AbilityPreview>();
         abilityPreview.Teardown();
     }
+
+    public bool Validate(AbilityUsageContext abilityUsageContext)
+    {
+        AbilityPreview abilityPreview = instantiatedObj.GetComponent<AbilityPreview>();
+        return abilityPreview.Validate(abilityUsageContext);
+    }
 }
 
 [System.Serializable]
@@ -64,3 +70,4 @@ public class AbilityDataEvent : UnityEvent<AbilityData> {}
 
 [System.Serializable]
 public class AbilityDataListEvent : UnityEvent<List<AbilityData>> {}
+

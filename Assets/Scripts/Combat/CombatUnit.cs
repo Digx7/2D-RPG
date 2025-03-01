@@ -108,16 +108,19 @@ public class CombatUnit : MonoBehaviour
         previewIndex = -1;
     }
 
-    public void ConfirmAbility()
+    public void ConfirmAbility(AbilityUsageContext abilityUsageContext)
     {
         if(previewIndex != -1) 
         {
-            UseAbility(previewIndex);
-            previewIndex = -1;
+            if(abilities[previewIndex].Validate(abilityUsageContext)) 
+            {
+                UseAbility(previewIndex, abilityUsageContext);
+                previewIndex = -1;
+            }
         }
     }
 
-    public void UseAbility(int index)
+    public void UseAbility(int index, AbilityUsageContext abilityUsageContext)
     {
         if(IsDead) return;
 
@@ -133,7 +136,7 @@ public class CombatUnit : MonoBehaviour
 
         if(abilities[index].EnergyCost <= CurrentEnergy)
         {
-            abilities[index].SpawnAbility(transform, this);
+            abilities[index].SpawnAbility(transform, this, abilityUsageContext);
             // abilities[index].SpawnAbility(transform, this, abilityContext);
             isUsingAbility = true;
 

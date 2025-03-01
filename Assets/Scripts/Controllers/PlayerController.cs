@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -652,9 +653,20 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
+                AbilityUsageContext abilityUsageContext = new AbilityUsageContext();
+                abilityUsageContext.Setup();
+
+                Vector2Control mouseScreenPos = Pointer.current.position;
+                Vector3 point = new Vector3();
+
+                point = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x.value, mouseScreenPos.y.value, 0));
+                point.z = 0;
+
+                abilityUsageContext.m_mousePos = point;
+                
                 foreach (CombatUnit unit in playerCombatUnits)
                 {
-                    unit.ConfirmAbility();
+                    unit.ConfirmAbility(abilityUsageContext);
                 }
                 break;
             case InputActionPhase.Canceled:

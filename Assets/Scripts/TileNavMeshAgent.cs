@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using System;
 using System.Collections;
@@ -11,7 +12,8 @@ public class TileNavMeshAgent : MonoBehaviour
     public float speed = 1f;
     public Vector3Int location;
     public string NavMeshName;
-    private TileMapNavMesh tileMapNavMesh;
+    public UnityEvent OnReachEndOfPath;
+    public TileMapNavMesh tileMapNavMesh{get; private set;}
 
     public void Start()
     {
@@ -32,9 +34,35 @@ public class TileNavMeshAgent : MonoBehaviour
         }
     }
     
+    public void TryToMoveToWorldPosition(Vector3 worldEndPosition)
+    {
+        if(tileMapNavMesh == null) 
+        {
+            Debug.Log("TileNavMeshAgent: TryToMoveToWorldPosition() FAILED because tileMapNavMesh == null");
+            return;
+        }
+
+        Debug.Log("TileNavMeshAgent: TryToMoveToWorldPosition()");
+
+        Vector3Int endlocation = Vector3Int.zero;
+
+        if(!tileMapNavMesh.WorldPositionToTileLocation(worldEndPosition, ref endlocation))
+        {
+            Debug.Log("TileNavMeshAgent: Given end position is not on nav mesh");
+            return;
+        }
+        else
+        {
+            TryToMove(endlocation);
+        }
+    }
+
     public void TryToMove(Vector3Int endLocation)
     {
-        if(tileMapNavMesh == null) return;
+        if(tileMapNavMesh == null) {
+            Debug.Log("TileNavMeshAgent: TryToMove() FAILED because tileMapNavMesh == null");
+            return;
+        }
         
         Debug.Log("TileNavMeshAgent: TryToMove()");
 
@@ -94,5 +122,7 @@ public class TileNavMeshAgent : MonoBehaviour
             }
             yield return null;
         }
+
+        OnReachEndOfPath.Invoke();
     }
 }

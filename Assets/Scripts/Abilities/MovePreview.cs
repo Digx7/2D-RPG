@@ -12,6 +12,7 @@ public class MovePreview : AbilityPreview
     private UITileMapDrawer m_UITileMapDrawer;
     private Vector3Int m_location;
     private int m_speed;
+    private TileNavMeshAgent tileNavMeshAgent;
     
     public override void Setup(CombatUnit newCaster)
     {
@@ -24,16 +25,45 @@ public class MovePreview : AbilityPreview
             if(drawer.gameObject.name == UIGroundTileMapDrawerName) m_UITileMapDrawer = drawer;
         }
 
-        TileNavMeshAgent tileNavMeshAgent = m_caster.gameObject.GetComponent<TileNavMeshAgent>();
+        tileNavMeshAgent = m_caster.gameObject.GetComponent<TileNavMeshAgent>();
         m_location = tileNavMeshAgent.location;
         m_speed = m_caster.Stats.data.Speed;
 
         RenderUI();
     }
 
+    public override bool Validate(AbilityUsageContext abilityUsageContext)
+    {
+        TileMapNavMesh tileMapNavMesh = tileNavMeshAgent.tileMapNavMesh;
+        if(tileMapNavMesh == null) 
+        {
+            return false;
+        }
+
+        Vector3Int endLocation = Vector3Int.zero;
+        if(!tileMapNavMesh.WorldPositionToTileLocation(abilityUsageContext.m_mousePos, ref endLocation))
+        {
+            return false;
+        }
+
+        List<TileNavMeshNode> path = new List<TileNavMeshNode>();
+
+        if(!tileMapNavMesh.GetPath(tileNavMeshAgent.location, endLocation, ref path))
+        {
+            return false;
+        }
+
+        if(path.Count > m_caster.Stats.data.Speed)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     protected override void RenderUI()
     {
-        if(m_UITileMapDrawer != null) m_UITileMapDrawer.GridFill(m_location, m_speed);
+        if(m_UITileMapDrawer != null) m_UITileMapDrawer.GridFill(m_location, (m_speed - 1));
     }
 
     protected override void ClearUI()

@@ -20,6 +20,11 @@ public class AbilityPreview : MonoBehaviour
         RenderUI();
     }
 
+    public virtual bool Validate(AbilityUsageContext abilityUsageContext)
+    {
+        return true;
+    }
+
     protected virtual void RenderUI() {}
 
     protected virtual void ClearUI() {}

@@ -20,9 +20,12 @@ public class GoblinAI : MonoBehaviour
 
     IEnumerator Think()
     {
+        AbilityUsageContext abilityUsageContext = new AbilityUsageContext();
+        abilityUsageContext.Setup();
+
         yield return new WaitForSeconds(thinkTime);
         if(combatUnit.CurrentEnergy == 2)
-            combatUnit.UseAbility(0);
-        else combatUnit.UseAbility(1);
+            combatUnit.UseAbility(0, abilityUsageContext);
+        else combatUnit.UseAbility(1, abilityUsageContext);
     }
 }
