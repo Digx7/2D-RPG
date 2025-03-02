@@ -28207,7 +28207,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046175197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -28480,63 +28480,6 @@ MonoBehaviour:
   canvasTileMap: {fileID: 192530100}
   tileBase: {fileID: 11400000, guid: fc8c33f36564e3e4d846bcd7d7cad128, type: 2}
   referenceNavMesh: {fileID: 1012850296}
---- !u!1001 &1450411370
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 28.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161079279153914065, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3470456916750989321, guid: 86f129a073d325d4a986b4122b322864, type: 3}
-      propertyPath: m_Name
-      value: Evil Wizard 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 86f129a073d325d4a986b4122b322864, type: 3}
 --- !u!1001 &1483920483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28594,6 +28537,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+--- !u!1001 &1509252172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470456916750989321, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_Name
+      value: Flying Eye (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
 --- !u!1 &1822470289
 GameObject:
   m_ObjectHideFlags: 0
@@ -28641,6 +28641,63 @@ MonoBehaviour:
   canvasTileMap: {fileID: 192530100}
   tileBase: {fileID: 11400000, guid: fc8c33f36564e3e4d846bcd7d7cad128, type: 2}
   referenceNavMesh: {fileID: 1958514952}
+--- !u!1001 &1837865179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 161079279153914065, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470456916750989321, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_Name
+      value: Flying Eye (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
 --- !u!1 &1958514951
 GameObject:
   m_ObjectHideFlags: 0
@@ -36527,7 +36584,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091237777}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -37181,5 +37238,6 @@ SceneRoots:
   - {fileID: 6602155276497448613}
   - {fileID: 1318541031}
   - {fileID: 1483920483}
-  - {fileID: 1450411370}
+  - {fileID: 1837865179}
+  - {fileID: 1509252172}
   - {fileID: 8545581094334385210}

@@ -333,7 +333,6 @@ GameObject:
   - component: {fileID: 4801327353471203495}
   - component: {fileID: 8862562227824767301}
   - component: {fileID: 2470944350707784549}
-  - component: {fileID: 1183567424147958556}
   - component: {fileID: 6311539929640047703}
   m_Layer: 0
   m_Name: Flying Eye
@@ -376,9 +375,9 @@ MonoBehaviour:
   DefaultEnergy: 2
   Stats: {fileID: 11400000, guid: 08530878ea7ff9f46aeb293a738b16c6, type: 2}
   abilities:
-  - {fileID: 11400000, guid: 59e4b0d3620bc1545a46e5514da8bc1f, type: 2}
-  - {fileID: 11400000, guid: 28bbc9db94a063d4592aacd65b33ae89, type: 2}
-  - {fileID: 11400000, guid: ffb168c8b092042489a95b19c6e12389, type: 2}
+  - {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
+  - {fileID: 11400000, guid: 5b62d68717a13dd4f934403886ce40f6, type: 2}
+  - {fileID: 11400000, guid: ce7846a6062de3d45919974963280ac5, type: 2}
   combatFaction: 1
   TurnOrderIcon: {fileID: 21300000, guid: e4b1469cc5e32ea4c8b1b0a7cb4d82e9, type: 3}
   animator: {fileID: 4571397052271655777}
@@ -426,6 +425,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onStillHasEnergyLeft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8862562227824767301}
+        m_TargetAssemblyTypeName: GoblinAI, Assembly-CSharp
+        m_MethodName: OnTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEndTurn:
     m_PersistentCalls:
       m_Calls:
@@ -459,9 +473,9 @@ MonoBehaviour:
   onDestroy:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1183567424147958556}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -601,52 +615,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!61 &1183567424147958556
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3470456916750989321}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.22, y: 0.28}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 2.59, y: 1.9}
-  m_EdgeRadius: 0
 --- !u!114 &6311539929640047703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +630,9 @@ MonoBehaviour:
   speed: 20
   location: {x: 0, y: 0, z: 0}
   NavMeshName: AirNavMesh
+  OnReachEndOfPath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5943585559232648929
 GameObject:
   m_ObjectHideFlags: 0

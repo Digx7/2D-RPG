@@ -420,7 +420,7 @@ MonoBehaviour:
   Stats: {fileID: 11400000, guid: 7adc650d02c774941bec4a1b6245a057, type: 2}
   abilities:
   - {fileID: 11400000, guid: 98d490e6b812ea34496c51ead4f1bc36, type: 2}
-  - {fileID: 11400000, guid: 28bbc9db94a063d4592aacd65b33ae89, type: 2}
+  - {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
   combatFaction: 1
   TurnOrderIcon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
   animator: {fileID: 4571397052271655777}
@@ -704,6 +704,9 @@ MonoBehaviour:
   speed: 20
   location: {x: 0, y: 0, z: 0}
   NavMeshName: GroundNavMesh
+  OnReachEndOfPath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3692494487640121951
 GameObject:
   m_ObjectHideFlags: 0

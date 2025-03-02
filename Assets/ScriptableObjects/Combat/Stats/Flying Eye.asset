@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: Flying Eye
   m_EditorClassIdentifier: 
   data:
-    Speed: 3
-    Str: 10
-    Dex: 10
-    Int: 10
-    Wis: 10
+    Speed: 10
+    EnergyGain: 2

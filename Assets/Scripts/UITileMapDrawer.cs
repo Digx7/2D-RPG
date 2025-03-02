@@ -11,26 +11,6 @@ public class UITileMapDrawer : MonoBehaviour
     public Tilemap canvasTileMap;
     public TileBase tileBase;
     public TileMapNavMesh referenceNavMesh;
-    
-    public void Update()
-    {
-        // if(Input.GetMouseButtonDown(0))
-        // {
-        //     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //     mousePosition.z = 0;
-            
-        //     Vector3Int start = Vector3Int.zero;
-
-        //     if(referenceNavMesh.WorldPositionToTileLocation(mousePosition, ref start))
-        //     {
-        //         GridFill(start, 5);
-        //     }
-        // }
-        // else if(Input.GetMouseButtonDown(1))
-        // {
-        //     Clear();
-        // }
-    }
 
 
     public void Clear()
@@ -58,7 +38,22 @@ public class UITileMapDrawer : MonoBehaviour
         }
     }
 
-    private List<Vector3Int> GetRadiusCordinates(Vector3Int origin, float radius)
+    public void LineFill(Vector3Int origin, Vector3 direction, int maxDistance = 3)
+    {
+        if(maxDistance <= 0) return;
+        
+        Vector3Int gridDirection = Vector3Int.RoundToInt(direction.normalized);
+        Vector3Int endLocation = origin + (gridDirection * maxDistance);
+
+        for (int i = 0; i < maxDistance; i++)
+        {
+            Vector3Int location = origin + (gridDirection * i);
+            
+            if(!TryPlaceTile(location)) return;
+        }
+    }
+
+    public List<Vector3Int> GetRadiusCordinates(Vector3Int origin, float radius)
     {
         List<Vector3Int> output = new List<Vector3Int>();
         
@@ -83,7 +78,7 @@ public class UITileMapDrawer : MonoBehaviour
         return output;
     }
 
-    private List<Vector3Int> GetGridCordinates(Vector3Int origin, int maxDistance)
+    public List<Vector3Int> GetGridCordinates(Vector3Int origin, int maxDistance)
     {
         List<Vector3Int> output = new List<Vector3Int>();
 
@@ -122,7 +117,7 @@ public class UITileMapDrawer : MonoBehaviour
         return output;
     }
 
-    private List<Vector3Int> GetNeighborCordinates(Vector3Int origin)
+    public List<Vector3Int> GetNeighborCordinates(Vector3Int origin)
     {
         List<Vector3Int> neighbors = new List<Vector3Int>();
         
@@ -139,7 +134,7 @@ public class UITileMapDrawer : MonoBehaviour
         return neighbors;
     }
 
-    private bool TryPlaceTile(Vector3Int location)
+    public bool TryPlaceTile(Vector3Int location)
     {
         if(referenceNavMesh.IsValidLocation(location)) 
         {

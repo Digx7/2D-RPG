@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
+  m_Name: Slash
+  m_EditorClassIdentifier: 
+  AbilityName: Slash
+  EnergyCost: 2
+  AbilityIcon: {fileID: 21300000, guid: af8c9e7a22dafc94882e34173e3d6440, type: 3}
+  Description: 'Damage 20 Slash
+
+    Cost 2 Energy
+
+    Hits all units 5 spaces in
+    either direction'
+  abilityPrefab: {fileID: 3912092619085005372, guid: f0c801910aff8624da90800f98134f20, type: 3}
+  previewPrefab: {fileID: 7553639000339606807, guid: 653dfc0af8da241418dfc2b741d33dc1, type: 3}

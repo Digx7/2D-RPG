@@ -21,6 +21,7 @@ public class CombatUnit : MonoBehaviour
     public string ReviveAnimationName;
     public Channel onEndUnitTurnChannel;
     public UnityEvent onStartTurn;
+    public UnityEvent onStillHasEnergyLeft;
     public UnityEvent onEndTurn;
     public UnityEvent onDeath;
     public UnityEvent onDestroy;
@@ -30,16 +31,11 @@ public class CombatUnit : MonoBehaviour
     private bool isUsingAbility = false;
     private bool isPreviewingAbility = false;
     private int previewIndex = -1;
-    // private var abilityContext = null;
     public bool IsDead {get; private set;} = false;
-    // public bool IsWeak {get; private set;} = false;
-    // public void SetWeak(){IsWeak = true;}
-    // public bool IsStrong {get; private set;} = false;
-    // public void SetStrong(){IsStrong = true;}
 
     private void OnEnable()
     {
-        CurrentEnergy = DefaultEnergy;
+        CurrentEnergy = 0;
         OnEnergyUpdate.Invoke(CurrentEnergy);
     }
 
@@ -61,6 +57,7 @@ public class CombatUnit : MonoBehaviour
         isUsingAbility = false;
 
         if(CurrentEnergy <= 0) EndTurn();
+        else onStillHasEnergyLeft.Invoke();
     }
 
     public void EndTurn()
@@ -68,11 +65,6 @@ public class CombatUnit : MonoBehaviour
         if(!isTurn) return;
 
         Debug.Log("CombatUnit: " + UnitName + " ending turn");
-
-        // IsWeak = false;
-        // IsStrong = false;
-        // CurrentEnergy = DefaultEnergy;
-        // OnEnergyUpdate.Invoke(CurrentEnergy);
 
         isTurn = false;
         isUsingAbility = false;
@@ -140,7 +132,6 @@ public class CombatUnit : MonoBehaviour
         if(abilities[index].EnergyCost <= CurrentEnergy)
         {
             abilities[index].SpawnAbility(transform, this, abilityUsageContext);
-            // abilities[index].SpawnAbility(transform, this, abilityContext);
             isUsingAbility = true;
 
             CurrentEnergy -= abilities[index].EnergyCost;
@@ -203,9 +194,6 @@ public class CombatUnit : MonoBehaviour
         if(IsDead) EndTurn();
         else
         {
-            // CurrentEnergy = DefaultEnergy;
-            // if(IsWeak) CurrentEnergy -= 1;
-            // if(IsStrong) CurrentEnergy += 1;
             
             CurrentEnergy += Stats.data.EnergyGain;
             OnEnergyUpdate.Invoke(CurrentEnergy);

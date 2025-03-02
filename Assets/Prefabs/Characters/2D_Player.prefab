@@ -908,8 +908,8 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: eb97fb75873d61c4d869a831e35d2cb6, type: 2}
   - {fileID: 11400000, guid: 1ad095de379d8a04c9461683d33e81b2, type: 2}
-  - {fileID: 11400000, guid: 781b460f2a7ab9a449a4a465cf03bf68, type: 2}
-  - {fileID: 11400000, guid: 28bbc9db94a063d4592aacd65b33ae89, type: 2}
+  - {fileID: 11400000, guid: ce7846a6062de3d45919974963280ac5, type: 2}
+  - {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
   combatFaction: 0
   TurnOrderIcon: {fileID: 21300000, guid: a4b1ba9c92bf15a40a6fe254843f20e2, type: 3}
   animator: {fileID: 5114435388740637882}
@@ -1032,6 +1032,9 @@ MonoBehaviour:
   speed: 20
   location: {x: 0, y: 0, z: 0}
   NavMeshName: GroundNavMesh
+  OnReachEndOfPath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6329130107479357747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,7 +1177,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
