@@ -23,6 +23,7 @@ public class CombatUnit : MonoBehaviour
     public UnityEvent onStartTurn;
     public UnityEvent onStillHasEnergyLeft;
     public UnityEvent onEndTurn;
+    public StringEvent onUseAbility;
     public UnityEvent onDeath;
     public UnityEvent onDestroy;
     public IntEvent OnEnergyUpdate;
@@ -133,6 +134,7 @@ public class CombatUnit : MonoBehaviour
         {
             abilities[index].SpawnAbility(transform, this, abilityUsageContext);
             isUsingAbility = true;
+            onUseAbility.Invoke(abilities[index].AbilityName);
 
             CurrentEnergy -= abilities[index].EnergyCost;
             OnEnergyUpdate.Invoke(CurrentEnergy);
