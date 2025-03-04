@@ -27,6 +27,7 @@ public class CombatUnit : MonoBehaviour
     public UnityEvent onDeath;
     public UnityEvent onDestroy;
     public IntEvent OnEnergyUpdate;
+    public StringChannel OnCombatLogChannel;
 
     private bool isTurn = false;
     private bool isUsingAbility = false;
@@ -132,6 +133,8 @@ public class CombatUnit : MonoBehaviour
 
         if(abilities[index].EnergyCost <= CurrentEnergy)
         {
+            OnCombatLogChannel.Raise("" + UnitName + " used " + abilities[index].AbilityName);
+            
             abilities[index].SpawnAbility(transform, this, abilityUsageContext);
             isUsingAbility = true;
             onUseAbility.Invoke(abilities[index].AbilityName);
@@ -160,6 +163,8 @@ public class CombatUnit : MonoBehaviour
             CurrentEnergy += 1 * Stats.data.EnergyGain;
             OnEnergyUpdate.Invoke(CurrentEnergy);
         }
+
+        OnCombatLogChannel.Raise("" + UnitName + " took " + damageResult.trueDamage + " damage");
     }
 
     public void OnHeal(DamageResult damageResult)
@@ -167,6 +172,8 @@ public class CombatUnit : MonoBehaviour
         if(IsDead) return;
         
         if(HealAnimationName != "" && animator != null)animator.Play(HealAnimationName);
+
+        OnCombatLogChannel.Raise("" + UnitName + " healed " + damageResult.trueDamage);
     }
 
     public void OnDeath()

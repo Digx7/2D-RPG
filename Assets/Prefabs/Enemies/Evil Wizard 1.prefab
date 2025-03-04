@@ -488,6 +488,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onStillHasEnergyLeft:
+    m_PersistentCalls:
+      m_Calls: []
   onEndTurn:
     m_PersistentCalls:
       m_Calls:
@@ -503,6 +506,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onUseAbility:
+    m_PersistentCalls:
+      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -536,6 +542,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCombatLogChannel: {fileID: 11400000, guid: 123e25af74046014ba5a161e95eaaaa2, type: 2}
 --- !u!114 &8862562227824767301
 MonoBehaviour:
   m_ObjectHideFlags: 0
