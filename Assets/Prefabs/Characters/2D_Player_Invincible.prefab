@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1860804825
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1450143638, guid: 917cbc2c1ffbd874a82acb3d40ff587c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -370,7 +370,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1760733497
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &7198026420870160349
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938b3c5bffcd37845ab30f476796bfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitName: Adventurer
+  UnitName: Invincible
   CurrentEnergy: 0
   DefaultEnergy: 2
   Stats: {fileID: 11400000, guid: 50400bde98bc82e4ca30bcc1afba83bc, type: 2}

@@ -14,13 +14,20 @@ public struct TileNavMeshNode
 {
     public Vector3Int position;
     public List<TileNavMeshEdge> links;
+    public List<NavMeshTileFlags> flags;
 
     public TileNavMeshNode(Vector3Int newPosition)
     {
         position = newPosition;
         links = new List<TileNavMeshEdge>();
+        flags = new List<NavMeshTileFlags>();
 
         
+    }
+
+    public void SetFlags(List<NavMeshTileFlags> newFlags)
+    {
+        flags = newFlags;
     }
 
     public void GiveLink(TileNavMeshNode otherNode)
@@ -29,6 +36,11 @@ public struct TileNavMeshNode
         edge.otherEnd = otherNode.position;
         edge.linkType = TileNavMeshLinkType.NORMAL;
         links.Add(edge);
+    }
+
+    public void GiveLink(TileNavMeshEdge link)
+    {
+        links.Add(link);
     }
 
     public static bool operator ==(TileNavMeshNode n1, TileNavMeshNode n2)
@@ -52,4 +64,4 @@ public struct TileNavMeshEdge
 }
 
 [System.Serializable]
-public enum TileNavMeshLinkType {NORMAL, JUMP, FALL};
+public enum TileNavMeshLinkType {NORMAL, JUMP, FALL, CLIMB};

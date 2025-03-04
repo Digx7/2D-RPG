@@ -95,9 +95,12 @@ public class UITileMapDrawer : MonoBehaviour
         {
             Vector3Int current = frontier.Dequeue();
 
-            List<Vector3Int> neighbors = GetNeighborCordinates(current);
-            foreach (Vector3Int neighbor in neighbors)
+            // List<Vector3Int> neighbors = GetNeighborCordinates(current);
+            List<TileNavMeshEdge> links = referenceNavMesh.GetPointAt(current).links;
+            foreach (TileNavMeshEdge link in links)
             {
+                Vector3Int neighbor = link.otherEnd;
+                
                 int newDistance = visited[current] + 1;
                 if(newDistance > maxDistance) continue;
 

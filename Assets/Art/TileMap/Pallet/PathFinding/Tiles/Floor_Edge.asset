@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf12781dac15147429937d173a2e4633, type: 3}
-  m_Name: Floor
+  m_Name: Floor_Edge
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 122d186a1680f664883233b3d4e6f577, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5cc111156ba8dcb4d8622e93d5727a7f, type: 3}
   m_Prefab: {fileID: 0}
-  flags: 
+  flags: 00000000
