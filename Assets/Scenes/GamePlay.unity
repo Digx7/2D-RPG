@@ -15115,6 +15115,63 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1001 &753182170
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.94422054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839096609123802247, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
+      propertyPath: m_Name
+      value: 2D_Player_Invincible
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35838ee1a3eae2544a8b0b5aff96284e, type: 3}
 --- !u!1 &833981821
 GameObject:
   m_ObjectHideFlags: 0
@@ -37237,6 +37294,7 @@ SceneRoots:
   - {fileID: 3749846278026937691}
   - {fileID: 6602155276497448613}
   - {fileID: 1318541031}
+  - {fileID: 753182170}
   - {fileID: 1483920483}
   - {fileID: 1837865179}
   - {fileID: 1509252172}
