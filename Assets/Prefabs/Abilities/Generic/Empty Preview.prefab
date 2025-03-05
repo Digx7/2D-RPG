@@ -44,3 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23d548d53938d04ca5302d96d68ad01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requestUITileMapChannel: {fileID: 11400000, guid: 96804c6562f45714cbbbf68101c7311f, type: 2}
+  selectableContext:
+    canvasType: 0
+    tileMapType: 0
+  selectedContext:
+    canvasType: 1
+    tileMapType: 0
+  lineContext:
+    canvasType: 2
+    tileMapType: 0

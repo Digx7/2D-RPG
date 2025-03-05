@@ -12,6 +12,8 @@ public class Ability : MonoBehaviour
     public string AnimationName;
     public bool ForceEndTurn = false;
     protected CombatUnit m_caster;
+    protected TileNavMeshAgent m_navMeshAgent;
+    protected Vector3Int m_location;
     protected AbilityUsageContext m_context;
     
     public virtual void Use()
@@ -24,6 +26,8 @@ public class Ability : MonoBehaviour
     {
         m_caster = newCaster;
         m_context = abilityUsageContext;
+        m_navMeshAgent = m_caster.gameObject.GetComponent<TileNavMeshAgent>();
+        m_location = m_navMeshAgent.location;
 
         Debug.Log("Ability Setup(): context m_mousePos = " + m_context.m_mousePos);
     }

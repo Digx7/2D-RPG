@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0efdf3cfcc92db43b7b64ced41f2c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIAirTileMapDrawerName: UITileMapDrawer_Air
+  requestUITileMapChannel: {fileID: 11400000, guid: 96804c6562f45714cbbbf68101c7311f, type: 2}
+  previewUITileMapContext:
+    canvasType: 1
+    tileMapType: 1

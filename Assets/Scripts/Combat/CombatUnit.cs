@@ -97,6 +97,14 @@ public class CombatUnit : MonoBehaviour
         }       
     }
 
+    public void RenderPreviewSelection(AbilityUsageContext abilityUsageContext)
+    {
+        if(previewIndex != -1) 
+        {
+            abilities[previewIndex].RenderSelectionUI(abilityUsageContext);
+        }
+    }
+
     public void StopPreviewing()
     {
         isPreviewingAbility = false;

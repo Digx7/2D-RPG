@@ -7,49 +7,94 @@ using System.Collections.Generic;
 [System.Serializable]
 public class SlashPreview : AbilityPreview
 {
-    public string UIAirTileMapDrawerName;
-
-    private UITileMapDrawer m_UITileMapDrawer;
-    private Vector3Int m_location;
-    private TileNavMeshAgent tileNavMeshAgent;
     
     public override void Setup(CombatUnit newCaster)
     {
         base.Setup(newCaster);
 
-        UITileMapDrawer[] uITileMapDrawers = GameObject.FindObjectsByType<UITileMapDrawer>(FindObjectsSortMode.None);
-
-        foreach (UITileMapDrawer drawer in uITileMapDrawers)
-        {
-            if(drawer.gameObject.name == UIAirTileMapDrawerName) m_UITileMapDrawer = drawer;
-        }
-
-        tileNavMeshAgent = m_caster.gameObject.GetComponent<TileNavMeshAgent>();
-        m_location = tileNavMeshAgent.location;
-
-        // RenderUI();
     }
 
     public override bool Validate(AbilityUsageContext abilityUsageContext)
     {
-        // TODO
+        TileMapNavMesh tileMapNavMesh = m_navMeshAgent.tileMapNavMesh;
+        if(tileMapNavMesh == null) 
+        {
+            Debug.Log("Slash Failed: no NavMesh found");
+            return false;
+        }
+
+        Vector3Int selectedLocation = Vector3Int.zero;
+        if(!tileMapNavMesh.WorldPositionToTileLocation(abilityUsageContext.m_mousePos, ref selectedLocation))
+        {
+            Debug.Log("Slash Failed: selected location is not on the map");
+            
+            return false;
+        }
+
+        if(selectedLocation == (m_location + Vector3Int.left) || selectedLocation == (m_location + Vector3Int.right))
+        {
+            return true;
+        }
+        else return false;
 
         return true;
     }
 
     protected override void RenderUI()
     {
-        // if(m_UITileMapDrawer != null) m_UITileMapDrawer.LineFill(m_location + new Vector3Int(1,0,0), new Vector3Int(1,0,0), 5);
-        if(m_UITileMapDrawer != null)
+        UITileMapRequest request = new UITileMapRequest();
+        request.header = UITileMapRequestHeader.PLACE_MANY;
+        request.locations = new List<Vector3Int>();
+        request.locations.Add(m_location + Vector3Int.left);
+        request.locations.Add(m_location + Vector3Int.right);
+        request.context = selectableContext;
+
+        requestUITileMapChannel.Raise(request);
+    }
+
+    public override void RenderSelectionUI(AbilityUsageContext context)
+    {
+        Vector3Int location = Vector3Int.zero;
+        if(m_navMeshAgent.tileMapNavMesh.WorldPositionToTileLocation(context.m_mousePos, ref location))
         {
-            m_UITileMapDrawer.TryPlaceTile(m_location + Vector3Int.right);
-            m_UITileMapDrawer.TryPlaceTile(m_location + Vector3Int.left);
+            UITileMapRequest request = new UITileMapRequest();
+            request.header = UITileMapRequestHeader.CLEAR;
+            request.context = selectedContext;
+
+            requestUITileMapChannel.Raise(request);
+
+            if(location == (m_location + Vector3Int.left) || location == (m_location + Vector3Int.right))
+            {
+                request.header = UITileMapRequestHeader.PLACE;
+                request.location = location;
+                request.context = selectedContext;
+
+                requestUITileMapChannel.Raise(request);
+            }
+        }
+        else
+        {
+            UITileMapRequest request = new UITileMapRequest();
+            request.header = UITileMapRequestHeader.CLEAR;
+            request.context = selectedContext;
+
+            requestUITileMapChannel.Raise(request);
         }
     }
 
     protected override void ClearUI()
     {
-        if(m_UITileMapDrawer != null) m_UITileMapDrawer.Clear();
+        UITileMapRequest request = new UITileMapRequest();
+        request.header = UITileMapRequestHeader.CLEAR;
+        request.context = selectableContext;
+
+        requestUITileMapChannel.Raise(request);
+
+
+        request.header = UITileMapRequestHeader.CLEAR;
+        request.context = selectedContext;
+
+        requestUITileMapChannel.Raise(request);
     }
 }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3546812660514047386}
   - component: {fileID: 7095078501852645577}
   m_Layer: 0
-  m_Name: Move Preview
+  m_Name: Fly Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,10 +47,10 @@ MonoBehaviour:
   requestUITileMapChannel: {fileID: 11400000, guid: 96804c6562f45714cbbbf68101c7311f, type: 2}
   selectableContext:
     canvasType: 0
-    tileMapType: 0
+    tileMapType: 1
   selectedContext:
     canvasType: 1
-    tileMapType: 0
+    tileMapType: 1
   lineContext:
     canvasType: 2
-    tileMapType: 0
+    tileMapType: 1

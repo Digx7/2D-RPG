@@ -7,34 +7,18 @@ using System.Collections.Generic;
 [System.Serializable]
 public class MovePreview : AbilityPreview
 {
-    public string UIGroundTileMapDrawerName;
 
-    private UITileMapDrawer m_UITileMapDrawer;
-    private Vector3Int m_location;
     private int m_speed;
-    private TileNavMeshAgent tileNavMeshAgent;
     
     public override void Setup(CombatUnit newCaster)
     {
         base.Setup(newCaster);
-
-        UITileMapDrawer[] uITileMapDrawers = GameObject.FindObjectsByType<UITileMapDrawer>(FindObjectsSortMode.None);
-
-        foreach (UITileMapDrawer drawer in uITileMapDrawers)
-        {
-            if(drawer.gameObject.name == UIGroundTileMapDrawerName) m_UITileMapDrawer = drawer;
-        }
-
-        tileNavMeshAgent = m_caster.gameObject.GetComponent<TileNavMeshAgent>();
-        m_location = tileNavMeshAgent.location;
         m_speed = m_caster.Stats.data.Speed;
-
-        // RenderUI();
     }
 
     public override bool Validate(AbilityUsageContext abilityUsageContext)
     {
-        TileMapNavMesh tileMapNavMesh = tileNavMeshAgent.tileMapNavMesh;
+        TileMapNavMesh tileMapNavMesh = m_navMeshAgent.tileMapNavMesh;
         if(tileMapNavMesh == null) 
         {
             return false;
@@ -48,13 +32,14 @@ public class MovePreview : AbilityPreview
 
         List<TileNavMeshNode> path = new List<TileNavMeshNode>();
 
-        if(!tileMapNavMesh.GetPath(tileNavMeshAgent.location, endLocation, ref path))
+        if(!tileMapNavMesh.GetPath(m_location, endLocation, ref path))
         {
             return false;
         }
 
         if(path.Count > m_caster.Stats.data.Speed)
         {
+            Debug.Log("Move Preview: Validation failed because the Path was to long");
             return false;
         }
 
@@ -63,12 +48,59 @@ public class MovePreview : AbilityPreview
 
     protected override void RenderUI()
     {
-        if(m_UITileMapDrawer != null) m_UITileMapDrawer.GridFill(m_location, (m_speed - 1));
+        UITileMapRequest request = new UITileMapRequest();
+        request.header = UITileMapRequestHeader.FILL;
+        request.location = m_location;
+        request.range = m_caster.Stats.data.Speed;
+        request.context = selectableContext;
+
+        requestUITileMapChannel.Raise(request);
+    }
+
+    public override void RenderSelectionUI(AbilityUsageContext context)
+    {
+        Vector3Int endLocation = Vector3Int.zero;
+        if(m_navMeshAgent.tileMapNavMesh.WorldPositionToTileLocation(context.m_mousePos, ref endLocation))
+        {
+            UITileMapRequest request = new UITileMapRequest();
+            request.header = UITileMapRequestHeader.CLEAR;
+            request.context = lineContext;
+
+            requestUITileMapChannel.Raise(request);
+
+
+            request.header = UITileMapRequestHeader.PATH;
+            request.locations = new List<Vector3Int>();
+            request.locations.Add(m_location);
+            request.locations.Add(endLocation);
+            request.range = m_caster.Stats.data.Speed;
+            request.context = lineContext;
+
+            requestUITileMapChannel.Raise(request);
+        }
+        else
+        {
+            UITileMapRequest request = new UITileMapRequest();
+            request.header = UITileMapRequestHeader.CLEAR;
+            request.context = lineContext;
+
+            requestUITileMapChannel.Raise(request);
+        }
     }
 
     protected override void ClearUI()
     {
-        if(m_UITileMapDrawer != null) m_UITileMapDrawer.Clear();
+        UITileMapRequest request = new UITileMapRequest();
+        request.header = UITileMapRequestHeader.CLEAR;
+        request.context = selectableContext;
+
+        requestUITileMapChannel.Raise(request);
+
+
+        request.header = UITileMapRequestHeader.CLEAR;
+        request.context = lineContext;
+
+        requestUITileMapChannel.Raise(request);
     }
 }
 

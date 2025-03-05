@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using System;
 using System.Collections;
@@ -8,147 +9,289 @@ using Utils;
 
 public class UITileMapDrawer : MonoBehaviour
 {
-    public Tilemap canvasTileMap;
-    public TileBase tileBase;
-    public TileMapNavMesh referenceNavMesh;
+    public List<UITileMapLookUp> allUITileMapLookUpData;
 
+    public UITileMapRequestChannel requestUITileMapChannel;
+
+    public void OnEnable()
+    {
+        requestUITileMapChannel.channelEvent.AddListener(RecieveRequest);
+    }
+
+    public void OnDisable()
+    {
+        requestUITileMapChannel.channelEvent.RemoveListener(RecieveRequest);
+    }
+
+    public void RecieveRequest(UITileMapRequest request)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(request.context))
+            {
+                switch (request.header)
+                {
+                    case UITileMapRequestHeader.FILL:
+                        mapLookUp.Fill(request.location, request.range);
+                        break;
+                    case UITileMapRequestHeader.FILL_FILTERED:
+                        mapLookUp.FillFiltered(request.location, request.range, request.linkList);
+                        break;
+                    case UITileMapRequestHeader.FILL_MASKED:
+                        mapLookUp.FillMasked(request.location, request.range, request.linkList);
+                        break;
+                    case UITileMapRequestHeader.DRAWLINE:
+                        mapLookUp.DrawLine(request.location, request.direction, request.range);
+                        break;
+                    case UITileMapRequestHeader.PATH:
+                        mapLookUp.DrawPath(request.locations[0], request.locations[1], request.range);
+                        break;
+                    case UITileMapRequestHeader.PLACE:
+                        mapLookUp.TryPlaceTile(request.location);
+                        break;
+                    case UITileMapRequestHeader.PLACE_MANY:
+                        mapLookUp.PlaceTiles(request.locations);
+                        break;
+                    case UITileMapRequestHeader.CLEAR:
+                        mapLookUp.Clear();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+
+    public void ClearAll()
+    {     
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            mapLookUp.Clear();
+        }
+    }
+
+    public void Clear(UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) mapLookUp.Clear();
+        }
+    }
+
+    public void Fill(Vector3Int location, int range, UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) mapLookUp.Fill(location, range);
+        }
+    }
+
+    public void FillFiltered(Vector3Int location, int range, List<TileNavMeshLinkType> filteredLinks, UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) mapLookUp.FillFiltered(location, range, filteredLinks);
+        }
+    }
+
+    public void FillMasked(Vector3Int location, int range, List<TileNavMeshLinkType> maskedLinks, UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) mapLookUp.FillMasked(location, range, maskedLinks);
+        }
+    }
+
+    public void DrawLine(Vector3Int location, Vector3Int direction, int range, UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) mapLookUp.DrawLine(location, direction, range);
+        }
+    }
+    
+    public void DrawPath(Vector3Int startingLocation, Vector3Int endingLocation, int range, UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) mapLookUp.DrawPath(startingLocation, endingLocation, range);
+        }
+    }
+
+    public bool TryPlaceTile(Vector3Int location, UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) 
+            {
+                return mapLookUp.TryPlaceTile(location);
+            }
+        }
+
+        return false;
+    }
+
+    private void ForcePlaceTile(Vector3Int location, UITileMapContext context)
+    {
+        foreach (UITileMapLookUp mapLookUp in allUITileMapLookUpData)
+        {
+            if(mapLookUp.IsValidContext(context)) 
+            {
+                mapLookUp.PlaceTile(location);
+            }
+        }
+    }
+}
+
+[System.Serializable]
+public enum UITileMapCanvasType {SELECTABLE, SELECTED, LINE}
+
+[System.Serializable]
+public enum UITileMapType {GROUND, AIR}
+
+[System.Serializable]
+public struct UITileMapLookUp
+{
+    public Tilemap canvasMap;
+    public TileMapNavMesh refrenceNavMesh;
+    public TileBase uiTile;
+    public UITileMapCanvasType canvasType;
+    public UITileMapType tileMapType; 
+
+    public bool IsValidContext(UITileMapContext context)
+    {
+        if(context.canvasType == canvasType && 
+            context.tileMapType == tileMapType) 
+                return true;
+        else
+            return false;
+    }
 
     public void Clear()
-    {     
-        canvasTileMap.ClearAllTiles();
+    {
+        canvasMap.ClearAllTiles();
     }
 
-    public void RadiusFill(Vector3Int origin, float radius)
+    public bool Fill(Vector3Int location, int range)
     {
-        List<Vector3Int> area = GetRadiusCordinates(origin, radius);
-        
-        foreach (Vector3Int point in area)
+        List<Vector3Int> locations = new List<Vector3Int>();
+        locations = refrenceNavMesh.GetRangeCordintates(location, range);
+
+        if(locations.Count <= 0) return false;
+
+        foreach (Vector3Int loc in locations)
         {
-            TryPlaceTile(point);
+            PlaceTile(loc);
+        }
+
+        return true;
+    }
+
+    public bool FillFiltered(Vector3Int location, int range, List<TileNavMeshLinkType> filteredLinks)
+    {
+        List<Vector3Int> locations = new List<Vector3Int>();
+        locations = refrenceNavMesh.GetFilteredRangeCordinates(location, range, filteredLinks);
+
+        if(locations.Count <= 0) return false;
+
+        foreach (Vector3Int loc in locations)
+        {
+            PlaceTile(loc);
+        }
+
+        return true;
+    }
+
+    public bool FillMasked(Vector3Int location, int range, List<TileNavMeshLinkType> maskedLinks)
+    {
+        List<Vector3Int> locations = new List<Vector3Int>();
+        locations = refrenceNavMesh.GetMaskedRangeCordinates(location, range, maskedLinks);
+
+        if(locations.Count <= 0) return false;
+
+        foreach (Vector3Int loc in locations)
+        {
+            PlaceTile(loc);
+        }
+
+        return true;
+    }
+
+    public bool DrawLine(Vector3Int location, Vector3Int direction, int range)
+    {
+        List<Vector3Int> locations = new List<Vector3Int>();
+        locations = refrenceNavMesh.GetLineCordinates(location, direction, range);
+
+        if(locations.Count <= 0) return false;
+
+        foreach (Vector3Int loc in locations)
+        {
+            PlaceTile(loc);
+        }
+
+        return true;
+    }
+
+    public bool DrawPath(Vector3Int startingLocation, Vector3Int endingLocation, int range)
+    {
+        List<Vector3Int> locations = new List<Vector3Int>();
+        locations = refrenceNavMesh.GetPathCordinates(startingLocation, endingLocation, range);
+
+        if(locations.Count <= 0) return false;
+
+        foreach (Vector3Int loc in locations)
+        {
+            PlaceTile(loc);
+        }
+
+        return true;
+    }
+
+    public void PlaceTiles(List<Vector3Int> locations)
+    {
+        foreach (Vector3Int location in locations)
+        {
+            if(refrenceNavMesh.IsValidLocation(location)) PlaceTile(location);
         }
     }
 
-    public void GridFill(Vector3Int origin, int maxDistance)
+    public void PlaceTile(Vector3Int location)
     {
-        List<Vector3Int> cords = GetGridCordinates(origin, maxDistance);
-
-        foreach (Vector3Int cord in cords)
-        {
-            ForcePlaceTile(cord);
-        }
-    }
-
-    public void LineFill(Vector3Int origin, Vector3 direction, int maxDistance = 3)
-    {
-        if(maxDistance <= 0) return;
-        
-        Vector3Int gridDirection = Vector3Int.RoundToInt(direction.normalized);
-        Vector3Int endLocation = origin + (gridDirection * maxDistance);
-
-        for (int i = 0; i < maxDistance; i++)
-        {
-            Vector3Int location = origin + (gridDirection * i);
-            
-            if(!TryPlaceTile(location)) return;
-        }
-    }
-
-    public List<Vector3Int> GetRadiusCordinates(Vector3Int origin, float radius)
-    {
-        List<Vector3Int> output = new List<Vector3Int>();
-        
-        Vector3Int startLocation = new Vector3Int(origin.x - (int)radius, origin.y - (int)radius, 0);
-        Vector3Int endLocation = new Vector3Int(startLocation.x + (int)(radius * 2), startLocation.y + (int)(radius * 2), 0);
-
-        
-
-        for (int i = startLocation.x; i < endLocation.x; i++)
-        { 
-            for (int j = startLocation.y; j < endLocation.y; j++)
-            {
-                Vector3Int location = new Vector3Int(i, j, 0);
-                float distance = Vector3Int.Distance(location, origin);
-                if(distance <= radius) 
-                {
-                    output.Add(location);
-                }
-            }
-        }
-
-        return output;
-    }
-
-    public List<Vector3Int> GetGridCordinates(Vector3Int origin, int maxDistance)
-    {
-        List<Vector3Int> output = new List<Vector3Int>();
-
-        Dictionary<Vector3Int, int> visited = new Dictionary<Vector3Int, int>();
-        PriorityQueue<Vector3Int, int> frontier = new PriorityQueue<Vector3Int, int>();
-
-        if(referenceNavMesh.IsValidLocation(origin))
-        {
-            frontier.Enqueue(origin, 0);
-            visited[origin] = 0;
-        }
-
-        while(frontier.Count != 0)
-        {
-            Vector3Int current = frontier.Dequeue();
-
-            // List<Vector3Int> neighbors = GetNeighborCordinates(current);
-            List<TileNavMeshEdge> links = referenceNavMesh.GetPointAt(current).links;
-            foreach (TileNavMeshEdge link in links)
-            {
-                Vector3Int neighbor = link.otherEnd;
-                
-                int newDistance = visited[current] + 1;
-                if(newDistance > maxDistance) continue;
-
-                if(!visited.ContainsKey(neighbor) || newDistance < visited[neighbor])
-                {
-                    visited[neighbor] = newDistance;
-                    frontier.Enqueue(neighbor, newDistance);
-                }
-            }
-        }
-
-        foreach (KeyValuePair<Vector3Int, int> entry in visited)
-        {
-            output.Add((Vector3Int)entry.Key);
-        }
-
-        return output;
-    }
-
-    public List<Vector3Int> GetNeighborCordinates(Vector3Int origin)
-    {
-        List<Vector3Int> neighbors = new List<Vector3Int>();
-        
-        Vector3Int up = origin + Vector3Int.up;
-        Vector3Int down = origin + Vector3Int.down;
-        Vector3Int left = origin + Vector3Int.left;
-        Vector3Int right = origin + Vector3Int.right;
-
-        if(referenceNavMesh.IsValidLocation(up)) neighbors.Add(up);
-        if(referenceNavMesh.IsValidLocation(down)) neighbors.Add(down);
-        if(referenceNavMesh.IsValidLocation(left)) neighbors.Add(left);
-        if(referenceNavMesh.IsValidLocation(right)) neighbors.Add(right);
-
-        return neighbors;
+        canvasMap.SetTile(location, uiTile);
     }
 
     public bool TryPlaceTile(Vector3Int location)
     {
-        if(referenceNavMesh.IsValidLocation(location)) 
+        if(refrenceNavMesh.IsValidLocation(location))
         {
-            canvasTileMap.SetTile(location, tileBase);
+            PlaceTile(location);
             return true;
         }
-        else return false;
-    }
-
-    private void ForcePlaceTile(Vector3Int location)
-    {
-        canvasTileMap.SetTile(location, tileBase);
+        
+        return false;
     }
 }
+
+[System.Serializable]
+public struct UITileMapContext
+{
+    public UITileMapCanvasType canvasType;
+    public UITileMapType tileMapType;
+}
+
+[System.Serializable]
+public struct UITileMapRequest
+{
+    public UITileMapRequestHeader header;
+    public Vector3Int location;
+    public List<Vector3Int> locations;
+    public Vector3Int direction;
+    public int range;
+    public List<TileNavMeshLinkType> linkList;
+    public UITileMapContext context;
+}
+
+[System.Serializable]
+public enum UITileMapRequestHeader {FILL, FILL_FILTERED, FILL_MASKED, DRAWLINE, PLACE, PLACE_MANY, PATH, CLEAR}
+
+public class UITileMapRequestEvent : UnityEvent<UITileMapRequest> {}

@@ -47,21 +47,36 @@ public class AbilityData : ScriptableObject
             instantiatedObj = Instantiate(previewPrefab, parent);
         }
 
-        AbilityPreview abilityPreview = instantiatedObj.GetComponent<AbilityPreview>();
-        abilityPreview.Setup(caster);
-        abilityPreview.Use();
+        AbilityPreview abilityPreview;
+        if(instantiatedObj.TryGetComponent<AbilityPreview>(out abilityPreview))
+        {
+            abilityPreview.Setup(caster);
+            abilityPreview.Use();
+        }
+        
     }
 
     public void DespawnPreview()
     {
-        AbilityPreview abilityPreview = instantiatedObj.GetComponent<AbilityPreview>();
-        abilityPreview.Teardown();
+        AbilityPreview abilityPreview;
+        if(instantiatedObj.TryGetComponent<AbilityPreview>(out abilityPreview))
+            abilityPreview.Teardown();
     }
 
     public bool Validate(AbilityUsageContext abilityUsageContext)
     {
-        AbilityPreview abilityPreview = instantiatedObj.GetComponent<AbilityPreview>();
-        return abilityPreview.Validate(abilityUsageContext);
+        AbilityPreview abilityPreview;
+        if(instantiatedObj.TryGetComponent<AbilityPreview>(out abilityPreview))
+            return abilityPreview.Validate(abilityUsageContext);
+
+        return false;
+    }
+
+    public void RenderSelectionUI(AbilityUsageContext abilityUsageContext)
+    {
+        AbilityPreview abilityPreview;
+        if(instantiatedObj.TryGetComponent<AbilityPreview>(out abilityPreview))
+            abilityPreview.RenderSelectionUI(abilityUsageContext);
     }
 }
 

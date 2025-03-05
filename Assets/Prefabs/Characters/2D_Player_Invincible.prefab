@@ -1189,7 +1189,7 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: eb97fb75873d61c4d869a831e35d2cb6, type: 2}
   - {fileID: 11400000, guid: 1ad095de379d8a04c9461683d33e81b2, type: 2}
-  - {fileID: 11400000, guid: ce7846a6062de3d45919974963280ac5, type: 2}
+  - {fileID: 11400000, guid: 102c6a0b39d30f94f87b82be23ed7d97, type: 2}
   - {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
   combatFaction: 0
   TurnOrderIcon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   location: {x: 0, y: 0, z: 0}
-  NavMeshName: GroundNavMesh
+  NavMeshName: AirNavMesh
   OnReachEndOfPath:
     m_PersistentCalls:
       m_Calls: []
@@ -1476,7 +1476,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

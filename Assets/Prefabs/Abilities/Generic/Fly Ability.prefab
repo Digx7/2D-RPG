@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7090164341912964269
+--- !u!1 &4406510644390687505
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3546812660514047386}
-  - component: {fileID: 7095078501852645577}
+  - component: {fileID: 3443333175129263384}
+  - component: {fileID: 524811725509496654}
   m_Layer: 0
-  m_Name: Move Preview
+  m_Name: Fly Ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3546812660514047386
+--- !u!4 &3443333175129263384
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7090164341912964269}
+  m_GameObject: {fileID: 4406510644390687505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.470415, y: 6.880923, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7095078501852645577
+--- !u!114 &524811725509496654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7090164341912964269}
+  m_GameObject: {fileID: 4406510644390687505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07bee64776820234da3b07fea553848d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f2388c34388d494591056350f4059fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestUITileMapChannel: {fileID: 11400000, guid: 96804c6562f45714cbbbf68101c7311f, type: 2}
-  selectableContext:
-    canvasType: 0
-    tileMapType: 0
-  selectedContext:
-    canvasType: 1
-    tileMapType: 0
-  lineContext:
-    canvasType: 2
-    tileMapType: 0
+  AbilityName: Move
+  LifeTime: 1
+  AnimationName: 
+  ForceEndTurn: 0
+  moveTime: 0
+  moveDirection: {x: 0, y: 0}

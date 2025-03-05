@@ -21,6 +21,8 @@ public class TileMapNavMesh : MonoBehaviour
         tilemap.color = color;
     }
 
+
+
     [ContextMenu("Bake")]
     public void Bake()
     {
@@ -45,16 +47,6 @@ public class TileMapNavMesh : MonoBehaviour
     {
         points.Clear();
         Debug.Log("TileMapNavMesh: cleared points");
-    }
-
-    public TileNavMeshNode GetPointAt(Vector3Int location)
-    {
-        for (int i = 0; i < points.Count; i++)
-        {
-            if(location == points[i].position) return points[i];
-        }
-
-        return points[0];
     }
 
     private void GatherAllPoints()
@@ -155,46 +147,17 @@ public class TileMapNavMesh : MonoBehaviour
             }
     }
 
-    public List<Vector3Int> GetNeighborCordinates(Vector3Int location)
-    {
-        List<Vector3Int> neighbors = new List<Vector3Int>();
 
-        neighbors.Add(location + Vector3Int.left);
-        neighbors.Add(location + Vector3Int.up);
-        neighbors.Add(location + Vector3Int.right);
-        neighbors.Add(location + Vector3Int.down);
-        // neighbors.Add(location + Vector3Int.up + Vector3Int.left);
-        // neighbors.Add(location + Vector3Int.up + Vector3Int.right);
-        // neighbors.Add(location + Vector3Int.down + Vector3Int.left);
-        // neighbors.Add(location + Vector3Int.down + Vector3Int.right);
 
-        return neighbors;
-    }
 
-    public bool IsValidLocation(Vector3Int location)
+    public TileNavMeshNode GetPointAt(Vector3Int location)
     {
         for (int i = 0; i < points.Count; i++)
         {
-            if(location == points[i].position) return true;
+            if(location == points[i].position) return points[i];
         }
 
-        return false;
-    }
-
-    public bool IsValidLocation(Vector3Int location, out int index)
-    {
-        index = -1;
-
-        for (int i = 0; i < points.Count; i++)
-        {
-            if(location == points[i].position) 
-            {
-                index = i;
-                return true;
-            }
-        }
-
-        return false;
+        return points[0];
     }
 
     public List<TileNavMeshNode> GetNeighbors(Vector3Int location)
@@ -214,6 +177,273 @@ public class TileMapNavMesh : MonoBehaviour
         return neighbors;
     }
 
+    public List<NavMeshTileFlags> GetPointFlags(Vector3Int location)
+    {
+        if(!IsValidLocation(location)) return null;
+        
+        return GetPointAt(location).flags;
+    }
+
+    public List<Vector3Int> GetNeighborCordinates(Vector3Int location)
+    {
+        List<Vector3Int> neighbors = new List<Vector3Int>();
+
+        Vector3Int left = location + Vector3Int.left;
+        Vector3Int up = location + Vector3Int.up;
+        Vector3Int right = location + Vector3Int.right;
+        Vector3Int down = location + Vector3Int.down;
+
+        if(IsValidLocation(left)) neighbors.Add(left);
+        if(IsValidLocation(up)) neighbors.Add(up);
+        if(IsValidLocation(right)) neighbors.Add(right);
+        if(IsValidLocation(down)) neighbors.Add(down);
+
+        return neighbors;
+    }
+
+    public List<Vector3Int> GetCornerCordinates(Vector3Int location)
+    {
+        List<Vector3Int> corners = new List<Vector3Int>();
+
+        Vector3Int ul = location + Vector3Int.up + Vector3Int.left;
+        Vector3Int ur = location + Vector3Int.up + Vector3Int.right;
+        Vector3Int dl = location + Vector3Int.down + Vector3Int.left;
+        Vector3Int dr = location + Vector3Int.down + Vector3Int.right;
+
+        if(IsValidLocation(ul)) corners.Add(ul);
+        if(IsValidLocation(ur)) corners.Add(ur);
+        if(IsValidLocation(dl)) corners.Add(dl);
+        if(IsValidLocation(dr)) corners.Add(dr);
+
+        return corners;
+    }
+
+    public List<Vector3Int> GetLineCordinates(Vector3Int location, Vector3Int direction, int maxRange)
+    {
+        List<Vector3Int> line = new List<Vector3Int>();
+        
+        for (int i = 0; i < maxRange; i++)
+        {
+            Vector3Int loc = location + (direction * i);
+            if(IsValidLocation(loc)) line.Add(loc);
+        }
+
+        return line;
+    }
+
+    public List<Vector3Int> GetRangeCordintates(Vector3Int startingLocation, int range)
+    {
+        List<Vector3Int> outputRange = new List<Vector3Int>();
+
+        if(!IsValidLocation(startingLocation)) 
+        {
+            return outputRange;
+        }
+
+        TileNavMeshNode startPoint = GetPointAt(startingLocation);
+
+        // A star
+        PriorityQueue<TileNavMeshNode, int> frontier = new PriorityQueue<TileNavMeshNode, int>();
+        frontier.Enqueue(startPoint, 0);
+        Dictionary<TileNavMeshNode, int> costSoFar = new Dictionary<TileNavMeshNode, int>();
+        costSoFar[startPoint] = 1;
+
+        while(frontier.Count != 0)
+        {
+            TileNavMeshNode current = frontier.Dequeue();
+
+            List<TileNavMeshEdge> links = current.links;
+            foreach (TileNavMeshEdge link in links)
+            {
+                TileNavMeshNode next = GetPointAt(link.otherEnd);
+                
+                int newCost = costSoFar[current] + 1;
+                if(!costSoFar.ContainsKey(next) || newCost < costSoFar[next])
+                {
+                    costSoFar[next] = newCost;
+                    int priority = newCost;
+                    if(priority < range) frontier.Enqueue(next, priority);
+                }
+            }
+        }
+
+        foreach (KeyValuePair<TileNavMeshNode, int> pair in costSoFar)
+        {
+            outputRange.Add(pair.Key.position);
+        }
+
+        return outputRange;
+    }
+
+    public List<Vector3Int> GetFilteredRangeCordinates(Vector3Int startingLocation, int range, List<TileNavMeshLinkType> filteredLinks)
+    {
+        List<Vector3Int> outputRange = new List<Vector3Int>();
+
+        if(!IsValidLocation(startingLocation)) 
+        {
+            return outputRange;
+        }
+
+        TileNavMeshNode startPoint = GetPointAt(startingLocation);
+
+        // A star
+        PriorityQueue<TileNavMeshNode, int> frontier = new PriorityQueue<TileNavMeshNode, int>();
+        frontier.Enqueue(startPoint, 0);
+        Dictionary<TileNavMeshNode, int> costSoFar = new Dictionary<TileNavMeshNode, int>();
+        costSoFar[startPoint] = 0;
+
+        while(frontier.Count != 0)
+        {
+            TileNavMeshNode current = frontier.Dequeue();
+
+            List<TileNavMeshEdge> links = current.links;
+            foreach (TileNavMeshEdge link in links)
+            {
+                if(filteredLinks.Contains(link.linkType)) continue;
+
+                TileNavMeshNode next = GetPointAt(link.otherEnd);
+                
+                int newCost = costSoFar[current] + 1;
+                if(!costSoFar.ContainsKey(next) || newCost < costSoFar[next])
+                {
+                    costSoFar[next] = newCost;
+                    int priority = newCost;
+                    if(priority <= range) frontier.Enqueue(next, priority);
+                }
+            }
+        }
+
+        foreach (KeyValuePair<TileNavMeshNode, int> pair in costSoFar)
+        {
+            outputRange.Add(pair.Key.position);
+        }
+
+        return outputRange;
+    }
+
+    public List<Vector3Int> GetMaskedRangeCordinates(Vector3Int startingLocation, int range, List<TileNavMeshLinkType> maskedLinks)
+    {
+        List<Vector3Int> outputRange = new List<Vector3Int>();
+
+        if(!IsValidLocation(startingLocation)) 
+        {
+            return outputRange;
+        }
+
+        TileNavMeshNode startPoint = GetPointAt(startingLocation);
+
+        // A star
+        PriorityQueue<TileNavMeshNode, int> frontier = new PriorityQueue<TileNavMeshNode, int>();
+        frontier.Enqueue(startPoint, 0);
+        Dictionary<TileNavMeshNode, int> costSoFar = new Dictionary<TileNavMeshNode, int>();
+        costSoFar[startPoint] = 0;
+
+        while(frontier.Count != 0)
+        {
+            TileNavMeshNode current = frontier.Dequeue();
+
+            List<TileNavMeshEdge> links = current.links;
+            foreach (TileNavMeshEdge link in links)
+            {
+                if(!maskedLinks.Contains(link.linkType)) continue;
+
+                TileNavMeshNode next = GetPointAt(link.otherEnd);
+                
+                int newCost = costSoFar[current] + 1;
+                if(!costSoFar.ContainsKey(next) || newCost < costSoFar[next])
+                {
+                    costSoFar[next] = newCost;
+                    int priority = newCost;
+                    if(priority <= range) frontier.Enqueue(next, priority);
+                }
+            }
+        }
+
+        foreach (KeyValuePair<TileNavMeshNode, int> pair in costSoFar)
+        {
+            outputRange.Add(pair.Key.position);
+        }
+
+        return outputRange;
+    }
+
+    public List<Vector3Int> GetPathCordinates(Vector3Int startingLocation, Vector3Int endingLocation, int range)
+    {
+       List<Vector3Int> path = new List<Vector3Int>();
+       
+       if(!IsValidLocation(startingLocation) || !IsValidLocation(endingLocation)) 
+        {
+            Debug.Log("TileMapNavMesh: Failed to find path because the start or end location are out of bounds");
+            return path;
+        }
+
+        TileNavMeshNode startPoint = GetPointAt(startingLocation);
+        TileNavMeshNode endPoint = GetPointAt(endingLocation);
+
+        // A star
+        PriorityQueue<TileNavMeshNode, int> frontier = new PriorityQueue<TileNavMeshNode, int>();
+        frontier.Enqueue(startPoint, 0);
+        Dictionary<TileNavMeshNode, TileNavMeshNode> cameFrom = new Dictionary<TileNavMeshNode, TileNavMeshNode>();
+        Dictionary<TileNavMeshNode, int> costSoFar = new Dictionary<TileNavMeshNode, int>();
+        cameFrom[startPoint] = startPoint;
+        costSoFar[startPoint] = 0;
+
+        while(frontier.Count  != 0)
+        {
+            TileNavMeshNode current = frontier.Dequeue();
+
+            if (current == endPoint)
+                break;
+            
+            // List<TileNavMeshNode> neighbors = GetNeighbors(current.position);
+
+            List<TileNavMeshEdge> links = current.links;
+            foreach (TileNavMeshEdge link in links)
+            {
+                TileNavMeshNode next = GetPointAt(link.otherEnd);
+                
+                int newCost = costSoFar[current] + (int)Vector3Int.Distance(current.position, next.position);
+                if(!costSoFar.ContainsKey(next) || newCost < costSoFar[next])
+                {
+                    costSoFar[next] = newCost;
+                    int priority = newCost + (int)Vector3Int.Distance(next.position, endPoint.position);
+                    frontier.Enqueue(next, priority);
+                    cameFrom[next] = current;
+                }
+            }
+        }
+
+        
+        // runs backwards to get path
+        if(cameFrom.ContainsKey(endPoint))
+        {
+            
+            TileNavMeshNode x = endPoint;
+
+            path.Add(x.position);
+
+            while (x.position != startPoint.position)
+            {
+                x = cameFrom[x];
+                path.Add(x.position);
+            }
+
+            path.Reverse();
+
+            if(path.Count > range)
+            {
+                path.Clear();
+            }
+
+            return path;
+        }
+        else 
+        {
+            Debug.Log("TileMapNavMesh: Failed to find path because destination is unreachable");
+            return path;
+        }
+ 
+    }
 
     public bool GetPath(Vector3Int startLocation, Vector3Int endLocation, ref List<TileNavMeshNode> path)
     {
@@ -432,6 +662,32 @@ public class TileMapNavMesh : MonoBehaviour
             return false;
         }
     }
+ 
+    public bool IsValidLocation(Vector3Int location)
+    {
+        for (int i = 0; i < points.Count; i++)
+        {
+            if(location == points[i].position) return true;
+        }
+
+        return false;
+    }
+
+    public bool IsValidLocation(Vector3Int location, out int index)
+    {
+        index = -1;
+
+        for (int i = 0; i < points.Count; i++)
+        {
+            if(location == points[i].position) 
+            {
+                index = i;
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     public Vector3 TileLocationToWorldPosition(Vector3Int location)
     {
@@ -457,10 +713,5 @@ public class TileMapNavMesh : MonoBehaviour
         return IsValidLocation(result);
     }
 
-    public List<NavMeshTileFlags> GetPointFlags(Vector3Int location)
-    {
-        if(!IsValidLocation(location)) return null;
-        
-        return GetPointAt(location).flags;
-    }
+    
 }

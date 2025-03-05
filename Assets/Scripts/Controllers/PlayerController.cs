@@ -709,6 +709,48 @@ public class PlayerController : GameController
         }
     }
 
+    public void OnMousePosition(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                AbilityUsageContext abilityUsageContext = new AbilityUsageContext();
+                abilityUsageContext.Setup();
+
+                Vector2Control mouseScreenPos = Pointer.current.position;
+                Vector3 point = new Vector3();
+
+                point = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x.value, mouseScreenPos.y.value, 0));
+                point.z = 0;
+
+                abilityUsageContext.m_mousePos = point;
+                
+                foreach (CombatUnit unit in playerCombatUnits)
+                {
+                    unit.RenderPreviewSelection(abilityUsageContext);
+                }
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
     // Universal Inputs ---------------------------
 
     public void OnLore(InputAction.CallbackContext callbackContext)
