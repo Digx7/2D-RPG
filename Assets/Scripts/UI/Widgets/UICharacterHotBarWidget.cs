@@ -50,7 +50,7 @@ public class UICharacterHotBarWidget : UIWidget
         abilityDataListChannel.channelEvent.RemoveListener(RenderAbilities);
         onFocusedCombatUnitChannel.channelEvent.RemoveListener(RenderInspector);
 
-        if(focusedUnit != null) focusedUnit.OnEnergyUpdate.RemoveListener(energyElement.SetEnergy);
+        if(focusedUnit != null) focusedUnit.OnEnergyUpdate_Absolute.RemoveListener(energyElement.SetEnergy);
 
         base.Teardown();
     }
@@ -92,7 +92,7 @@ public class UICharacterHotBarWidget : UIWidget
         uITurnOrderIcon.Render(focusedUnit.TurnOrderIcon);
 
         energyElement.SetEnergy(focusedUnit.CurrentEnergy);
-        focusedUnit.OnEnergyUpdate.AddListener(energyElement.SetEnergy);
+        focusedUnit.OnEnergyUpdate_Absolute.AddListener(energyElement.SetEnergy);
     }
 
     public void OnPointerEnterAction(AbilityData abilityData)
