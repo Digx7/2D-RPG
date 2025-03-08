@@ -594,10 +594,14 @@ MonoBehaviour:
   actionImage: {fileID: 6268290041181886328}
   buttonTextMeshPro: {fileID: 7029882591495907947}
   costTextMeshPro: {fileID: 723874950405917261}
+  requestCanConfirmAbilities: {fileID: 11400000, guid: 05ef49501ddc4484093158f975aa8d72, type: 2}
   OnPointerEnter:
     m_PersistentCalls:
       m_Calls: []
   OnPointerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerClick:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &544695895036863206
@@ -636,6 +640,22 @@ MonoBehaviour:
         - m_Target: {fileID: 8038620764044532581}
           m_TargetAssemblyTypeName: CharacterHotBarElement, Assembly-CSharp
           m_MethodName: RaiseOnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8038620764044532581}
+          m_TargetAssemblyTypeName: CharacterHotBarElement, Assembly-CSharp
+          m_MethodName: RaisOnPointerClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

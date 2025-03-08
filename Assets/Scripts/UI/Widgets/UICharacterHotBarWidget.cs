@@ -13,9 +13,20 @@ public class UICharacterHotBarWidget : UIWidget
     public TextMeshProUGUI toolTipAbilityName;
     public TextMeshProUGUI toolTipAbilityDescription;
     public AbilityDataListChannel abilityDataListChannel;
+
+    private List<CombatUnit> playerCombatUnits;
+    
     
     public override void Setup(UIWidgetData newUIWidgetData)
     {
+        playerCombatUnits = new List<CombatUnit>();
+        CombatUnit[] combatUnits = FindObjectsByType<CombatUnit>(FindObjectsSortMode.None);
+
+        for (int i = 0; i < combatUnits.Length; i++)
+        {
+            if(combatUnits[i].combatFaction == CombatFaction.PLAYER) playerCombatUnits.Add(combatUnits[i]);
+        }
+        
         abilityDataListChannel.channelEvent.AddListener(Render);
         
         base.Setup(newUIWidgetData);
@@ -45,6 +56,8 @@ public class UICharacterHotBarWidget : UIWidget
 
         characterHotBarElement.SetAbility(abilityData);
         characterHotBarElement.SetButton(button);
+        characterHotBarElement.SetAbilityIndex(Int32.Parse(button) - 1);
+        characterHotBarElement.OnPointerClick.AddListener(OnPointerClick);
 
         characterHotBarElement.OnPointerEnter.AddListener(OnPointerEnterAction);
         characterHotBarElement.OnPointerExit.AddListener(OnPointerExit);
@@ -60,5 +73,13 @@ public class UICharacterHotBarWidget : UIWidget
     public void OnPointerExit(AbilityData abilityData)
     {
         toolTip.SetActive(false);
+    }
+
+    public void OnPointerClick(int abilityIndex)
+    {
+        foreach (CombatUnit unit in playerCombatUnits)
+        {
+            unit.PreviewAbility(abilityIndex);
+        }
     }
 }

@@ -12,9 +12,13 @@ public class CharacterHotBarElement : MonoBehaviour
     public TextMeshProUGUI buttonTextMeshPro;
     public TextMeshProUGUI costTextMeshPro;
     private AbilityData abilityData;
+    private int abilityIndex = 0;
+
+    public BooleanChannel requestCanConfirmAbilities;
 
     public AbilityDataEvent OnPointerEnter;
     public AbilityDataEvent OnPointerExit;
+    public IntEvent OnPointerClick;
 
     public void SetAbility(AbilityData newAbilityData)
     {
@@ -39,13 +43,28 @@ public class CharacterHotBarElement : MonoBehaviour
         costTextMeshPro.text = cost;
     }
 
+    public void SetAbilityIndex(int index)
+    {
+        abilityIndex = index;
+        // Debug.Log("" + abilityIndex);
+    }
+
     public void RaiseOnPointerEnter()
     {
+        requestCanConfirmAbilities.Raise(false);
         OnPointerEnter.Invoke(abilityData);
     }
 
     public void RaiseOnPointerExit()
     {
+        requestCanConfirmAbilities.Raise(true);
         OnPointerExit.Invoke(abilityData);
+    }
+
+    public void RaisOnPointerClick()
+    {
+        // Debug.Log("Raise with " + abilityIndex);
+        
+        OnPointerClick.Invoke(abilityIndex);
     }
 }

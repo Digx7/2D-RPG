@@ -13,9 +13,11 @@ public class PlayerController : GameController
     [SerializeField] private UIWidgetData pauseMenuWidgetData;
     [SerializeField] private Channel onCombatStartChannel;
     [SerializeField] private Channel onCombatEndChannel;
+    [SerializeField] private BooleanChannel requestCanConfirmAbilities;
     private PlayerCharacter possessedPlayer;
     private PlayerInput playerInput;
     private List<CombatUnit> playerCombatUnits;
+    private bool canConfirmAbilities = true;
 
     // OVERRIDE FUNCTIONS ==============================================
 
@@ -54,6 +56,7 @@ public class PlayerController : GameController
 
         onCombatStartChannel.channelEvent.AddListener(OnCombatStart);
         onCombatEndChannel.channelEvent.AddListener(OnCombatEnd);
+        requestCanConfirmAbilities.channelEvent.AddListener(SetCanConfirmAbilities);
 
         playerInput = GetComponent<PlayerInput>();
     }
@@ -64,6 +67,7 @@ public class PlayerController : GameController
 
         onCombatStartChannel.channelEvent.RemoveListener(OnCombatStart);
         onCombatEndChannel.channelEvent.RemoveListener(OnCombatEnd);
+        requestCanConfirmAbilities.channelEvent.AddListener(SetCanConfirmAbilities);
     }
 
     // CHANNEL FUNCTIONS ================================================
@@ -105,6 +109,11 @@ public class PlayerController : GameController
         // Updates player animations
         PlayerCharacter2D playerCharacter2D = (PlayerCharacter2D)possessedPlayer;
         playerCharacter2D.UpdateAnimatorInCombat(false);
+    }
+
+    public void SetCanConfirmAbilities(bool input)
+    {
+        canConfirmAbilities = input;
     }
 
     // CAMERA FUNCTIONS ===================================================
@@ -653,21 +662,7 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                AbilityUsageContext abilityUsageContext = new AbilityUsageContext();
-                abilityUsageContext.Setup();
-
-                Vector2Control mouseScreenPos = Pointer.current.position;
-                Vector3 point = new Vector3();
-
-                point = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x.value, mouseScreenPos.y.value, 0));
-                point.z = 0;
-
-                abilityUsageContext.m_mousePos = point;
-                
-                foreach (CombatUnit unit in playerCombatUnits)
-                {
-                    unit.ConfirmAbility(abilityUsageContext);
-                }
+                if(canConfirmAbilities)ConfirmAbility();
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here
@@ -695,9 +690,12 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                foreach (CombatUnit unit in playerCombatUnits)
+                if(canConfirmAbilities)
                 {
-                    unit.StopPreviewing();
+                    foreach (CombatUnit unit in playerCombatUnits)
+                    {
+                        unit.StopPreviewing();
+                    }
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -825,4 +823,27 @@ public class PlayerController : GameController
     {
 
     }
+
+
+    // Other -------------------------------------------
+
+    public void ConfirmAbility()
+    {
+        AbilityUsageContext abilityUsageContext = new AbilityUsageContext();
+        abilityUsageContext.Setup();
+
+        Vector2Control mouseScreenPos = Pointer.current.position;
+        Vector3 point = new Vector3();
+
+        point = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x.value, mouseScreenPos.y.value, 0));
+        point.z = 0;
+
+        abilityUsageContext.m_mousePos = point;
+        
+        foreach (CombatUnit unit in playerCombatUnits)
+        {
+            unit.ConfirmAbility(abilityUsageContext);
+        }
+    }
+
 }
