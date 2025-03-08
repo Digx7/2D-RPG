@@ -7,6 +7,7 @@ using TMPro;
 public class UICharacterHotBarWidget : UIWidget
 {
 
+    [Header("Actions")]
     public GameObject actionElementPrefab;
     public Transform actionElementParent;
     public GameObject toolTip;
@@ -14,7 +15,15 @@ public class UICharacterHotBarWidget : UIWidget
     public TextMeshProUGUI toolTipAbilityDescription;
     public AbilityDataListChannel abilityDataListChannel;
 
+    [Header("Inspector")]
+    public HealthBarElement healthBarElement;
+    public UITurnOrderIcon uITurnOrderIcon;
+    public WeaknessOrStrengthHolderElement weaknessOrStrengthHolderElement;
+    public EnergyElement energyElement;
+    public CombatUnitChannel onFocusedCombatUnitChannel;
+
     private List<CombatUnit> playerCombatUnits;
+    private CombatUnit focusedUnit;
     
     
     public override void Setup(UIWidgetData newUIWidgetData)
@@ -27,7 +36,10 @@ public class UICharacterHotBarWidget : UIWidget
             if(combatUnits[i].combatFaction == CombatFaction.PLAYER) playerCombatUnits.Add(combatUnits[i]);
         }
         
-        abilityDataListChannel.channelEvent.AddListener(Render);
+
+
+        abilityDataListChannel.channelEvent.AddListener(RenderAbilities);
+        onFocusedCombatUnitChannel.channelEvent.AddListener(RenderInspector);
         
         base.Setup(newUIWidgetData);
 
@@ -35,12 +47,15 @@ public class UICharacterHotBarWidget : UIWidget
 
     public override void Teardown()
     {
-        abilityDataListChannel.channelEvent.RemoveListener(Render);
+        abilityDataListChannel.channelEvent.RemoveListener(RenderAbilities);
+        onFocusedCombatUnitChannel.channelEvent.RemoveListener(RenderInspector);
+
+        if(focusedUnit != null) focusedUnit.OnEnergyUpdate.RemoveListener(energyElement.SetEnergy);
 
         base.Teardown();
     }
 
-    public void Render(List<AbilityData> abilities)
+    public void RenderAbilities(List<AbilityData> abilities)
     {
         for (int i = 0; i < abilities.Count; i++)
         {
@@ -61,6 +76,23 @@ public class UICharacterHotBarWidget : UIWidget
 
         characterHotBarElement.OnPointerEnter.AddListener(OnPointerEnterAction);
         characterHotBarElement.OnPointerExit.AddListener(OnPointerExit);
+    }
+
+    public void RenderInspector(CombatUnit combatUnit)
+    {
+        focusedUnit = combatUnit;
+        
+        Health health = focusedUnit.gameObject.GetComponent<Health>();
+        healthBarElement.health = health;
+        healthBarElement.Setup();
+
+        weaknessOrStrengthHolderElement.health = health;
+        weaknessOrStrengthHolderElement.Render();
+
+        uITurnOrderIcon.Render(focusedUnit.TurnOrderIcon);
+
+        energyElement.SetEnergy(focusedUnit.CurrentEnergy);
+        focusedUnit.OnEnergyUpdate.AddListener(energyElement.SetEnergy);
     }
 
     public void OnPointerEnterAction(AbilityData abilityData)

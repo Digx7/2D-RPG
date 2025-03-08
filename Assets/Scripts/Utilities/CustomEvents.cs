@@ -50,3 +50,6 @@ public class SceneContextEvent : UnityEvent<SceneContext> {}
 
 [System.Serializable]
 public class SpriteListEvent : UnityEvent<List<Sprite>> {}
+
+[System.Serializable]
+public class CombatUnitEvent : UnityEvent<CombatUnit> {}

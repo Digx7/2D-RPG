@@ -12,23 +12,44 @@ public class HealthBarElement : UIElement
     public Slider slider;
     private float maxHealth;
     private float currentHealth;
+    public bool setUpOnEnable = true;
 
+    public void Setup()
+    {
+        if(health != null)
+        {
+            health.OnDamage.AddListener(Damage);
+            health.OnHeal.AddListener(Heal);
+
+            maxHealth = health.MaxHealth;
+            currentHealth = health.CurrentHealth;
+        }
+    }
+    
     public void OnEnable()
     {
-        health.OnDamage.AddListener(Damage);
-        health.OnHeal.AddListener(Heal);
+        if(setUpOnEnable)
+        {
+            Setup();
+        }
     }
 
     public void OnDisable()
     {
-        health.OnDamage.RemoveListener(Damage);
-        health.OnHeal.RemoveListener(Heal);
+        if(health != null)
+        {
+            health.OnDamage.RemoveListener(Damage);
+            health.OnHeal.RemoveListener(Heal);
+        }
     }
 
     private void Start()
     {
-        maxHealth = health.MaxHealth;
-        currentHealth = health.CurrentHealth;
+        if(setUpOnEnable)
+        {
+            maxHealth = health.MaxHealth;
+            currentHealth = health.CurrentHealth;
+        }
     }
 
     private void Render()

@@ -732,6 +732,7 @@ MonoBehaviour:
   requestLoadUIChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
   requestUnLoadUIChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
   abilitiesListChannel: {fileID: 11400000, guid: 2bdd837513142ed4092038aa522f3878, type: 2}
+  onFocusedCombatUnitChannel: {fileID: 11400000, guid: c4820ac874f335744b8d743cb5f613a3, type: 2}
 --- !u!1 &4406845818231183219
 GameObject:
   m_ObjectHideFlags: 0
