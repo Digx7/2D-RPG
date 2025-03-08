@@ -21,12 +21,20 @@ public class MovePreview : AbilityPreview
         TileMapNavMesh tileMapNavMesh = m_navMeshAgent.tileMapNavMesh;
         if(tileMapNavMesh == null) 
         {
+            Debug.Log("Move Validation Failed: TileMapNavMesh == NULL");
             return false;
         }
 
         Vector3Int endLocation = Vector3Int.zero;
         if(!tileMapNavMesh.WorldPositionToTileLocation(abilityUsageContext.m_mousePos, ref endLocation))
         {
+            Debug.Log("Move Validation Failed: Chosen location is not on the NavMesh (Screen Location: " + abilityUsageContext.m_mousePos + " NavMesh Location: " + endLocation);
+            return false;
+        }
+
+        if(tileMapNavMesh.IsLocationOccupied(endLocation))
+        {
+            Debug.Log("Move Validation Failed: Location (" + endLocation + ") is occupied");
             return false;
         }
 
@@ -34,12 +42,19 @@ public class MovePreview : AbilityPreview
 
         if(!tileMapNavMesh.GetPath(m_location, endLocation, ref path))
         {
+            Debug.Log("Move Validation Failed: Get Path Failed");
             return false;
         }
 
         if(path.Count > m_caster.Stats.data.Speed)
         {
-            Debug.Log("Move Preview: Validation failed because the Path was to long");
+            Debug.Log("Move Validation Failed: Path.Count (" + path.Count + " > " + m_caster.Stats.data.Speed + " Speed");
+            
+            foreach (TileNavMeshNode node in path)
+            {
+                Debug.Log("" + node.position);
+            }
+
             return false;
         }
 

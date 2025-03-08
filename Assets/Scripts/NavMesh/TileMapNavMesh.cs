@@ -402,11 +402,13 @@ public class TileMapNavMesh : MonoBehaviour
             {
                 TileNavMeshNode next = GetPointAt(link.otherEnd);
                 
-                int newCost = costSoFar[current] + (int)Vector3Int.Distance(current.position, next.position);
+                // int newCost = costSoFar[current] + (int)Vector3Int.Distance(current.position, next.position);
+                int newCost = costSoFar[current] + 1;
                 if(!costSoFar.ContainsKey(next) || newCost < costSoFar[next])
                 {
                     costSoFar[next] = newCost;
-                    int priority = newCost + (int)Vector3Int.Distance(next.position, endPoint.position);
+                    // int priority = newCost + (int)Vector3Int.Distance(next.position, endPoint.position);
+                    int priority = newCost;
                     frontier.Enqueue(next, priority);
                     cameFrom[next] = current;
                 }
@@ -480,11 +482,13 @@ public class TileMapNavMesh : MonoBehaviour
             {
                 TileNavMeshNode next = GetPointAt(link.otherEnd);
                 
-                int newCost = costSoFar[current] + (int)Vector3Int.Distance(current.position, next.position);
+                // int newCost = costSoFar[current] + (int)Vector3Int.Distance(current.position, next.position);
+                int newCost = costSoFar[current] + 1;
                 if(!costSoFar.ContainsKey(next) || newCost < costSoFar[next])
                 {
                     costSoFar[next] = newCost;
-                    int priority = newCost + (int)Vector3Int.Distance(next.position, endPoint.position);
+                    // int priority = newCost + (int)Vector3Int.Distance(next.position, endPoint.position);
+                    int priority = newCost;
                     frontier.Enqueue(next, priority);
                     cameFrom[next] = current;
                 }
@@ -663,6 +667,18 @@ public class TileMapNavMesh : MonoBehaviour
         }
     }
  
+    public bool IsLocationOccupied(Vector3Int location)
+    {
+        TileNavMeshAgent[] allAgents = GameObject.FindObjectsByType<TileNavMeshAgent>(FindObjectsSortMode.None);
+
+        foreach (TileNavMeshAgent agent in allAgents)
+        {
+            if(agent.location == location) return true;
+        }
+
+        return false;
+    }
+
     public bool IsValidLocation(Vector3Int location)
     {
         for (int i = 0; i < points.Count; i++)
@@ -708,7 +724,7 @@ public class TileMapNavMesh : MonoBehaviour
         result.y = (int)worldPosition.y;
         result.z = 0;
 
-        Debug.Log("TileMapNavMesh: World -> Tile: " + worldPosition + " -> " + result);
+        // Debug.Log("TileMapNavMesh: World -> Tile: " + worldPosition + " -> " + result);
 
         return IsValidLocation(result);
     }
