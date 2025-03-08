@@ -463,6 +463,15 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MoveCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""ccda5ec0-563c-4dc9-8018-677462c37a79"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -630,6 +639,61 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""d311fbc5-e61a-4f67-b146-227a577db7f8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""5bb49b95-c3c8-4490-90b2-02d1bf6fa335"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""28ebd5ce-b845-4d4f-8cf8-a18ccc7fe4b5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6e3d1a00-0586-4083-8850-ab9eaa99b068"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""845ba765-87b0-4ec3-a34b-fc2361712165"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -996,6 +1060,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Combat_Confirm_Ability = m_Combat.FindAction("Confirm_Ability", throwIfNotFound: true);
         m_Combat_Back_Ability = m_Combat.FindAction("Back_Ability", throwIfNotFound: true);
         m_Combat_MousePosition = m_Combat.FindAction("MousePosition", throwIfNotFound: true);
+        m_Combat_MoveCamera = m_Combat.FindAction("MoveCamera", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -1256,6 +1321,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_Combat_Confirm_Ability;
     private readonly InputAction m_Combat_Back_Ability;
     private readonly InputAction m_Combat_MousePosition;
+    private readonly InputAction m_Combat_MoveCamera;
     /// <summary>
     /// Provides access to input actions defined in input action map "Combat".
     /// </summary>
@@ -1328,6 +1394,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// </summary>
         public InputAction @MousePosition => m_Wrapper.m_Combat_MousePosition;
         /// <summary>
+        /// Provides access to the underlying input action "Combat/MoveCamera".
+        /// </summary>
+        public InputAction @MoveCamera => m_Wrapper.m_Combat_MoveCamera;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
@@ -1398,6 +1468,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
+            @MoveCamera.started += instance.OnMoveCamera;
+            @MoveCamera.performed += instance.OnMoveCamera;
+            @MoveCamera.canceled += instance.OnMoveCamera;
         }
 
         /// <summary>
@@ -1454,6 +1527,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
+            @MoveCamera.started -= instance.OnMoveCamera;
+            @MoveCamera.performed -= instance.OnMoveCamera;
+            @MoveCamera.canceled -= instance.OnMoveCamera;
         }
 
         /// <summary>
@@ -1870,6 +1946,13 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMousePosition(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MoveCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMoveCamera(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

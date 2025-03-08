@@ -45,9 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  camera: {fileID: 0}
+  cameraPrefab: {fileID: 0}
   connectedPlayerController: {fileID: 0}
   playerCharacter: {fileID: 0}
   OnCameraManagerFinishedSetup: {fileID: 11400000, guid: 4a255e74701a3ce40ac885c36ad867c6, type: 2}
+  RequestFocusLocationChannel: {fileID: 11400000, guid: 61fe7d0c0a112bc46bfb9b4a279e8e72, type: 2}
+  RequestStartFollowingUnitChannel: {fileID: 11400000, guid: cd84baaa1ed15e043a62106e034541e7, type: 2}
+  RequestStopFollowingUnitChannel: {fileID: 11400000, guid: c165960bda7b7db46a946a0b0812954a, type: 2}
   runSetupOnEnable: 1
   controllerToConnectToOnEnable: {fileID: 0}
   playerCharacterToConnectToOnEnable: {fileID: 0}

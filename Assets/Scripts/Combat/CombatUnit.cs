@@ -29,6 +29,10 @@ public class CombatUnit : MonoBehaviour
     public IntEvent OnEnergyUpdate_Absolute;
     public IntEvent OnEnergyUpdate_Delta;
     public StringChannel OnCombatLogChannel;
+    public Vector3Channel RequestFocusUnitChannel;
+    public CombatUnitChannel RequestStartFollowingUnitChannel;
+    public Channel RequestStopFollowingUnitChannel;
+    public bool followUnit = false;
 
     private bool isTurn = false;
     private bool isUsingAbility = false;
@@ -68,6 +72,8 @@ public class CombatUnit : MonoBehaviour
         if(!isTurn) return;
 
         Debug.Log("CombatUnit: " + UnitName + " ending turn");
+
+        if(followUnit) RequestStopFollowingUnitChannel.Raise();
 
         isTurn = false;
         isUsingAbility = false;
@@ -222,6 +228,17 @@ public class CombatUnit : MonoBehaviour
             OnEnergyUpdate_Delta.Invoke(Stats.data.EnergyGain);
 
             Debug.Log("CombatUnit: It is the " + UnitName + "s turn\nEnergy: " + CurrentEnergy);
+
+            if(followUnit)
+            {
+                RequestStartFollowingUnitChannel.Raise(this);
+            }
+            else
+            {
+                RequestFocusUnitChannel.Raise(transform.position);
+            }
+
+            
 
             onStartTurn.Invoke();
         }

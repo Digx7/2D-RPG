@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 250
+  isFlying: 0
   jumpForce: 10
   jumpBufferCheckDistance: 2
   groundedCheckDistance: 2
@@ -1298,6 +1299,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnCombatLogChannel: {fileID: 11400000, guid: 123e25af74046014ba5a161e95eaaaa2, type: 2}
+  RequestFocusUnitChannel: {fileID: 11400000, guid: 61fe7d0c0a112bc46bfb9b4a279e8e72, type: 2}
+  RequestStartFollowingUnitChannel: {fileID: 11400000, guid: cd84baaa1ed15e043a62106e034541e7, type: 2}
+  RequestStopFollowingUnitChannel: {fileID: 11400000, guid: c165960bda7b7db46a946a0b0812954a, type: 2}
+  followUnit: 0
 --- !u!114 &8839921623085788326
 MonoBehaviour:
   m_ObjectHideFlags: 0
