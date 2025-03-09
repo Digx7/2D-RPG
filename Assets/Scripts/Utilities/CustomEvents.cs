@@ -53,3 +53,6 @@ public class SpriteListEvent : UnityEvent<List<Sprite>> {}
 
 [System.Serializable]
 public class CombatUnitEvent : UnityEvent<CombatUnit> {}
+
+[System.Serializable]
+public class CombatUnitListEvent : UnityEvent<List<CombatUnit>> {}

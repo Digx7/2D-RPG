@@ -11,8 +11,12 @@ public class CharacterHotBarElement : MonoBehaviour
     public Image actionImage;
     public TextMeshProUGUI buttonTextMeshPro;
     public TextMeshProUGUI costTextMeshPro;
+    public ImageColorHelper generalImageColorHelper;
+    public ImageColorHelper boaderImageColorHelper;
     private AbilityData abilityData;
     private int abilityIndex = 0;
+    private bool isBeingPreviewed = false;
+    private bool canAfford = true;
 
     public BooleanChannel requestCanConfirmAbilities;
 
@@ -26,6 +30,20 @@ public class CharacterHotBarElement : MonoBehaviour
 
         actionImage.sprite = abilityData.AbilityIcon;
         costTextMeshPro.text = "" + abilityData.EnergyCost;
+
+        abilityData.OnSpawnPreview.AddListener(StartPreviewing);
+        abilityData.OnDespawnPreview.AddListener(StopPreviewing);
+        abilityData.OnUpdateCanAfford.AddListener(SetCanAfford);
+    }
+
+    public void OnDisable()
+    {
+        if(abilityData != null)
+        {
+            abilityData.OnSpawnPreview.RemoveListener(StartPreviewing);
+            abilityData.OnDespawnPreview.RemoveListener(StopPreviewing);
+            abilityData.OnUpdateCanAfford.RemoveListener(SetCanAfford);
+        }
     }
 
     public void SetImage(Sprite sprite)
@@ -47,6 +65,59 @@ public class CharacterHotBarElement : MonoBehaviour
     {
         abilityIndex = index;
         // Debug.Log("" + abilityIndex);
+    }
+
+    public void RefreshColor()
+    {
+        if(!canAfford)
+        {
+            generalImageColorHelper.SetColorIndex(1);
+            boaderImageColorHelper.SetColorIndex(1);
+        }
+        else if(isBeingPreviewed)
+        {
+            generalImageColorHelper.SetColorIndex(0);
+            boaderImageColorHelper.SetColorIndex(2);
+        }
+        else
+        {
+            generalImageColorHelper.SetColorIndex(0);
+            boaderImageColorHelper.SetColorIndex(0);
+        }
+    }
+
+    public void SetIsBeingPreviewed(bool value)
+    {
+        isBeingPreviewed = value;
+        RefreshColor();
+    }
+
+    public void StartPreviewing()
+    {
+        SetIsBeingPreviewed(true);
+    }
+
+    public void StopPreviewing()
+    {
+        SetIsBeingPreviewed(false);
+    }
+
+    public void SetCanAfford(bool value)
+    {
+        canAfford = value;
+        RefreshColor();
+    }
+
+    public void CheckIfCanAfford(int CurrentEnergy)
+    {
+        if(CurrentEnergy >= abilityData.EnergyCost)
+        {
+            SetCanAfford(true);
+        }
+        else
+        {
+            SetCanAfford(false);
+        }
     }
 
     public void RaiseOnPointerEnter()

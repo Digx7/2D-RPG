@@ -266,5 +266,5 @@ MonoBehaviour:
   RequestUnloadWidgetDataChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
   iconPrefab: {fileID: 3139539390696268354, guid: 54d7c6906ce9cba4d9c448e0edddf1b7, type: 3}
   iconParent: {fileID: 2229968826575786415}
-  onSetupChannel: {fileID: 11400000, guid: db5da0630fc68b34c9f210a528e8adac, type: 2}
+  onSetupChannel: {fileID: 11400000, guid: 7e6dae4a211072e4abccb7bcc179c9dc, type: 2}
   onNextTurnChannel: {fileID: 11400000, guid: 50e519fff4ea31042b4b5a6d64bad7f4, type: 2}

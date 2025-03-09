@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 453350267725474019}
   - component: {fileID: 6589152092786113514}
   - component: {fileID: 3993812430219437248}
+  - component: {fileID: 2875351814372585977}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -499,6 +500,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2875351814372585977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203111360528685254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e245decb4293f7d428e796a3fff5475a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 1}
+  - {r: 1, g: 0.654902, b: 0, a: 1}
+  images:
+  - {fileID: 3993812430219437248}
 --- !u!1 &7089779441215466940
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +531,7 @@ GameObject:
   - component: {fileID: 6268290041181886328}
   - component: {fileID: 8038620764044532581}
   - component: {fileID: 544695895036863206}
+  - component: {fileID: 3689660132540832432}
   m_Layer: 5
   m_Name: CharacterHotBarAction
   m_TagString: Untagged
@@ -594,6 +614,8 @@ MonoBehaviour:
   actionImage: {fileID: 6268290041181886328}
   buttonTextMeshPro: {fileID: 7029882591495907947}
   costTextMeshPro: {fileID: 723874950405917261}
+  generalImageColorHelper: {fileID: 3689660132540832432}
+  boaderImageColorHelper: {fileID: 2875351814372585977}
   requestCanConfirmAbilities: {fileID: 11400000, guid: 05ef49501ddc4484093158f975aa8d72, type: 2}
   OnPointerEnter:
     m_PersistentCalls:
@@ -665,3 +687,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &3689660132540832432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089779441215466940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e245decb4293f7d428e796a3fff5475a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 1}
+  images:
+  - {fileID: 4965966843111480639}
+  - {fileID: 138251544094151816}
+  - {fileID: 6268290041181886328}

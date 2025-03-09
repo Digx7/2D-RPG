@@ -156,10 +156,26 @@ public class CombatUnit : MonoBehaviour
 
             int cost = abilities[index].EnergyCost;
             CurrentEnergy -= cost;
+            RefresCanAffordAbilities();
             OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
             // OnEnergyUpdate_Delta.Invoke(cost * (-1));
 
             Debug.Log("CombatUnit: " + UnitName + " spends " + abilities[index].EnergyCost + " energy leaving it with " + CurrentEnergy + " energy");
+        }
+    }
+
+    public void RefresCanAffordAbilities()
+    {
+        foreach (AbilityData ability in abilities)
+        {
+            if(CurrentEnergy >= ability.EnergyCost)
+            {
+                ability.OnUpdateCanAfford.Invoke(true);
+            }
+            else
+            {
+                ability.OnUpdateCanAfford.Invoke(false);
+            }
         }
     }
 
@@ -172,6 +188,7 @@ public class CombatUnit : MonoBehaviour
         if(damageResult.weakOrRessistant == WeakOrRessistant.WEAK)
         {
             CurrentEnergy -= 1;
+            RefresCanAffordAbilities();
             if(CurrentEnergy < 0) CurrentEnergy = 0;
             OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
             OnEnergyUpdate_Delta.Invoke(-1);
@@ -179,6 +196,7 @@ public class CombatUnit : MonoBehaviour
         else if(damageResult.weakOrRessistant == WeakOrRessistant.RESSISTANT)
         {
             CurrentEnergy += 1 * Stats.data.EnergyGain;
+            RefresCanAffordAbilities();
             OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
             OnEnergyUpdate_Delta.Invoke(1);
         }
@@ -224,6 +242,7 @@ public class CombatUnit : MonoBehaviour
         {
             
             CurrentEnergy += Stats.data.EnergyGain;
+            RefresCanAffordAbilities();
             OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
             OnEnergyUpdate_Delta.Invoke(Stats.data.EnergyGain);
 

@@ -14,6 +14,10 @@ public class AbilityData : ScriptableObject
     public string Description;
     public GameObject abilityPrefab;
     public GameObject previewPrefab;
+    public UnityEvent OnSpawnAbility;
+    public UnityEvent OnSpawnPreview;
+    public UnityEvent OnDespawnPreview;
+    public BooleanEvent OnUpdateCanAfford;
 
     private GameObject instantiatedObj;
 
@@ -30,6 +34,8 @@ public class AbilityData : ScriptableObject
         }
 
         Ability ability = instantiatedObj.GetComponent<Ability>();
+
+        OnSpawnAbility.Invoke();
         ability.Setup(caster, abilityUsageContext);
         ability.Use();
     }
@@ -50,6 +56,8 @@ public class AbilityData : ScriptableObject
         AbilityPreview abilityPreview;
         if(instantiatedObj.TryGetComponent<AbilityPreview>(out abilityPreview))
         {
+            OnSpawnPreview.Invoke();
+            
             abilityPreview.Setup(caster);
             abilityPreview.Use();
         }
@@ -60,7 +68,10 @@ public class AbilityData : ScriptableObject
     {
         AbilityPreview abilityPreview;
         if(instantiatedObj.TryGetComponent<AbilityPreview>(out abilityPreview))
-            abilityPreview.Teardown();
+            {
+                OnDespawnPreview.Invoke();
+                abilityPreview.Teardown();
+            }
     }
 
     public bool Validate(AbilityUsageContext abilityUsageContext)

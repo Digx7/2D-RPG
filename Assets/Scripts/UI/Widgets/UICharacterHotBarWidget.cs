@@ -23,6 +23,7 @@ public class UICharacterHotBarWidget : UIWidget
     public CombatUnitChannel onFocusedCombatUnitChannel;
 
     private List<CombatUnit> playerCombatUnits;
+    private List<CharacterHotBarElement> characterHotBarElements;
     private CombatUnit focusedUnit;
     
     
@@ -66,6 +67,8 @@ public class UICharacterHotBarWidget : UIWidget
 
     public void SpawnActionElement(AbilityData abilityData, string button)
     {
+        characterHotBarElements = new List<CharacterHotBarElement>();
+        
         GameObject obj = Instantiate(actionElementPrefab, actionElementParent);
         CharacterHotBarElement characterHotBarElement = obj.GetComponent<CharacterHotBarElement>();
 
@@ -76,6 +79,13 @@ public class UICharacterHotBarWidget : UIWidget
 
         characterHotBarElement.OnPointerEnter.AddListener(OnPointerEnterAction);
         characterHotBarElement.OnPointerExit.AddListener(OnPointerExit);
+
+        if(focusedUnit != null)
+        {
+            characterHotBarElement.CheckIfCanAfford(focusedUnit.CurrentEnergy);
+        }
+
+        characterHotBarElements.Add(characterHotBarElement);
     }
 
     public void RenderInspector(CombatUnit combatUnit)
@@ -89,10 +99,19 @@ public class UICharacterHotBarWidget : UIWidget
         weaknessOrStrengthHolderElement.health = health;
         weaknessOrStrengthHolderElement.Render();
 
-        uITurnOrderIcon.Render(focusedUnit.TurnOrderIcon);
+        // uITurnOrderIcon.Render(focusedUnit.TurnOrderIcon);
+        uITurnOrderIcon.SetCombatUnit(focusedUnit);
 
         energyElement.SetEnergy(focusedUnit.CurrentEnergy);
         focusedUnit.OnEnergyUpdate_Absolute.AddListener(energyElement.SetEnergy);
+
+        if(characterHotBarElements != null)
+        {
+            foreach (CharacterHotBarElement element in characterHotBarElements)
+            {
+                element.CheckIfCanAfford(focusedUnit.CurrentEnergy);
+            }
+        }
     }
 
     public void OnPointerEnterAction(AbilityData abilityData)
