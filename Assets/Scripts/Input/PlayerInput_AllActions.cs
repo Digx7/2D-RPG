@@ -522,7 +522,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""493d11c8-8443-4965-8a5e-2cfd0f2019ba"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
@@ -544,7 +544,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""75951b36-44cd-4cca-861c-97462e27c971"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/7"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
@@ -599,7 +599,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""f56e7912-bd06-49e4-880c-d9fa80ee3d7f"",
-                    ""path"": ""<Keyboard>/minus"",
+                    ""path"": ""<Keyboard>/equals"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",

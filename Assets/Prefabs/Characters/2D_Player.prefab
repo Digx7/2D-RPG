@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1860804825
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 12cb75511c54e9d49a821f6c2feb4e74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1118,9 +1118,12 @@ MonoBehaviour:
   DefaultEnergy: 2
   Stats: {fileID: 11400000, guid: 50400bde98bc82e4ca30bcc1afba83bc, type: 2}
   abilities:
-  - {fileID: 11400000, guid: eb97fb75873d61c4d869a831e35d2cb6, type: 2}
-  - {fileID: 11400000, guid: 1ad095de379d8a04c9461683d33e81b2, type: 2}
   - {fileID: 11400000, guid: ce7846a6062de3d45919974963280ac5, type: 2}
+  - {fileID: 11400000, guid: 4e465efa961d9e749af4cefb50cd27e9, type: 2}
+  - {fileID: 11400000, guid: eb97fb75873d61c4d869a831e35d2cb6, type: 2}
+  - {fileID: 11400000, guid: 71140544900480444b4d6e619af1d8c2, type: 2}
+  - {fileID: 11400000, guid: 1ad095de379d8a04c9461683d33e81b2, type: 2}
+  - {fileID: 11400000, guid: c691e325e596f1443af48543590176e8, type: 2}
   - {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
   combatFaction: 0
   TurnOrderIcon: {fileID: 21300000, guid: a4b1ba9c92bf15a40a6fe254843f20e2, type: 3}

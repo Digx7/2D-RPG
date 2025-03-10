@@ -15,6 +15,20 @@ MonoBehaviour:
   AbilityName: Fly
   EnergyCost: 1
   AbilityIcon: {fileID: 21300000, guid: 31967bff097ba0b4cbcff6debd6229e4, type: 3}
-  Description: Fly up to a number of spaces equal to your speed
+  Description: 'Cost 0
+
+    Fly up to a number of spaces equal to your speed'
   abilityPrefab: {fileID: 4406510644390687505, guid: 32ff897e67147364f9b0aea84f0c30d6, type: 3}
   previewPrefab: {fileID: 7090164341912964269, guid: b2fa8f304b54f3241958b76e5b7f23da, type: 3}
+  OnSpawnAbility:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnPreview:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDespawnPreview:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdateCanAfford:
+    m_PersistentCalls:
+      m_Calls: []

@@ -15,6 +15,20 @@ MonoBehaviour:
   AbilityName: Move
   EnergyCost: 1
   AbilityIcon: {fileID: 21300000, guid: 70b8992b9e97ed74199c44c828b9c78a, type: 3}
-  Description: Move up to a number of spaces equal to your speed
+  Description: 'Cost 1
+
+    Move up to a number of spaces equal to your speed'
   abilityPrefab: {fileID: 4406510644390687505, guid: 9592f3f6c5449744ca8cbb0f9457ea4f, type: 3}
   previewPrefab: {fileID: 7090164341912964269, guid: 35019c3d94a43324cbd9214fc990781c, type: 3}
+  OnSpawnAbility:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnPreview:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDespawnPreview:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdateCanAfford:
+    m_PersistentCalls:
+      m_Calls: []

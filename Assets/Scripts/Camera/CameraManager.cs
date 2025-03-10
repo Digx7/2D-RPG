@@ -221,7 +221,7 @@ public class CameraManager : MonoBehaviour
     {
         while(isFollowingUnit)
         {
-            Debug.Log("Follow 1");
+            // Debug.Log("Follow 1");
             
             Vector3 targetPosition = new Vector3(m_unitToFollow.transform.position.x, m_unitToFollow.transform.position.y, -10);
             
@@ -232,7 +232,7 @@ public class CameraManager : MonoBehaviour
 
             while(currentTimer <= maxTime)
             {
-                Debug.Log("Follw 2");
+                // Debug.Log("Follw 2");
                 
                 currentTimer += Time.deltaTime;
 
