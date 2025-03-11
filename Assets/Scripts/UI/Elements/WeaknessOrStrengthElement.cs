@@ -12,6 +12,7 @@ public class WeaknessOrStrengthElement : UIElement
     public Image image;
     public Color weaknessColor;
     public Color strengthColor;
+    public Color healsColor;
 
     public void Setup(Modifier modifier)
     {
@@ -19,13 +20,26 @@ public class WeaknessOrStrengthElement : UIElement
         {
             image.color = weaknessColor;
         }
-        else if(modifier.multiplier < 1)
+        else if(modifier.multiplier < 1 && modifier.multiplier > 0)
         {
             image.color = strengthColor;
+        }
+        else if(modifier.multiplier < 0)
+        {
+            image.color = healsColor;
         }
 
         switch(modifier.damageType)
         {
+            case DamageType.SLASH:
+                letterTextMeshPro.text = "S";
+                break;
+            case DamageType.PIERCE:
+                letterTextMeshPro.text = "P";
+                break;
+            case DamageType.BLUDGEON:
+                letterTextMeshPro.text = "B";
+                break;
             case DamageType.FIRE:
                 letterTextMeshPro.text = "F";
                 break;
@@ -38,8 +52,11 @@ public class WeaknessOrStrengthElement : UIElement
             case DamageType.WATER:
                 letterTextMeshPro.text = "W";
                 break;
+            case DamageType.LIFE:
+                letterTextMeshPro.text = "Lif";
+                break;
             case DamageType.LIGHT:
-                letterTextMeshPro.text = "L";
+                letterTextMeshPro.text = "Lig";
                 break;
             case DamageType.DARK:
                 letterTextMeshPro.text = "D";

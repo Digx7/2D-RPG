@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1701202179725200170}
   - component: {fileID: 4790870361578826617}
   m_Layer: 5
-  m_Name: Weakness_Strength
+  m_Name: WeaknessOrStrengthHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

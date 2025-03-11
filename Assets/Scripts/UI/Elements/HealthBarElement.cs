@@ -60,14 +60,14 @@ public class HealthBarElement : UIElement
 
     public void Damage(DamageResult damageResult)
     {
-        currentHealth -= damageResult.trueDamage;
+        currentHealth -= damageResult.trueDamage.amount;
         if(currentHealth < 0) currentHealth = 0;
         Render();
     }
 
     public void Heal(DamageResult damageResult)
     {
-        currentHealth += damageResult.trueDamage;
+        currentHealth += damageResult.trueDamage.amount;
         if(currentHealth > maxHealth) currentHealth = maxHealth;
         Render();
     }

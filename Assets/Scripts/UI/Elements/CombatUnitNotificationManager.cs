@@ -52,7 +52,7 @@ public class CombatUnitNotificationManager : MonoBehaviour
     {
         CombatUnitNotification notification;
 
-        notification.message = damageResult.trueDamage.ToString();
+        notification.message = damageResult.trueDamage.amount.ToString();
         Color color = Color.white;
         CombatUnitNotificationSize size = CombatUnitNotificationSize.MEDIUM;
 
@@ -70,6 +70,10 @@ public class CombatUnitNotificationManager : MonoBehaviour
                 color = Color.blue;
                 size = CombatUnitNotificationSize.SMALL;
                 break;
+            case WeakOrRessistant.HEALS:
+                color = Color.green;
+                size = CombatUnitNotificationSize.LARGE;
+                break;
             default:
                 break;
         }
@@ -82,31 +86,7 @@ public class CombatUnitNotificationManager : MonoBehaviour
 
     public void OnHeal(DamageResult healResult)
     {
-        CombatUnitNotification notification;
-
-        notification.message = healResult.trueDamage.ToString();
-        Color color = Color.green;
-        CombatUnitNotificationSize size = CombatUnitNotificationSize.MEDIUM;
-
-        switch (healResult.weakOrRessistant)
-        {
-            case WeakOrRessistant.WEAK:
-                size = CombatUnitNotificationSize.LARGE;
-                break;
-            case WeakOrRessistant.NORMAL:
-                size = CombatUnitNotificationSize.MEDIUM;
-                break;
-            case WeakOrRessistant.RESSISTANT:
-                size = CombatUnitNotificationSize.SMALL;
-                break;
-            default:
-                break;
-        }
-
-        notification.color = color;
-        notification.size = size;
-
-        Notify(notification);
+        OnDamage(healResult);
     }
 
     public void OnEnergyChange(int delta)

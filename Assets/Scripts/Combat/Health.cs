@@ -22,72 +22,61 @@ public class Health : MonoBehaviour
 
     public void Damage(Damage incomingDamage)
     {
+        DamageResult damageResult = GetTrueDamage(incomingDamage);
+
+        CurrentHealth -= damageResult.trueDamage.amount;
+        if(CurrentHealth < 0) CurrentHealth = 0;
+
+        if(damageResult.weakOrRessistant == WeakOrRessistant.HEALS)
+        {
+            damageResult.trueDamage.amount *= -1;
+            OnHeal.Invoke(damageResult);
+            if(isDead && CurrentHealth > 0) OnRevive.Invoke();
+        }
+        else
+        {
+            OnDamage.Invoke(damageResult);
+            if(CheckIfIsDead()) Dead();
+        }
+    }
+
+    public void Heal(Damage incomingHeal)
+    {
+        Damage(incomingHeal);
+    }
+
+    private DamageResult GetTrueDamage(Damage incomingDamage)
+    {
         DamageResult damageResult;
 
-        damageResult.trueDamage = incomingDamage.amount;
+        damageResult.trueDamage = incomingDamage;
 
         foreach (Modifier modifier in Modifiers)
         {
             if(incomingDamage.damageType == modifier.damageType)
             {
-                damageResult.trueDamage = damageResult.trueDamage * modifier.multiplier;
+                damageResult.trueDamage.amount = damageResult.trueDamage.amount * modifier.multiplier;
             }
         }
 
-        CurrentHealth -= damageResult.trueDamage;
-        if(CurrentHealth < 0) CurrentHealth = 0;
-
-        if(damageResult.trueDamage > incomingDamage.amount) 
+        if(damageResult.trueDamage.amount > incomingDamage.amount) 
         {
             damageResult.weakOrRessistant = WeakOrRessistant.WEAK;
-
-            Debug.Log("Health: took " + damageResult.trueDamage + " " + incomingDamage.damageType + " damage\nIts super effective\nCurrentHealth: " + CurrentHealth);
         }
-        else if(damageResult.trueDamage < incomingDamage.amount) 
+        else if(damageResult.trueDamage.amount < incomingDamage.amount && damageResult.trueDamage.amount > 0) 
         {
             damageResult.weakOrRessistant = WeakOrRessistant.RESSISTANT;
-
-            Debug.Log("Health: took " + damageResult.trueDamage + " " + incomingDamage.damageType + " damage\nIts NOT effective\nCurrentHealth: " + CurrentHealth);
+        }
+        else if(damageResult.trueDamage.amount < 0)
+        {
+            damageResult.weakOrRessistant = WeakOrRessistant.HEALS;
         }
         else 
         {
             damageResult.weakOrRessistant = WeakOrRessistant.NORMAL;
-
-            Debug.Log("Health: took " + damageResult.trueDamage + " " + incomingDamage.damageType + " damage\nIts normal\nCurrentHealth: " + CurrentHealth);
         }
 
-        OnDamage.Invoke(damageResult);
-
-        if(CheckIfIsDead()) Dead();
-    }
-
-    public void Heal(Damage incomingHeal)
-    {
-        DamageResult healResult;
-
-        healResult.trueDamage = incomingHeal.amount;
-
-        foreach (Modifier modifier in Modifiers)
-        {
-            if(incomingHeal.damageType == modifier.damageType)
-            {
-                healResult.trueDamage = healResult.trueDamage * modifier.multiplier;
-            }
-        }
-
-        CurrentHealth += healResult.trueDamage;
-
-        if(CurrentHealth > MaxHealth) CurrentHealth = MaxHealth;
-
-        if(healResult.trueDamage > incomingHeal.amount) healResult.weakOrRessistant = WeakOrRessistant.WEAK;
-        else if(healResult.trueDamage > incomingHeal.amount) healResult.weakOrRessistant = WeakOrRessistant.RESSISTANT;
-        else healResult.weakOrRessistant = WeakOrRessistant.NORMAL;
-
-        Debug.Log("Health: Healed " + healResult.trueDamage + "\nCurrentHealth: " + CurrentHealth);
-
-        OnHeal.Invoke(healResult);
-
-        if(isDead && CurrentHealth > 0) OnRevive.Invoke();
+        return damageResult;
     }
 
     public bool CheckIfIsDead()
@@ -108,13 +97,17 @@ public struct Damage
 {
     public DamageType damageType;
     public float amount;
+    public string Print()
+    {
+        return amount + " " + damageType;
+    }
 }
 
 [System.Serializable]
 public struct DamageResult
 {
     public WeakOrRessistant weakOrRessistant;
-    public float trueDamage;
+    public Damage trueDamage;
 }
 
 [System.Serializable]
@@ -127,13 +120,13 @@ public struct Modifier
 [System.Serializable]
 public enum DamageType
 {
-    FIRE, EARTH, AIR, WATER, LIGHT, DARK
+    SLASH, PIERCE, BLUDGEON, FIRE, EARTH, AIR, WATER, LIFE, LIGHT, DARK
 }
 
 [System.Serializable]
 public enum WeakOrRessistant
 {
-    WEAK, RESSISTANT, NORMAL
+    WEAK, RESSISTANT, HEALS, NORMAL
 }
 
 [System.Serializable]

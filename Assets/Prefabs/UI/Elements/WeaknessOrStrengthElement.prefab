@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1499596704630957545}
   - component: {fileID: 5310339486984590456}
   m_Layer: 5
-  m_Name: WeaknessOrStrength
+  m_Name: WeaknessOrStrengthElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,8 @@ MonoBehaviour:
   letterTextMeshPro: {fileID: 5592930622425932938}
   image: {fileID: 1499596704630957545}
   weaknessColor: {r: 0.98039216, g: 0.5764706, b: 0.52156866, a: 1}
-  strengthColor: {r: 0.6117647, g: 1, b: 0.59607846, a: 1}
+  strengthColor: {r: 0.1696925, g: 0.73440343, b: 0.9811321, a: 1}
+  healsColor: {r: 0.6117647, g: 1, b: 0.59607846, a: 1}
 --- !u!1 &7227264810261985973
 GameObject:
   m_ObjectHideFlags: 0

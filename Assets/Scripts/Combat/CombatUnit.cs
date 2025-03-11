@@ -185,6 +185,24 @@ public class CombatUnit : MonoBehaviour
 
         if(HurtAnimationName != "" && animator != null)animator.Play(HurtAnimationName);
 
+        UpdateEnergyAfterHit(damageResult);
+
+        OnCombatLogChannel.Raise("" + UnitName + " took " + damageResult.trueDamage.Print() + " damage");
+    }
+
+    public void OnHeal(DamageResult damageResult)
+    {
+        if(IsDead) return;
+        
+        if(HealAnimationName != "" && animator != null)animator.Play(HealAnimationName);
+
+        UpdateEnergyAfterHit(damageResult);
+
+        OnCombatLogChannel.Raise("" + UnitName + " healed " + damageResult.trueDamage.Print());
+    }
+
+    private void UpdateEnergyAfterHit(DamageResult damageResult)
+    {
         if(damageResult.weakOrRessistant == WeakOrRessistant.WEAK)
         {
             CurrentEnergy -= 1;
@@ -195,22 +213,18 @@ public class CombatUnit : MonoBehaviour
         }
         else if(damageResult.weakOrRessistant == WeakOrRessistant.RESSISTANT)
         {
+            // CurrentEnergy += 1 * Stats.data.EnergyGain;
+            // RefresCanAffordAbilities();
+            // OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
+            // OnEnergyUpdate_Delta.Invoke(1);
+        }
+        else if(damageResult.weakOrRessistant == WeakOrRessistant.HEALS)
+        {
             CurrentEnergy += 1 * Stats.data.EnergyGain;
             RefresCanAffordAbilities();
             OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
             OnEnergyUpdate_Delta.Invoke(1);
         }
-
-        OnCombatLogChannel.Raise("" + UnitName + " took " + damageResult.trueDamage + " damage");
-    }
-
-    public void OnHeal(DamageResult damageResult)
-    {
-        if(IsDead) return;
-        
-        if(HealAnimationName != "" && animator != null)animator.Play(HealAnimationName);
-
-        OnCombatLogChannel.Raise("" + UnitName + " healed " + damageResult.trueDamage);
     }
 
     public void OnDeath()
