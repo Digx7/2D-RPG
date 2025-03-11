@@ -69,6 +69,10 @@ PrefabInstance:
       value: Evil Wizard 1
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: TurnOrderIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: af39ef272ba2a674db83faa1a597ce71, type: 3}
+    - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: HurtAnimationName
       value: Hurt
       objectReference: {fileID: 0}

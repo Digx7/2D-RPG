@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireWorm_Hurt
+  m_Name: Fantasy Warrior_Hurt
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -811824617, guid: 28132f7d955fd1d4cbad671e19de8a30, type: 3}
+      value: {fileID: -9869758, guid: 2934e8060ac96174393fcfb4af1ac3d1, type: 3}
     - time: 0.083333336
-      value: {fileID: 167249573, guid: 28132f7d955fd1d4cbad671e19de8a30, type: 3}
+      value: {fileID: -752023020, guid: 2934e8060ac96174393fcfb4af1ac3d1, type: 3}
     - time: 0.16666667
-      value: {fileID: 1411090161, guid: 28132f7d955fd1d4cbad671e19de8a30, type: 3}
+      value: {fileID: -703349777, guid: 2934e8060ac96174393fcfb4af1ac3d1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -811824617, guid: 28132f7d955fd1d4cbad671e19de8a30, type: 3}
-    - {fileID: 167249573, guid: 28132f7d955fd1d4cbad671e19de8a30, type: 3}
-    - {fileID: 1411090161, guid: 28132f7d955fd1d4cbad671e19de8a30, type: 3}
+    - {fileID: -9869758, guid: 2934e8060ac96174393fcfb4af1ac3d1, type: 3}
+    - {fileID: -752023020, guid: 2934e8060ac96174393fcfb4af1ac3d1, type: 3}
+    - {fileID: -703349777, guid: 2934e8060ac96174393fcfb4af1ac3d1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

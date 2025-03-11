@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1020506609, guid: b230fa8d8980b97488d7789883d5c0f1, type: 3}
+    - target: {fileID: 901811555681938497, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 198.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3470456916750989321, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: m_Name
       value: Fire Worm Variant
@@ -60,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 41559856a365a85448affdee4a556a1b, type: 2}
+    - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: TurnOrderIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 432199e85dbb4db40941474d44409946, type: 3}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: HurtAnimationName
       value: Hurt
@@ -70,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: abilities.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: 'abilities.Array.data[0]'
@@ -79,11 +87,15 @@ PrefabInstance:
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: 'abilities.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 5b62d68717a13dd4f934403886ce40f6, type: 2}
+      objectReference: {fileID: 11400000, guid: 71140544900480444b4d6e619af1d8c2, type: 2}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: 'abilities.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: 102c6a0b39d30f94f87b82be23ed7d97, type: 2}
+      objectReference: {fileID: 11400000, guid: c691e325e596f1443af48543590176e8, type: 2}
+    - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: 'abilities.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ce7846a6062de3d45919974963280ac5, type: 2}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStartTurn.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -99,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStartTurn.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 4274435506389214082}
+      objectReference: {fileID: 7886105842481446622}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStartTurn.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -115,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStillHasEnergyLeft.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 4274435506389214082}
+      objectReference: {fileID: 7886105842481446622}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStillHasEnergyLeft.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -126,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStartTurn.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FlyingEyeAI, Assembly-CSharp
+      value: FireWormAI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStartTurn.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
@@ -134,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStillHasEnergyLeft.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: FlyingEyeAI, Assembly-CSharp
+      value: FireWormAI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: onStillHasEnergyLeft.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
@@ -148,20 +160,24 @@ PrefabInstance:
       propertyPath: onStillHasEnergyLeft.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6621938532178646840, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 205.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3470456916750989321, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4274435506389214082}
+      addedObject: {fileID: 7886105842481446622}
   m_SourcePrefab: {fileID: 100100000, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
 --- !u!1 &8318997102718015147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3470456916750989321, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
   m_PrefabInstance: {fileID: 4853343162002812578}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4274435506389214082
+--- !u!114 &7886105842481446622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8318997102718015147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0207bbd6ceef94db1185fcaf147003, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b200811e866fc4289cf92a30f78737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thinkTime: 0.5
