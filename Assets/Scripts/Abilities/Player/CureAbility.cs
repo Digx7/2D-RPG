@@ -43,7 +43,9 @@ public class CureAbility : Ability
             {
                 if(agent.location == range[i])
                 {
-                    agent.gameObject.GetComponent<Health>().Heal(damage);
+                    Damage trueDamage = damage;
+                    damage.amount += m_caster.Stats.Wisdom.TrueValue();
+                    agent.gameObject.GetComponent<Health>().Heal(trueDamage);
                 }
             }
         }

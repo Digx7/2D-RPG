@@ -65,6 +65,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 41559856a365a85448affdee4a556a1b, type: 2}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 11400000, guid: e3a4ddc78cbc54e42a48ef485640e665, type: 2}
+    - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: TurnOrderIcon
       value: 
       objectReference: {fileID: 21300000, guid: 432199e85dbb4db40941474d44409946, type: 3}

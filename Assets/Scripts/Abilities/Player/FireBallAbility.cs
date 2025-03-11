@@ -43,7 +43,9 @@ public class FireBallAbility : Ability
             {
                 if(agent.location == range[i])
                 {
-                    agent.gameObject.GetComponent<Health>().Damage(damage);
+                    Damage trueDamage = damage;
+                    damage.amount += m_caster.Stats.Intelligence.TrueValue();
+                    agent.gameObject.GetComponent<Health>().Damage(trueDamage);
                 }
             }
         }

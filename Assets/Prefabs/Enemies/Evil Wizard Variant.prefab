@@ -65,6 +65,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 83946996bb2f993479a0efbbb1bcb178, type: 2}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 2afb592f9ec8e1047a498c727eab62da, type: 2}
+    - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: UnitName
       value: Evil Wizard 1
       objectReference: {fileID: 0}

@@ -52,9 +52,9 @@ public class FlyingEyeAI : AI
 
         if(m_NavMesh.GetPath(m_tileNavMeshAgent.location, closestPlayer, ref path))
         {
-            Debug.Log("Path Length: " + path.Count + " trying to access index " + (m_combatUnit.Stats.data.Speed - 1));
+            Debug.Log("Path Length: " + path.Count + " trying to access index " + (m_combatUnit.Stats.Speed.TrueValue() - 1));
             
-            int index = m_combatUnit.Stats.data.Speed - 1;
+            int index = m_combatUnit.Stats.Speed.TrueValue() - 1;
 
             if(index >= path.Count) index = path.Count - 1;
 

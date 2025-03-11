@@ -14,9 +14,21 @@ public class Health : MonoBehaviour
     public UnityEvent OnDeath;
     public UnityEvent OnRevive;
     private bool isDead = false;
+    private CombatUnit m_CombatUnit;
 
     private void Awake()
     {
+        // CurrentHealth = MaxHealth;
+
+
+        gameObject.TryGetComponent<CombatUnit>(out m_CombatUnit);
+        if(m_CombatUnit != null)
+        {
+            MaxHealth = m_CombatUnit.Stats.MaxHealth.TrueValue();
+
+            Modifiers = m_CombatUnit.Stats.GetAllDamageModifiers();
+        }
+
         CurrentHealth = MaxHealth;
     }
 

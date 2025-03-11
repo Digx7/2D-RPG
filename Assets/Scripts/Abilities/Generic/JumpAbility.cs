@@ -14,20 +14,8 @@ public class JumpAbility : Ability
     {
         movement2D = m_caster.GetComponent<Movement2D>();
         tileNavMeshAgent = m_caster.GetComponent<TileNavMeshAgent>();
-        // tileNavMeshAgent.TryToMoveToWorldPosition(m_context.m_mousePos);
-        // tileNavMeshAgent.OnReachEndOfPath.AddListener(EndMove);
-
-        // TODO
+        
         tileNavMeshAgent.TryTeleportToWorldPosition(m_context.m_mousePos);
         base.Use();
-
-        // m_caster.animator.SetBool("IsRunning", true);
     }
-
-    // public void EndMove()
-    // {
-    //     m_caster.animator.SetBool("IsRunning", false);
-    //     tileNavMeshAgent.OnReachEndOfPath.RemoveListener(EndMove);
-    //     Teardown();
-    // }
 }

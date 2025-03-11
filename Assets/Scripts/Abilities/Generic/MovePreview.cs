@@ -8,12 +8,11 @@ using System.Collections.Generic;
 public class MovePreview : AbilityPreview
 {
 
-    private int m_speed;
+   
     
     public override void Setup(CombatUnit newCaster)
     {
         base.Setup(newCaster);
-        m_speed = m_caster.Stats.data.Speed;
     }
 
     public override bool Validate(AbilityUsageContext abilityUsageContext)
@@ -46,9 +45,9 @@ public class MovePreview : AbilityPreview
             return false;
         }
 
-        if(path.Count > m_caster.Stats.data.Speed)
+        if(path.Count > m_caster.Stats.Speed.TrueValue())
         {
-            Debug.Log("Move Validation Failed: Path.Count (" + path.Count + " > " + m_caster.Stats.data.Speed + " Speed");
+            Debug.Log("Move Validation Failed: Path.Count (" + path.Count + " > " + m_caster.Stats.Speed.TrueValue() + " Speed");
             
             foreach (TileNavMeshNode node in path)
             {
@@ -66,7 +65,7 @@ public class MovePreview : AbilityPreview
         UITileMapRequest request = new UITileMapRequest();
         request.header = UITileMapRequestHeader.FILL;
         request.location = m_location;
-        request.range = m_caster.Stats.data.Speed;
+        request.range = m_caster.Stats.Speed.TrueValue();
         request.context = selectableContext;
 
         requestUITileMapChannel.Raise(request);
@@ -88,7 +87,7 @@ public class MovePreview : AbilityPreview
             request.locations = new List<Vector3Int>();
             request.locations.Add(m_location);
             request.locations.Add(endLocation);
-            request.range = m_caster.Stats.data.Speed;
+            request.range = m_caster.Stats.Speed.TrueValue();
             request.context = lineContext;
 
             requestUITileMapChannel.Raise(request);

@@ -65,6 +65,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 0555628f0a0357944beffd9e77220a3d, type: 2}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
       propertyPath: UnitName
       value: Warrior
       objectReference: {fileID: 0}

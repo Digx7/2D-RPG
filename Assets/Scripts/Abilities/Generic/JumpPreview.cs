@@ -8,14 +8,12 @@ using System.Collections.Generic;
 public class JumpPreview : AbilityPreview
 {
     public string AirNavMashName;
-    private int m_speed;
     private TileMapNavMesh m_groundedNavMash;
     private TileMapNavMesh m_airNavMesh;
     
     public override void Setup(CombatUnit newCaster)
     {
         base.Setup(newCaster);
-        m_speed = m_caster.Stats.data.Speed;
         m_groundedNavMash = m_navMeshAgent.tileMapNavMesh;
 
         GameObject obj = GameObject.Find(AirNavMashName);
@@ -125,7 +123,7 @@ public class JumpPreview : AbilityPreview
     {
         List<Vector3Int> validLocations = new List<Vector3Int>();
 
-        List<Vector3Int> airLocations = m_airNavMesh.GetRangeCordintates(m_location, 10);
+        List<Vector3Int> airLocations = m_airNavMesh.GetRangeCordintates(m_location, m_caster.Stats.Dexterity.TrueValue());
 
         for (int i = 0; i < airLocations.Count; i++)
         {

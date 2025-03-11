@@ -52,7 +52,9 @@ public class SlashAbility : Ability
             {
                 if(agent.location == location)
                 {
-                    agent.gameObject.GetComponent<Health>().Damage(damage);
+                    Damage trueDamage = damage;
+                    trueDamage.amount += m_caster.Stats.Strength.TrueValue();
+                    agent.gameObject.GetComponent<Health>().Damage(trueDamage);
                 }
             }
         }

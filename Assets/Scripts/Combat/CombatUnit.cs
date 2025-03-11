@@ -220,7 +220,7 @@ public class CombatUnit : MonoBehaviour
         }
         else if(damageResult.weakOrRessistant == WeakOrRessistant.HEALS)
         {
-            CurrentEnergy += 1 * Stats.data.EnergyGain;
+            CurrentEnergy += 1 * Stats.EnergyGain.TrueValue();
             RefresCanAffordAbilities();
             OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
             OnEnergyUpdate_Delta.Invoke(1);
@@ -254,11 +254,16 @@ public class CombatUnit : MonoBehaviour
         if(IsDead) EndTurn();
         else
         {
-            
-            CurrentEnergy += Stats.data.EnergyGain;
+            if(CurrentEnergy < Stats.EnergySoftCap.TrueValue())
+            {
+                int difference = Stats.EnergySoftCap.TrueValue() - CurrentEnergy;
+                CurrentEnergy = Stats.EnergySoftCap.TrueValue();
+                
+                OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
+                OnEnergyUpdate_Delta.Invoke(difference);
+            }
+
             RefresCanAffordAbilities();
-            OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
-            OnEnergyUpdate_Delta.Invoke(Stats.data.EnergyGain);
 
             Debug.Log("CombatUnit: It is the " + UnitName + "s turn\nEnergy: " + CurrentEnergy);
 

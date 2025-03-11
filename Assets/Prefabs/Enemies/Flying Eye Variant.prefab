@@ -53,6 +53,10 @@ PrefabInstance:
       value: Flying Eye Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 11400000, guid: e5e4ec46132fd4b41a468a51856b0cbc, type: 2}
+    - target: {fileID: 4801327353471203495, guid: ee88ac5438d028e4e8fe6f586c041ca6, type: 3}
       propertyPath: abilities.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -157,5 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0207bbd6ceef94db1185fcaf147003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thinkTime: 0.5
   thinkTime: 0.5
