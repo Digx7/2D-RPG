@@ -9,60 +9,72 @@ using TMPro;
 public class WeaknessOrStrengthElement : UIElement
 {
     public TextMeshProUGUI letterTextMeshPro;
-    public Image image;
-    public Color weaknessColor;
-    public Color strengthColor;
-    public Color healsColor;
+    public Image image_boarder;
+    public Image image_icon;
+
+    public Sprite boarder_weak;
+    public Sprite boarder_resistant;
+    public Sprite boarder_heals;
+
+    public Sprite icon_fire;
+    public Sprite icon_air;
+    public Sprite icon_earth;
+    public Sprite icon_water;
+    public Sprite icon_slash;
+    public Sprite icon_pierce;
+    public Sprite icon_bludgeon;
+    public Sprite icon_life;
+    public Sprite icon_light;
+    public Sprite icon_dark;
 
     public void Setup(Modifier modifier)
     {
-        if(modifier.multiplier > 1)
+        if(modifier.multiplier == 2)
         {
-            image.color = weaknessColor;
+            image_boarder.sprite = boarder_weak;
         }
-        else if(modifier.multiplier < 1 && modifier.multiplier > 0)
+        else if(modifier.multiplier == 0.5)
         {
-            image.color = strengthColor;
+            image_boarder.sprite = boarder_resistant;
         }
         else if(modifier.multiplier < 0)
         {
-            image.color = healsColor;
+            image_boarder.sprite = boarder_heals;
         }
 
         switch(modifier.damageType)
         {
             case DamageType.SLASH:
-                letterTextMeshPro.text = "S";
+                image_icon.sprite = icon_slash;
                 break;
             case DamageType.PIERCE:
-                letterTextMeshPro.text = "P";
+                image_icon.sprite = icon_pierce;
                 break;
             case DamageType.BLUDGEON:
-                letterTextMeshPro.text = "B";
+                image_icon.sprite = icon_bludgeon;
                 break;
             case DamageType.FIRE:
-                letterTextMeshPro.text = "F";
+                image_icon.sprite = icon_fire;
                 break;
             case DamageType.EARTH:
-                letterTextMeshPro.text = "E";
+                image_icon.sprite = icon_earth;
                 break;
             case DamageType.AIR:
-                letterTextMeshPro.text = "A";
+                image_icon.sprite = icon_air;
                 break;
             case DamageType.WATER:
-                letterTextMeshPro.text = "W";
+                image_icon.sprite = icon_water;
                 break;
             case DamageType.LIFE:
-                letterTextMeshPro.text = "Lif";
+                image_icon.sprite = icon_life;
                 break;
             case DamageType.LIGHT:
-                letterTextMeshPro.text = "Lig";
+                image_icon.sprite = icon_life;
                 break;
             case DamageType.DARK:
-                letterTextMeshPro.text = "D";
+                image_icon.sprite = icon_dark;
                 break;
             default:
-                letterTextMeshPro.text = "?";
                 break;
         }
     }

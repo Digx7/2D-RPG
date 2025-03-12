@@ -1126,7 +1126,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c691e325e596f1443af48543590176e8, type: 2}
   - {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
   combatFaction: 0
-  TurnOrderIcon: {fileID: 21300000, guid: a4b1ba9c92bf15a40a6fe254843f20e2, type: 3}
+  TurnOrderIcon: {fileID: 21300000, guid: d7c64e8f01e7ce249868f1c3e9c716cb, type: 3}
   animator: {fileID: 5114435388740637882}
   HurtAnimationName: Adventurer_Hurt
   HealAnimationName: 

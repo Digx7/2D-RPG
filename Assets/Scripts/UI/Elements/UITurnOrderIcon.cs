@@ -5,6 +5,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(ImageColorHelper))]
 public class UITurnOrderIcon : MonoBehaviour
 {
+    public ImageColorHelper boarderColorHelper;
+    public ImageColorHelper iconColorHelper;
     public Vector3Channel RequestFocusLocationChannel;
     public BooleanChannel requestCanConfirmAbilities;
     
@@ -38,15 +40,17 @@ public class UITurnOrderIcon : MonoBehaviour
     {
         if(isHighLighted)
         {
-            m_imageColorHelper.SetColorIndex(3);
+            boarderColorHelper.SetColorIndex(3);
+            iconColorHelper.SetColorIndex(0);
         }
         else if(isTurn)
         {
-            m_imageColorHelper.SetColorIndex(2);
+            boarderColorHelper.SetColorIndex(2);
         }
         else if(hasGone)
         {
-            m_imageColorHelper.SetColorIndex(1);
+            boarderColorHelper.SetColorIndex(1);
+            iconColorHelper.SetColorIndex(1);
         }
         else
         {
