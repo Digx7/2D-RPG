@@ -16,6 +16,8 @@ public class CameraManager : MonoBehaviour
     [SerializeField] protected Vector3Channel RequestFocusLocationChannel;
     [SerializeField] protected CombatUnitChannel RequestStartFollowingUnitChannel;
     [SerializeField] protected Channel RequestStopFollowingUnitChannel;
+    [SerializeField] protected Channel OnCombatStartChannel;
+    [SerializeField] protected Channel OnCombatEndChannel;
 
     [SerializeField] private bool runSetupOnEnable = true;
     [SerializeField] private PlayerController controllerToConnectToOnEnable;
@@ -24,7 +26,7 @@ public class CameraManager : MonoBehaviour
     private bool canMoveCameraManually = true;
     private bool isFocusing = false;
     private bool isFollowingUnit = false;
-    private CombatUnit m_unitToFollow;
+    private Transform m_transformToFollow;
 
     protected UnityEvent OnReachFocusLocation;
 
@@ -126,6 +128,7 @@ public class CameraManager : MonoBehaviour
         RequestFocusLocationChannel.channelEvent.AddListener(MoveCameraToLocation);
         RequestStartFollowingUnitChannel.channelEvent.AddListener(StartFollowingUnit);
         RequestStopFollowingUnitChannel.channelEvent.AddListener(StopFollowingUnit);
+        OnCombatStartChannel.channelEvent.AddListener(OnCombatStartChan)
 
         OnReachFocusLocation = new UnityEvent();
 
@@ -177,13 +180,26 @@ public class CameraManager : MonoBehaviour
 
     public void StartFollowingUnit(CombatUnit unitToFollow)
     {
+        // canMoveCameraManually = false;
+        // isFollowingUnit = true;
+
+        // m_transformToFollow = unitToFollow.transform;
+
+        // OnReachFocusLocation.AddListener(StartFollowingLoop);
+        // MoveCameraToLocation(m_transformToFollow.transform.position);
+
+        StartFollowingTransform(unitToFollow.transform);
+    }
+
+    public void StartFollowingTransform(Transform transformToFollow)
+    {
         canMoveCameraManually = false;
         isFollowingUnit = true;
 
-        m_unitToFollow = unitToFollow;
+        m_transformToFollow = transformToFollow;
 
         OnReachFocusLocation.AddListener(StartFollowingLoop);
-        MoveCameraToLocation(m_unitToFollow.transform.position);
+        MoveCameraToLocation(m_transformToFollow.transform.position);
     }
 
     private void StartFollowingLoop()
@@ -195,6 +211,16 @@ public class CameraManager : MonoBehaviour
     {
         isFollowingUnit = false;
         OnReachFocusLocation.RemoveListener(StartFollowingLoop);
+    }
+
+    public void OnStartCombat()
+    {
+
+    }
+
+    public void OnEndCombat()
+    {
+
     }
 
     IEnumerator FocusOnLocation(Vector3 focusLocation, Vector3 startLocation, float timeToTake)
@@ -223,7 +249,7 @@ public class CameraManager : MonoBehaviour
         {
             // Debug.Log("Follow 1");
             
-            Vector3 targetPosition = new Vector3(m_unitToFollow.transform.position.x, m_unitToFollow.transform.position.y, -10);
+            Vector3 targetPosition = new Vector3(m_transformToFollow.position.x, m_transformToFollow.position.y, -10);
             
             Vector3 currentPosition = camera.transform.position;
 

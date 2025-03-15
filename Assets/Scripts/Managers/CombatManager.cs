@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class CombatManager : Singleton<CombatManager>
 {
-    [SerializeField] private Channel requestCombatStartChannel;
+    // [SerializeField] private Channel requestCombatStartChannel;
+    [SerializeField] private CombatInstanceChannel notifyActiveCombatInstance;
     [SerializeField] private Channel onCombatStartChannel;
     [SerializeField] private Channel onCombatEndChannel;
     [SerializeField] private Channel onEndUnitTurnChannel;
@@ -19,6 +19,9 @@ public class CombatManager : Singleton<CombatManager>
     public UnityEvent onCombatEnd;
     private Prompter prompter;
     private int roundNumber;
+    private bool allCombatUnitsAreSetup = false;
+    private CombatInstance combatInstance;
+    private PartyManager partyManager;
 
     private List<CombatUnit> combatUnits;
 
@@ -32,45 +35,53 @@ public class CombatManager : Singleton<CombatManager>
 
     private void OnEnable()
     {
-        requestCombatStartChannel.channelEvent.AddListener(StartCombat);
+        // requestCombatStartChannel.channelEvent.AddListener(StartCombat);
+        notifyActiveCombatInstance.channelEvent.AddListener(StartCombat);
         onEndUnitTurnChannel.channelEvent.AddListener(OnEndUnitTurn);
         onNewRoundStartChannel.channelEvent.AddListener(OnNewRoundStart);
     }
 
     private void OnDisable()
     {
-        requestCombatStartChannel.channelEvent.RemoveListener(StartCombat);
+        // requestCombatStartChannel.channelEvent.RemoveListener(StartCombat);
+        notifyActiveCombatInstance.channelEvent.RemoveListener(StartCombat);
         onEndUnitTurnChannel.channelEvent.RemoveListener(OnEndUnitTurn);
         onNewRoundStartChannel.channelEvent.RemoveListener(OnNewRoundStart);
     }
 
-    private void StartCombat()
+    private void StartCombat(CombatInstance instance)
     {
         Debug.Log("CombatManager: Starting Combat");
         
         // loads combat ui
-        if(combatWidgetDatas.Count > 0)
-        {
-            foreach (UIWidgetData data in combatWidgetDatas)
-            {
-                onRequestLoadUIChannel.Raise(data);
-            }
-        }
+        // if(combatWidgetDatas.Count > 0)
+        // {
+        //     foreach (UIWidgetData data in combatWidgetDatas)
+        //     {
+        //         onRequestLoadUIChannel.Raise(data);
+        //     }
+        // }
 
-        SetupAllCombatUnits();
-        prompter.UpdateCombatUnitList(combatUnits);
-        roundNumber = 1;
+        // SetupAllCombatUnits();
+        // prompter.UpdateCombatUnitList(combatUnits);
+        // roundNumber = 1;
 
-        prompter.PromptFirstUnit();
+        // prompter.PromptFirstUnit();
 
-        onCombatStartChannel.Raise();
-        onCombatStart.Invoke();
+        // onCombatStartChannel.Raise();
+        // onCombatStart.Invoke();
+
+        combatInstance = instance;
+
+        StartCoroutine(SetupCombat());
     }
 
     private void EndCombat()
     {
         Debug.Log("CombatManager: Ending Combat");
         
+        combatInstance.SetInstanceActive(false);
+
         // loads combat ui
         if(combatWidgetDatas.Count > 0)
         {
@@ -85,17 +96,19 @@ public class CombatManager : Singleton<CombatManager>
             if(unit.IsDead) unit.DestroyUnit();
         }
 
+        partyManager.RemoveAllPartyMembers();
+
+        combatUnits.Clear();
+
         onCombatEndChannel.Raise();
         onCombatEnd.Invoke();
     }
 
-    private void SetupAllCombatUnits()
-    {
-        combatUnits.Clear();
-        combatUnits.AddRange(FindObjectsByType<CombatUnit>(FindObjectsSortMode.None));
-
-        // combatUnits.Sort((x,y) => x.Stats.data.Speed.CompareTo(y.Stats.data.Speed));
-    }
+    // private void SetupAllCombatUnits()
+    // {
+    //     combatUnits.Clear();
+    //     combatUnits.AddRange(FindObjectsByType<CombatUnit>(FindObjectsSortMode.None));
+    // }
 
     public void OnEndUnitTurn()
     {
@@ -160,6 +173,67 @@ public class CombatManager : Singleton<CombatManager>
         return true;
     }
 
+    IEnumerator SetupCombat()
+    {
+        // Gets CombatInstance
+        // CombatInstance[] allCombatInstances = GameObject.FindObjectsByType<CombatInstance>(FindObjectsSortMode.None);
+        // foreach (CombatInstance instance in allCombatInstances)
+        // {
+        //     if(instance.isActive)
+        //     {
+        //         combatInstance = instance;
+        //         break;
+        //     }
+        // }
+
+        if(combatInstance == null)
+        {
+            Debug.LogError("CombatManager: Combat was triggered but no valid CombatInstance was found");
+        }
+        
+        // Loads UI
+        if(combatWidgetDatas.Count > 0)
+        {
+            foreach (UIWidgetData data in combatWidgetDatas)
+            {
+                onRequestLoadUIChannel.Raise(data);
+            }
+        }
+
+        StartCoroutine(SetupAllCombatUnits());
+        while (!allCombatUnitsAreSetup)
+        {
+            yield return null;
+        }
+
+        prompter.UpdateCombatUnitList(combatUnits);
+        roundNumber = 1;
+
+        prompter.PromptFirstUnit();
+
+        onCombatStartChannel.Raise();
+        onCombatStart.Invoke();
+    }
+
+    IEnumerator SetupAllCombatUnits()
+    {
+        combatUnits.Clear();
+
+        // Get Player
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        CombatUnit player = playerObj.GetComponent<CombatUnit>();
+        combatUnits.Add(player);
+        
+        // Get Party Members
+        partyManager = GameObject.FindFirstObjectByType<PartyManager>();
+        combatUnits.AddRange(partyManager.PlacePartyMembers(combatInstance.partyMemberSpawnPoints));
+
+        // Get Enemies
+        combatUnits.AddRange(combatInstance.allEnemies);
+        
+        allCombatUnitsAreSetup = true;
+        yield return null;
+    }
 
     IEnumerator EndUnitTurn()
     {

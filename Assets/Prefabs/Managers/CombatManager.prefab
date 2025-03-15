@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cf9661f9e7c834797c2d410c957f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestCombatStartChannel: {fileID: 11400000, guid: d9837cbd911a5d242a36b06d20a0ea1a, type: 2}
+  notifyActiveCombatInstance: {fileID: 11400000, guid: cb0def7f826e6804cafb9d3c8535e35c, type: 2}
   onCombatStartChannel: {fileID: 11400000, guid: 021fa70ec378f2449ab92383d92bf9f9, type: 2}
   onCombatEndChannel: {fileID: 11400000, guid: af10a3019b9b35f4d9e8b2a031f1ffe7, type: 2}
   onEndUnitTurnChannel: {fileID: 11400000, guid: 50a88c07cfb6cec4880f8f792271c736, type: 2}
