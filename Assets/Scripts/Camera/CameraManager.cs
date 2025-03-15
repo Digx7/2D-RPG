@@ -67,6 +67,7 @@ public class CameraManager : MonoBehaviour
         if(newPlayerCharacter.ConnectCameraManager(this))
         {
             playerCharacter = newPlayerCharacter;
+            Debug.Log(playerCharacter);
             return true;
         }
 
@@ -128,9 +129,12 @@ public class CameraManager : MonoBehaviour
         RequestFocusLocationChannel.channelEvent.AddListener(MoveCameraToLocation);
         RequestStartFollowingUnitChannel.channelEvent.AddListener(StartFollowingUnit);
         RequestStopFollowingUnitChannel.channelEvent.AddListener(StopFollowingUnit);
-        OnCombatStartChannel.channelEvent.AddListener(OnCombatStartChan)
+        OnCombatStartChannel.channelEvent.AddListener(OnStartCombat);
+        OnCombatEndChannel.channelEvent.AddListener(OnEndCombat);
 
         OnReachFocusLocation = new UnityEvent();
+
+        StartFollowingTransform(playerCharacter.transform);
 
 
         OnCameraManagerFinishedSetup.Raise(ID);
@@ -141,6 +145,8 @@ public class CameraManager : MonoBehaviour
         RequestFocusLocationChannel.channelEvent.RemoveListener(MoveCameraToLocation);
         RequestStartFollowingUnitChannel.channelEvent.RemoveListener(StartFollowingUnit);
         RequestStopFollowingUnitChannel.channelEvent.RemoveListener(StopFollowingUnit);
+        OnCombatStartChannel.channelEvent.RemoveListener(OnStartCombat);
+        OnCombatEndChannel.channelEvent.RemoveListener(OnEndCombat);
     }
 
     protected virtual void FindOrSpawnCamera()
@@ -220,7 +226,7 @@ public class CameraManager : MonoBehaviour
 
     public void OnEndCombat()
     {
-
+        StartFollowingTransform(playerCharacter.transform);
     }
 
     IEnumerator FocusOnLocation(Vector3 focusLocation, Vector3 startLocation, float timeToTake)
