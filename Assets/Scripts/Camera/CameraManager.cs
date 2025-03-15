@@ -128,7 +128,7 @@ public class CameraManager : MonoBehaviour
 
         RequestFocusLocationChannel.channelEvent.AddListener(MoveCameraToLocation);
         RequestStartFollowingUnitChannel.channelEvent.AddListener(StartFollowingUnit);
-        RequestStopFollowingUnitChannel.channelEvent.AddListener(StopFollowingUnit);
+        RequestStopFollowingUnitChannel.channelEvent.AddListener(StopFollowing);
         OnCombatStartChannel.channelEvent.AddListener(OnStartCombat);
         OnCombatEndChannel.channelEvent.AddListener(OnEndCombat);
 
@@ -144,7 +144,7 @@ public class CameraManager : MonoBehaviour
     {
         RequestFocusLocationChannel.channelEvent.RemoveListener(MoveCameraToLocation);
         RequestStartFollowingUnitChannel.channelEvent.RemoveListener(StartFollowingUnit);
-        RequestStopFollowingUnitChannel.channelEvent.RemoveListener(StopFollowingUnit);
+        RequestStopFollowingUnitChannel.channelEvent.RemoveListener(StopFollowing);
         OnCombatStartChannel.channelEvent.RemoveListener(OnStartCombat);
         OnCombatEndChannel.channelEvent.RemoveListener(OnEndCombat);
     }
@@ -213,7 +213,7 @@ public class CameraManager : MonoBehaviour
         StartCoroutine(FollowUnit());
     }
 
-    public void StopFollowingUnit()
+    public void StopFollowing()
     {
         isFollowingUnit = false;
         OnReachFocusLocation.RemoveListener(StartFollowingLoop);
@@ -221,7 +221,7 @@ public class CameraManager : MonoBehaviour
 
     public void OnStartCombat()
     {
-
+        StopFollowing();
     }
 
     public void OnEndCombat()
