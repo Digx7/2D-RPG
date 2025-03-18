@@ -11,6 +11,17 @@ public class QuestChecker : MonoBehaviour
 
     public UnityEvent OnCheckPass;
     public UnityEvent OnCheckFail;
+    public Channel onLoadedQuestsChannel;
+
+    public void OnEnable()
+    {
+        onLoadedQuestsChannel.channelEvent.AddListener(Check);
+    }
+
+    public void OnDisable()
+    {
+        onLoadedQuestsChannel.channelEvent.RemoveListener(Check);
+    }
 
     public void Start()
     {

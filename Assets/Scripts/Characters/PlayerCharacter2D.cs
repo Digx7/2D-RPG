@@ -7,11 +7,23 @@ public class PlayerCharacter2D : PlayerCharacter
     private Animator animator;
     private float lastMoveDirection;
     [SerializeField] private GameObject playerSprite;
+    [SerializeField] private Channel onStartInteractionChannel;
+    [SerializeField] private Channel onStopInteractionChannel;
+    private bool isInInteraction = false;
+
+    protected override void OnEnable()
+    {
+        onStartInteractionChannel.channelEvent.AddListener(OnStartInteraction);
+        onStopInteractionChannel.channelEvent.AddListener(OnStopInteraction);
+    }
 
     protected override void OnDisable()
     {
         movement2D.OnAirborn.RemoveListener(UpdateAnimatorAirborn);
         movement2D.OnFalling.RemoveListener(UpdateAnimatorFalling);
+
+        onStartInteractionChannel.channelEvent.RemoveListener(OnStartInteraction);
+        onStopInteractionChannel.channelEvent.RemoveListener(OnStopInteraction);
         
         base.OnDisable();
     }
@@ -30,7 +42,8 @@ public class PlayerCharacter2D : PlayerCharacter
 
     public override void UpdateDesiredMoveDirection(Vector2 newDesiredDirection)
     {
-        // Debug.Log("PlayerCharacter3D: UpdateDesiredMoveDirection( " + newDesiredDirection + ")");
+        if(isInInteraction) return;
+
         base.UpdateDesiredMoveDirection(newDesiredDirection);
         movement2D.setDesiredMoveDirection(desiredMoveDirection);
 
@@ -39,7 +52,7 @@ public class PlayerCharacter2D : PlayerCharacter
     }
 
     private void UpdateRunningAnimation(Vector2 moveDirection)
-    {
+    {   
         if(moveDirection.x >= 0.1 || moveDirection.x <= -0.1)
         {
             if(animator != null) animator.SetBool("IsRunning", true);
@@ -90,8 +103,24 @@ public class PlayerCharacter2D : PlayerCharacter
 
     public override void Jump()
     {
+        if(isInInteraction) return;
+        
         Debug.Log("PlayerCharacter3D: Jump()");
         base.Jump();
         movement2D.tryToJump();
+    }
+
+
+
+    public void OnStartInteraction()
+    {
+        UpdateDesiredMoveDirection(Vector2.zero);
+        
+        isInInteraction = true;
+    }
+
+    public void OnStopInteraction()
+    {
+        isInInteraction = false;
     }
 }

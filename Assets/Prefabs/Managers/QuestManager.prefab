@@ -48,3 +48,4 @@ MonoBehaviour:
   reciveQuestChannel: {fileID: 11400000, guid: 38e4c26a54bacfe4b92acdf56eac6726, type: 2}
   tryProgressQuestChannel: {fileID: 11400000, guid: 2eacbb58e03a1a44184ae5eaeacb73e4, type: 2}
   onGameLoadedChannel: {fileID: 11400000, guid: f7d5e22a91f57b640b0bb267b5f7489e, type: 2}
+  onLoadedQuestsChannel: {fileID: 11400000, guid: e2d32ad72a6ab0b4487222adab2126c6, type: 2}

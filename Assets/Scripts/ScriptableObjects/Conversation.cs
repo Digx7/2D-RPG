@@ -8,6 +8,9 @@ public class Conversation : ScriptableObject
 {
     public List<ConversationNode> nodes;
 
+    [Header("On Finish")]
+    public QuestData questToGive;
+    public QuestObjectiveProgress questProgressToGive; 
     public Conversation nextConversationToLoadOnFinish;
 }
 

@@ -19,4 +19,8 @@ MonoBehaviour:
     line: You Swing Sword ... Get Glory and Gold.
   - speaker: Zavag
     line: You Speak to Hope.  He Say were Swing Sword.
+  questToGive: {fileID: 11400000, guid: a3cdb789f44ef33459e7f568de24a289, type: 2}
+  questProgressToGive:
+    objectiveName: 
+    addedAmount: 0
   nextConversationToLoadOnFinish: {fileID: 11400000, guid: 8270f6c2f9d15c1459a0c821e38fc388, type: 2}

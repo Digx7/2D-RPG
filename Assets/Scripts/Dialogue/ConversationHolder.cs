@@ -8,6 +8,10 @@ public class ConversationHolder : MonoBehaviour
     public UIWidgetDataChannel requestLoadDialogueWidgetChannel;
     public UIWidgetDataChannel requestUnloadDialogueWidgetChannel;
     public ConversationNodeChannel onConversationUpdateChannel;
+    public Channel onStartInteractionChannel;
+    public Channel onStopInteractionChannel;
+    public QuestDataChannel giveQuestChannel;
+    public QuestObjectiveProgressChannel progressQuestChannel;
 
     public UnityEvent OnConversationEnd;
 
@@ -30,6 +34,11 @@ public class ConversationHolder : MonoBehaviour
         }
     }
 
+    public void SetConversation(Conversation newConversation)
+    {
+        conversation = newConversation;
+    }
+
     private void StartConversation()
     {
         Debug.Log("ConversationHolder: StartConversation()");
@@ -40,6 +49,8 @@ public class ConversationHolder : MonoBehaviour
             requestLoadDialogueWidgetChannel.Raise(dialogueWidgetData);
             onConversationUpdateChannel.Raise(currentNode);
             currentNode.Print();
+
+            onStartInteractionChannel.Raise();
         }
         else
         {
@@ -69,8 +80,17 @@ public class ConversationHolder : MonoBehaviour
         
         isConversationGoing = false;
         requestUnloadDialogueWidgetChannel.Raise(dialogueWidgetData);
+
+        if(conversation.questToGive != null)
+            giveQuestChannel.Raise(conversation.questToGive);
+
+        if(conversation.questProgressToGive.objectiveName != "")
+            progressQuestChannel.Raise(conversation.questProgressToGive);
+
         OnConversationEnd.Invoke();
         TryLoadNextConversation();
+
+        onStopInteractionChannel.Raise();
     }
 
     private bool TryGetNode()

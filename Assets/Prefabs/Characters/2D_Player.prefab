@@ -1220,6 +1220,8 @@ MonoBehaviour:
   onPlayerTryInteractChannel: {fileID: 11400000, guid: 47b2b9ceb4ec91f4994f326f99deb8c3, type: 2}
   cameraManager: {fileID: 0}
   playerSprite: {fileID: 150859509830767730}
+  onStartInteractionChannel: {fileID: 11400000, guid: 0e077e2f1b97a52498c2cdaa56cb54bc, type: 2}
+  onStopInteractionChannel: {fileID: 11400000, guid: 4b164614dc93c6d459372637c81b518f, type: 2}
 --- !u!114 &235150269458573661
 MonoBehaviour:
   m_ObjectHideFlags: 0

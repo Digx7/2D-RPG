@@ -9,6 +9,7 @@ public class QuestManager : Singleton<QuestManager>
     public QuestDataChannel reciveQuestChannel;
     public QuestObjectiveProgressChannel tryProgressQuestChannel;
     public Channel onGameLoadedChannel;
+    public Channel onLoadedQuestsChannel;
 
     private SaveSystem saveSystem;
 
@@ -121,6 +122,8 @@ public class QuestManager : Singleton<QuestManager>
 
             activeQuests.Add(quest);
         }
+
+        onLoadedQuestsChannel.Raise();
     }
 
     private bool FindSaveSystem()

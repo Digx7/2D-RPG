@@ -58,15 +58,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.69411767}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 8459ac9062339c649868f5679afb9922, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c19845201cf1db4895d061099701092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RequestUnloadWidgetDataChannel: {fileID: 0}
   typingSpeed: 100
   speakerNameTextMeshPro: {fileID: 5463440040697904216}
   dialogueTextMeshPro: {fileID: 623903111324690541}
@@ -200,11 +201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904205574197700275, guid: 8378e6453b3dce549a01c84967670769, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -36
       objectReference: {fileID: 0}
     - target: {fileID: 1904205574197700275, guid: 8378e6453b3dce549a01c84967670769, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 1904205574197700275, guid: 8378e6453b3dce549a01c84967670769, type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904205574197700275, guid: 8378e6453b3dce549a01c84967670769, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 1904205574197700275, guid: 8378e6453b3dce549a01c84967670769, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -261,6 +262,22 @@ PrefabInstance:
     - target: {fileID: 8737998770570985712, guid: 8378e6453b3dce549a01c84967670769, type: 3}
       propertyPath: m_text
       value: Speaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737998770570985712, guid: 8378e6453b3dce549a01c84967670769, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737998770570985712, guid: 8378e6453b3dce549a01c84967670769, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737998770570985712, guid: 8378e6453b3dce549a01c84967670769, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737998770570985712, guid: 8378e6453b3dce549a01c84967670769, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -317,11 +334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533648995589109771, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -36
       objectReference: {fileID: 0}
     - target: {fileID: 6533648995589109771, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 6533648995589109771, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -357,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6533648995589109771, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6533648995589109771, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -376,6 +393,22 @@ PrefabInstance:
       value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346860038100409234, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346860038100409234, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346860038100409234, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346860038100409234, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 7677548607432914500, guid: 7474b0a491acfa645902fd4f385efb69, type: 3}
       propertyPath: m_Name
