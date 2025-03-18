@@ -59,6 +59,13 @@ public class QuestData : ScriptableObject
        return value;
     }
 
+    public QuestNode GetActiveNode()
+    {
+        if(nodeIndex >= nodes.Count) return null;
+
+        return nodes[nodeIndex];
+    }
+
     public void Finish()
     {
         Debug.Log("QuestData - " + questName + " : Finish()");
