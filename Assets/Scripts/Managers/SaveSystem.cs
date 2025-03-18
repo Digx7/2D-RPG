@@ -42,8 +42,16 @@ public class SaveSystem : Singleton<SaveSystem>
         string destination = Path();
         FileStream file;
 
-        if(File.Exists(destination)) file = File.OpenWrite(destination);
-        else file = File.Create(destination);
+        if(File.Exists(destination)) 
+        {
+            File.Delete(destination);
+            // file = File.OpenWrite(destination);
+        }
+        // else 
+        // {
+        //     file = File.Create(destination);
+        // }
+        file = File.Create(destination);
 
         DataContractSerializer serializer = new DataContractSerializer(save.GetType());
         serializer.WriteObject(file, save);

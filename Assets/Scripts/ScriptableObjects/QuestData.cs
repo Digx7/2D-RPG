@@ -66,6 +66,20 @@ public class QuestData : ScriptableObject
         return nodes[nodeIndex];
     }
 
+    public bool SetActiveNode(string nodeName)
+    {
+        for (int i = 0; i < nodes.Count; i++)
+        {
+            if(nodes[i].nodeName == nodeName)
+            {
+                nodeIndex = 0;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void Finish()
     {
         Debug.Log("QuestData - " + questName + " : Finish()");

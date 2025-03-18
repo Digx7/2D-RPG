@@ -114,6 +114,12 @@ public class QuestManager : Singleton<QuestManager>
         foreach (KeyValuePair<string,string> pair in loadedQuests)
         {
             Debug.Log("Loaded Quest: " + pair.Key + " : " + pair.Value);
+
+            QuestData quest = Resources.Load<QuestData>(pair.Key);
+            if(quest == null) continue;
+            quest.SetActiveNode(pair.Value);
+
+            activeQuests.Add(quest);
         }
     }
 
