@@ -53,4 +53,7 @@ MonoBehaviour:
   requestMakeNewSaveChannel: {fileID: 11400000, guid: 68f02c4a08f05fd4e904ce75b9c4a81d, type: 2}
   onMakeNewSaveChannel: {fileID: 11400000, guid: f4b167f54aa8ff1459942ed562f2a673, type: 2}
   requestChangeActiveSaveSlot: {fileID: 11400000, guid: a8ef4fa76dafa854fbe8061793d3fa27, type: 2}
+  requestLoadUIChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
+  requestUnloadUIChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
+  saveIconWidgetData: {fileID: 11400000, guid: ac1e3d657cce68c4eb9b5eed82fccc01, type: 2}
   activeSaveSlot: 0
