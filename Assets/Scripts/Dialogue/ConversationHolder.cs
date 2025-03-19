@@ -62,7 +62,7 @@ public class ConversationHolder : MonoBehaviour
     {
         Debug.Log("ConversationHolder: ProgressConversation()");
         
-        currentNodeIndex++;
+        currentNodeIndex = conversation.nodes[currentNodeIndex].nextNode;
         if(TryGetNode())
         {
             onConversationUpdateChannel.Raise(currentNode);

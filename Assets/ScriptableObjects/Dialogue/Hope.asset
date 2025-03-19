@@ -13,19 +13,34 @@ MonoBehaviour:
   m_Name: Hope
   m_EditorClassIdentifier: 
   nodes:
-  - speaker: Hope
+  - icon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
+    speaker: Hope
     line: Greetings there splended adventurer.  How may I be of service?
-  - speaker: Hope
+    options: []
+    nextNode: 1
+  - icon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
+    speaker: Hope
     line: Zavag did bid you to inquire with me?..
-  - speaker: Hope
+    options: []
+    nextNode: 2
+  - icon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
+    speaker: Hope
     line: Right.... That imbecule thinks I can enlighten all adventures.  After chasing
       of a goblin THAT ONE TIME!!
-  - speaker: Hope
+    options: []
+    nextNode: 3
+  - icon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
+    speaker: Hope
     line: Appologies... I get carried away.  Um... I guess you could check up on
       our hunting party.
-  - speaker: Hope
+    options: []
+    nextNode: 4
+  - icon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
+    speaker: Hope
     line: We haven't heard from them in some time.  I would hate for fate to find
       them.
+    options: []
+    nextNode: 5
   questToGive: {fileID: 11400000, guid: 1088d7dda1d06ec43a17fe90198f72eb, type: 2}
   questProgressToGive:
     objectiveName: Talk to Hope

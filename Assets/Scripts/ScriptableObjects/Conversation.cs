@@ -17,10 +17,14 @@ public class Conversation : ScriptableObject
 [System.Serializable]
 public struct ConversationNode
 {
+    public Sprite icon;
     public string speaker;
     
     [TextAreaAttribute]
     public string line;
+    public List<OptionPair> options;
+
+    public int nextNode;
 
     public void Print()
     {
@@ -28,4 +32,12 @@ public struct ConversationNode
     }
 }
 
+[System.Serializable]
+public struct OptionPair
+{
+    public string line;
+    public int nextNode;
+}
+
+[System.Serializable]
 public class ConversationNodeEvent : UnityEvent<ConversationNode> {}

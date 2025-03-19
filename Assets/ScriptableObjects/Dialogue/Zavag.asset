@@ -13,12 +13,21 @@ MonoBehaviour:
   m_Name: Zavag
   m_EditorClassIdentifier: 
   nodes:
-  - speaker: Zavag
+  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+    speaker: Zavag
     line: You Adventur?...
-  - speaker: Zavag
+    options: []
+    nextNode: 1
+  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+    speaker: Zavag
     line: You Swing Sword ... Get Glory and Gold.
-  - speaker: Zavag
+    options: []
+    nextNode: 2
+  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+    speaker: Zavag
     line: You Speak to Hope.  He Say were Swing Sword.
+    options: []
+    nextNode: 3
   questToGive: {fileID: 11400000, guid: a3cdb789f44ef33459e7f568de24a289, type: 2}
   questProgressToGive:
     objectiveName: 
