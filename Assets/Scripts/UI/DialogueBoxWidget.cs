@@ -4,20 +4,21 @@ using System.Collections;
 using TMPro;
 
 public class DialogueBoxWidget : UIWidget
-{
-    public float typingSpeed;
-    
+{   
     public Image speakerIcon;
-
     public ScrollRect scrollRect;
 
-    public GameObject dialogueElementParent;
-    public GameObject dialogueElementPrefab;
-    public GameObject dialogueElementPrefab_Options;
+    public GameObject dialogueLine_Parent;
+    public GameObject dialogueLine_Prefab;
+
+    public GameObject dialogueInput_Parent;
+    public GameObject dialogueContinueInput_Prefab;
+    public GameObject dialogueOptionInput_Prefab;
+
     public ConversationNodeChannel onConversationUpdateChannel;
 
     private ConversationNode currentNode;
-    private DialogueElement lastDialogueElement;
+    private DialogueElement_Line lastLine;
     private bool isTyping = false;
     
     public override void Setup(UIWidgetData newUIWidgetData)
@@ -37,62 +38,59 @@ public class DialogueBoxWidget : UIWidget
         currentNode = latestNode;
         speakerIcon.sprite = currentNode.icon;
 
-        if(lastDialogueElement != null)
+        if(lastLine != null)
         {
-            lastDialogueElement.OnFadeOut.Invoke();
+            lastLine.OnFadeOut.Invoke();
         }
 
-        if(currentNode.options.Count == 0)
+        lastLine = RenderLine();
+
+        UpdateScrollRectContentSize();
+
+        foreach (Transform child in dialogueInput_Parent.transform)
         {
-            lastDialogueElement = RenderDefault();
+            Destroy(child.gameObject);
         }
+
+        if(latestNode.options.Count == 0)
+            RenderContinue();
         else
-        {
-            lastDialogueElement = RenderOptions();
-        }
+            RenderOptions();
+    }
 
-        RectTransform contentRectTransform = dialogueElementParent.GetComponent<RectTransform>();
+    private void UpdateScrollRectContentSize()
+    {
+        RectTransform contentRectTransform = dialogueLine_Parent.GetComponent<RectTransform>();
         float size = contentRectTransform.rect.height;
-        size += (lastDialogueElement.GetComponent<RectTransform>().rect.height + 20f);
+        size += (lastLine.GetComponent<RectTransform>().rect.height + 20f);
         contentRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
 
         scrollRect.verticalNormalizedPosition = 0;
-
-        // speakerNameTextMeshPro.text = currentNode.speaker;
-        // if(isTyping) StopAllCoroutines();
-        // StartCoroutine(TypeOutLine());
     }
 
-    private DialogueElement RenderDefault()
+    private DialogueElement_Line RenderLine()
     {
-        GameObject obj = Instantiate(dialogueElementPrefab, dialogueElementParent.transform);
-        DialogueElement dialogueElement = obj.GetComponent<DialogueElement>();
-        dialogueElement.SetNode(currentNode);
+        GameObject obj = Instantiate(dialogueLine_Prefab, dialogueLine_Parent.transform);
+        DialogueElement_Line dialogueElement_Line = obj.GetComponent<DialogueElement_Line>();
+        dialogueElement_Line.SetNode(currentNode);
 
-        return dialogueElement;
+        return dialogueElement_Line;
     }
 
-    private DialogueElement RenderOptions()
+    private void RenderOptions()
     {
-        GameObject obj = Instantiate(dialogueElementPrefab, dialogueElementParent.transform);
-        DialogueElement_Options dialogueElement_Options = obj.GetComponent<DialogueElement_Options>();
-        dialogueElement_Options.SetNode(currentNode);
-
-        return dialogueElement_Options;
+        for (int i = 0; i < currentNode.options.Count; i++)
+        {
+            GameObject obj = Instantiate(dialogueOptionInput_Prefab, dialogueInput_Parent.transform);
+            DialogueElement_Option dialogueElement_Option = obj.GetComponent<DialogueElement_Option>();
+            dialogueElement_Option.SetOption(currentNode.options[i], (i + 1)); 
+        }
     }
 
-    // IEnumerator TypeOutLine()
-    // {
-    //     isTyping = true;
-    //     dialogueTextMeshPro.text = "";
-    //     int characterIndex = 0;
-
-    //     while(characterIndex < currentNode.line.Length)
-    //     {
-    //         dialogueTextMeshPro.text += currentNode.line[characterIndex];
-    //         yield return new WaitForSeconds(1f / typingSpeed);
-    //         characterIndex++;
-    //     }
-    //     isTyping = false;
-    // }
+    private void RenderContinue()
+    {
+        GameObject obj = Instantiate(dialogueContinueInput_Prefab, dialogueInput_Parent.transform);
+        DialogueElement_Continue dialogueElement_Continue = obj.GetComponent<DialogueElement_Continue>();
+        dialogueElement_Continue.SetNode(currentNode);
+    }
 }

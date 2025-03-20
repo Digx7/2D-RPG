@@ -164,12 +164,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5363705540828075685}
   - component: {fileID: 6040417666749182430}
+  - component: {fileID: 2504956484964422184}
   - component: {fileID: 1352531176790115666}
   - component: {fileID: 6192469804897530554}
   - component: {fileID: 7495606621279346444}
-  - component: {fileID: 540857527847604022}
   m_Layer: 5
-  m_Name: DialogueOption
+  m_Name: DialogueElement_Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,6 +204,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3517300050088246267}
   m_CullTransparentMesh: 1
+--- !u!114 &2504956484964422184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517300050088246267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d6ccf81bca454cb7bcc2459e8b703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1352531176790115666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,20 +391,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &540857527847604022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517300050088246267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e674e257cf042b94fa229ef422a27000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshProUGUI: {fileID: 5492195612354494686}
-  button: {fileID: 6192469804897530554}
 --- !u!1 &6507967498025003994
 GameObject:
   m_ObjectHideFlags: 0

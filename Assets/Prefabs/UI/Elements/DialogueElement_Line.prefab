@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5316750385447918626}
   - component: {fileID: 4749755315539672107}
-  - component: {fileID: 4363042408323558420}
+  - component: {fileID: 4656729891335976568}
   - component: {fileID: 4239966970763753570}
   - component: {fileID: 2394427378613259043}
   m_Layer: 5
-  m_Name: DialogueElement
+  m_Name: DialogueElement_Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8882290671846817306}
   m_CullTransparentMesh: 1
---- !u!114 &4363042408323558420
+--- !u!114 &4656729891335976568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8882290671846817306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c56eb75b9d522d4ca025c32498d0bff, type: 3}
+  m_Script: {fileID: 11500000, guid: f3a9279e191ec8644afe3460ca3b9d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lineTextMeshPro: {fileID: 2394427378613259043}

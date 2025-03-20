@@ -19,7 +19,7 @@ public class ConversationHolder : MonoBehaviour
     private ConversationNode currentNode;
     private bool isConversationGoing = false;
 
-    public void Interact()
+    public void Interact(int value)
     {
         Debug.Log("ConversationHolder: Interact()");
 
@@ -30,7 +30,7 @@ public class ConversationHolder : MonoBehaviour
         }
         else
         {
-            ProgressConversation();
+            ProgressConversation(value);
         }
     }
 
@@ -58,11 +58,17 @@ public class ConversationHolder : MonoBehaviour
         }
     }
 
-    private void ProgressConversation()
+    private void ProgressConversation(int value)
     {
         Debug.Log("ConversationHolder: ProgressConversation()");
         
-        currentNodeIndex = conversation.nodes[currentNodeIndex].nextNode;
+        if(value == 0)
+            currentNodeIndex = conversation.nodes[currentNodeIndex].nextNode;
+        else
+        {
+            currentNodeIndex = conversation.nodes[currentNodeIndex].options[value].nextNode;
+        }
+        
         if(TryGetNode())
         {
             onConversationUpdateChannel.Raise(currentNode);

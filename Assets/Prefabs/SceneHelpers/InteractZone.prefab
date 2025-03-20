@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  onPlayerTryInteractChannel: {fileID: 11400000, guid: 47b2b9ceb4ec91f4994f326f99deb8c3, type: 2}
+  onPlayerTryInteractChannel: {fileID: 11400000, guid: 31835448a553af94eabc8cd7ec5dd74d, type: 2}
   onStartInteractionChannel: {fileID: 11400000, guid: 0e077e2f1b97a52498c2cdaa56cb54bc, type: 2}
   onStopInteractionChannel: {fileID: 11400000, guid: 4b164614dc93c6d459372637c81b518f, type: 2}
   onPlayerEnter:
@@ -143,7 +143,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8774575998405046825}
         m_TargetAssemblyTypeName: ConversationHolder, Assembly-CSharp
         m_MethodName: Interact
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

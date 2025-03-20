@@ -1217,7 +1217,7 @@ MonoBehaviour:
   ID: 0
   controller: {fileID: 0}
   OnPlayerCharacterFinishedSetup: {fileID: 11400000, guid: ec85a42ea4285fd48a9789e68c7f4a7a, type: 2}
-  onPlayerTryInteractChannel: {fileID: 11400000, guid: 47b2b9ceb4ec91f4994f326f99deb8c3, type: 2}
+  onPlayerTryInteractChannel: {fileID: 11400000, guid: 31835448a553af94eabc8cd7ec5dd74d, type: 2}
   cameraManager: {fileID: 0}
   playerSprite: {fileID: 150859509830767730}
   onStartInteractionChannel: {fileID: 11400000, guid: 0e077e2f1b97a52498c2cdaa56cb54bc, type: 2}

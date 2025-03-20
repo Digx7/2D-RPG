@@ -6,12 +6,12 @@ public class InteractZone : MonoBehaviour
 {
 
     public string playerTag = "Player";
-    public Channel onPlayerTryInteractChannel;
+    public IntChannel onPlayerTryInteractChannel;
     public Channel onStartInteractionChannel;
     public Channel onStopInteractionChannel;
     public UnityEvent onPlayerEnter;
     public UnityEvent onPlayerLeave;
-    public UnityEvent onPlayerInteract;
+    public IntEvent onPlayerInteract;
     public UnityEvent onInteractionStart;
     public UnityEvent onInteractionStop;
     
@@ -32,12 +32,12 @@ public class InteractZone : MonoBehaviour
         onStopInteractionChannel.channelEvent.RemoveListener(OnStopInteraction);
     }
 
-    public void TryInteract()
+    public void TryInteract(int value)
     {
         if(isPlayerInZone) 
         {
-            onPlayerInteract.Invoke();
-            Debug.Log("InteractZone: Interact");
+            onPlayerInteract.Invoke(value);
+            Debug.Log("InteractZone: Interact with value " + value);
         }
     }
 

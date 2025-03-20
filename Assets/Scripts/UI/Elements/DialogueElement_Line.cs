@@ -4,12 +4,12 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 
-public class DialogueElement : UIElement
+public class DialogueElement_Line : UIElement
 {
     public TextMeshProUGUI lineTextMeshPro;
     public UnityEvent OnFadeOut;
 
-    public virtual void SetNode(ConversationNode node)
+    public void SetNode(ConversationNode node)
     {
         string line = node.speaker + " - " + node.line;
         lineTextMeshPro.text = line;
@@ -17,7 +17,7 @@ public class DialogueElement : UIElement
         Resize(line.Length);
     }
 
-    protected virtual void Resize(int lineLength)
+    protected void Resize(int lineLength)
     {
         RectTransform contentRectTransform = gameObject.GetComponent<RectTransform>();
         float size = contentRectTransform.rect.height;
