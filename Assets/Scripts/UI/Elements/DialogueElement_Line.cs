@@ -9,9 +9,8 @@ public class DialogueElement_Line : UIElement
     public TextMeshProUGUI lineTextMeshPro;
     public UnityEvent OnFadeOut;
 
-    public void SetNode(ConversationNode node)
+    public void SetLine(string line)
     {
-        string line = node.speaker + " - " + node.line;
         lineTextMeshPro.text = line;
 
         Resize(line.Length);

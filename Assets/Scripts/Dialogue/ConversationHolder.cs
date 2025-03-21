@@ -13,19 +13,20 @@ public class ConversationHolder : MonoBehaviour
     public QuestDataChannel giveQuestChannel;
     public QuestObjectiveProgressChannel progressQuestChannel;
 
+    public UnityEvent OnConversationStart;
     public UnityEvent OnConversationEnd;
 
-    private int currentNodeIndex = 0;
+    private int currentNodeID = 0;
     private ConversationNode currentNode;
+    private Conversation nextConversationToLoad;
     private bool isConversationGoing = false;
 
     public void Interact(int value)
     {
         Debug.Log("ConversationHolder: Interact()");
 
-        if(!isConversationGoing && value == 0)
+        if(!isConversationGoing && value == 1)
         {
-            isConversationGoing = true;
             StartConversation();
         }
         else
@@ -43,14 +44,15 @@ public class ConversationHolder : MonoBehaviour
     {
         Debug.Log("ConversationHolder: StartConversation()");
 
-        currentNodeIndex = 0;
+        currentNodeID = 0;
         if(TryGetNode())
         {
+            isConversationGoing = true;
             requestLoadDialogueWidgetChannel.Raise(dialogueWidgetData);
-            onConversationUpdateChannel.Raise(currentNode);
-            currentNode.Print();
-
             onStartInteractionChannel.Raise();
+            OnConversationStart.Invoke();
+
+            OnGetNewNode();
         }
         else
         {
@@ -62,26 +64,54 @@ public class ConversationHolder : MonoBehaviour
     {
         Debug.Log("ConversationHolder: ProgressConversation()");
         
-        if(value == 0)
-            currentNodeIndex = conversation.nodes[currentNodeIndex].nextNode;
-        else if(value <= conversation.nodes[currentNodeIndex].options.Count)
-        {
-            currentNodeIndex = conversation.nodes[currentNodeIndex].options[(value - 1)].nextNode;
-        }
-        else
-        {
-            return;
-        }
+        // if(value == 0)
+        //     currentNodeID = conversation.nodes[currentNodeID].nextNode;
+        // else if(value <= conversation.nodes[currentNodeID].options.Count)
+        // {
+        //     currentNodeID = conversation.nodes[currentNodeID].options[(value - 1)].nextNode;
+        // }
+        // else
+        // {
+        //     return;
+        // }
+
+        // if(!TryGetNextID(value)) return;
         
-        if(TryGetNode())
+        if(TryGetNextID(value) && TryGetNode())
         {
-            onConversationUpdateChannel.Raise(currentNode);
-            currentNode.Print();
+            OnGetNewNode();
         }
         else
         {
             EndConversation();
         }
+    }
+
+    private void OnGetNewNode()
+    {
+        currentNode.Print();
+            
+        if(currentNode is ConversationNode_End)
+        {
+            nextConversationToLoad = ((ConversationNode_End)currentNode).nextConversationToLoadOnFinish;
+            EndConversation();
+            return;
+        }
+        else if(currentNode is ConversationNode_QuestUpdate)
+        {
+            ConversationNode_QuestUpdate questNode = (ConversationNode_QuestUpdate) currentNode;
+            
+            if(questNode.questToGive != null)
+                giveQuestChannel.Raise(questNode.questToGive);
+
+            if(questNode.questProgressToGive.objectiveName != "")
+                progressQuestChannel.Raise(questNode.questProgressToGive);
+
+            ProgressConversation(0);
+            return;
+        }
+        
+        onConversationUpdateChannel.Raise(currentNode);
     }
 
     private void EndConversation()
@@ -90,34 +120,68 @@ public class ConversationHolder : MonoBehaviour
         
         isConversationGoing = false;
         requestUnloadDialogueWidgetChannel.Raise(dialogueWidgetData);
-
-        if(conversation.questToGive != null)
-            giveQuestChannel.Raise(conversation.questToGive);
-
-        if(conversation.questProgressToGive.objectiveName != "")
-            progressQuestChannel.Raise(conversation.questProgressToGive);
-
+        onStopInteractionChannel.Raise();
         OnConversationEnd.Invoke();
+
         TryLoadNextConversation();
 
-        onStopInteractionChannel.Raise();
+        // if(conversation.questToGive != null)
+        //     giveQuestChannel.Raise(conversation.questToGive);
+
+        // if(conversation.questProgressToGive.objectiveName != "")
+        //     progressQuestChannel.Raise(conversation.questProgressToGive);
+
+        
+
+        
     }
 
     private bool TryGetNode()
     {
-        if(currentNodeIndex < conversation.nodes.Count)
+        // if(currentNodeID < conversation.nodes.Count)
+        // {
+        //     currentNode = conversation.nodes[currentNodeID];
+        //     return true;
+        // }
+        // return false;
+
+        for (int i = 0; i < conversation.nodes.Count; i++)
         {
-            currentNode = conversation.nodes[currentNodeIndex];
+            if(conversation.nodes[i].ID == currentNodeID) 
+            {
+                currentNode = conversation.nodes[i];
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool TryGetNextID(int value)
+    {
+        if(currentNode is ConversationNode_Options)
+        {
+            ConversationNode_Options optionsNode = (ConversationNode_Options) currentNode;
+
+            if(value <= optionsNode.options.Count)
+            {
+                currentNodeID = optionsNode.options[value - 1].nextNode;
+                return true;
+            }
+            else return false;
+        }
+        else
+        {
+            currentNodeID = currentNode.nextNode;
             return true;
         }
-        return false;
     }
 
     private bool TryLoadNextConversation()
     {
-        if(conversation.nextConversationToLoadOnFinish != null)
+        if(nextConversationToLoad != null)
         {
-            conversation = conversation.nextConversationToLoadOnFinish;
+            conversation = nextConversationToLoad;
             return true;
         }
         return false;

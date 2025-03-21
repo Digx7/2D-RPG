@@ -13,39 +13,100 @@ MonoBehaviour:
   m_Name: Zavag
   m_EditorClassIdentifier: 
   nodes:
-  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
-    speaker: Zavag
-    line: You Adventur?...
-    options:
-    - line: I'm the best adventure there is
-      nextNode: 1
-    - line: No
-      nextNode: 4
-    - line: You've heard of me?
-      nextNode: 3
-    nextNode: 1
-  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
-    speaker: Zavag
-    line: You Swing Sword ... Get Glory and Gold.
-    options: []
-    nextNode: 2
-  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
-    speaker: Zavag
-    line: You Speak to Hope.  He Say were Swing Sword.
-    options: []
-    nextNode: 5
-  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
-    speaker: Zavag
-    line: No but you look strong
-    options: []
-    nextNode: 1
-  - icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
-    speaker: Zavag
-    line: Bummer
-    options: []
-    nextNode: 5
-  questToGive: {fileID: 11400000, guid: a3cdb789f44ef33459e7f568de24a289, type: 2}
-  questProgressToGive:
-    objectiveName: 
-    addedAmount: 0
-  nextConversationToLoadOnFinish: {fileID: 11400000, guid: 8270f6c2f9d15c1459a0c821e38fc388, type: 2}
+  - rid: 2135641286704627786
+  - rid: 2135641286704627787
+  - rid: 2135641286704627788
+  - rid: 2135641286704627789
+  - rid: 2135641286704627790
+  - rid: 2135641286704627791
+  - rid: 2135641286704627792
+  - rid: 2135641286704627793
+  - rid: 2135641286704627794
+  - rid: 2135641286704627795
+  references:
+    version: 2
+    RefIds:
+    - rid: 2135641286704627786
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        nextNode: 1
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: ???
+        line: You Adventurer?
+        options:
+        - line: Yes!
+          nextNode: 1
+        - line: No?
+          nextNode: 8
+        - line: Who's asking?
+          nextNode: 7
+    - rid: 2135641286704627787
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        nextNode: 2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: ???
+        line: Good
+    - rid: 2135641286704627788
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        nextNode: 3
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: Zavag like adventure
+    - rid: 2135641286704627789
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        nextNode: 4
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: Adventure swing sword, solve problem
+    - rid: 2135641286704627790
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 4
+        nextNode: 5
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: Talk to Hope find problem
+    - rid: 2135641286704627791
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 5
+        nextNode: 6
+        questToGive: {fileID: 11400000, guid: a3cdb789f44ef33459e7f568de24a289, type: 2}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 2135641286704627792
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 6
+        nextNode: 0
+        nextConversationToLoadOnFinish: {fileID: 11400000, guid: 8270f6c2f9d15c1459a0c821e38fc388, type: 2}
+    - rid: 2135641286704627793
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 7
+        nextNode: 2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: Me Zavag!
+    - rid: 2135641286704627794
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 8
+        nextNode: 9
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: ???
+        line: Bummer
+    - rid: 2135641286704627795
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 9
+        nextNode: 0
+        nextConversationToLoadOnFinish: {fileID: 11400000, guid: b27df9f7a61b1a44bacce59b2558dc3d, type: 2}
