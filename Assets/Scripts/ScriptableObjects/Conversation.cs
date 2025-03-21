@@ -14,6 +14,21 @@ public class Conversation : ScriptableObject
     public Conversation nextConversationToLoadOnFinish;
 }
 
+// public class Node_Line
+// {
+
+// }
+
+// public class Node_End
+// {
+
+// }
+
+// public class Node_QuestUpdate
+// {
+
+// }
+
 [System.Serializable]
 public struct ConversationNode
 {

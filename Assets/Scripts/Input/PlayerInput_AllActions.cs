@@ -146,9 +146,45 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""Interact_0"",
                     ""type"": ""Button"",
                     ""id"": ""642914df-5e3e-4760-8661-5e33df0805f8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""14ad4175-bd7c-40e0-8e70-703d6093ac2d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""f39b56fc-6421-4e8a-a6a9-a91ca4bcd2df"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_3"",
+                    ""type"": ""Button"",
+                    ""id"": ""6da4860d-0a44-443d-ba57-6314b5dd58b3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_4"",
+                    ""type"": ""Button"",
+                    ""id"": ""813bee51-98f4-47f6-85a6-144b55370957"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -339,7 +375,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
-                    ""action"": ""Interact"",
+                    ""action"": ""Interact_0"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -350,7 +386,51 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";GamePad"",
-                    ""action"": ""Interact"",
+                    ""action"": ""Interact_0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4f61357-4964-4c17-b345-f95b895826b8"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44348828-84ab-4c4c-970b-543539668eb0"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91f3c3b9-a6fc-45cc-a865-6ea0f09c30e5"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e4088b0-65fa-411c-92d9-42ceedf3cfa3"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1074,7 +1154,11 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Exploration_Fire2 = m_Exploration.FindAction("Fire2", throwIfNotFound: true);
         m_Exploration_Lore = m_Exploration.FindAction("Lore", throwIfNotFound: true);
         m_Exploration_Pause = m_Exploration.FindAction("Pause", throwIfNotFound: true);
-        m_Exploration_Interact = m_Exploration.FindAction("Interact", throwIfNotFound: true);
+        m_Exploration_Interact_0 = m_Exploration.FindAction("Interact_0", throwIfNotFound: true);
+        m_Exploration_Interact_1 = m_Exploration.FindAction("Interact_1", throwIfNotFound: true);
+        m_Exploration_Interact_2 = m_Exploration.FindAction("Interact_2", throwIfNotFound: true);
+        m_Exploration_Interact_3 = m_Exploration.FindAction("Interact_3", throwIfNotFound: true);
+        m_Exploration_Interact_4 = m_Exploration.FindAction("Interact_4", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Ability_1 = m_Combat.FindAction("Ability_1", throwIfNotFound: true);
@@ -1193,7 +1277,11 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_Exploration_Fire2;
     private readonly InputAction m_Exploration_Lore;
     private readonly InputAction m_Exploration_Pause;
-    private readonly InputAction m_Exploration_Interact;
+    private readonly InputAction m_Exploration_Interact_0;
+    private readonly InputAction m_Exploration_Interact_1;
+    private readonly InputAction m_Exploration_Interact_2;
+    private readonly InputAction m_Exploration_Interact_3;
+    private readonly InputAction m_Exploration_Interact_4;
     /// <summary>
     /// Provides access to input actions defined in input action map "Exploration".
     /// </summary>
@@ -1230,9 +1318,25 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_Exploration_Pause;
         /// <summary>
-        /// Provides access to the underlying input action "Exploration/Interact".
+        /// Provides access to the underlying input action "Exploration/Interact_0".
         /// </summary>
-        public InputAction @Interact => m_Wrapper.m_Exploration_Interact;
+        public InputAction @Interact_0 => m_Wrapper.m_Exploration_Interact_0;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_1".
+        /// </summary>
+        public InputAction @Interact_1 => m_Wrapper.m_Exploration_Interact_1;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_2".
+        /// </summary>
+        public InputAction @Interact_2 => m_Wrapper.m_Exploration_Interact_2;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_3".
+        /// </summary>
+        public InputAction @Interact_3 => m_Wrapper.m_Exploration_Interact_3;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_4".
+        /// </summary>
+        public InputAction @Interact_4 => m_Wrapper.m_Exploration_Interact_4;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1277,9 +1381,21 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            @Interact_0.started += instance.OnInteract_0;
+            @Interact_0.performed += instance.OnInteract_0;
+            @Interact_0.canceled += instance.OnInteract_0;
+            @Interact_1.started += instance.OnInteract_1;
+            @Interact_1.performed += instance.OnInteract_1;
+            @Interact_1.canceled += instance.OnInteract_1;
+            @Interact_2.started += instance.OnInteract_2;
+            @Interact_2.performed += instance.OnInteract_2;
+            @Interact_2.canceled += instance.OnInteract_2;
+            @Interact_3.started += instance.OnInteract_3;
+            @Interact_3.performed += instance.OnInteract_3;
+            @Interact_3.canceled += instance.OnInteract_3;
+            @Interact_4.started += instance.OnInteract_4;
+            @Interact_4.performed += instance.OnInteract_4;
+            @Interact_4.canceled += instance.OnInteract_4;
         }
 
         /// <summary>
@@ -1309,9 +1425,21 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @Interact_0.started -= instance.OnInteract_0;
+            @Interact_0.performed -= instance.OnInteract_0;
+            @Interact_0.canceled -= instance.OnInteract_0;
+            @Interact_1.started -= instance.OnInteract_1;
+            @Interact_1.performed -= instance.OnInteract_1;
+            @Interact_1.canceled -= instance.OnInteract_1;
+            @Interact_2.started -= instance.OnInteract_2;
+            @Interact_2.performed -= instance.OnInteract_2;
+            @Interact_2.canceled -= instance.OnInteract_2;
+            @Interact_3.started -= instance.OnInteract_3;
+            @Interact_3.performed -= instance.OnInteract_3;
+            @Interact_3.canceled -= instance.OnInteract_3;
+            @Interact_4.started -= instance.OnInteract_4;
+            @Interact_4.performed -= instance.OnInteract_4;
+            @Interact_4.canceled -= instance.OnInteract_4;
         }
 
         /// <summary>
@@ -1877,12 +2005,40 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Interact_0" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInteract(InputAction.CallbackContext context);
+        void OnInteract_0(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_4(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Combat" which allows adding and removing callbacks.

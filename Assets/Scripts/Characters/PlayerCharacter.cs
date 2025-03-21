@@ -79,9 +79,9 @@ public class PlayerCharacter : Character
 
     }
 
-    public virtual void Interact()
+    public virtual void Interact(int value)
     {
-        onPlayerTryInteractChannel.Raise(0);
+        onPlayerTryInteractChannel.Raise(value);
     }
 
 }

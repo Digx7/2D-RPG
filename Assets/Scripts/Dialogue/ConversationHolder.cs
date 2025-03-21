@@ -23,7 +23,7 @@ public class ConversationHolder : MonoBehaviour
     {
         Debug.Log("ConversationHolder: Interact()");
 
-        if(!isConversationGoing)
+        if(!isConversationGoing && value == 0)
         {
             isConversationGoing = true;
             StartConversation();
@@ -64,9 +64,13 @@ public class ConversationHolder : MonoBehaviour
         
         if(value == 0)
             currentNodeIndex = conversation.nodes[currentNodeIndex].nextNode;
+        else if(value <= conversation.nodes[currentNodeIndex].options.Count)
+        {
+            currentNodeIndex = conversation.nodes[currentNodeIndex].options[(value - 1)].nextNode;
+        }
         else
         {
-            currentNodeIndex = conversation.nodes[currentNodeIndex].options[value].nextNode;
+            return;
         }
         
         if(TryGetNode())

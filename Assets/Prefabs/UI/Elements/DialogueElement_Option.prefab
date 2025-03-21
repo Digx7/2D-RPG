@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857d6ccf81bca454cb7bcc2459e8b703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 5492195612354494686}
+  onPlayerTryInteract: {fileID: 11400000, guid: 31835448a553af94eabc8cd7ec5dd74d, type: 2}
 --- !u!114 &1352531176790115666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +295,18 @@ MonoBehaviour:
       - m_Target: {fileID: 349445209767986014}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2504956484964422184}
+        m_TargetAssemblyTypeName: DialogueElement_Option, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
