@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Buildings_5
+      name: Buildings_WoodInside_TopL
       rect:
         serializedVersion: 2
         x: 80
@@ -132,7 +132,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_6
+      name: Buildings_WoodInside_Top
       rect:
         serializedVersion: 2
         x: 96
@@ -154,7 +154,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_7
+      name: Buildings_WoodInside_TopR
       rect:
         serializedVersion: 2
         x: 112
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_8
+      name: Buildings_PlainOutside_TopL
       rect:
         serializedVersion: 2
         x: 128
@@ -198,7 +198,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_9
+      name: Buildings_PlainOutside_Top
       rect:
         serializedVersion: 2
         x: 144
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_10
+      name: Buildings_PlainOutside_TopR
       rect:
         serializedVersion: 2
         x: 160
@@ -242,7 +242,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_11
+      name: Buildings_WoodPanels_2_StackedLogs_Left
       rect:
         serializedVersion: 2
         x: 176
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_12
+      name: Buildings_WoodPanels_2_Center_1
       rect:
         serializedVersion: 2
         x: 192
@@ -286,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_13
+      name: Buildings_WoodPanels_2_Beam_1
       rect:
         serializedVersion: 2
         x: 208
@@ -308,7 +308,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_14
+      name: Buildings_WoodPannel_2_StackedLogs_Right
       rect:
         serializedVersion: 2
         x: 224
@@ -330,7 +330,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_15
+      name: Buildings_RoofBeam_1
       rect:
         serializedVersion: 2
         x: 240
@@ -352,7 +352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_16
+      name: Buildings_RoofBeam_2
       rect:
         serializedVersion: 2
         x: 256
@@ -374,7 +374,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_17
+      name: Buildings_RoofBeam_3
       rect:
         serializedVersion: 2
         x: 272
@@ -396,37 +396,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_18
+      name: Buildings_BrownRoof_TopL
       rect:
         serializedVersion: 2
         x: 320
         y: 384
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e5c3131723b99f4f9a43abf54d4c71c
-      internalID: -1316293642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_19
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 384
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.75, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -440,7 +418,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_20
+      name: Buildings_BrownRoof_Top
       rect:
         serializedVersion: 2
         x: 352
@@ -462,15 +440,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_21
+      name: Buildings_BrownRoof_TopR
       rect:
         serializedVersion: 2
         x: 368
         y: 384
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -484,29 +462,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_22
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a16f958252bad6e4f8adb2e4ecdc1c5e
-      internalID: 1988511994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_23
+      name: Buildings_LargeBox_TopL
       rect:
         serializedVersion: 2
         x: 0
@@ -528,7 +484,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_24
+      name: Buildings_LargeBox_Top1
       rect:
         serializedVersion: 2
         x: 16
@@ -550,7 +506,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_25
+      name: Buildings_LargeBox_Top2
       rect:
         serializedVersion: 2
         x: 32
@@ -572,7 +528,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_26
+      name: Buildings_LargeBox_Top3
       rect:
         serializedVersion: 2
         x: 48
@@ -594,7 +550,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_27
+      name: Buildings_LargeBox_TopR
       rect:
         serializedVersion: 2
         x: 64
@@ -616,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_28
+      name: Buildings_WoodInside_Left
       rect:
         serializedVersion: 2
         x: 80
@@ -638,7 +594,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_30
+      name: Buildings_WoodInside_Right
       rect:
         serializedVersion: 2
         x: 112
@@ -660,7 +616,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_31
+      name: Buildings_PlainOutside_Left
       rect:
         serializedVersion: 2
         x: 128
@@ -682,7 +638,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_32
+      name: Buildings_PlainOutside_Center
       rect:
         serializedVersion: 2
         x: 144
@@ -704,7 +660,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_33
+      name: Buildings_PlainOutside_Right
       rect:
         serializedVersion: 2
         x: 160
@@ -748,7 +704,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_35
+      name: Buildings_WoodPanels_2_Center_2
       rect:
         serializedVersion: 2
         x: 192
@@ -770,7 +726,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_36
+      name: Buildings_WoodPanels_2_Beam_2
       rect:
         serializedVersion: 2
         x: 208
@@ -814,7 +770,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_38
+      name: Buildings_BlueRoof_Left
       rect:
         serializedVersion: 2
         x: 240
@@ -836,7 +792,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_39
+      name: Buildings_BlueRoof_Center_1
       rect:
         serializedVersion: 2
         x: 256
@@ -858,7 +814,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_40
+      name: Buildings_BlueRoof_Right
       rect:
         serializedVersion: 2
         x: 272
@@ -880,7 +836,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_41
+      name: Buildings_BlueRoof_Center_2
       rect:
         serializedVersion: 2
         x: 288
@@ -924,7 +880,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_43
+      name: Buildings_1
       rect:
         serializedVersion: 2
         x: 336
@@ -946,7 +902,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_44
+      name: Buildings_BrownRoof_Center
       rect:
         serializedVersion: 2
         x: 352
@@ -968,7 +924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_45
+      name: Buildings_2
       rect:
         serializedVersion: 2
         x: 368
@@ -990,7 +946,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_46
+      name: Buildings_BrownRoof_Top_Dark
       rect:
         serializedVersion: 2
         x: 384
@@ -1012,7 +968,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_47
+      name: Buildings_LargeBox_Left_1
       rect:
         serializedVersion: 2
         x: 0
@@ -1034,7 +990,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_48
+      name: Buildings_LargeBox_Center_1
       rect:
         serializedVersion: 2
         x: 16
@@ -1056,7 +1012,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_49
+      name: Buildings_LargeBox_Center_2
       rect:
         serializedVersion: 2
         x: 32
@@ -1078,7 +1034,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_50
+      name: Buildings_LargeBox_Center_3
       rect:
         serializedVersion: 2
         x: 48
@@ -1100,7 +1056,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_51
+      name: Buildings_LargeBox_Right_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1122,7 +1078,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_52
+      name: Buildings_WoodInside_BotL
       rect:
         serializedVersion: 2
         x: 80
@@ -1144,7 +1100,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_53
+      name: Buildings_WoodInside_Bot
       rect:
         serializedVersion: 2
         x: 96
@@ -1152,7 +1108,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1166,7 +1122,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_54
+      name: Buildings_WoodInside_BotR
       rect:
         serializedVersion: 2
         x: 112
@@ -1188,7 +1144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_55
+      name: Buildings_PlainOutside_BotL
       rect:
         serializedVersion: 2
         x: 128
@@ -1210,7 +1166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_56
+      name: Buildings_PlainOutside_Bot
       rect:
         serializedVersion: 2
         x: 144
@@ -1232,7 +1188,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_57
+      name: Buildings_PlainOutside_BotR
       rect:
         serializedVersion: 2
         x: 160
@@ -1276,7 +1232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_59
+      name: Buildings_WoodPanels_2_Center_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1298,7 +1254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_60
+      name: Buildings_WoodPanels_2_Beam_3
       rect:
         serializedVersion: 2
         x: 208
@@ -1342,7 +1298,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_62
+      name: Buildings_BlueRoof_BotL
       rect:
         serializedVersion: 2
         x: 240
@@ -1364,7 +1320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_63
+      name: Buildings_BlueRoof_Bot
       rect:
         serializedVersion: 2
         x: 256
@@ -1386,7 +1342,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_64
+      name: Buildings_BlueRoof_BotR
       rect:
         serializedVersion: 2
         x: 272
@@ -1474,7 +1430,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_68
+      name: Buildings_BrownRoof_BotL
       rect:
         serializedVersion: 2
         x: 336
@@ -1496,7 +1452,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_69
+      name: Buildings_BrownRoof_Bot
       rect:
         serializedVersion: 2
         x: 352
@@ -1518,7 +1474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_70
+      name: Buildings_BrownRoof_BotR
       rect:
         serializedVersion: 2
         x: 368
@@ -1540,7 +1496,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_71
+      name: Buildings_BrownRoof__Center_Dark
       rect:
         serializedVersion: 2
         x: 384
@@ -1562,7 +1518,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_72
+      name: Buildings_LargeBox_Left_2
       rect:
         serializedVersion: 2
         x: 0
@@ -1584,7 +1540,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_73
+      name: Buildings_LargeBox_Center_4
       rect:
         serializedVersion: 2
         x: 16
@@ -1606,7 +1562,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_74
+      name: Buildings_LargeBox_Center_5
       rect:
         serializedVersion: 2
         x: 32
@@ -1628,7 +1584,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_75
+      name: Buildings_LargeBox_Center_6
       rect:
         serializedVersion: 2
         x: 48
@@ -1650,7 +1606,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_76
+      name: Buildings_LargeBox_Right_2
       rect:
         serializedVersion: 2
         x: 64
@@ -1738,7 +1694,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_80
+      name: Buildings_PlainInside_TopL
       rect:
         serializedVersion: 2
         x: 128
@@ -1760,7 +1716,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_81
+      name: Buildings_PlainInside_Top
       rect:
         serializedVersion: 2
         x: 144
@@ -1782,7 +1738,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_82
+      name: Buildings_PlainInside_TopR
       rect:
         serializedVersion: 2
         x: 160
@@ -1804,15 +1760,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_83
+      name: Buildings_MediumBox_Top
       rect:
         serializedVersion: 2
         x: 176
         y: 336
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1826,29 +1782,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_84
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 638406d81f9be0f41854a4824a31a112
-      internalID: -1616907330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_85
+      name: Buildings_SmallBox_Top
       rect:
         serializedVersion: 2
         x: 208
@@ -1870,7 +1804,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_86
+      name: Buildings_Barrel
       rect:
         serializedVersion: 2
         x: 224
@@ -2090,7 +2024,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_96
+      name: Buildings_BrownRoof_Bot_Dark
       rect:
         serializedVersion: 2
         x: 384
@@ -2112,7 +2046,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_97
+      name: Buildings_LargeBox_BotL
       rect:
         serializedVersion: 2
         x: 0
@@ -2134,7 +2068,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_98
+      name: Buildings_LargeBox_Bottom_3
       rect:
         serializedVersion: 2
         x: 16
@@ -2156,7 +2090,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_99
+      name: Buildings_LargeBox_Bottom_2
       rect:
         serializedVersion: 2
         x: 32
@@ -2178,7 +2112,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_100
+      name: Buildings_LargeBox_Bottom_1
       rect:
         serializedVersion: 2
         x: 48
@@ -2200,7 +2134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_101
+      name: Buildings_LargeBox_BotR
       rect:
         serializedVersion: 2
         x: 64
@@ -2288,7 +2222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_105
+      name: Buildings_PlainInside_Left
       rect:
         serializedVersion: 2
         x: 128
@@ -2310,7 +2244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_106
+      name: Buildings_PlainInside_Right
       rect:
         serializedVersion: 2
         x: 160
@@ -2332,51 +2266,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_107
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 320
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd422eb4580312d4890aab5868a25690
-      internalID: -347647096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_108
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 320
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e66421ee634d08469a5f936abab76f8
-      internalID: -1448588316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_109
+      name: Buildings_SmallBox_Side
       rect:
         serializedVersion: 2
         x: 208
@@ -2684,7 +2574,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_126
+      name: Buildings_PlainInside_BotL
       rect:
         serializedVersion: 2
         x: 128
@@ -2706,7 +2596,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_127
+      name: Buildings_PlainInside_Bot
       rect:
         serializedVersion: 2
         x: 144
@@ -2728,7 +2618,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_128
+      name: Buildings_PlainInside_BotR
       rect:
         serializedVersion: 2
         x: 160
@@ -2750,15 +2640,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_129
+      name: Buildings_MediumBox_Side
       rect:
         serializedVersion: 2
         x: 176
         y: 304
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.25, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2772,37 +2662,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_130
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 304
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb23f3e1cef570748b4d2908a2745a10
-      internalID: 189156632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_131
+      name: Buildings_Shelf
       rect:
         serializedVersion: 2
         x: 208
         y: 304
-        width: 16
+        width: 32
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2811,28 +2679,6 @@ TextureImporter:
       bones: []
       spriteID: 36bffbe7e54cc9347b8458a8e5734875
       internalID: 37717716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_132
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 304
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7f5e9657a46ce540a68df2a331acc79
-      internalID: 1774116656
       vertices: []
       indices: 
       edges: []
@@ -3036,11 +2882,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_142
+      name: Buildings_WoodBridge_Middle_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
+        y: 283
         width: 16
         height: 32
       alignment: 9
@@ -3058,11 +2904,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_143
+      name: Buildings_WoodBridge_Middle_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 288
+        y: 283
         width: 16
         height: 32
       alignment: 9
@@ -3080,11 +2926,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_144
+      name: Buildings_WoodBridge_Middle_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 288
+        y: 283
         width: 16
         height: 32
       alignment: 9
@@ -3256,7 +3102,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_152
+      name: Buildings_WoodGrid_TopL
       rect:
         serializedVersion: 2
         x: 240
@@ -3278,7 +3124,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_153
+      name: Buildings_WoodGrid_Top
       rect:
         serializedVersion: 2
         x: 256
@@ -3300,7 +3146,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_154
+      name: Buildings_WoodGrid_TopR
       rect:
         serializedVersion: 2
         x: 272
@@ -3476,7 +3322,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_166
+      name: Buildings_WoodPanel_1_TopL
       rect:
         serializedVersion: 2
         x: 64
@@ -3498,7 +3344,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_167
+      name: Buildings_WoodPanel_1_Top
       rect:
         serializedVersion: 2
         x: 80
@@ -3520,7 +3366,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_168
+      name: Buildings_WoodPanel_1_TopR
       rect:
         serializedVersion: 2
         x: 96
@@ -3674,7 +3520,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_175
+      name: Buildings_WoodGrid_Left
       rect:
         serializedVersion: 2
         x: 240
@@ -3696,7 +3542,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_176
+      name: Buildings_WoodGrid_Center
       rect:
         serializedVersion: 2
         x: 256
@@ -3718,7 +3564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_177
+      name: Buildings_WoodGrid_Right
       rect:
         serializedVersion: 2
         x: 272
@@ -3784,81 +3630,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_181
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45bf51b1c661e104680cfa3f076c6788
-      internalID: 897808198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_182
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d830fbd482def5439533befb97981d1
-      internalID: -532394730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_183
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 774dde07bbbd57349b53688166ffa63b
-      internalID: -1750329133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_184
+      name: Buildings_WoodBridge_EndL_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 240
         width: 16
-        height: 32
+        height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3872,15 +3652,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_185
+      name: Buildings_WoodBridge_EndL_2
       rect:
         serializedVersion: 2
         x: 16
         y: 256
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3894,15 +3674,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_186
+      name: Buildings_WoodBridge_EndR_2
       rect:
         serializedVersion: 2
         x: 32
         y: 256
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3916,15 +3696,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_187
+      name: Buildings_WoodBridge_EndR_1
       rect:
         serializedVersion: 2
         x: 48
-        y: 256
+        y: 240
         width: 16
-        height: 32
+        height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3938,7 +3718,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_188
+      name: Buildings_WoodPanel_1_Left
       rect:
         serializedVersion: 2
         x: 64
@@ -3960,7 +3740,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_189
+      name: Buildings_WoodPanel_1_Center
       rect:
         serializedVersion: 2
         x: 80
@@ -3982,7 +3762,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_190
+      name: Buildings_WoodPanel_1_Right
       rect:
         serializedVersion: 2
         x: 96
@@ -4136,7 +3916,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_197
+      name: Buildings_WoodGrid_BotL
       rect:
         serializedVersion: 2
         x: 240
@@ -4158,7 +3938,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_198
+      name: Buildings_WoodGrid_Bot
       rect:
         serializedVersion: 2
         x: 256
@@ -4180,7 +3960,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_199
+      name: Buildings_WoodGrid_BotR
       rect:
         serializedVersion: 2
         x: 272
@@ -4246,7 +4026,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_202
+      name: Buildings_Window
       rect:
         serializedVersion: 2
         x: 320
@@ -4268,117 +4048,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_203
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d739d26206448ac409b9275eb1454d39
-      internalID: -579492246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_204
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 773cac7535ab2fa45b399b363661d789
-      internalID: 1719407882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_205
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd20dca39e15aeb46be17d2c7ddf88f4
-      internalID: 1160327609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_206
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 719ec708f77579d44955ef760b683be7
-      internalID: -1127848800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_207
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1517f376021573f408b8e71169f14605
-      internalID: 1494556627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_208
+      name: Buildings_WoodPanel_1_BotL
       rect:
         serializedVersion: 2
         x: 64
@@ -4400,7 +4070,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_209
+      name: Buildings_WoodPanel_1_Bot
       rect:
         serializedVersion: 2
         x: 80
@@ -4422,7 +4092,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_210
+      name: Buildings_WoodPanel_1_BotR
       rect:
         serializedVersion: 2
         x: 96
@@ -4554,161 +4224,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_216
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f664f167b83b4cf4a88c07ccaaeb1854
-      internalID: 2113289904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_217
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f413195ed886236428936de5d4d3a4f1
-      internalID: 265654505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_218
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 334aee446e29b9a4db1468ad323aa79b
-      internalID: -1852328925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_219
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d72076bbbdaaad54a99565091b63b824
-      internalID: -877413071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_220
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 043b3b54ac3bc6141834efd103b98308
-      internalID: -839587817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_221
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb1e76567adf5264dbd34e08a61f8b05
-      internalID: -1297586048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_222
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70db65732f430cb4daa17ec9c12f4716
-      internalID: -1081510716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_223
+      name: Buildings_Logs_EndL
       rect:
         serializedVersion: 2
         x: 16
@@ -4730,7 +4246,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_224
+      name: Buildings_Logs_Middle
       rect:
         serializedVersion: 2
         x: 32
@@ -4752,7 +4268,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_225
+      name: Buildings_Logs_EndR
       rect:
         serializedVersion: 2
         x: 48
@@ -4774,7 +4290,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_226
+      name: Buildings_WoodPanels_1_StackedLogs_Left
       rect:
         serializedVersion: 2
         x: 64
@@ -4818,7 +4334,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_228
+      name: Buildings_WoodPanels_1_StackedLogs_Right
       rect:
         serializedVersion: 2
         x: 96
@@ -4972,147 +4488,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_235
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9eee71f326e491e458b946e80897689c
-      internalID: 1296731638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_236
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11ac403a818aa1d44b3e2a35e9ad9854
-      internalID: 1221168687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_237
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f263e1ef726a47547b20fce627dfadb0
-      internalID: -1968362091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_238
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db7439fdb449d1941abccc437da0225a
-      internalID: 1072018776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_239
+      name: Buildings_Door_1
       rect:
         serializedVersion: 2
         x: 336
         y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3238392115862f4899ca406ad4fac23
-      internalID: -787336979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_240
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa190f7e762f7754abde8ea99409d1b3
-      internalID: -1817781889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_241
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 48
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5214,7 +4598,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_247
+      name: Buildings_Fence_Middle_Top
       rect:
         serializedVersion: 2
         x: 176
@@ -5236,7 +4620,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_248
+      name: Buildings_Fence_EndR_Top
       rect:
         serializedVersion: 2
         x: 192
@@ -5258,7 +4642,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_249
+      name: Buildings_Fence_Smooth_Top
       rect:
         serializedVersion: 2
         x: 208
@@ -5280,7 +4664,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_250
+      name: Buildings_Fence_Solo_Top
       rect:
         serializedVersion: 2
         x: 224
@@ -5297,94 +4681,6 @@ TextureImporter:
       bones: []
       spriteID: 3fd4bacea97017f42b6049cfcc117866
       internalID: 1109756755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_251
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14e2507d82d700849ac952668ff38daa
-      internalID: 1428747024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_252
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a34299bc380d0cf4db4b48f251002dd7
-      internalID: -1681894763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_253
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1866c0d759ed26448ca6ebf83206a69
-      internalID: 1366214969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_254
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39174556f8ba11546b7e7ff8ace72a31
-      internalID: -1889100516
       vertices: []
       indices: 
       edges: []
@@ -5456,7 +4752,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_258
+      name: Buildings_Fence_EndL
       rect:
         serializedVersion: 2
         x: 160
@@ -5478,7 +4774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_259
+      name: Buildings_Fence_Middle
       rect:
         serializedVersion: 2
         x: 176
@@ -5500,7 +4796,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_260
+      name: Buildings_Fence_EndR
       rect:
         serializedVersion: 2
         x: 192
@@ -5522,7 +4818,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_261
+      name: Buildings_Fence_Solo_Smooth
       rect:
         serializedVersion: 2
         x: 208
@@ -5544,7 +4840,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_262
+      name: Buildings_Fence_Solo
       rect:
         serializedVersion: 2
         x: 224
@@ -5566,81 +4862,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_263
+      name: Buildings_Gate
       rect:
         serializedVersion: 2
         x: 272
         y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: caefbe40c9c70ec4c8f9d22430817662
-      internalID: 1186723391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_264
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78fefa9b3eb0505439e5ac6b652ef564
-      internalID: 614126233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_265
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f57c64d4816904f45bc09d44911482ec
-      internalID: 193725099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Buildings_266
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.375, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5661,8 +4891,8 @@ TextureImporter:
         y: 160
         width: 80
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5683,8 +4913,8 @@ TextureImporter:
         y: 160
         width: 80
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5705,8 +4935,8 @@ TextureImporter:
         y: 160
         width: 80
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5720,15 +4950,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buildings_349
+      name: Buildings_CaveEntrance
       rect:
         serializedVersion: 2
         x: 272
         y: 32
         width: 128
         height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.0625, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5737,6 +4967,28 @@ TextureImporter:
       bones: []
       spriteID: f3281362acfc8964ead56de4e2a71117
       internalID: 172052769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buildings_Fence_EndL_Top
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c070655bcb62b048852d26c86358b4d
+      internalID: -971679431
       vertices: []
       indices: 
       edges: []
@@ -5755,20 +5007,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Buildings_0: -1692831949
-      Buildings_1: 150592712
-      Buildings_10: 615330739
-      Buildings_100: 337565364
-      Buildings_101: -1115556677
+      Buildings_0: -569976340
+      Buildings_1: 2071592499
       Buildings_102: 486254737
       Buildings_103: -2102169552
       Buildings_104: -1925494877
-      Buildings_105: 995064602
-      Buildings_106: 1170450604
       Buildings_107: -347647096
       Buildings_108: -1448588316
-      Buildings_109: -960767228
-      Buildings_11: -127342164
       Buildings_110: 1022087582
       Buildings_111: -458315503
       Buildings_112: -1973285066
@@ -5779,20 +5024,13 @@ TextureImporter:
       Buildings_117: -163683693
       Buildings_118: -1627343276
       Buildings_119: 1607929244
-      Buildings_12: -1699500815
       Buildings_120: -1413007817
       Buildings_121: 572725054
       Buildings_122: 1023944016
       Buildings_123: 48123029
       Buildings_124: 2087496600
       Buildings_125: -1361374363
-      Buildings_126: 1400887472
-      Buildings_127: -404656686
-      Buildings_128: -848536196
-      Buildings_129: 2084181665
-      Buildings_13: -1762025485
       Buildings_130: 189156632
-      Buildings_131: 37717716
       Buildings_132: 1774116656
       Buildings_133: 1892017096
       Buildings_134: 1992480318
@@ -5801,86 +5039,52 @@ TextureImporter:
       Buildings_137: 2132840492
       Buildings_138: -2028975188
       Buildings_139: -2051224086
-      Buildings_14: -1489968827
       Buildings_140: 1146432056
       Buildings_141: 315369852
-      Buildings_142: 1073199389
-      Buildings_143: -1383083736
-      Buildings_144: -1092074480
       Buildings_145: 785731052
       Buildings_146: -1158996409
       Buildings_147: -746383861
       Buildings_148: 507621961
       Buildings_149: -1165288559
-      Buildings_15: 179983419
       Buildings_150: -1615452727
       Buildings_151: 1345317193
-      Buildings_152: -158181108
-      Buildings_153: -676958194
-      Buildings_154: 2040957196
       Buildings_155: -1785344766
       Buildings_156: 833191232
       Buildings_157: 1531349893
       Buildings_158: 1417898339
       Buildings_159: -1419884424
-      Buildings_16: -156418744
       Buildings_160: 217717388
       Buildings_161: -347095982
       Buildings_162: -1853972140
       Buildings_163: 363668675
       Buildings_164: -2007959702
       Buildings_165: -296350898
-      Buildings_166: -1179607252
-      Buildings_167: 1990711886
-      Buildings_168: -2001557544
       Buildings_169: -1379940079
-      Buildings_17: 529754107
       Buildings_170: -201046482
       Buildings_171: 1330422016
       Buildings_172: 237151113
       Buildings_173: -1335751269
       Buildings_174: 957007770
-      Buildings_175: 1700615769
-      Buildings_176: 374682892
-      Buildings_177: -1998018913
       Buildings_178: 1509575049
       Buildings_179: 1821644016
-      Buildings_18: -1316293642
       Buildings_180: 1801273416
       Buildings_181: 897808198
       Buildings_182: -532394730
       Buildings_183: -1750329133
-      Buildings_184: 994510203
-      Buildings_185: 2068160577
-      Buildings_186: 195150422
-      Buildings_187: -1280651613
-      Buildings_188: 305630691
-      Buildings_189: 656263630
-      Buildings_19: -589962119
-      Buildings_190: 1924525904
       Buildings_191: 2025718953
       Buildings_192: 851644622
       Buildings_193: 2050338129
       Buildings_194: 783045299
       Buildings_195: -160317703
       Buildings_196: 1148626611
-      Buildings_197: 1171986495
-      Buildings_198: 1015373451
-      Buildings_199: 490734347
-      Buildings_2: 1228626854
-      Buildings_20: 1530541657
+      Buildings_2: -1941380361
       Buildings_200: -2048826850
       Buildings_201: -445920648
-      Buildings_202: 977135892
       Buildings_203: -579492246
       Buildings_204: 1719407882
       Buildings_205: 1160327609
       Buildings_206: -1127848800
       Buildings_207: 1494556627
-      Buildings_208: -177616497
-      Buildings_209: -1349358400
-      Buildings_21: 797275317
-      Buildings_210: -1143923287
       Buildings_211: 286884640
       Buildings_212: -1215463815
       Buildings_213: -121185687
@@ -5890,18 +5094,11 @@ TextureImporter:
       Buildings_217: 265654505
       Buildings_218: -1852328925
       Buildings_219: -877413071
-      Buildings_22: 1988511994
       Buildings_220: -839587817
       Buildings_221: -1297586048
       Buildings_222: -1081510716
-      Buildings_223: -48555863
-      Buildings_224: 706831078
-      Buildings_225: -1584063987
-      Buildings_226: 1244181266
       Buildings_227: -1568284330
-      Buildings_228: -2118712632
       Buildings_229: -1786403330
-      Buildings_23: 326933317
       Buildings_230: -1437968163
       Buildings_231: 1697005625
       Buildings_232: -2001956715
@@ -5912,19 +5109,12 @@ TextureImporter:
       Buildings_237: -1968362091
       Buildings_238: 1072018776
       Buildings_239: -787336979
-      Buildings_24: 1269250424
       Buildings_240: -1817781889
-      Buildings_241: 930509327
       Buildings_242: -275589910
       Buildings_243: -400973621
       Buildings_244: -885494947
       Buildings_245: 1883956722
       Buildings_246: 74842952
-      Buildings_247: 1200876608
-      Buildings_248: 1492055932
-      Buildings_249: -1182849759
-      Buildings_25: -244669423
-      Buildings_250: 1109756755
       Buildings_251: 1428747024
       Buildings_252: -1681894763
       Buildings_253: 1366214969
@@ -5932,20 +5122,12 @@ TextureImporter:
       Buildings_255: -163018362
       Buildings_256: 1393193376
       Buildings_257: 164318141
-      Buildings_258: 900934515
-      Buildings_259: 1798974676
-      Buildings_26: -2002167777
-      Buildings_260: 631525633
-      Buildings_261: 353498298
-      Buildings_262: 1737902910
       Buildings_263: 1186723391
       Buildings_264: 614126233
       Buildings_265: 193725099
-      Buildings_266: 1827615846
       Buildings_267: 447222421
       Buildings_268: 90051310
       Buildings_269: 256046335
-      Buildings_27: 845836535
       Buildings_270: 87717487
       Buildings_271: 257160953
       Buildings_272: 1252772200
@@ -5956,7 +5138,6 @@ TextureImporter:
       Buildings_277: -156051785
       Buildings_278: -1771801142
       Buildings_279: 1702802538
-      Buildings_28: 455325501
       Buildings_280: 1688325666
       Buildings_281: -986744120
       Buildings_282: -713218932
@@ -5978,8 +5159,6 @@ TextureImporter:
       Buildings_297: 163106057
       Buildings_298: -379645379
       Buildings_299: -1953403695
-      Buildings_3: -282575142
-      Buildings_30: -1604455741
       Buildings_300: 282721786
       Buildings_301: -888831265
       Buildings_302: -1518969728
@@ -5990,7 +5169,6 @@ TextureImporter:
       Buildings_307: 1683933638
       Buildings_308: -315417009
       Buildings_309: -318902822
-      Buildings_31: -2009300452
       Buildings_310: 1475474758
       Buildings_311: -858533244
       Buildings_312: -1475119052
@@ -6001,7 +5179,6 @@ TextureImporter:
       Buildings_317: 1968922818
       Buildings_318: -621056027
       Buildings_319: 1953068381
-      Buildings_32: -82673988
       Buildings_320: 1568613395
       Buildings_321: -251512767
       Buildings_322: -1221578471
@@ -6012,7 +5189,6 @@ TextureImporter:
       Buildings_327: -1686068993
       Buildings_328: 172536814
       Buildings_329: 1011277108
-      Buildings_33: 111291913
       Buildings_330: 2043016904
       Buildings_331: 1647068815
       Buildings_332: 1580629553
@@ -6033,8 +5209,6 @@ TextureImporter:
       Buildings_346: -1737644373
       Buildings_347: -91008968
       Buildings_348: 1983784204
-      Buildings_349: 172052769
-      Buildings_35: -1006946102
       Buildings_350: 1363626053
       Buildings_351: -1111092082
       Buildings_352: -1554992880
@@ -6045,81 +5219,154 @@ TextureImporter:
       Buildings_357: 1882913407
       Buildings_358: 1242703691
       Buildings_359: 859812304
-      Buildings_36: -1459230226
       Buildings_360: 1719122390
       Buildings_361: 58992025
       Buildings_362: -624543799
       Buildings_363: 511186285
       Buildings_364: 98486197
       Buildings_37: -1558526799
-      Buildings_38: -977848835
-      Buildings_39: -1811007136
-      Buildings_4: -77302571
-      Buildings_40: -1093067284
-      Buildings_41: -231530476
       Buildings_42: 541641647
-      Buildings_43: 2071592499
-      Buildings_44: -271862794
-      Buildings_45: -1941380361
-      Buildings_46: 604501505
-      Buildings_47: 1000463496
-      Buildings_48: 1763590870
-      Buildings_49: -1261039861
-      Buildings_5: -1412597913
-      Buildings_50: -1536975835
-      Buildings_51: 2006000441
-      Buildings_52: -1756648632
-      Buildings_53: -1576114894
-      Buildings_54: 168169859
-      Buildings_55: -1721994084
-      Buildings_56: 2096692209
-      Buildings_57: -2003497377
       Buildings_58: -240776558
-      Buildings_59: -888343357
-      Buildings_6: -1144304225
-      Buildings_60: 880642916
       Buildings_61: -2014869332
-      Buildings_62: 1066799503
-      Buildings_63: -492232968
-      Buildings_64: -1738816081
       Buildings_65: -970329488
       Buildings_66: 1567294720
       Buildings_67: -1523467600
-      Buildings_68: 1667672059
-      Buildings_69: 627284080
-      Buildings_7: 2130411159
-      Buildings_70: 907156984
-      Buildings_71: -1120070454
-      Buildings_72: -54729916
-      Buildings_73: -1537053326
-      Buildings_74: 848954233
-      Buildings_75: 1918358137
-      Buildings_76: 1369503382
       Buildings_77: -1471930172
       Buildings_78: -1917206665
       Buildings_79: 943920023
-      Buildings_8: 2082192741
-      Buildings_80: -1672655960
-      Buildings_81: -277972163
-      Buildings_82: 1454120852
-      Buildings_83: -353327790
       Buildings_84: -1616907330
-      Buildings_85: -742157519
-      Buildings_86: -1456585582
       Buildings_87: 780217608
       Buildings_88: 956010503
       Buildings_89: 144227486
-      Buildings_9: 79115447
       Buildings_90: -2046335223
       Buildings_91: -1659711778
       Buildings_92: -924124778
       Buildings_93: -1827727702
       Buildings_94: -2101558939
       Buildings_95: 1033379210
-      Buildings_96: 339830653
-      Buildings_97: 1685706328
-      Buildings_98: 1720636113
-      Buildings_99: 294401919
+      Buildings_Barrel: -1456585582
+      Buildings_BlueRoof_Bot: -492232968
+      Buildings_BlueRoof_BotL: 1066799503
+      Buildings_BlueRoof_BotR: -1738816081
+      Buildings_BlueRoof_Center_1: -1811007136
+      Buildings_BlueRoof_Center_2: -231530476
+      Buildings_BlueRoof_Left: -977848835
+      Buildings_BlueRoof_Right: -1093067284
+      Buildings_BrownRoof_Bot: 627284080
+      Buildings_BrownRoof_BotL: 1667672059
+      Buildings_BrownRoof_BotR: 907156984
+      Buildings_BrownRoof_Bot_Dark: 339830653
+      Buildings_BrownRoof_Center: -271862794
+      Buildings_BrownRoof_Top: 1530541657
+      Buildings_BrownRoof_TopL: -589962119
+      Buildings_BrownRoof_TopR: 797275317
+      Buildings_BrownRoof_Top_Dark: 604501505
+      Buildings_BrownRoof__Center_Dark: -1120070454
+      Buildings_CaveEntrance: 172052769
+      Buildings_Door_1: 930509327
+      Buildings_Fence_EndL: 900934515
+      Buildings_Fence_EndL_Top: -1692831949
+      Buildings_Fence_EndR: 631525633
+      Buildings_Fence_EndR_Top: 1492055932
+      Buildings_Fence_Middle: 1798974676
+      Buildings_Fence_Middle_Top: 1200876608
+      Buildings_Fence_Smooth_Top: -1182849759
+      Buildings_Fence_Solo: 1737902910
+      Buildings_Fence_Solo_Smooth: 353498298
+      Buildings_Fence_Solo_Top: 1109756755
+      Buildings_Gate: 1827615846
+      Buildings_LargeBox_BotL: 1685706328
+      Buildings_LargeBox_BotR: -1115556677
+      Buildings_LargeBox_Bottom_1: 337565364
+      Buildings_LargeBox_Bottom_2: 294401919
+      Buildings_LargeBox_Bottom_3: 1720636113
+      Buildings_LargeBox_Center_1: 1763590870
+      Buildings_LargeBox_Center_2: -1261039861
+      Buildings_LargeBox_Center_3: -1536975835
+      Buildings_LargeBox_Center_4: -1537053326
+      Buildings_LargeBox_Center_5: 848954233
+      Buildings_LargeBox_Center_6: 1918358137
+      Buildings_LargeBox_Left_1: 1000463496
+      Buildings_LargeBox_Left_2: -54729916
+      Buildings_LargeBox_Right_1: 2006000441
+      Buildings_LargeBox_Right_2: 1369503382
+      Buildings_LargeBox_Top1: 1269250424
+      Buildings_LargeBox_Top2: -244669423
+      Buildings_LargeBox_Top3: -2002167777
+      Buildings_LargeBox_TopL: 326933317
+      Buildings_LargeBox_TopR: 845836535
+      Buildings_Logs_EndL: -48555863
+      Buildings_Logs_EndR: -1584063987
+      Buildings_Logs_Middle: 706831078
+      Buildings_MediumBox_Side: 2084181665
+      Buildings_MediumBox_Top: -353327790
+      Buildings_PlainInside_Bot: -404656686
+      Buildings_PlainInside_BotL: 1400887472
+      Buildings_PlainInside_BotR: -848536196
+      Buildings_PlainInside_Left: 995064602
+      Buildings_PlainInside_Right: 1170450604
+      Buildings_PlainInside_Top: -277972163
+      Buildings_PlainInside_TopL: -1672655960
+      Buildings_PlainInside_TopR: 1454120852
+      Buildings_PlainOutside_Bot: 2096692209
+      Buildings_PlainOutside_BotL: -1721994084
+      Buildings_PlainOutside_BotR: -2003497377
+      Buildings_PlainOutside_Center: -82673988
+      Buildings_PlainOutside_Left: -2009300452
+      Buildings_PlainOutside_Right: 111291913
+      Buildings_PlainOutside_Top: 79115447
+      Buildings_PlainOutside_TopL: 2082192741
+      Buildings_PlainOutside_TopR: 615330739
+      Buildings_RoofBeam_1: 179983419
+      Buildings_RoofBeam_2: -156418744
+      Buildings_RoofBeam_3: 529754107
+      Buildings_Shelf: 37717716
+      Buildings_SmallBox_Side: -960767228
+      Buildings_SmallBox_Top: -742157519
+      Buildings_Window: 977135892
+      Buildings_WoodBridge_EndL_1: 994510203
+      Buildings_WoodBridge_EndL_2: 2068160577
+      Buildings_WoodBridge_EndR_1: -1280651613
+      Buildings_WoodBridge_EndR_2: 195150422
+      Buildings_WoodBridge_Middle_1: -1383083736
+      Buildings_WoodBridge_Middle_2: -1092074480
+      Buildings_WoodBridge_Middle_3: 1073199389
+      Buildings_WoodGrid_Bot: 1015373451
+      Buildings_WoodGrid_BotL: 1171986495
+      Buildings_WoodGrid_BotR: 490734347
+      Buildings_WoodGrid_Center: 374682892
+      Buildings_WoodGrid_Left: 1700615769
+      Buildings_WoodGrid_Right: -1998018913
+      Buildings_WoodGrid_Top: -676958194
+      Buildings_WoodGrid_TopL: -158181108
+      Buildings_WoodGrid_TopR: 2040957196
+      Buildings_WoodInside_Bot: -1576114894
+      Buildings_WoodInside_BotL: -1756648632
+      Buildings_WoodInside_BotR: 168169859
+      Buildings_WoodInside_Left: 455325501
+      Buildings_WoodInside_Right: -1604455741
+      Buildings_WoodInside_Top: -1144304225
+      Buildings_WoodInside_TopL: -1412597913
+      Buildings_WoodInside_TopR: 2130411159
+      Buildings_WoodPanel_1_Bot: -1349358400
+      Buildings_WoodPanel_1_BotL: -177616497
+      Buildings_WoodPanel_1_BotR: -1143923287
+      Buildings_WoodPanel_1_Center: 656263630
+      Buildings_WoodPanel_1_Left: 305630691
+      Buildings_WoodPanel_1_Right: 1924525904
+      Buildings_WoodPanel_1_Top: 1990711886
+      Buildings_WoodPanel_1_TopL: -1179607252
+      Buildings_WoodPanel_1_TopR: -2001557544
+      Buildings_WoodPanels_1_StackedLogs_Left: 1244181266
+      Buildings_WoodPanels_1_StackedLogs_Right: -2118712632
+      Buildings_WoodPanels_2_Beam_1: -1762025485
+      Buildings_WoodPanels_2_Beam_2: -1459230226
+      Buildings_WoodPanels_2_Beam_3: 880642916
+      Buildings_WoodPanels_2_Center_1: -1699500815
+      Buildings_WoodPanels_2_Center_2: -1006946102
+      Buildings_WoodPanels_2_Center_3: -888343357
+      Buildings_WoodPanels_2_StackedLogs_Left: -127342164
+      Buildings_WoodPannel_2_StackedLogs_Right: -1489968827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

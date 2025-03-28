@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1455111488385755148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7830978879855239968}
+  - component: {fileID: 1239415838408770241}
+  m_Layer: 0
+  m_Name: SaveSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7830978879855239968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455111488385755148}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 367.2216, y: 158.3931, z: -39.01499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1239415838408770241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455111488385755148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b5175bcc13207469cb22cbd918ce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestSaveGameChannel: {fileID: 11400000, guid: 395726e415530d848872b164786c82ae, type: 2}
+  onGameSavedChannel: {fileID: 11400000, guid: c063421187e685e45893e9857e8d7f8d, type: 2}
+  requestLoadGameChannel: {fileID: 11400000, guid: cb3cc0c6649d25e40aee501ded5c9d1d, type: 2}
+  onGameLoadedChannel: {fileID: 11400000, guid: f7d5e22a91f57b640b0bb267b5f7489e, type: 2}
+  requestDeleteSaveChannel: {fileID: 11400000, guid: 26e27ef5bf9a03a4f8d3b20711b95c9d, type: 2}
+  onDeleteSaveChannel: {fileID: 11400000, guid: 8415fe4504bca0b40a82f75b1560a1ac, type: 2}
+  requestMakeNewSaveChannel: {fileID: 11400000, guid: 68f02c4a08f05fd4e904ce75b9c4a81d, type: 2}
+  onMakeNewSaveChannel: {fileID: 11400000, guid: f4b167f54aa8ff1459942ed562f2a673, type: 2}
+  requestChangeActiveSaveSlot: {fileID: 11400000, guid: a8ef4fa76dafa854fbe8061793d3fa27, type: 2}
+  requestLoadUIChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
+  requestUnloadUIChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
+  saveIconWidgetData: {fileID: 11400000, guid: ac1e3d657cce68c4eb9b5eed82fccc01, type: 2}
+  activeSaveSlot: 0

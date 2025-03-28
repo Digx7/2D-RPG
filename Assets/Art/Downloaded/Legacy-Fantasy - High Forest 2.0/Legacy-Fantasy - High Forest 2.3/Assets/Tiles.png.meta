@@ -3872,7 +3872,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiles_370
+      name: Tiles_AllBlue
       rect:
         serializedVersion: 2
         x: 16
@@ -5159,8 +5159,6 @@ TextureImporter:
       Tiles_367: 1111498775
       Tiles_368: -978216503
       Tiles_369: -1686840006
-      Tiles_37: -1401483383
-      Tiles_370: -1548551539
       Tiles_371: -1125843152
       Tiles_375: -1020638997
       Tiles_376: -470012969
@@ -5262,6 +5260,7 @@ TextureImporter:
       Tiles_97: -1935640972
       Tiles_98: 198060149
       Tiles_99: -814241226
+      Tiles_AllBlue: -1548551539
       Tiles_BushProp_1: 354233624
       Tiles_BushProp_2: 1005611206
       Tiles_BushProp_3: -1239827199
