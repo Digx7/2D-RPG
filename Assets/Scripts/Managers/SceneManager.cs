@@ -47,6 +47,7 @@ public class SceneManager : Singleton<SceneManager>
 
     private void OnChangeScene(SceneData data)
     {
+        Debug.Log("SceneManager: OnChangeScene");
         UpdateContext(data.context);
         LoadScene(data.sceneName);
     }
@@ -72,6 +73,7 @@ public class SceneManager : Singleton<SceneManager>
 
     private void LoadScene(string name, LoadSceneMode mode = LoadSceneMode.Single)
     {
+        Debug.Log("SceneManger: LoadScene()");
         // UnityEngine.SceneManagement.SceneManager.LoadScene(name, mode);
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(name, mode);
     }
