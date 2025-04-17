@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8591538049813734135}
   - component: {fileID: 2297201532782095256}
   m_Layer: 0
-  m_Name: PlayerSpawnHelper
+  m_Name: PlayerSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: a32d7642b3818f74b9cd3df731b2751a, type: 3}
   m_NavMeshLayer: 0
@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e0dbbbadac1d14682ef4d4423722bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
   requestSpawnPlayerChannel: {fileID: 11400000, guid: 0552dee96b05be743b569078468665c9, type: 2}
+  contextOnSceneSetupChannel: {fileID: 11400000, guid: 0a103d01407c3144da7f08f39b4812ca, type: 2}
