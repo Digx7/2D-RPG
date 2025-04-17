@@ -134,7 +134,9 @@ public class CameraManager : MonoBehaviour
 
         OnReachFocusLocation = new UnityEvent();
 
+        WarpCameraToTransform(playerCharacter.transform);
         StartFollowingTransform(playerCharacter.transform);
+
 
 
         OnCameraManagerFinishedSetup.Raise(ID);
@@ -206,6 +208,17 @@ public class CameraManager : MonoBehaviour
 
         OnReachFocusLocation.AddListener(StartFollowingLoop);
         MoveCameraToLocation(m_transformToFollow.transform.position);
+    }
+
+    public void WarpCameraToTransform(Transform transformToWarpTo)
+    {
+        canMoveCameraManually = false;
+        isFollowingUnit = false;
+
+        StopAllCoroutines();
+
+        Vector3 target = new Vector3(transformToWarpTo.position.x, transformToWarpTo.position.y, -10);
+        camera.transform.position = target;
     }
 
     private void StartFollowingLoop()
