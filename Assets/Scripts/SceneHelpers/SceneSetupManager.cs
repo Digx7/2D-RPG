@@ -32,5 +32,7 @@ public class SceneSetupManager : MonoBehaviour
         contextOnSceneSetupChannel.Raise(context);
 
         // Add code here
+
+        Debug.Log("SceneSetupManager: Setup()");
     }
 }
