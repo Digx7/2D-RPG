@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 // Change
 
@@ -12,6 +13,12 @@ public class SceneManager : Singleton<SceneManager>
     [SerializeField] private SceneChannel  addSceneChannel;
     [SerializeField] private SceneChannel  removeSceneChannel;
     [SerializeField] private SceneContextChannel  updateSceneContextChannel;
+
+    public UnityEvent OnChangeSceneEvent;
+    public UnityEvent OnChangeSceneFinishedEvent;
+
+    private bool onChangeSceneCoroutineIsGoing = false;
+    private bool onChangeSceneFinishedCoroutineIsGoing = false;
     
     // CHANELS =================================
 
@@ -47,9 +54,11 @@ public class SceneManager : Singleton<SceneManager>
 
     private void OnChangeScene(SceneData data)
     {
+        if(onChangeSceneCoroutineIsGoing) return;
+
         Debug.Log("SceneManager: OnChangeScene");
-        UpdateContext(data.context);
-        LoadScene(data.sceneName);
+        OnChangeSceneEvent.Invoke();
+        StartCoroutine(OnChangeSceneCoroutine(data));
     }
 
     private void OnAddScene(SceneData data)
@@ -66,7 +75,9 @@ public class SceneManager : Singleton<SceneManager>
 
     private void OnAcitveSceneChanged(Scene current, Scene next)
     {
-        // Exists if we need to add any code here
+        if(onChangeSceneFinishedCoroutineIsGoing) return;
+
+        StartCoroutine(OnChangeSceneFinishedCoroutine());
     }
 
     // MAIN FUNCTIONS =================================
@@ -81,5 +92,24 @@ public class SceneManager : Singleton<SceneManager>
     private void UnloadScene(SceneData data)
     {
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(data.sceneName);
+    }
+
+    // COROUTINES ======================================
+
+    private IEnumerator OnChangeSceneCoroutine(SceneData data)
+    {
+        onChangeSceneCoroutineIsGoing = true;
+        yield return new WaitForSeconds(0.5f);
+        UpdateContext(data.context);
+        LoadScene(data.sceneName);
+        onChangeSceneCoroutineIsGoing = false;
+    }
+
+    private IEnumerator OnChangeSceneFinishedCoroutine()
+    {
+        onChangeSceneFinishedCoroutineIsGoing = true;
+        yield return new WaitForSeconds(0.5f);
+        OnChangeSceneFinishedEvent.Invoke();
+        onChangeSceneFinishedCoroutineIsGoing = false;
     }
 }
