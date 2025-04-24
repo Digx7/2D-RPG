@@ -22,6 +22,7 @@ public class Conversation : ScriptableObject
 public class ConversationNode
 {
     public int ID;
+    public int UID;
     public int nextNode;
 
     public virtual void Print()
