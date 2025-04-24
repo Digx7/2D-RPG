@@ -34,6 +34,30 @@ public class TileNavMeshAgent : MonoBehaviour
         }
     }
     
+    public void TryTeleportToWorldPosition(Vector3 worldPosition)
+    {
+        if(tileMapNavMesh == null) 
+        {
+            Debug.Log("TileNavMeshAgent: TryTeleportToWorldPosition() FAILED because tileMapNavMesh == null");
+            return;
+        }
+
+        Debug.Log("TileNavMeshAgent: TryTeleportToWorldPosition()");
+
+        Vector3Int endlocation = Vector3Int.zero;
+
+        if(!tileMapNavMesh.WorldPositionToTileLocation(worldPosition, ref endlocation))
+        {
+            Debug.Log("TileNavMeshAgent: Given end position is not on nav mesh");
+            return;
+        }
+        else
+        {
+            transform.position = endlocation;
+            location = endlocation;
+        }
+    }
+
     public void TryToMoveToWorldPosition(Vector3 worldEndPosition)
     {
         if(tileMapNavMesh == null) 

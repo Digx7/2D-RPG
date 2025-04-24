@@ -7,10 +7,11 @@ public class UITurnOrderWidget : UIWidget
 {
     public GameObject iconPrefab;
     public GameObject iconParent;
-    public SpriteListChannel onSetupChannel;
+    public CombatUnitListChannel onSetupChannel;
     public Channel onNextTurnChannel;
 
-    private List<Sprite> iconList;
+    // private List<Sprite> iconList;
+    private List<CombatUnit> unitList;
     private int indexStart = 0;
 
     public override void Setup(UIWidgetData newUIWidgetData)
@@ -29,10 +30,11 @@ public class UITurnOrderWidget : UIWidget
         base.Teardown();
     }
 
-    public void SetIcons(List<Sprite> newIconList)
+    public void SetIcons(List<CombatUnit> newUnitList)
     {
         Debug.Log("UITurnOrderWidget: SetIcons()");
-        iconList = newIconList;
+        // iconList = newIconList;
+        unitList = newUnitList;
         StartCoroutine(Refresh());
     }
 
@@ -40,7 +42,7 @@ public class UITurnOrderWidget : UIWidget
     {
         indexStart++;
 
-        if(indexStart >= iconList.Count) indexStart = 0;
+        if(indexStart >= unitList.Count) indexStart = 0;
 
         StartCoroutine(Refresh());
     }
@@ -66,11 +68,14 @@ public class UITurnOrderWidget : UIWidget
     {
         int x = 0;
         
-        for (int i = indexStart; i < iconList.Count; i++)
+        for (int i = indexStart; i < unitList.Count; i++)
         {
             GameObject obj = Instantiate(iconPrefab, iconParent.transform);
             UITurnOrderIcon icon = obj.GetComponent<UITurnOrderIcon>();
-            icon.Render(iconList[i]);
+            
+            icon.SetCombatUnit(unitList[i]);
+            if(i == indexStart) icon.SetIsTurn(true);
+
             obj.transform.SetSiblingIndex(x);
             x++;
         }
@@ -78,7 +83,11 @@ public class UITurnOrderWidget : UIWidget
         {
             GameObject obj = Instantiate(iconPrefab, iconParent.transform);
             UITurnOrderIcon icon = obj.GetComponent<UITurnOrderIcon>();
-            icon.Render(iconList[i]);
+            
+            icon.SetCombatUnit(unitList[i]);
+            icon.SetHasGone(true);
+
+
             obj.transform.SetSiblingIndex(x);
             x++;
         }

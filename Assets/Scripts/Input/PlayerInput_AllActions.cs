@@ -144,6 +144,42 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""14ad4175-bd7c-40e0-8e70-703d6093ac2d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""f39b56fc-6421-4e8a-a6a9-a91ca4bcd2df"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_3"",
+                    ""type"": ""Button"",
+                    ""id"": ""6da4860d-0a44-443d-ba57-6314b5dd58b3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact_4"",
+                    ""type"": ""Button"",
+                    ""id"": ""813bee51-98f4-47f6-85a6-144b55370957"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -322,6 +358,61 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4f61357-4964-4c17-b345-f95b895826b8"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""226240d0-3d97-4124-ab04-86c2f99c6319"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44348828-84ab-4c4c-970b-543539668eb0"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91f3c3b9-a6fc-45cc-a865-6ea0f09c30e5"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e4088b0-65fa-411c-92d9-42ceedf3cfa3"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Interact_4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -463,6 +554,15 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MoveCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""ccda5ec0-563c-4dc9-8018-677462c37a79"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -513,7 +613,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""493d11c8-8443-4965-8a5e-2cfd0f2019ba"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
@@ -535,7 +635,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""75951b36-44cd-4cca-861c-97462e27c971"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/7"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
@@ -590,7 +690,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""f56e7912-bd06-49e4-880c-d9fa80ee3d7f"",
-                    ""path"": ""<Keyboard>/minus"",
+                    ""path"": ""<Keyboard>/equals"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
@@ -630,6 +730,61 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""d311fbc5-e61a-4f67-b146-227a577db7f8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""5bb49b95-c3c8-4490-90b2-02d1bf6fa335"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""28ebd5ce-b845-4d4f-8cf8-a18ccc7fe4b5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6e3d1a00-0586-4083-8850-ab9eaa99b068"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""845ba765-87b0-4ec3-a34b-fc2361712165"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -979,6 +1134,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Exploration_Fire2 = m_Exploration.FindAction("Fire2", throwIfNotFound: true);
         m_Exploration_Lore = m_Exploration.FindAction("Lore", throwIfNotFound: true);
         m_Exploration_Pause = m_Exploration.FindAction("Pause", throwIfNotFound: true);
+        m_Exploration_Interact_1 = m_Exploration.FindAction("Interact_1", throwIfNotFound: true);
+        m_Exploration_Interact_2 = m_Exploration.FindAction("Interact_2", throwIfNotFound: true);
+        m_Exploration_Interact_3 = m_Exploration.FindAction("Interact_3", throwIfNotFound: true);
+        m_Exploration_Interact_4 = m_Exploration.FindAction("Interact_4", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Ability_1 = m_Combat.FindAction("Ability_1", throwIfNotFound: true);
@@ -996,6 +1155,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Combat_Confirm_Ability = m_Combat.FindAction("Confirm_Ability", throwIfNotFound: true);
         m_Combat_Back_Ability = m_Combat.FindAction("Back_Ability", throwIfNotFound: true);
         m_Combat_MousePosition = m_Combat.FindAction("MousePosition", throwIfNotFound: true);
+        m_Combat_MoveCamera = m_Combat.FindAction("MoveCamera", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
@@ -1096,6 +1256,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_Exploration_Fire2;
     private readonly InputAction m_Exploration_Lore;
     private readonly InputAction m_Exploration_Pause;
+    private readonly InputAction m_Exploration_Interact_1;
+    private readonly InputAction m_Exploration_Interact_2;
+    private readonly InputAction m_Exploration_Interact_3;
+    private readonly InputAction m_Exploration_Interact_4;
     /// <summary>
     /// Provides access to input actions defined in input action map "Exploration".
     /// </summary>
@@ -1131,6 +1295,22 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// Provides access to the underlying input action "Exploration/Pause".
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_Exploration_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_1".
+        /// </summary>
+        public InputAction @Interact_1 => m_Wrapper.m_Exploration_Interact_1;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_2".
+        /// </summary>
+        public InputAction @Interact_2 => m_Wrapper.m_Exploration_Interact_2;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_3".
+        /// </summary>
+        public InputAction @Interact_3 => m_Wrapper.m_Exploration_Interact_3;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Interact_4".
+        /// </summary>
+        public InputAction @Interact_4 => m_Wrapper.m_Exploration_Interact_4;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1175,6 +1355,18 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Interact_1.started += instance.OnInteract_1;
+            @Interact_1.performed += instance.OnInteract_1;
+            @Interact_1.canceled += instance.OnInteract_1;
+            @Interact_2.started += instance.OnInteract_2;
+            @Interact_2.performed += instance.OnInteract_2;
+            @Interact_2.canceled += instance.OnInteract_2;
+            @Interact_3.started += instance.OnInteract_3;
+            @Interact_3.performed += instance.OnInteract_3;
+            @Interact_3.canceled += instance.OnInteract_3;
+            @Interact_4.started += instance.OnInteract_4;
+            @Interact_4.performed += instance.OnInteract_4;
+            @Interact_4.canceled += instance.OnInteract_4;
         }
 
         /// <summary>
@@ -1204,6 +1396,18 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Interact_1.started -= instance.OnInteract_1;
+            @Interact_1.performed -= instance.OnInteract_1;
+            @Interact_1.canceled -= instance.OnInteract_1;
+            @Interact_2.started -= instance.OnInteract_2;
+            @Interact_2.performed -= instance.OnInteract_2;
+            @Interact_2.canceled -= instance.OnInteract_2;
+            @Interact_3.started -= instance.OnInteract_3;
+            @Interact_3.performed -= instance.OnInteract_3;
+            @Interact_3.canceled -= instance.OnInteract_3;
+            @Interact_4.started -= instance.OnInteract_4;
+            @Interact_4.performed -= instance.OnInteract_4;
+            @Interact_4.canceled -= instance.OnInteract_4;
         }
 
         /// <summary>
@@ -1256,6 +1460,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_Combat_Confirm_Ability;
     private readonly InputAction m_Combat_Back_Ability;
     private readonly InputAction m_Combat_MousePosition;
+    private readonly InputAction m_Combat_MoveCamera;
     /// <summary>
     /// Provides access to input actions defined in input action map "Combat".
     /// </summary>
@@ -1328,6 +1533,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// </summary>
         public InputAction @MousePosition => m_Wrapper.m_Combat_MousePosition;
         /// <summary>
+        /// Provides access to the underlying input action "Combat/MoveCamera".
+        /// </summary>
+        public InputAction @MoveCamera => m_Wrapper.m_Combat_MoveCamera;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
@@ -1398,6 +1607,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
+            @MoveCamera.started += instance.OnMoveCamera;
+            @MoveCamera.performed += instance.OnMoveCamera;
+            @MoveCamera.canceled += instance.OnMoveCamera;
         }
 
         /// <summary>
@@ -1454,6 +1666,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
+            @MoveCamera.started -= instance.OnMoveCamera;
+            @MoveCamera.performed -= instance.OnMoveCamera;
+            @MoveCamera.canceled -= instance.OnMoveCamera;
         }
 
         /// <summary>
@@ -1757,6 +1972,34 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact_4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract_4(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Combat" which allows adding and removing callbacks.
@@ -1870,6 +2113,13 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMousePosition(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MoveCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMoveCamera(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

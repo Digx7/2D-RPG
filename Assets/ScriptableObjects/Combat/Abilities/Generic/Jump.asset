@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3af7c7c5eb081546931dd57132c14e9, type: 3}
+  m_Name: Jump
+  m_EditorClassIdentifier: 
+  AbilityName: Jump
+  EnergyCost: 2
+  AbilityIcon: {fileID: 21300000, guid: 7b39484981f299146bd5f69ee0021b0c, type: 3}
+  Description: 'Cost 2
+
+    Jump up to 5 tiles away'
+  abilityPrefab: {fileID: 8473801279894230163, guid: 4a15fa612aaa013479401071351a379d, type: 3}
+  previewPrefab: {fileID: 6835768397679461804, guid: 2f28e4e165410844e8d8181aa7a48122, type: 3}
+  OnSpawnAbility:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpawnPreview:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDespawnPreview:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdateCanAfford:
+    m_PersistentCalls:
+      m_Calls: []

@@ -13,6 +13,56 @@ MonoBehaviour:
   m_Name: Zavag 2
   m_EditorClassIdentifier: 
   nodes:
-  - speaker: Zavag
-    line: Hope Send You To Hunters? Hope Wise.  Hunters Gone Long Time.
-  nextConversationToLoadOnFinish: {fileID: 0}
+  - rid: 2135641286704627819
+  - rid: 2135641286704627820
+  - rid: 2135641286704627821
+  - rid: 2135641286704627822
+  - rid: 2135641286704627823
+  references:
+    version: 2
+    RefIds:
+    - rid: 2135641286704627819
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        nextNode: 1
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: What Hope say?
+        options:
+        - line: To find some hunters
+          nextNode: 1
+        - line: To kill you
+          nextNode: 3
+        - line: Strangly nothing
+          nextNode: 4
+    - rid: 2135641286704627820
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        nextNode: 2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: 
+        line: Hope smart.  Hunters gone long time.
+    - rid: 2135641286704627821
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        nextNode: 0
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 2135641286704627822
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        nextNode: 2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: Then we fight.
+    - rid: 2135641286704627823
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 4
+        nextNode: 2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: Hope have no use for you

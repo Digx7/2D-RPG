@@ -11,6 +11,7 @@ public class SceneSetupManager : MonoBehaviour
     [SerializeField] private SongData songToJumpTo;
     [SerializeField] private SceneContext context;
     [SerializeField] private SceneContextChannel updateContextChannel;
+    [SerializeField] private SceneContextChannel contextOnSceneSetupChannel;
     
     [SerializeField] bool triggerOnStart = true;
     public SceneContextEvent onSetup;
@@ -26,8 +27,12 @@ public class SceneSetupManager : MonoBehaviour
         
         if(changeGameModeOnSceneStart) onChangeGameModeChannel.Raise(gameModeToChangeToOnSetup);
         if(changeSongOnSceneStart) requestJumpToSongChannel.Raise(songToJumpTo);
+
         onSetup.Invoke(context);
+        contextOnSceneSetupChannel.Raise(context);
 
         // Add code here
+
+        Debug.Log("SceneSetupManager: Setup()");
     }
 }

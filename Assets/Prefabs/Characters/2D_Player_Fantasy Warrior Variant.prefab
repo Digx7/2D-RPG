@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8940740638180136507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1879311426056809069, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 87.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945206322952147803, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 204.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491279839361829222, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 225.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692271506373578924, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 236.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490187693441939366, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 0555628f0a0357944beffd9e77220a3d, type: 2}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: UnitName
+      value: Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: TurnOrderIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 410a3bfeb643e694eaa3b83ae56d95e5, type: 3}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: abilities.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: 'abilities.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ad095de379d8a04c9461683d33e81b2, type: 2}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: 'abilities.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
+    - target: {fileID: 4714412151015465676, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: 'abilities.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 90553541e71df5c4b80b318475bfca8c, type: 2}
+    - target: {fileID: 4908179280775989176, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1373637909, guid: 54dd37af531aace4aa9477096d46d0b8, type: 3}
+    - target: {fileID: 5114435388740637882, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 04e4084b8fd9b0642907c20e466ddf01, type: 2}
+    - target: {fileID: 7839096609123802247, guid: b1a940317ecb80541a41349801037dc5, type: 3}
+      propertyPath: m_Name
+      value: 2D_Player_Fantasy Warrior Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1a940317ecb80541a41349801037dc5, type: 3}

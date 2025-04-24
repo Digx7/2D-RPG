@@ -13,9 +13,11 @@ public class PlayerController : GameController
     [SerializeField] private UIWidgetData pauseMenuWidgetData;
     [SerializeField] private Channel onCombatStartChannel;
     [SerializeField] private Channel onCombatEndChannel;
+    [SerializeField] private BooleanChannel requestCanConfirmAbilities;
     private PlayerCharacter possessedPlayer;
     private PlayerInput playerInput;
     private List<CombatUnit> playerCombatUnits;
+    private bool canConfirmAbilities = true;
 
     // OVERRIDE FUNCTIONS ==============================================
 
@@ -54,6 +56,7 @@ public class PlayerController : GameController
 
         onCombatStartChannel.channelEvent.AddListener(OnCombatStart);
         onCombatEndChannel.channelEvent.AddListener(OnCombatEnd);
+        requestCanConfirmAbilities.channelEvent.AddListener(SetCanConfirmAbilities);
 
         playerInput = GetComponent<PlayerInput>();
     }
@@ -64,6 +67,7 @@ public class PlayerController : GameController
 
         onCombatStartChannel.channelEvent.RemoveListener(OnCombatStart);
         onCombatEndChannel.channelEvent.RemoveListener(OnCombatEnd);
+        requestCanConfirmAbilities.channelEvent.AddListener(SetCanConfirmAbilities);
     }
 
     // CHANNEL FUNCTIONS ================================================
@@ -105,6 +109,11 @@ public class PlayerController : GameController
         // Updates player animations
         PlayerCharacter2D playerCharacter2D = (PlayerCharacter2D)possessedPlayer;
         playerCharacter2D.UpdateAnimatorInCombat(false);
+    }
+
+    public void SetCanConfirmAbilities(bool input)
+    {
+        canConfirmAbilities = input;
     }
 
     // CAMERA FUNCTIONS ===================================================
@@ -262,7 +271,119 @@ public class PlayerController : GameController
         }
     }
 
-    // Combat Inputs --------------------------------
+    public void OnInteract_1(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                possessedPlayer.Interact(1);
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnInteract_2(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                possessedPlayer.Interact(2);
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnInteract_3(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                possessedPlayer.Interact(3);
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnInteract_4(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                possessedPlayer.Interact(4);
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    // COMBAT INPUT FUNCTIONS ============================================
 
     public void OnAbility1(InputAction.CallbackContext callbackContext)
     {
@@ -653,21 +774,7 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                AbilityUsageContext abilityUsageContext = new AbilityUsageContext();
-                abilityUsageContext.Setup();
-
-                Vector2Control mouseScreenPos = Pointer.current.position;
-                Vector3 point = new Vector3();
-
-                point = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x.value, mouseScreenPos.y.value, 0));
-                point.z = 0;
-
-                abilityUsageContext.m_mousePos = point;
-                
-                foreach (CombatUnit unit in playerCombatUnits)
-                {
-                    unit.ConfirmAbility(abilityUsageContext);
-                }
+                if(canConfirmAbilities)ConfirmAbility();
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here
@@ -695,9 +802,12 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Performed:
                 // Add Code here
-                foreach (CombatUnit unit in playerCombatUnits)
+                if(canConfirmAbilities)
                 {
-                    unit.StopPreviewing();
+                    foreach (CombatUnit unit in playerCombatUnits)
+                    {
+                        unit.StopPreviewing();
+                    }
                 }
                 break;
             case InputActionPhase.Canceled:
@@ -744,6 +854,39 @@ public class PlayerController : GameController
                 break;
             case InputActionPhase.Canceled:
                 // Add Code here
+                break;
+            default:
+                // Add Code here
+                break;
+        }
+    }
+
+    public void OnMoveCamera(InputAction.CallbackContext callbackContext)
+    {
+
+        // For more on the InputActionPhase see: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputActionPhase.html
+        switch (callbackContext.phase)
+        {
+            case InputActionPhase.Disabled:
+                // Add Code here
+                break;
+            case InputActionPhase.Waiting:
+                // Add Code here
+                break;
+            case InputActionPhase.Started:
+                // Add Code here
+                break;
+            case InputActionPhase.Performed:
+                // Add Code here
+                
+                cameraManager.MoveCameraManually(callbackContext.ReadValue<Vector2>());
+
+                break;
+            case InputActionPhase.Canceled:
+                // Add Code here
+
+                cameraManager.MoveCameraManually(Vector2.zero);
+
                 break;
             default:
                 // Add Code here
@@ -825,4 +968,27 @@ public class PlayerController : GameController
     {
 
     }
+
+
+    // Other -------------------------------------------
+
+    public void ConfirmAbility()
+    {
+        AbilityUsageContext abilityUsageContext = new AbilityUsageContext();
+        abilityUsageContext.Setup();
+
+        Vector2Control mouseScreenPos = Pointer.current.position;
+        Vector3 point = new Vector3();
+
+        point = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x.value, mouseScreenPos.y.value, 0));
+        point.z = 0;
+
+        abilityUsageContext.m_mousePos = point;
+        
+        foreach (CombatUnit unit in playerCombatUnits)
+        {
+            unit.ConfirmAbility(abilityUsageContext);
+        }
+    }
+
 }

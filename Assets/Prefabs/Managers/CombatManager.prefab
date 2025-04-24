@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cf9661f9e7c834797c2d410c957f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestCombatStartChannel: {fileID: 11400000, guid: d9837cbd911a5d242a36b06d20a0ea1a, type: 2}
+  notifyActiveCombatInstance: {fileID: 11400000, guid: cb0def7f826e6804cafb9d3c8535e35c, type: 2}
   onCombatStartChannel: {fileID: 11400000, guid: 021fa70ec378f2449ab92383d92bf9f9, type: 2}
   onCombatEndChannel: {fileID: 11400000, guid: af10a3019b9b35f4d9e8b2a031f1ffe7, type: 2}
   onEndUnitTurnChannel: {fileID: 11400000, guid: 50a88c07cfb6cec4880f8f792271c736, type: 2}
@@ -76,3 +76,4 @@ MonoBehaviour:
   onNewRoundStartChannel: {fileID: 11400000, guid: 7b60cec205ba8c346b8eb60ca9e2d6b1, type: 2}
   onNewTurnChannel: {fileID: 11400000, guid: 50e519fff4ea31042b4b5a6d64bad7f4, type: 2}
   onCombatIconsUpdate: {fileID: 11400000, guid: db5da0630fc68b34c9f210a528e8adac, type: 2}
+  onCombatUnitTurnOrderUpdateChannel: {fileID: 11400000, guid: 7e6dae4a211072e4abccb7bcc179c9dc, type: 2}

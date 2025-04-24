@@ -13,17 +13,96 @@ MonoBehaviour:
   m_Name: Hope
   m_EditorClassIdentifier: 
   nodes:
-  - speaker: Hope
-    line: Greetings there splended adventurer.  How may I be of service?
-  - speaker: Hope
-    line: Zavag did bid you to inquire with me?..
-  - speaker: Hope
-    line: Right.... That imbecule thinks I can enlighten all adventures.  After chasing
-      of a goblin THAT ONE TIME!!
-  - speaker: Hope
-    line: Appologies... I get carried away.  Um... I guess you could check up on
-      our hunting party.
-  - speaker: Hope
-    line: We haven't heard from them in some time.  I would hate for fate to find
-      them.
-  nextConversationToLoadOnFinish: {fileID: 11400000, guid: 59fd8c7c2b6d57a46a8555883f7cf4ca, type: 2}
+  - rid: 2135641286704627832
+  - rid: 2135641286704627825
+  - rid: 2135641286704627826
+  - rid: 2135641286704627827
+  - rid: 2135641286704627828
+  - rid: 2135641286704627829
+  - rid: 2135641286704627830
+  - rid: 2135641286704627831
+  - rid: 2135641286704627833
+  references:
+    version: 2
+    RefIds:
+    - rid: 2135641286704627825
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        nextNode: 2
+        icon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
+        speaker: Hope
+        line: Hello there.  Can I help you?
+        options:
+        - line: Zavag said to talk to you
+          nextNode: 2
+        - line: I'm an adventurer
+          nextNode: 2
+        - line: Got anything that needs killing?
+          nextNode: 2
+    - rid: 2135641286704627826
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        nextNode: 3
+        icon: {fileID: 0}
+        speaker: Hope
+        line: Gosh darng it Zavag!  Just because I scared off a goblin THAT ONE TIME
+          does not mean I need every adventurer you see coming up to-
+    - rid: 2135641286704627827
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        nextNode: 4
+        icon: {fileID: 0}
+        speaker: Hope
+        line: '*sigh*'
+    - rid: 2135641286704627828
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 4
+        nextNode: 5
+        icon: {fileID: 0}
+        speaker: Hope
+        line: I'm sorry there's no reason to take this out on you
+    - rid: 2135641286704627829
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 5
+        nextNode: 6
+        icon: {fileID: 0}
+        speaker: Hope
+        line: If your looking to help we haven't heard from our hunting party in
+          a long time
+    - rid: 2135641286704627830
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 6
+        nextNode: 7
+        icon: {fileID: 0}
+        speaker: Hope
+        line: I fear something bad as become of them
+    - rid: 2135641286704627831
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 7
+        nextNode: 8
+        questToGive: {fileID: 11400000, guid: 1088d7dda1d06ec43a17fe90198f72eb, type: 2}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 2135641286704627832
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        nextNode: 1
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: Talk to Hope
+          addedAmount: 0
+    - rid: 2135641286704627833
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 8
+        nextNode: 0
+        nextConversationToLoadOnFinish: {fileID: 11400000, guid: 59fd8c7c2b6d57a46a8555883f7cf4ca, type: 2}

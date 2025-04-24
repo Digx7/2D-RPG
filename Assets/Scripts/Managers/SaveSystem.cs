@@ -1,5 +1,8 @@
 using UnityEngine;
+using System;
 using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 // using System.Text;
@@ -15,6 +18,9 @@ public class SaveSystem : Singleton<SaveSystem>
     public Channel requestMakeNewSaveChannel;
     public Channel onMakeNewSaveChannel;
     public IntChannel requestChangeActiveSaveSlot;
+    public UIWidgetDataChannel requestLoadUIChannel;
+    public UIWidgetDataChannel requestUnloadUIChannel;
+    public UIWidgetData saveIconWidgetData;
 
     public int activeSaveSlot = 0;
     public Save save;
@@ -42,15 +48,19 @@ public class SaveSystem : Singleton<SaveSystem>
         string destination = Path();
         FileStream file;
 
-        if(File.Exists(destination)) file = File.OpenWrite(destination);
-        else file = File.Create(destination);
+        if(File.Exists(destination)) 
+        {
+            File.Delete(destination);
+        }
+        file = File.Create(destination);
 
         DataContractSerializer serializer = new DataContractSerializer(save.GetType());
         serializer.WriteObject(file, save);
         file.Close();
 
         Debug.Log("SaveSystem: Saving game to slot " + activeSaveSlot);
-        // save.PrintAllEntries();
+
+        StartCoroutine(SaveIcon());
 
         onGameSavedChannel.Raise();
     }
@@ -110,5 +120,14 @@ public class SaveSystem : Singleton<SaveSystem>
     private string Path()
     {
         return Application.persistentDataPath + "/save" + activeSaveSlot + ".data";
+    }
+
+    IEnumerator SaveIcon()
+    {
+        requestLoadUIChannel.Raise(saveIconWidgetData);
+
+        yield return new WaitForSeconds(3f);
+
+        requestUnloadUIChannel.Raise(saveIconWidgetData);
     }
 }

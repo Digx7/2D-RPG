@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public class Movement2D : MonoBehaviour
 {
     public float moveSpeed;
+    public bool isFlying = false;
     public float jumpForce;
     public float jumpBufferCheckDistance = 2f;
     public float groundedCheckDistance = 2f;
@@ -41,8 +42,8 @@ public class Movement2D : MonoBehaviour
     
     public void FixedUpdate()
     {
-        if(wantsToJump) Jump();
-        RefreshAirBornState();
+        if(wantsToJump && !isFlying) Jump();
+        if(!isFlying) RefreshAirBornState();
         Move();
     }
 
@@ -51,11 +52,21 @@ public class Movement2D : MonoBehaviour
         Vector3 startingVelocity = rb.linearVelocity;
 
         Vector3 finalVelocity = new Vector3(desiredMoveDirection.x, 0, 0);
+
+        if(isFlying)
+        {
+            finalVelocity.y = desiredMoveDirection.y;
+        }
+
+        
         finalVelocity = finalVelocity * moveSpeed * Time.deltaTime;
 
         finalVelocity = transform.TransformDirection(finalVelocity);
 
-        finalVelocity.y = startingVelocity.y;
+        if(!isFlying)
+        {
+            finalVelocity.y = startingVelocity.y;
+        }
 
 
         rb.linearVelocity = finalVelocity;

@@ -11,13 +11,14 @@ public class WeaknessOrStrengthHolderElement : UIElement
     public GameObject weaknessOrStrengthElementPrefab;
     public Transform weaknessOrStrenghtElementHolder;
     public Health health;
+    public bool renderOnStart = true;
 
     public void Start()
     {
-        Setup();
+        if(renderOnStart)Render();
     }
 
-    public void Setup()
+    public void Render()
     {
         foreach (Modifier modifier in health.Modifiers)
         {

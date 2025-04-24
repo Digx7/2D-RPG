@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e078a9e4c21608a4584272966207a982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  relevantActiveTimeLore:
+  - {fileID: 11400000, guid: ac2058f65ef156f4782346e9e287cce2, type: 2}
+  - {fileID: 11400000, guid: c390dcb74061d414dab43c5df15ac3d8, type: 2}
   RequestAddRelevantLoreChannel: {fileID: 11400000, guid: c9201745e6b20d941acf3d55fddfba3f, type: 2}
   RequestRemoveRelevantLoreChannel: {fileID: 11400000, guid: b782e0822e8de274db9c9ab9b1a704f7, type: 2}

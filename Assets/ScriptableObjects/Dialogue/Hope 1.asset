@@ -13,9 +13,22 @@ MonoBehaviour:
   m_Name: Hope 1
   m_EditorClassIdentifier: 
   nodes:
-  - speaker: Hope
-    line: 'Please do check on the hunting party.  They''ve been gone longer than
-      usual
-
-'
-  nextConversationToLoadOnFinish: {fileID: 0}
+  - rid: 2135641286704627834
+  - rid: 2135641286704627835
+  references:
+    version: 2
+    RefIds:
+    - rid: 2135641286704627834
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        nextNode: 1
+        icon: {fileID: 21300000, guid: fbd4090f4b9e8844f83277814bf72884, type: 3}
+        speaker: Hope
+        line: Please look for the Hunters
+    - rid: 2135641286704627835
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        nextNode: 0
+        nextConversationToLoadOnFinish: {fileID: 0}

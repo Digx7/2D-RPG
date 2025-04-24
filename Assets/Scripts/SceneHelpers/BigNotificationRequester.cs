@@ -6,8 +6,10 @@ public class BigNotificationRequester : MonoBehaviour
     public UIWidgetDataChannel requestLoadUIWidgetChannel;
     public StringChannel requestBigNotificationChannel;
     public UIWidgetData notificationWidgetData;
+
     public void Notify()
     {
+        Debug.Log("BigNotificationRequester: Notify()");
         requestBigNotificationChannel.Raise(notification);
         requestLoadUIWidgetChannel.Raise(notificationWidgetData);
     }

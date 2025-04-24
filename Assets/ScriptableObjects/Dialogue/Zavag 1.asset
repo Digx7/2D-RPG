@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: Zavag 1
   m_EditorClassIdentifier: 
   nodes:
-  - speaker: Zavag
-    line: You Speak to Hope
-  nextConversationToLoadOnFinish: {fileID: 0}
+  - rid: 2135641286704627796
+  - rid: 2135641286704627803
+  references:
+    version: 2
+    RefIds:
+    - rid: 2135641286704627796
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        nextNode: 1
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Zavag
+        line: You talk to Hope
+    - rid: 2135641286704627803
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        nextNode: 0
+        nextConversationToLoadOnFinish: {fileID: 0}

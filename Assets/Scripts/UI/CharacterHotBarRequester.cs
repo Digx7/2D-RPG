@@ -12,6 +12,7 @@ public class CharacterHotBarRequester : MonoBehaviour
     public UIWidgetDataChannel requestLoadUIChannel;
     public UIWidgetDataChannel requestUnLoadUIChannel;
     public AbilityDataListChannel abilitiesListChannel;
+    public CombatUnitChannel onFocusedCombatUnitChannel;
 
 
     public void OnStartTurn()
@@ -30,6 +31,7 @@ public class CharacterHotBarRequester : MonoBehaviour
         yield return null;
         List<AbilityData> abilities = combatUnit.abilities;
         abilitiesListChannel.Raise(abilities);
+        onFocusedCombatUnitChannel.Raise(combatUnit);
     }
 }
 

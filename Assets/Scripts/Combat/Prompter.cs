@@ -9,6 +9,7 @@ public class Prompter : MonoBehaviour
     [SerializeField] private Channel onNewRoundStartChannel;
     [SerializeField] private Channel onNewTurnChannel;
     [SerializeField] private SpriteListChannel onCombatIconsUpdate;
+    [SerializeField] private CombatUnitListChannel onCombatUnitTurnOrderUpdateChannel;
 
     private List<CombatUnit> combatUnits;
     private int combatUnitIndex = 0;
@@ -40,6 +41,7 @@ public class Prompter : MonoBehaviour
         }
 
         onCombatIconsUpdate.Raise(turnIconList);
+        onCombatUnitTurnOrderUpdateChannel.Raise(combatUnits);
     }
 
     public void PromptFirstUnit()

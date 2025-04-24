@@ -53,6 +53,7 @@ MonoBehaviour:
   context:
     SpawnPointID: 0
   updateContextChannel: {fileID: 11400000, guid: 6c4dbd924ed83aa449be46d600421f47, type: 2}
+  contextOnSceneSetupChannel: {fileID: 11400000, guid: 0a103d01407c3144da7f08f39b4812ca, type: 2}
   triggerOnStart: 1
   onSetup:
     m_PersistentCalls:

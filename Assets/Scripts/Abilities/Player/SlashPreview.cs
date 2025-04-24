@@ -63,10 +63,39 @@ public class SlashPreview : AbilityPreview
 
             requestUITileMapChannel.Raise(request);
 
-            if(location == (m_location + Vector3Int.left) || location == (m_location + Vector3Int.right))
+            // if(location == (m_location + Vector3Int.left) || location == (m_location + Vector3Int.right))
+            // {
+            //     request.header = UITileMapRequestHeader.PLACE;
+            //     request.location = location;
+            //     request.context = selectedContext;
+
+            //     requestUITileMapChannel.Raise(request);
+            // }
+
+            if(location == (m_location + Vector3Int.left))
             {
-                request.header = UITileMapRequestHeader.PLACE;
-                request.location = location;
+                request.header = UITileMapRequestHeader.PLACE_MANY;
+                request.locations = new List<Vector3Int>();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    request.locations.Add(m_location + (Vector3Int.left * (i + 1)));
+                }
+
+                request.context = selectedContext;
+
+                requestUITileMapChannel.Raise(request);
+            }
+            else if(location == (m_location + Vector3Int.right))
+            {
+                request.header = UITileMapRequestHeader.PLACE_MANY;
+                request.locations = new List<Vector3Int>();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    request.locations.Add(m_location + (Vector3Int.right * (i + 1)));
+                }
+
                 request.context = selectedContext;
 
                 requestUITileMapChannel.Raise(request);

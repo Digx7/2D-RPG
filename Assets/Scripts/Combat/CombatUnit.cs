@@ -26,8 +26,13 @@ public class CombatUnit : MonoBehaviour
     public StringEvent onUseAbility;
     public UnityEvent onDeath;
     public UnityEvent onDestroy;
-    public IntEvent OnEnergyUpdate;
+    public IntEvent OnEnergyUpdate_Absolute;
+    public IntEvent OnEnergyUpdate_Delta;
     public StringChannel OnCombatLogChannel;
+    public Vector3Channel RequestFocusUnitChannel;
+    public CombatUnitChannel RequestStartFollowingUnitChannel;
+    public Channel RequestStopFollowingUnitChannel;
+    public bool followUnit = false;
 
     private bool isTurn = false;
     private bool isUsingAbility = false;
@@ -38,7 +43,7 @@ public class CombatUnit : MonoBehaviour
     private void OnEnable()
     {
         CurrentEnergy = 0;
-        OnEnergyUpdate.Invoke(CurrentEnergy);
+        OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
     }
 
     private void OnDisable()
@@ -67,6 +72,8 @@ public class CombatUnit : MonoBehaviour
         if(!isTurn) return;
 
         Debug.Log("CombatUnit: " + UnitName + " ending turn");
+
+        if(followUnit) RequestStopFollowingUnitChannel.Raise();
 
         isTurn = false;
         isUsingAbility = false;
@@ -147,10 +154,28 @@ public class CombatUnit : MonoBehaviour
             isUsingAbility = true;
             onUseAbility.Invoke(abilities[index].AbilityName);
 
-            CurrentEnergy -= abilities[index].EnergyCost;
-            OnEnergyUpdate.Invoke(CurrentEnergy);
+            int cost = abilities[index].EnergyCost;
+            CurrentEnergy -= cost;
+            RefresCanAffordAbilities();
+            OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
+            // OnEnergyUpdate_Delta.Invoke(cost * (-1));
 
             Debug.Log("CombatUnit: " + UnitName + " spends " + abilities[index].EnergyCost + " energy leaving it with " + CurrentEnergy + " energy");
+        }
+    }
+
+    public void RefresCanAffordAbilities()
+    {
+        foreach (AbilityData ability in abilities)
+        {
+            if(CurrentEnergy >= ability.EnergyCost)
+            {
+                ability.OnUpdateCanAfford.Invoke(true);
+            }
+            else
+            {
+                ability.OnUpdateCanAfford.Invoke(false);
+            }
         }
     }
 
@@ -160,19 +185,9 @@ public class CombatUnit : MonoBehaviour
 
         if(HurtAnimationName != "" && animator != null)animator.Play(HurtAnimationName);
 
-        if(damageResult.weakOrRessistant == WeakOrRessistant.WEAK)
-        {
-            CurrentEnergy -= 1;
-            if(CurrentEnergy < 0) CurrentEnergy = 0;
-            OnEnergyUpdate.Invoke(CurrentEnergy);
-        }
-        else if(damageResult.weakOrRessistant == WeakOrRessistant.RESSISTANT)
-        {
-            CurrentEnergy += 1 * Stats.data.EnergyGain;
-            OnEnergyUpdate.Invoke(CurrentEnergy);
-        }
+        UpdateEnergyAfterHit(damageResult);
 
-        OnCombatLogChannel.Raise("" + UnitName + " took " + damageResult.trueDamage + " damage");
+        OnCombatLogChannel.Raise("" + UnitName + " took " + damageResult.trueDamage.Print() + " damage");
     }
 
     public void OnHeal(DamageResult damageResult)
@@ -181,7 +196,35 @@ public class CombatUnit : MonoBehaviour
         
         if(HealAnimationName != "" && animator != null)animator.Play(HealAnimationName);
 
-        OnCombatLogChannel.Raise("" + UnitName + " healed " + damageResult.trueDamage);
+        UpdateEnergyAfterHit(damageResult);
+
+        OnCombatLogChannel.Raise("" + UnitName + " healed " + damageResult.trueDamage.Print());
+    }
+
+    private void UpdateEnergyAfterHit(DamageResult damageResult)
+    {
+        if(damageResult.weakOrRessistant == WeakOrRessistant.WEAK)
+        {
+            CurrentEnergy -= 1;
+            RefresCanAffordAbilities();
+            if(CurrentEnergy < 0) CurrentEnergy = 0;
+            OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
+            OnEnergyUpdate_Delta.Invoke(-1);
+        }
+        else if(damageResult.weakOrRessistant == WeakOrRessistant.RESSISTANT)
+        {
+            // CurrentEnergy += 1 * Stats.data.EnergyGain;
+            // RefresCanAffordAbilities();
+            // OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
+            // OnEnergyUpdate_Delta.Invoke(1);
+        }
+        else if(damageResult.weakOrRessistant == WeakOrRessistant.HEALS)
+        {
+            CurrentEnergy += 1 * Stats.EnergyGain.TrueValue();
+            RefresCanAffordAbilities();
+            OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
+            OnEnergyUpdate_Delta.Invoke(1);
+        }
     }
 
     public void OnDeath()
@@ -211,11 +254,29 @@ public class CombatUnit : MonoBehaviour
         if(IsDead) EndTurn();
         else
         {
-            
-            CurrentEnergy += Stats.data.EnergyGain;
-            OnEnergyUpdate.Invoke(CurrentEnergy);
+            if(CurrentEnergy < Stats.EnergySoftCap.TrueValue())
+            {
+                int difference = Stats.EnergySoftCap.TrueValue() - CurrentEnergy;
+                CurrentEnergy = Stats.EnergySoftCap.TrueValue();
+                
+                OnEnergyUpdate_Absolute.Invoke(CurrentEnergy);
+                OnEnergyUpdate_Delta.Invoke(difference);
+            }
+
+            RefresCanAffordAbilities();
 
             Debug.Log("CombatUnit: It is the " + UnitName + "s turn\nEnergy: " + CurrentEnergy);
+
+            if(followUnit)
+            {
+                RequestStartFollowingUnitChannel.Raise(this);
+            }
+            else
+            {
+                RequestFocusUnitChannel.Raise(transform.position);
+            }
+
+            
 
             onStartTurn.Invoke();
         }
