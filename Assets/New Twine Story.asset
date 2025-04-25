@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f7fe94a9937e64e8d11b5675569bdc, type: 3}
+  m_Name: New Twine Story
+  m_EditorClassIdentifier: 
+  uuid: 930C16CA-C780-45D6-B189-2E29945CBEC1
+  name: Hope_1
+  creator: Twine
+  creatorVersion: 2.10.0
+  schemaName: Twine to JSON
+  schemaVersion: 0.0.6
+  createdAtMs: 1790570734
+  passages:
+  - name: 1
+    tags: []
+    id: 1
+    text: '//Speaker: Hope
+
+      Hello Adventure!  Welcome to our town
+
+
+      [[2]]'
+    links:
+    - linkText: 2
+      passageName: 2
+      original: '[[2]]'
+    cleanText: '//Speaker: Hope
+
+      Hello Adventure!  Welcome to our town'
+  - name: 2
+    tags: []
+    id: 2
+    text: '//Speaker: Hope
+
+      What can I Help you with?
+
+
+      [[3]]
+
+      [[4]]
+
+      [[5]]'
+    links:
+    - linkText: 3
+      passageName: 3
+      original: '[[3]]'
+    - linkText: 4
+      passageName: 4
+      original: '[[4]]'
+    - linkText: 5
+      passageName: 5
+      original: '[[5]]'
+    cleanText: '//Speaker: Hope
+
+      What can I Help you with?'
+  - name: 3
+    tags: []
+    id: 3
+    text: 'Where can I buy potions?
+
+
+      [[6]]'
+    links:
+    - linkText: 6
+      passageName: 6
+      original: '[[6]]'
+    cleanText: Where can I buy potions?
+  - name: 4
+    tags: []
+    id: 4
+    text: 'What is this place?
+
+
+      [[7]]'
+    links:
+    - linkText: 7
+      passageName: 7
+      original: '[[7]]'
+    cleanText: What is this place?
+  - name: 5
+    tags: []
+    id: 5
+    text: 'Fight Me!
+
+
+      [[8]]'
+    links:
+    - linkText: 8
+      passageName: 8
+      original: '[[8]]'
+    cleanText: Fight Me!
+  - name: 6
+    tags: []
+    id: 6
+    text: '//Speaker: Hope
+
+      You can buy potions at the General Store'
+    links: []
+    cleanText: '//Speaker: Hope
+
+      You can buy potions at the General Store'
+  - name: 7
+    tags: []
+    id: 7
+    text: '//Speaker: Hope
+
+      This is the Town'
+    links: []
+    cleanText: '//Speaker: Hope
+
+      This is the Town'
+  - name: 8
+    tags: []
+    id: 8
+    text: '//Speaker: Hope
+
+      Lets Fight!'
+    links: []
+    cleanText: '//Speaker: Hope
+
+      Lets Fight!'
