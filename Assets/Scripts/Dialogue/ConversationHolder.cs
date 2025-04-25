@@ -16,7 +16,7 @@ public class ConversationHolder : MonoBehaviour
     public UnityEvent OnConversationStart;
     public UnityEvent OnConversationEnd;
 
-    private int currentNodeID = 0;
+    private string currentNodeID = "0";
     private ConversationNode currentNode;
     private Conversation nextConversationToLoad;
     private bool isConversationGoing = false;
@@ -44,7 +44,7 @@ public class ConversationHolder : MonoBehaviour
     {
         Debug.Log("ConversationHolder: StartConversation()");
 
-        currentNodeID = 0;
+        currentNodeID = "0";
         if(TryGetNode())
         {
             isConversationGoing = true;

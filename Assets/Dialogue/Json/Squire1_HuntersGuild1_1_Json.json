@@ -1,0 +1,94 @@
+{
+  "uuid": "b502f384-f5b3-4594-b0f4-e34af46efbcf",
+  "name": "Squire1_HunterGuild1_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1745564901271,
+  "passages": [
+    {
+      "name": "1",
+      "tags": "Line",
+      "id": "1",
+      "text": "//Speaker: Hunter\n//Body:\nCan you please look for the missing hunters?\n\n[[2]]",
+      "links": [
+        {
+          "linkText": "2",
+          "passageName": "2",
+          "original": "[[2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Hunter\n//Body:\nCan you please look for the missing hunters?"
+    },
+    {
+      "name": "2",
+      "tags": "Options",
+      "id": "2",
+      "text": "//Text: Yes\n[[3]]\n\n//Text: No\n[[4]]",
+      "links": [
+        {
+          "linkText": "3",
+          "passageName": "3",
+          "original": "[[3]]"
+        },
+        {
+          "linkText": "4",
+          "passageName": "4",
+          "original": "[[4]]"
+        }
+      ],
+      "cleanText": "//Text: Yes\n\n\n//Text: No"
+    },
+    {
+      "name": "3",
+      "tags": "Line",
+      "id": "3",
+      "text": "//Speaker: Hunter\n//Body:\nAwsome!  I'll add it to your journal!\n\n[[5]]",
+      "links": [
+        {
+          "linkText": "5",
+          "passageName": "5",
+          "original": "[[5]]"
+        }
+      ],
+      "cleanText": "//Speaker: Hunter\n//Body:\nAwsome!  I'll add it to your journal!"
+    },
+    {
+      "name": "4",
+      "tags": "Line",
+      "id": "4",
+      "text": "//Speaker: Hunter\n//Body: \nBummer\n\n[[6]]",
+      "links": [
+        {
+          "linkText": "6",
+          "passageName": "6",
+          "original": "[[6]]"
+        }
+      ],
+      "cleanText": "//Speaker: Hunter\n//Body: \nBummer"
+    },
+    {
+      "name": "5",
+      "tags": "QuestUpdate",
+      "id": "5",
+      "text": "//QuestName: Find the Hunters\n//QuestObjective: \n\n[[6]]",
+      "links": [
+        {
+          "linkText": "6",
+          "passageName": "6",
+          "original": "[[6]]"
+        }
+      ],
+      "cleanText": "//QuestName: Find the Hunters\n//QuestObjective:"
+    },
+    {
+      "name": "6",
+      "tags": "End",
+      "id": "6",
+      "text": "",
+      "links": [],
+      "cleanText": ""
+    }
+  ]
+}

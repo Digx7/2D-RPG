@@ -17,9 +17,9 @@ public class DialogueCreator : Editor
             conversation.nodes = new List<ConversationNode>();
 
             ConversationNode_Line m_line = new ConversationNode_Line();
-            m_line.ID = 1;
-            m_line.UID = m_line.ID;
-            m_line.nextNode = m_line.ID + 1;
+            m_line.ID = "1";
+            // m_line.UID = m_line.ID;
+            m_line.nextNode = m_line.ID + "1";
             m_line.speaker = "Dev";
             m_line.line = "Hello World!";
 
@@ -31,9 +31,9 @@ public class DialogueCreator : Editor
         else
         {
             ConversationNode_Line m_line = new ConversationNode_Line();
-            m_line.ID = conversation.nodes.Count;
-            m_line.UID = m_line.ID;
-            m_line.nextNode = m_line.ID + 1;
+            // m_line.ID = conversation.nodes.Count;
+            // m_line.UID = m_line.ID;
+            m_line.nextNode = m_line.ID + "1";
             m_line.speaker = "Dev";
             m_line.line = "New Line!";
 

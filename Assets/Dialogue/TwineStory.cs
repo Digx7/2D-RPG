@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 public class TwineStory : ScriptableObject
 {
-    public string uuid;
+    // public string uuid;
     public string name;
-    public string creator;
-    public string creatorVersion;
-    public string schemaName;
-    public string schemaVersion;
-    public int createdAtMs;
+    // public string creator;
+    // public string creatorVersion;
+    // public string schemaName;
+    // public string schemaVersion;
+    // public int createdAtMs;
     public List<TwinePassage> passages;
 }
 
@@ -19,9 +19,9 @@ public class TwineStory : ScriptableObject
 public class TwinePassage
 {
     public string name;
-    public List<string> tags;
-    public string id;
-    public string text;
+    public string tags;
+    // public string id;
+    // public string text;
     public List<TwineLink> links;
     public string cleanText;
 }
@@ -29,7 +29,7 @@ public class TwinePassage
 [System.Serializable]
 public class TwineLink
 {
-    public string linkText;
+    // public string linkText;
     public string passageName;
-    public string original;
+    // public string original;
 }
