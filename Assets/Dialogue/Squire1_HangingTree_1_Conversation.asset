@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Squire1_HangingTree_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148205282230426
-  - rid: 901148205282230427
-  - rid: 901148205282230428
-  - rid: 901148205282230429
-  - rid: 901148205282230430
+  - rid: 901148209049763919
+  - rid: 901148209049763920
+  - rid: 901148209049763921
+  - rid: 901148209049763922
+  - rid: 901148209049763923
   references:
     version: 2
     RefIds:
-    - rid: 901148205282230426
+    - rid: 901148209049763919
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
           it
 
 '
-    - rid: 901148205282230427
+    - rid: 901148209049763920
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 2
@@ -44,7 +44,7 @@ MonoBehaviour:
         line: 'Strapped to each of the bodies is a plaque listing various crimes
 
 '
-    - rid: 901148205282230428
+    - rid: 901148209049763921
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 3
@@ -55,7 +55,7 @@ MonoBehaviour:
         line: 'Murder, Theif, Rapist..
 
 '
-    - rid: 901148205282230429
+    - rid: 901148209049763922
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 4
@@ -67,7 +67,7 @@ MonoBehaviour:
           your job has already been done for you.
 
 '
-    - rid: 901148205282230430
+    - rid: 901148209049763923
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 5

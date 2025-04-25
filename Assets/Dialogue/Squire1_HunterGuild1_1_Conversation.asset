@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Squire1_HunterGuild1_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148205282230447
-  - rid: 901148205282230448
-  - rid: 901148205282230449
-  - rid: 901148205282230450
-  - rid: 901148205282230451
-  - rid: 901148205282230452
+  - rid: 901148209049763924
+  - rid: 901148209049763925
+  - rid: 901148209049763926
+  - rid: 901148209049763927
+  - rid: 901148209049763928
+  - rid: 901148209049763929
   references:
     version: 2
     RefIds:
-    - rid: 901148205282230447
+    - rid: 901148209049763924
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
         line: 'Can you please look for the missing hunters?
 
 '
-    - rid: 901148205282230448
+    - rid: 901148209049763925
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: 2
@@ -47,7 +47,7 @@ MonoBehaviour:
           nextNode: 3
         - line: No
           nextNode: 4
-    - rid: 901148205282230449
+    - rid: 901148209049763926
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 3
@@ -58,7 +58,7 @@ MonoBehaviour:
         line: 'Awsome!  I''ll add it to your journal!
 
 '
-    - rid: 901148205282230450
+    - rid: 901148209049763927
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 4
@@ -69,7 +69,7 @@ MonoBehaviour:
         line: 'Bummer
 
 '
-    - rid: 901148205282230451
+    - rid: 901148209049763928
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: 5
@@ -79,7 +79,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148205282230452
+    - rid: 901148209049763929
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 6

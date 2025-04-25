@@ -27,56 +27,58 @@ public class DialoguePipeline : Editor
     [MenuItem("Assets/DialoguePipeline")]
     public static void Pipeline()
     {
-        // Json -> TwineStory ========
-        SetupJsonAsset();
-
-        JsonToTwineStory();
-
-
-
-        // TwineStory -> Conversation ========
-        TryToGetConversationAsset();
-        if(conversation == null)
+        for (int i = 0; i < Selection.objects.Length; i++)
         {
-            // Create new conversation
-            conversation = ScriptableObject.CreateInstance<Conversation>();
+            if(!(Selection.objects[i] is TextAsset)) continue;
+            
+            // Json -> TwineStory ========
+            SetupJsonAsset(Selection.objects[i]);
 
-            conversation.nodes = new List<ConversationNode>();
+            JsonToTwineStory();
 
-            TwineStoryPassagesToConversationNodes();
 
-            AssetDatabase.CreateAsset(conversation, GetConversationPath());
+
+            // TwineStory -> Conversation ========
+            TryToGetConversationAsset();
+            if(conversation == null)
+            {
+                // Create new conversation
+                conversation = ScriptableObject.CreateInstance<Conversation>();
+
+                conversation.nodes = new List<ConversationNode>();
+
+                TwineStoryPassagesToConversationNodes();
+
+                AssetDatabase.CreateAsset(conversation, GetConversationPath());
+            }
+            else
+            {
+                // Modify existing conversation
+                conversation.nodes.Clear();
+
+                TwineStoryPassagesToConversationNodes();
+            }
+
+            // Conversation -> LocTables ===============
+            TryToGetStringTable();
+            TryToGetLocale();
+            TryToGetEnglishTable();
+
+            EditLocalizationTables();
+
+
+            // Cleanup
+            TryToDeleteTwineStory();
+
+            AssetDatabase.SaveAssets();
         }
-        else
-        {
-            // Modify existing conversation
-            conversation.nodes.Clear();
-
-            TwineStoryPassagesToConversationNodes();
-        }
-
-        AssetDatabase.SaveAssets();
-
-        
-
-
-
-        // Conversation -> LocTables ===============
-        TryToGetStringTable();
-        TryToGetLocale();
-        TryToGetEnglishTable();
-
-        EditLocalizationTables();
-
-
-        // Cleanup
-        TryToDeleteTwineStory();
         
     }
 
-    public static void SetupJsonAsset()
+    public static void SetupJsonAsset(Object obj)
     {
-        jsonAsset = (TextAsset) Selection.activeObject;
+        // jsonAsset = (TextAsset) Selection.activeObject;
+        jsonAsset = (TextAsset) obj;
     }
 
     public static void JsonToTwineStory()
