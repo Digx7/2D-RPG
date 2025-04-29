@@ -222,8 +222,20 @@ public class DialoguePipeline : Editor
                 string[] jSubStrings = subStrings[i].Split(' ');
                 key = jSubStrings[0];
 
-                if (jSubStrings.Length >= 2) 
-                    value = jSubStrings[1];
+                if (jSubStrings.Length >= 2)
+                {
+                    // value = jSubStrings[1];
+                    value = "";
+                    for (int j = 1; j < jSubStrings.Length; j++)
+                    {
+                        value += jSubStrings[j];
+
+                        // Only adds a space if length is greater than 2 (the first indext is always the key)
+                        // Also does NOT add a space if we are on the last value
+                        if(jSubStrings.Length > 2 && j < (jSubStrings.Length - 1)) value += " ";
+                    }
+                } 
+                    
 
                 if(key == "//Body:")
                 {

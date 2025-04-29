@@ -1,0 +1,33 @@
+{
+    "uuid": "c366e0c5-acb5-459a-878d-ec1d5ec53224",
+    "name": "Squire1_Inn_Farmer_4",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745965337444,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nVoids blessing Squire!  May your hunt for the monster in Sida's field find fortune!\n//End_Body:\n\n[[15]]",
+        "links": [
+          {
+            "linkText": "15",
+            "passageName": "15",
+            "original": "[[15]]"
+          }
+        ],
+        "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nVoids blessing Squire!  May your hunt for the monster in Sida's field find fortune!\n//End_Body:"
+      },
+      {
+        "name": "15",
+        "tags": "End",
+        "id": "2",
+        "text": "",
+        "links": [],
+        "cleanText": ""
+      }
+    ]
+  }

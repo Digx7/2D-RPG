@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Inn_Farmer_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148312823398400
+  - rid: 901148312823398401
+  - rid: 901148312823398402
+  - rid: 901148312823398403
+  - rid: 901148312823398404
+  - rid: 901148312823398405
+  - rid: 901148312823398406
+  - rid: 901148312823398407
+  - rid: 901148312823398408
+  - rid: 901148312823398409
+  - rid: 901148312823398410
+  - rid: 901148312823398411
+  - rid: 901148312823398412
+  - rid: 901148312823398413
+  - rid: 901148312823398414
+  - rid: 901148312823398415
+  - rid: 901148312823398416
+  - rid: 901148312823398417
+  - rid: 901148312823398418
+  - rid: 901148312823398419
+  - rid: 901148312823398420
+  - rid: 901148312823398421
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148312823398400
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Inn_Farmer_1_0
+        nextNode: 1
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398401
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_Inn_Farmer_1_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398402
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        LocKey: Squire1_Inn_Farmer_1_3
+        nextNode: 5
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398403
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 4
+        LocKey: Squire1_Inn_Farmer_1_4
+        nextNode: 6
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398404
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 6
+        LocKey: Squire1_Inn_Farmer_1_6
+        nextNode: 7
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398405
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 7
+        LocKey: Squire1_Inn_Farmer_1_7
+        nextNode: 8
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398406
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 8
+        LocKey: Squire1_Inn_Farmer_1_8
+        nextNode: 10
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398407
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 9
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148312823398408
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 10
+        LocKey: 
+        nextNode: 9
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148312823398409
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 11
+        LocKey: Squire1_Inn_Farmer_1_11
+        nextNode: 14
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398410
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 12
+        LocKey: Squire1_Inn_Farmer_1_12
+        nextNode: 16
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398411
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 14
+        LocKey: 
+        nextNode: 15
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148312823398412
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 15
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148312823398413
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 16
+        LocKey: Squire1_Inn_Farmer_1_16
+        nextNode: 17
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398414
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 17
+        LocKey: Squire1_Inn_Farmer_1_17
+        nextNode: 18
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398415
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 18
+        LocKey: 
+        nextNode: 19
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148312823398416
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 19
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148312823398417
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 21
+        LocKey: Squire1_Inn_Farmer_1_21
+        nextNode: 24
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398418
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 22
+        LocKey: Squire1_Inn_Farmer_1_22
+        nextNode: 13
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398419
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 23
+        LocKey: Squire1_Inn_Farmer_1_23
+        nextNode: 25
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398420
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 24
+        LocKey: Squire1_Inn_Farmer_1_24
+        nextNode: 13
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
+    - rid: 901148312823398421
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 25
+        LocKey: Squire1_Inn_Farmer_1_25
+        nextNode: 13
+        icon: {fileID: 0}
+        speaker: Timoleon
+        line: 
