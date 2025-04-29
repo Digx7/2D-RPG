@@ -1,50 +1,64 @@
 {
   "uuid": "b502f384-f5b3-4594-b0f4-e34af46efbcf",
-  "name": "Squire1_HunterGuild1_1",
+  "name": "Squire1_HuntersGuild1_1",
   "creator": "Twine",
   "creatorVersion": "2.10.0",
   "schemaName": "Twine to JSON",
   "schemaVersion": "0.0.6",
-  "createdAtMs": 1745564901271,
+  "createdAtMs": 1745957728033,
   "passages": [
     {
-      "name": "1",
+      "name": "0",
       "tags": "Line",
       "id": "1",
-      "text": "//Speaker: Hunter\n//Body:\nCan you please look for the missing hunters?\n\n[[2]]",
+      "text": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nCan you please look for the missing hunters?\n//End_Body:\n\n[[1]]",
+      "links": [
+        {
+          "linkText": "1",
+          "passageName": "1",
+          "original": "[[1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nCan you please look for the missing hunters?\n//End_Body:"
+    },
+    {
+      "name": "1",
+      "tags": "Options",
+      "id": "2",
+      "text": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nCan you please look for the missing hunters?\n//End_Body:\n\n//Option_1: Yes\n[[2]]\n\n//Option_2: No\n[[3]]",
       "links": [
         {
           "linkText": "2",
           "passageName": "2",
           "original": "[[2]]"
-        }
-      ],
-      "cleanText": "//Speaker: Hunter\n//Body:\nCan you please look for the missing hunters?"
-    },
-    {
-      "name": "2",
-      "tags": "Options",
-      "id": "2",
-      "text": "//Text: Yes\n[[3]]\n\n//Text: No\n[[4]]",
-      "links": [
+        },
         {
           "linkText": "3",
           "passageName": "3",
           "original": "[[3]]"
-        },
+        }
+      ],
+      "cleanText": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nCan you please look for the missing hunters?\n//End_Body:\n\n//Option_1: Yes\n\n\n//Option_2: No"
+    },
+    {
+      "name": "2",
+      "tags": "Line",
+      "id": "3",
+      "text": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nAwsome!  I'll add it to your journal!\n//End_Body:\n\n[[4]]",
+      "links": [
         {
           "linkText": "4",
           "passageName": "4",
           "original": "[[4]]"
         }
       ],
-      "cleanText": "//Text: Yes\n\n\n//Text: No"
+      "cleanText": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nAwsome!  I'll add it to your journal!\n//End_Body:"
     },
     {
       "name": "3",
       "tags": "Line",
-      "id": "3",
-      "text": "//Speaker: Hunter\n//Body:\nAwsome!  I'll add it to your journal!\n\n[[5]]",
+      "id": "4",
+      "text": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body: \nBummer\n//End_Body:\n\n[[5]]",
       "links": [
         {
           "linkText": "5",
@@ -52,43 +66,29 @@
           "original": "[[5]]"
         }
       ],
-      "cleanText": "//Speaker: Hunter\n//Body:\nAwsome!  I'll add it to your journal!"
+      "cleanText": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body: \nBummer\n//End_Body:"
     },
     {
       "name": "4",
-      "tags": "Line",
-      "id": "4",
-      "text": "//Speaker: Hunter\n//Body: \nBummer\n\n[[6]]",
+      "tags": "QuestUpdate",
+      "id": "5",
+      "text": "//QuestName: My_Quest\n//QuestObjectiveName: Objective_Name\n\n[[5]]",
       "links": [
         {
-          "linkText": "6",
-          "passageName": "6",
-          "original": "[[6]]"
+          "linkText": "5",
+          "passageName": "5",
+          "original": "[[5]]"
         }
       ],
-      "cleanText": "//Speaker: Hunter\n//Body: \nBummer"
+      "cleanText": "//QuestName: My_Quest\n//QuestObjectiveName: Objective_Name"
     },
     {
       "name": "5",
-      "tags": "QuestUpdate",
-      "id": "5",
-      "text": "//QuestName: Find the Hunters\n//QuestObjective: \n\n[[6]]",
-      "links": [
-        {
-          "linkText": "6",
-          "passageName": "6",
-          "original": "[[6]]"
-        }
-      ],
-      "cleanText": "//QuestName: Find the Hunters\n//QuestObjective:"
-    },
-    {
-      "name": "6",
       "tags": "End",
       "id": "6",
-      "text": "",
+      "text": "//NextConversation: Squire1_HuntersGuild1_2",
       "links": [],
-      "cleanText": ""
+      "cleanText": "//NextConversation: Squire1_HuntersGuild1_2"
     }
   ]
 }

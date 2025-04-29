@@ -15,6 +15,8 @@ public class DialoguePipeline : Editor
     const string PATH_BASE = "Assets/Dialogue/";
     const string STRING_TABLE_PATH = "Assets/Localization/Tables/Dialogue.asset";
     const string LOCALE_PATH = "Assets/Localization/Locals/English (en).asset";
+    const string ICON_PATH_BASE = "Assets/Dialogue/Icons/";
+    const string QUEST_PATH_BASE = "Assets/Quests/Resources/";
     static string name;
     
     static TextAsset jsonAsset;
@@ -27,51 +29,59 @@ public class DialoguePipeline : Editor
     [MenuItem("Assets/DialoguePipeline")]
     public static void Pipeline()
     {
-        for (int i = 0; i < Selection.objects.Length; i++)
+        for (int j = 0; j < 2; j++)
         {
-            if(!(Selection.objects[i] is TextAsset)) continue;
+            // We run this twice because some conversations try to refrence other conversations
+            // If these are created in the wrong order these refrences will be null
+            // However, running everything twice will get around this
             
-            // Json -> TwineStory ========
-            SetupJsonAsset(Selection.objects[i]);
-
-            JsonToTwineStory();
-
-
-
-            // TwineStory -> Conversation ========
-            TryToGetConversationAsset();
-            if(conversation == null)
+            for (int i = 0; i < Selection.objects.Length; i++)
             {
-                // Create new conversation
-                conversation = ScriptableObject.CreateInstance<Conversation>();
+                if(!(Selection.objects[i] is TextAsset)) continue;
+                
+                // Json -> TwineStory ========
+                SetupJsonAsset(Selection.objects[i]);
 
-                conversation.nodes = new List<ConversationNode>();
+                JsonToTwineStory();
 
-                TwineStoryPassagesToConversationNodes();
 
-                AssetDatabase.CreateAsset(conversation, GetConversationPath());
+
+                // TwineStory -> Conversation ========
+                TryToGetConversationAsset();
+                if(conversation == null)
+                {
+                    // Create new conversation
+                    conversation = ScriptableObject.CreateInstance<Conversation>();
+
+                    conversation.nodes = new List<ConversationNode>();
+
+                    TwineStoryPassagesToConversationNodes();
+
+                    AssetDatabase.CreateAsset(conversation, GetConversationPath());
+                }
+                else
+                {
+                    // Modify existing conversation
+                    conversation.nodes.Clear();
+
+                    TwineStoryPassagesToConversationNodes();
+                }
+
+                // Conversation -> LocTables ===============
+                TryToGetStringTable();
+                TryToGetLocale();
+                TryToGetEnglishTable();
+
+                EditLocalizationTables();
+
+
+                // Cleanup
+                TryToDeleteTwineStory();
+
+                AssetDatabase.SaveAssets();
             }
-            else
-            {
-                // Modify existing conversation
-                conversation.nodes.Clear();
-
-                TwineStoryPassagesToConversationNodes();
-            }
-
-            // Conversation -> LocTables ===============
-            TryToGetStringTable();
-            TryToGetLocale();
-            TryToGetEnglishTable();
-
-            EditLocalizationTables();
-
-
-            // Cleanup
-            TryToDeleteTwineStory();
-
-            AssetDatabase.SaveAssets();
         }
+        
         
     }
 
@@ -96,6 +106,10 @@ public class DialoguePipeline : Editor
     {
         foreach (TwinePassage passage in twineStory.passages)
         {
+            // Gets all components
+            Dictionary<string, string> components;
+            ParseLineText(passage.cleanText, out components);
+            
             if(passage.tags == "Line")
             {
                 ConversationNode_Line newLine = new ConversationNode_Line();
@@ -104,7 +118,14 @@ public class DialoguePipeline : Editor
                 newLine.LocKey = name + "_" + passage.name;
                 newLine.nextNode = passage.links[0].passageName;
 
-                newLine.line = ParseLineText(passage.cleanText, out newLine.speaker);
+                // Gets Body, Speaker, Icon
+                if(components.ContainsKey("//Body:")) newLine.line = components["//Body:"];
+                if(components.ContainsKey("//Speaker:"))newLine.speaker = components["//Speaker:"];
+                if(components.ContainsKey("//Icon:"))
+                {
+                    Sprite newIcon = (Sprite) AssetDatabase.LoadAssetAtPath(ICON_PATH_BASE + components["//Icon:"] + ".png", typeof(Sprite));
+                    newLine.icon = newIcon;
+                }
 
 
                 conversation.nodes.Add(newLine);
@@ -112,36 +133,34 @@ public class DialoguePipeline : Editor
             else if (passage.tags == "Options")
             {
                 ConversationNode_Options newOptions = new ConversationNode_Options();
-                newOptions.options = new List<OptionPair>();
-                newOptions.LocKey = name + "_" + passage.name;
 
                 newOptions.ID = passage.name;
+                newOptions.LocKey = name + "_" + passage.name;
+                newOptions.options = new List<OptionPair>();
 
+                // Gets Body, Speaker, Icon
+                if(components.ContainsKey("//Body:")) newOptions.line = components["//Body:"];
+                if(components.ContainsKey("//Speaker:"))newOptions.speaker = components["//Speaker:"];
+                if(components.ContainsKey("//Icon:"))
+                {
+                    Sprite newIcon = (Sprite) AssetDatabase.LoadAssetAtPath(ICON_PATH_BASE + components["//Icon:"] + ".png", typeof(Sprite));
+                    newOptions.icon = newIcon;
+                }
+
+                // Gets options
                 for (int i = 0; i < passage.links.Count; i++)
                 {
                     OptionPair xOption = new OptionPair();
+                    
                     xOption.nextNode = passage.links[i].passageName;
-                    newOptions.options.Add(xOption);
-                }
 
-                string[] subStrings = passage.cleanText.Split('\n');
-                int j = 0;
-                for (int i = 0; i < subStrings.Length; i++)
-                {
-                    if(subStrings[i] == "") continue;
-
-                    if(subStrings[i].Contains("//Text: "))
+                    string key = "//Option_" + (i + 1) + ":";
+                    if(components.ContainsKey(key))
                     {
-                        string line = subStrings[i];
-                        line = line.Remove(0, 8);
-
-                        OptionPair jOption = newOptions.options[j];
-                        jOption.line = line;
-
-                        newOptions.options[j] = jOption;
-
-                        j++;
+                        xOption.line = components[key]; 
                     }
+
+                    newOptions.options.Add(xOption);
                 }
 
                 conversation.nodes.Add(newOptions);
@@ -153,6 +172,16 @@ public class DialoguePipeline : Editor
                 newQuestUpdate.ID = passage.name;
                 newQuestUpdate.nextNode = passage.links[0].passageName;
 
+                if(components.ContainsKey("//QuestName:"))
+                {
+                    newQuestUpdate.questToGive = (QuestData) AssetDatabase.LoadAssetAtPath(QUEST_PATH_BASE + components["//QuestName:"] + ".asset", typeof(QuestData));
+                }
+
+                if(components.ContainsKey("//QuestObjectiveName:"))
+                {
+                    newQuestUpdate.questProgressToGive.objectiveName = components["//QuestObjectiveName:"];
+                }
+
                 conversation.nodes.Add(newQuestUpdate);
             }
             else if (passage.tags == "End")
@@ -161,40 +190,58 @@ public class DialoguePipeline : Editor
 
                 newEnd.ID = passage.name;
 
+                if(components.ContainsKey("//NextConversation:"))
+                {
+                    newEnd.nextConversationToLoadOnFinish = (Conversation) AssetDatabase.LoadAssetAtPath(PATH_BASE + components["//NextConversation:"] + "_Conversation.asset", typeof(Conversation));
+                }
+
                 conversation.nodes.Add(newEnd);
             }
         }
     }
 
-    public static string ParseLineText(string input, out string speaker)
+    public static void ParseLineText(string input, out Dictionary<string, string> components)
     {
-        string cleanLine = "";
-        speaker = "???";
+        components = new Dictionary<string, string>();
 
         string[] subStrings = input.Split('\n');
+
+        string key = "";
+        string value = "";
 
         bool buildingLine = false;
         for(int i = 0; i < subStrings.Length; ++i)
         {
             if(buildingLine)
             {
-                cleanLine = cleanLine + subStrings[i] + "\n";
+                value += subStrings[i];
             }
-            else
+
+            if(subStrings[i].Contains("//"))
             {
-                if(subStrings[i].Contains("//Speaker: "))
-                {
-                    speaker = subStrings[i];
-                    speaker = speaker.Remove(0, 11);
-                }
-                else if(subStrings[i].Contains("//Body:"))
+                string[] jSubStrings = subStrings[i].Split(' ');
+                key = jSubStrings[0];
+
+                if (jSubStrings.Length >= 2) 
+                    value = jSubStrings[1];
+
+                if(key == "//Body:")
                 {
                     buildingLine = true;
+                    value = "";
+                }
+                else if(key == "//End_Body:")
+                {
+                    key = "//Body:";
+                    value = value.Remove(value.Length - 11);
+                    components[key] = value;
+                }
+                else
+                {
+                    components[key] = value;
                 }
             }
         }
-
-        return cleanLine;
     }
 
     public static void EditLocalizationTables()

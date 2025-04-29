@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Squire1_HangingTree_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148209049763919
-  - rid: 901148209049763920
-  - rid: 901148209049763921
-  - rid: 901148209049763922
-  - rid: 901148209049763923
+  - rid: 901148309550792894
+  - rid: 901148309550792895
+  - rid: 901148309550792896
+  - rid: 901148309550792897
+  - rid: 901148309550792898
   references:
     version: 2
     RefIds:
-    - rid: 901148209049763919
+    - rid: 901148309550792894
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -29,11 +29,8 @@ MonoBehaviour:
         nextNode: 2
         icon: {fileID: 0}
         speaker: Narrator
-        line: 'Before you stands at large tree with multiple bodies hanging from
-          it
-
-'
-    - rid: 901148209049763920
+        line: 
+    - rid: 901148309550792895
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 2
@@ -41,10 +38,8 @@ MonoBehaviour:
         nextNode: 3
         icon: {fileID: 0}
         speaker: Narrator
-        line: 'Strapped to each of the bodies is a plaque listing various crimes
-
-'
-    - rid: 901148209049763921
+        line: 
+    - rid: 901148309550792896
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 3
@@ -52,10 +47,8 @@ MonoBehaviour:
         nextNode: 4
         icon: {fileID: 0}
         speaker: Narrator
-        line: 'Murder, Theif, Rapist..
-
-'
-    - rid: 901148209049763922
+        line: 
+    - rid: 901148309550792897
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 4
@@ -63,11 +56,8 @@ MonoBehaviour:
         nextNode: 5
         icon: {fileID: 0}
         speaker: Narrator
-        line: 'As always, the more people that gather, the more the crime.  At least
-          your job has already been done for you.
-
-'
-    - rid: 901148209049763923
+        line: 
+    - rid: 901148309550792898
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 5

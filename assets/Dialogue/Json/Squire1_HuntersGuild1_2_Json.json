@@ -1,0 +1,33 @@
+{
+    "uuid": "f8fc435d-f128-429c-88d3-eb8dfc35d932",
+    "name": "Squire1_HuntersGuild1_2",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745957759416,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nYou've already spoken to me!\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Hunter\n\n//Icon: Skeleton_Icon\n\n//Body:\nYou've already spoken to me!\n//End_Body:"
+      },
+      {
+        "name": "1",
+        "tags": "End",
+        "id": "2",
+        "text": "",
+        "links": [],
+        "cleanText": ""
+      }
+    ]
+  }
