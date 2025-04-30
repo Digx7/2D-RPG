@@ -278,13 +278,178 @@ This is a line
 //Icon: Icon_Name
 
 //Body:
-Squire!  Can you help find the missing hunters?
+By Fate!  A Squire!  Hey you hear for the missing hunters?
 //End_Body:
 
-[[q1]]
-</tw-passagedata><tw-passagedata pid="6" name="e1" tags="End" position="800,300" size="100,100">//NextConversation: Squire1_Tool Shop_Hunters_1</tw-passagedata><tw-passagedata pid="7" name="q1" tags="QuestUpdate" position="800,175" size="100,100">//QuestName: Find the Hunters
+//Option_1: Yes, what can you tell me about them?
+[[q1]] 
 
-[[e1]] </tw-passagedata></tw-storydata></div>
+//Option_2: No
+[[q2]] 
+
+//Option_3: I&#39;ve got other buisness
+[[q3]] 
+
+[[q1]]
+</tw-passagedata><tw-passagedata pid="6" name="e1" tags="End" position="1200,825" size="100,100">//NextConversation: Squire1_Tool Shop_Hunters_1</tw-passagedata><tw-passagedata pid="7" name="q1" tags="QuestUpdate" position="625,200" size="100,100">//QuestName: Find the Hunters
+
+[[a1_1]] </tw-passagedata><tw-passagedata pid="8" name="q2" tags="QuestUpdate" position="1050,225" size="100,100">//QuestName: Find the Hunters
+
+[[e1]] </tw-passagedata><tw-passagedata pid="9" name="q3" tags="QuestUpdate" position="1275,225" size="100,100">//QuestName: Find the Hunters
+
+[[e1]] </tw-passagedata><tw-passagedata pid="10" name="a1_1" tags="Options" position="625,325" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Whats there to tell?  A bunch of my friends from the Fate&#39;s Hand and those rippling void D.R.A.G.O.N.S. went out about a week ago and havent been heard from since.
+//End_Body:
+
+//Option_1: Maybe their all dead
+[[b1_1]] 
+
+//Option_2: Why so many of them?
+[[b2_1]] 
+
+//Option_3: Are any of them a seperatist?
+[[b3_1]] 
+
+//Option_4: That&#39;s all for now
+[[e1]] </tw-passagedata><tw-passagedata pid="11" name="b1_1" tags="Options" position="550,475" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+By the fate I hope not.  We&#39;d have heard something from the mages if they had.  Their void magic gives me the shakes, but it has its uses
+//End_Body:
+
+//Option_1: Why so many of them?
+[[b2_1]] 
+
+//Option_2: Are any of them a seperatist?
+[[b3_1]] 
+
+//Option_3: That&#39;s all for now
+[[e1]] </tw-passagedata><tw-passagedata pid="12" name="b2_1" tags="Options" position="650,675" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+I guess the mages predicted a larger void activity and therefore a larger haul.  Probably the only thing that made Roderic and Stijntgen agree to work together.
+//End_Body:
+
+//Option_1: Who&#39;s Roderic and Stijnten?
+[[b2_2]] 
+
+//Option_1: That&#39;s all for now
+[[e1]] </tw-passagedata><tw-passagedata pid="13" name="b3_1" tags="Options" position="325,475" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+I heard Stijntgen de Ortel was making some rather seperatist claims after a few rounds at the saloon.  But you didn&#39;t hear that from me.  I&#39;m a man of my country after all.
+//End_Body:
+
+//Option_1: Where can I find Stijntgen de Ortel?
+[[d1_1]] 
+
+//Option_2: Why so many of them?
+[[b2_1]] </tw-passagedata><tw-passagedata pid="14" name="b2_2" tags="Line" position="650,800" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Whos?... right your new to town.
+//End_Body:
+
+[[b2_3]]</tw-passagedata><tw-passagedata pid="15" name="b2_3" tags="Line" position="650,925" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Roderic Mortimer is the head of the Fate&#39;s Hand, the best hunters guild I&#39;ve every been a crew of.
+//End_Body:
+
+[[b2_4]]</tw-passagedata><tw-passagedata pid="16" name="b2_4" tags="Line" position="650,1050" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Even if its the only hunter guild I&#39;ve crewed for I know it to be true
+//End_Body:
+
+[[b2_5]]</tw-passagedata><tw-passagedata pid="17" name="b2_5" tags="Options" position="650,1175" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Stijntgen de Ortel, that void rippling arse of a man, is the head of the D.R.A.G.O.N.S.
+//End_Body:
+
+//Option_1: You sure they are not all dead?
+[[c1_1]] 
+
+//Option_2: Are any of them a seperatist?
+[[c2_1]] 
+
+//Option_3: What does D.R.A.G.O.N.S. stand for?
+[[c3_1]] </tw-passagedata><tw-passagedata pid="18" name="c1_1" tags="Options" position="475,1300" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+By the fate I hope not.  We&#39;d have heard something from the mages if they had.  Their void magic gives me the shakes, but it has its uses
+//End_Body:
+
+//Option_1: Are any of them a seperatist?
+[[c2_1]] </tw-passagedata><tw-passagedata pid="19" name="c2_1" tags="Options" position="650,1450" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+I heard Stijntgen was making some rather seperatist claims after a few rounds at the saloon.  But you didn&#39;t hear that from me.  I&#39;m a man of my country after all.
+//End_Body:
+
+//Option_1: That&#39;s all for now
+[[c2_2]] </tw-passagedata><tw-passagedata pid="20" name="c3_1" tags="Options" position="825,1300" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+I don&#39;t ripplingly know.  But I bet my freedom its something foul.
+//End_Body:
+
+//Option_1: You sure they are not all dead?
+[[c1_1]] 
+
+//Option_2: Are any of them a seperatist?
+[[c2_1]] </tw-passagedata><tw-passagedata pid="21" name="c2_2" tags="Line" position="650,1575" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Voids blessing Squire!
+//End_Body:
+
+[[e1]]</tw-passagedata><tw-passagedata pid="22" name="d1_1" tags="Line" position="200,625" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Fate blasted Stijntgen is with the missing hunters.  She&#39;s the head of the D.R.A.G.O.N.S.
+At least I know she&#39;s not dead.  Her or the other hunters
+//End_Body:
+
+[[d1_2]]</tw-passagedata><tw-passagedata pid="23" name="d1_2" tags="Options" position="200,750" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Else the mages would have seen it with that odd power of their&#39;s
+//End_Body:
+
+//Option_1: That&#39;s all for now
+[[c2_2]] </tw-passagedata></tw-storydata></div>
         <script type='text/javascript'>document.getElementById('content').innerHTML = JSON.stringify(twineToJSON("twine"), null, 2);</script>
 	</body>
 </html>
