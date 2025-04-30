@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Tool Shop_Hunters_2_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148317194911878
+  - rid: 901148317194911879
+  - rid: 901148317194911880
+  - rid: 901148317194911881
+  - rid: 901148317194911882
+  - rid: 901148317194911883
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148317194911878
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: LIne
+        LocKey: Squire1_Tool Shop_Hunters_2_LIne
+        nextNode: End
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+    - rid: 901148317194911879
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: End
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148317194911880
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Options
+        LocKey: Squire1_Tool Shop_Hunters_2_Options
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+        options:
+        - line: Option 1 Text
+          nextNode: LIne
+        - line: Option 2 Text
+          nextNode: End
+    - rid: 901148317194911881
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Quest Update
+        LocKey: 
+        nextNode: End
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148317194911882
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Tool Shop_Hunters_2_0
+        nextNode: e1
+        icon: {fileID: 0}
+        speaker: Sidimund
+        line: Can you help find the missing hunters?
+    - rid: 901148317194911883
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

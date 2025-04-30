@@ -1,0 +1,33 @@
+{
+    "uuid": "01b2a73e-8b22-4f5a-aead-e27806fd53bf",
+    "name": "Squire1_General-Store_Mayor_2",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979088231,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nMayor Otos is looking for you in Old Bostra\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nMayor Otos is looking for you in Old Bostra\n//End_Body:"
+      },
+      {
+        "name": "1",
+        "tags": "End",
+        "id": "2",
+        "text": "",
+        "links": [],
+        "cleanText": ""
+      }
+    ]
+  }

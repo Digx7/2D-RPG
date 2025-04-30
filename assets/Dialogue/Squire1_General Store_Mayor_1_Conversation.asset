@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_General Store_Mayor_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148317194911751
+  - rid: 901148317194911752
+  - rid: 901148317194911753
+  - rid: 901148317194911754
+  - rid: 901148317194911755
+  - rid: 901148317194911756
+  - rid: 901148317194911757
+  - rid: 901148317194911758
+  - rid: 901148317194911759
+  - rid: 901148317194911760
+  - rid: 901148317194911761
+  - rid: 901148317194911762
+  - rid: 901148317194911763
+  - rid: 901148317194911764
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148317194911751
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_General Store_Mayor_1_0
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Oh.. Squire!  May I have a moment of your time?
+        options:
+        - line: What do you want?
+          nextNode: 1
+        - line: No
+          nextNode: 2
+    - rid: 901148317194911752
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_General Store_Mayor_1_1
+        nextNode: 1_Q
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Voids blessing to have you vist Bostra!  Mayor Otos heard you would
+          be arriving and is looking for you.
+    - rid: 901148317194911753
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_General Store_Mayor_1_2
+        nextNode: 2_Q
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Appoligies I know your busy, but when your free Mayor Otos is looking
+          for you in Old Bostra.
+    - rid: 901148317194911754
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_1
+        LocKey: Squire1_General Store_Mayor_1_1_1
+        nextNode: 1_2
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: You should be able to find him in Old Bostra.
+    - rid: 901148317194911755
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_2
+        LocKey: Squire1_General Store_Mayor_1_1_2
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: If I may inquire what brings you to our town?  Have the mages predictions
+          grown more dire?
+        options:
+        - line: I'm hunting for a seperatist
+          nextNode: 1_3
+        - line: My buisness is my own
+          nextNode: 1_2_1
+    - rid: 901148317194911756
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_3
+        LocKey: Squire1_General Store_Mayor_1_1_3
+        nextNode: 1_5
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Fate be with us!  A sepreatist here in Bostra!
+    - rid: 901148317194911757
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_2_1
+        LocKey: Squire1_General Store_Mayor_1_1_2_1
+        nextNode: 1_2_2
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: So sorry please excuse my curiosity.  Well if you need anything you
+          just see me or Mayor Otos.
+    - rid: 901148317194911758
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_5
+        LocKey: Squire1_General Store_Mayor_1_1_5
+        nextNode: 1_7
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Well, now that you mention it many of the locals have been claiming
+          they were seeing bandits in the forest.
+    - rid: 901148317194911759
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_2_2
+        LocKey: Squire1_General Store_Mayor_1_1_2_2
+        nextNode: 1_2_3
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Regardless if you need anything you just see me or Mayor Otos in Old
+          Bostra.
+    - rid: 901148317194911760
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_Q
+        LocKey: 
+        nextNode: 1_1
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148317194911761
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_7
+        LocKey: Squire1_General Store_Mayor_1_1_7
+        nextNode: 1_8
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: I had thought they were just getting jumpy about all the hunters about.
+    - rid: 901148317194911762
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_8
+        LocKey: Squire1_General Store_Mayor_1_1_8
+        nextNode: 1_2_2
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Can't they see how good they are for our town?  Bostra will be on the
+          map for sure now!
+    - rid: 901148317194911763
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1_2_3
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148317194911764
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2_Q
+        LocKey: Squire1_General Store_Mayor_1_2_Q
+        nextNode: 1_2_3
+        icon: {fileID: 0}
+        speaker: 
+        line: 

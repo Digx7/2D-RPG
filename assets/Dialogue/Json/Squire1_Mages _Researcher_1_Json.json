@@ -1,0 +1,116 @@
+{
+    "uuid": "87d0b866-54db-41eb-97e7-66d39e051b03",
+    "name": "Squire1_Mages _Researcher_1",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979284660,
+    "passages": [
+      {
+        "name": "LIne",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n[[End]]",
+        "links": [
+          {
+            "linkText": "End",
+            "passageName": "End",
+            "original": "[[End]]"
+          }
+        ],
+        "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:"
+      },
+      {
+        "name": "End",
+        "tags": "End",
+        "id": "2",
+        "text": "//NextConversation: Next_Conversation_Name",
+        "links": [],
+        "cleanText": "//NextConversation: Next_Conversation_Name"
+      },
+      {
+        "name": "Options",
+        "tags": "Options",
+        "id": "3",
+        "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n[[LIne]] \n\n//Option_2: Option 2 Text\n[[End]]",
+        "links": [
+          {
+            "linkText": "LIne",
+            "passageName": "LIne",
+            "original": "[[LIne]]"
+          },
+          {
+            "linkText": "End",
+            "passageName": "End",
+            "original": "[[End]]"
+          }
+        ],
+        "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n \n\n//Option_2: Option 2 Text"
+      },
+      {
+        "name": "Quest Update",
+        "tags": "QuestUpdate",
+        "id": "4",
+        "text": "//QuestName: Name\n//QuestObjective: Objective\n\n[[End]]",
+        "links": [
+          {
+            "linkText": "End",
+            "passageName": "End",
+            "original": "[[End]]"
+          }
+        ],
+        "cleanText": "//QuestName: Name\n//QuestObjective: Objective"
+      },
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "5",
+        "text": "//Speaker: Marcus\n\n//Icon: Icon_Name\n\n//Body:\nFate guild you squire!  How can a humble scholar like myself help you?\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Marcus\n\n//Icon: Icon_Name\n\n//Body:\nFate guild you squire!  How can a humble scholar like myself help you?\n//End_Body:"
+      },
+      {
+        "name": "e1",
+        "tags": "End",
+        "id": "6",
+        "text": "//NextConversation: Squire1_Mages_Researcher_2",
+        "links": [],
+        "cleanText": "//NextConversation: Squire1_Mages_Researcher_2"
+      },
+      {
+        "name": "1",
+        "tags": "Line",
+        "id": "7",
+        "text": "//Speaker: Marcus\n\n//Icon: Icon_Name\n\n//Body:\nWould you be willing to help an expidition into some local ruins?  Apperently the hunters are indisposed at the moment.\n//End_Body:\n\n[[q1]]",
+        "links": [
+          {
+            "linkText": "q1",
+            "passageName": "q1",
+            "original": "[[q1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Marcus\n\n//Icon: Icon_Name\n\n//Body:\nWould you be willing to help an expidition into some local ruins?  Apperently the hunters are indisposed at the moment.\n//End_Body:"
+      },
+      {
+        "name": "q1",
+        "tags": "QuestUpdate",
+        "id": "8",
+        "text": "//QuestName: Help the Researchers\n\n[[e1]]",
+        "links": [
+          {
+            "linkText": "e1",
+            "passageName": "e1",
+            "original": "[[e1]]"
+          }
+        ],
+        "cleanText": "//QuestName: Help the Researchers"
+      }
+    ]
+  }

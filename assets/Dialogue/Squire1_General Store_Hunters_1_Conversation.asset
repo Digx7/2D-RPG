@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_General Store_Hunters_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148317194911744
+  - rid: 901148317194911745
+  - rid: 901148317194911746
+  - rid: 901148317194911747
+  - rid: 901148317194911748
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148317194911744
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_General Store_Hunters_1_0
+        nextNode: 1
+        icon: {fileID: 0}
+        speaker: Orxan
+        line: Did you hear?  The hunters have all gone missing.
+    - rid: 901148317194911745
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_General Store_Hunters_1_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Orxan
+        line: Who will Almas sell to if they don't return?
+    - rid: 901148317194911746
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_General Store_Hunters_1_2
+        nextNode: 3
+        icon: {fileID: 0}
+        speaker: Orxan
+        line: Maybe we'll have to move on to the next town
+    - rid: 901148317194911747
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        LocKey: 
+        nextNode: 4
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148317194911748
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 4
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

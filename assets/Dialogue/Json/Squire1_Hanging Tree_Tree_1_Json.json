@@ -1,0 +1,75 @@
+{
+    "uuid": "BDB4A499-00F8-4FEF-9114-A51BF620CB49",
+    "name": "Squire1_Hanging Tree_Tree_1",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979139724,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Narrator\n\n//Body:\nBefore you stands at large tree with multiple bodies hanging from it\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Narrator\n\n//Body:\nBefore you stands at large tree with multiple bodies hanging from it\n//End_Body:"
+      },
+      {
+        "name": "1",
+        "tags": "Line",
+        "id": "2",
+        "text": "//Speaker: Narrator\n\n//Body:\nStrapped to each of the bodies is a plaque listing various crimes\n//End_Body:\n\n[[1_1]]",
+        "links": [
+          {
+            "linkText": "1_1",
+            "passageName": "1_1",
+            "original": "[[1_1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Narrator\n\n//Body:\nStrapped to each of the bodies is a plaque listing various crimes\n//End_Body:"
+      },
+      {
+        "name": "2",
+        "tags": "Line",
+        "id": "3",
+        "text": "//Speaker: Narrator\n\n//Body:\nAs always, the more people that gather, the more the crime.  At least your job has already been done for you.\n//End_Body:\n\n[[3]]",
+        "links": [
+          {
+            "linkText": "3",
+            "passageName": "3",
+            "original": "[[3]]"
+          }
+        ],
+        "cleanText": "//Speaker: Narrator\n\n//Body:\nAs always, the more people that gather, the more the crime.  At least your job has already been done for you.\n//End_Body:"
+      },
+      {
+        "name": "3",
+        "tags": "End",
+        "id": "4",
+        "text": "",
+        "links": [],
+        "cleanText": ""
+      },
+      {
+        "name": "1_1",
+        "tags": "Line",
+        "id": "5",
+        "text": "//Speaker: Narrator\n\n//Body:\nMurder, Bandit, Poacher..\n//End_Body:\n\n[[2]]",
+        "links": [
+          {
+            "linkText": "2",
+            "passageName": "2",
+            "original": "[[2]]"
+          }
+        ],
+        "cleanText": "//Speaker: Narrator\n\n//Body:\nMurder, Bandit, Poacher..\n//End_Body:"
+      }
+    ]
+  }

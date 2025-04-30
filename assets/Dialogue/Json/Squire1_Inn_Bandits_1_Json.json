@@ -1,0 +1,103 @@
+{
+    "uuid": "44e50f5d-1f1c-4507-b71b-6c4602312e56",
+    "name": "Squire1_Inn_Bandits_1",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979219450,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nVoid's Blessing Squire!  Are you here for the bandits camped in the forest?\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nVoid's Blessing Squire!  Are you here for the bandits camped in the forest?\n//End_Body:"
+      },
+      {
+        "name": "1",
+        "tags": "Line",
+        "id": "2",
+        "text": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nThose rippling void hunters have taken care of a few of them.  Hung them on that tree.\n//End_Body:\n\n[[2]]",
+        "links": [
+          {
+            "linkText": "2",
+            "passageName": "2",
+            "original": "[[2]]"
+          }
+        ],
+        "cleanText": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nThose rippling void hunters have taken care of a few of them.  Hung them on that tree.\n//End_Body:"
+      },
+      {
+        "name": "2",
+        "tags": "Line",
+        "id": "3",
+        "text": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nBut they haven't taken care of enough of them.  I still see the slipping through the forest.\n//End_Body:\n\n[[3]]",
+        "links": [
+          {
+            "linkText": "3",
+            "passageName": "3",
+            "original": "[[3]]"
+          }
+        ],
+        "cleanText": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nBut they haven't taken care of enough of them.  I still see the slipping through the forest.\n//End_Body:"
+      },
+      {
+        "name": "3",
+        "tags": "Line",
+        "id": "4",
+        "text": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nI keep telling the First Clerk Semele but she doesn't beleive me.\n//End_Body:\n\n[[4]]",
+        "links": [
+          {
+            "linkText": "4",
+            "passageName": "4",
+            "original": "[[4]]"
+          }
+        ],
+        "cleanText": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nI keep telling the First Clerk Semele but she doesn't beleive me.\n//End_Body:"
+      },
+      {
+        "name": "4",
+        "tags": "Line",
+        "id": "5",
+        "text": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nI swear on my freedom that there's a large camp of them still in the forest.  Fate's wit their all seperatists too.\n//End_Body:\n\n[[q1]]",
+        "links": [
+          {
+            "linkText": "q1",
+            "passageName": "q1",
+            "original": "[[q1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Iseas\n\n//Icon: Icon_Name\n\n//Body:\nI swear on my freedom that there's a large camp of them still in the forest.  Fate's wit their all seperatists too.\n//End_Body:"
+      },
+      {
+        "name": "q1",
+        "tags": "QuestUpdate",
+        "id": "6",
+        "text": "//QuestName: Bandits in the woods\n\n[[e1]]",
+        "links": [
+          {
+            "linkText": "e1",
+            "passageName": "e1",
+            "original": "[[e1]]"
+          }
+        ],
+        "cleanText": "//QuestName: Bandits in the woods"
+      },
+      {
+        "name": "e1",
+        "tags": "End",
+        "id": "7",
+        "text": "//NextConversation: Squire1_Inn_Bandits_2",
+        "links": [],
+        "cleanText": "//NextConversation: Squire1_Inn_Bandits_2"
+      }
+    ]
+  }

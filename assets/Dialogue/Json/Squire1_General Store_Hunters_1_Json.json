@@ -1,0 +1,75 @@
+{
+    "uuid": "abe4d687-f394-43c0-b52f-558e4cabe140",
+    "name": "Squire1_General Store_Hunters_1",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979001599,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nDid you hear?  The hunters have all gone missing.\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nDid you hear?  The hunters have all gone missing.\n//End_Body:"
+      },
+      {
+        "name": "1",
+        "tags": "Line",
+        "id": "2",
+        "text": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nWho will Almas sell to if they don't return?\n//End_Body:\n\n[[2]]",
+        "links": [
+          {
+            "linkText": "2",
+            "passageName": "2",
+            "original": "[[2]]"
+          }
+        ],
+        "cleanText": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nWho will Almas sell to if they don't return?\n//End_Body:"
+      },
+      {
+        "name": "2",
+        "tags": "Line",
+        "id": "3",
+        "text": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nMaybe we'll have to move on to the next town\n//End_Body:\n\n[[3]]",
+        "links": [
+          {
+            "linkText": "3",
+            "passageName": "3",
+            "original": "[[3]]"
+          }
+        ],
+        "cleanText": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nMaybe we'll have to move on to the next town\n//End_Body:"
+      },
+      {
+        "name": "3",
+        "tags": "QuestUpdate",
+        "id": "4",
+        "text": "//QuestName: Find the Hunters\n\n[[4]]",
+        "links": [
+          {
+            "linkText": "4",
+            "passageName": "4",
+            "original": "[[4]]"
+          }
+        ],
+        "cleanText": "//QuestName: Find the Hunters"
+      },
+      {
+        "name": "4",
+        "tags": "End",
+        "id": "5",
+        "text": "//NextConversation: Squire1_General Store_Hunters_2",
+        "links": [],
+        "cleanText": "//NextConversation: Squire1_General Store_Hunters_2"
+      }
+    ]
+  }

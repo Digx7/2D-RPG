@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Mages _Researcher_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148317194911818
+  - rid: 901148317194911819
+  - rid: 901148317194911820
+  - rid: 901148317194911821
+  - rid: 901148317194911822
+  - rid: 901148317194911823
+  - rid: 901148317194911824
+  - rid: 901148317194911825
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148317194911818
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: LIne
+        LocKey: Squire1_Mages _Researcher_1_LIne
+        nextNode: End
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+    - rid: 901148317194911819
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: End
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148317194911820
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Options
+        LocKey: Squire1_Mages _Researcher_1_Options
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+        options:
+        - line: Option 1 Text
+          nextNode: LIne
+        - line: Option 2 Text
+          nextNode: End
+    - rid: 901148317194911821
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Quest Update
+        LocKey: 
+        nextNode: End
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148317194911822
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Mages _Researcher_1_0
+        nextNode: 1
+        icon: {fileID: 0}
+        speaker: Marcus
+        line: Fate guild you squire!  How can a humble scholar like myself help you?
+    - rid: 901148317194911823
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148317194911824
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_Mages _Researcher_1_1
+        nextNode: q1
+        icon: {fileID: 0}
+        speaker: Marcus
+        line: Would you be willing to help an expidition into some local ruins? 
+          Apperently the hunters are indisposed at the moment.
+    - rid: 901148317194911825
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: q1
+        LocKey: 
+        nextNode: e1
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0

@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Hunters Guild 2_Hunters_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148317194911795
+  - rid: 901148317194911796
+  - rid: 901148317194911797
+  - rid: 901148317194911798
+  - rid: 901148317194911799
+  - rid: 901148317194911800
+  - rid: 901148317194911801
+  - rid: 901148317194911802
+  - rid: 901148317194911803
+  - rid: 901148317194911804
+  - rid: 901148317194911805
+  - rid: 901148317194911806
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148317194911795
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_0
+        nextNode: 1
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: Squire!!  Welcome to the Hall of the D.R.A.G.O.N.S.!  The best hunters
+          this side of the Carters.
+    - rid: 901148317194911796
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148317194911797
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_1
+        nextNode: 2
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: I Ludwig van Beken would give the most wonderful tour of the hall
+    - rid: 901148317194911798
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_2
+        nextNode: 
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: But I'm affaid most of our hunters are missing at the moment and I
+          must focus on that instead.
+        options:
+        - line: ' How did they all go missing?'
+          nextNode: a1
+        - line: You sure you can't still give that tour?
+          nextNode: a2
+        - line: I have more important buisness than missing hunters.
+          nextNode: a3
+    - rid: 901148317194911799
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_a1
+        nextNode: a1_2
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: Roderic Mortimer, head of the Fate's Hand reached out to us to run
+          a joint hunting party for the large haul the Mages were predicting.
+    - rid: 901148317194911800
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a2
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_a2
+        nextNode: 4
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: Fate knows I want to, but my worry over the hunters would sour the
+          experiance.
+    - rid: 901148317194911801
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a3
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_a3
+        nextNode: 4
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: Fate be with you.  What could be more important in this town than the
+          missing hunters?
+    - rid: 901148317194911802
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_2
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_a1_2
+        nextNode: a1_3
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: Stijntegen de Ortel felt Roderic might try some foul play, but said
+          he was ready if they did.
+    - rid: 901148317194911803
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_3
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_a1_3
+        nextNode: a1_4
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: Regardless they all left on a hunt together about a week ago and haven't
+          been heard from since
+    - rid: 901148317194911804
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_4
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_a1_4
+        nextNode: 4
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: According to the mages they aren't all dead, but something went down. 
+          And now everyone else is to scared to go and look.
+    - rid: 901148317194911805
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 4
+        LocKey: Squire1_Hunters Guild 2_Hunters_1_4
+        nextNode: q1
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Ludwig
+        line: I ask you.  For the freedom our hunters, will you try to find out what
+          happened?
+    - rid: 901148317194911806
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: q1
+        LocKey: 
+        nextNode: e1
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0

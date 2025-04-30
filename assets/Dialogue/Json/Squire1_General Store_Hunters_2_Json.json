@@ -1,0 +1,33 @@
+{
+    "uuid": "558e4cab-e140-4e85-ae22-87481c03b2af",
+    "name": "Squire1_General Store_Hunters_2",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979054478,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nI hope someone finds the hunters.  Else Almas will have to move onto the next town.\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nI hope someone finds the hunters.  Else Almas will have to move onto the next town.\n//End_Body:"
+      },
+      {
+        "name": "1",
+        "tags": "End",
+        "id": "2",
+        "text": "",
+        "links": [],
+        "cleanText": ""
+      }
+    ]
+  }
