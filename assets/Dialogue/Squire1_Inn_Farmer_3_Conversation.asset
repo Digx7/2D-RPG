@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Inn_Farmer_3_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148312823398700
-  - rid: 901148312823398701
+  - rid: 901148319480546208
+  - rid: 901148319480546209
   references:
     version: 2
     RefIds:
-    - rid: 901148312823398700
+    - rid: 901148319480546208
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
         speaker: Timoleon
         line: Unless your gonna hunt that monster in Sida's field leave me to my
           drink
-    - rid: 901148312823398701
+    - rid: 901148319480546209
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 15

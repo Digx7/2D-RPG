@@ -9,6 +9,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
 using UnityEditor;
 using UnityEditor.Localization;
+using Unity.EditorCoroutines.Editor;
 
 public class DialoguePipeline : Editor
 {
@@ -29,61 +30,68 @@ public class DialoguePipeline : Editor
     [MenuItem("Assets/DialoguePipeline")]
     public static void Pipeline()
     {
-        for (int j = 0; j < 2; j++)
+        for (int i = 0; i < Selection.objects.Length; i++)
         {
-            // We run this twice because some conversations try to refrence other conversations
-            // If these are created in the wrong order these refrences will be null
-            // However, running everything twice will get around this
+            if(!(Selection.objects[i] is TextAsset)) continue;
             
-            for (int i = 0; i < Selection.objects.Length; i++)
+            // Json -> TwineStory ========
+            SetupJsonAsset(Selection.objects[i]);
+
+            JsonToTwineStory();
+
+
+
+            // TwineStory -> Conversation ========
+            TryToGetConversationAsset();
+            if(conversation == null)
             {
-                if(!(Selection.objects[i] is TextAsset)) continue;
-                
-                // Json -> TwineStory ========
-                SetupJsonAsset(Selection.objects[i]);
+                // Create new conversation
+                conversation = ScriptableObject.CreateInstance<Conversation>();
 
-                JsonToTwineStory();
+                conversation.nodes = new List<ConversationNode>();
 
+                TwineStoryPassagesToConversationNodes();
 
-
-                // TwineStory -> Conversation ========
-                TryToGetConversationAsset();
-                if(conversation == null)
-                {
-                    // Create new conversation
-                    conversation = ScriptableObject.CreateInstance<Conversation>();
-
-                    conversation.nodes = new List<ConversationNode>();
-
-                    TwineStoryPassagesToConversationNodes();
-
-                    AssetDatabase.CreateAsset(conversation, GetConversationPath());
-                }
-                else
-                {
-                    // Modify existing conversation
-                    conversation.nodes.Clear();
-
-                    TwineStoryPassagesToConversationNodes();
-                }
-
-                // Conversation -> LocTables ===============
-                TryToGetStringTable();
-                TryToGetLocale();
-                TryToGetEnglishTable();
-
-                EditLocalizationTables();
-
-
-                // Cleanup
-                TryToDeleteTwineStory();
-
-                AssetDatabase.SaveAssets();
+                AssetDatabase.CreateAsset(conversation, GetConversationPath());
             }
+            else
+            {
+                // Modify existing conversation
+                conversation.nodes.Clear();
+
+                TwineStoryPassagesToConversationNodes();
+            }
+
+            // Conversation -> LocTables ===============
+            TryToGetStringTable();
+            TryToGetLocale();
+            TryToGetEnglishTable();
+
+            EditLocalizationTables();
+
+
+            // Cleanup
+            TryToDeleteTwineStory();
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
         
         
     }
+
+    // [MenuItem("Assets/DialoguePipeline")]
+    // public static void StartFlow()
+    // {
+    //     EditorCoroutineUtility.StartCoroutineOwnerless(Flow());
+    // }
+
+    // static IEnumerator Flow()
+    // {
+    //     Pipeline();
+    //     yield return new WaitForSeconds(0.5f);
+    //     Pipeline();
+    // }
 
     public static void SetupJsonAsset(Object obj)
     {

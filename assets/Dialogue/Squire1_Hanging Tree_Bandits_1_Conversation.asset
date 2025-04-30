@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Squire1_Hanging Tree_Bandits_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911767
-  - rid: 901148317194911768
-  - rid: 901148317194911769
-  - rid: 901148317194911770
+  - rid: 901148319480546130
+  - rid: 901148319480546131
+  - rid: 901148319480546132
+  - rid: 901148319480546133
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911767
+    - rid: 901148319480546130
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Aspar
         line: Bandits are so troublesome
-    - rid: 901148317194911768
+    - rid: 901148319480546131
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -38,20 +38,20 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Aspar
         line: You would think they would get the message after we hung a few of them
-    - rid: 901148317194911769
+    - rid: 901148319480546132
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 2
         LocKey: Squire1_Hanging Tree_Bandits_1_2
-        nextNode: 3
+        nextNode: e1
         icon: {fileID: 0}
         speaker: Aspar
         line: But word is theres still a large encampent of them somewhere out in
           the Forest.
-    - rid: 901148317194911770
+    - rid: 901148319480546133
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 3
+        ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}

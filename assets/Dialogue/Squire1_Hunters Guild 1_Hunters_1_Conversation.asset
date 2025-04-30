@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: Squire1_Hunters Guild 1_Hunters_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911780
-  - rid: 901148317194911781
-  - rid: 901148317194911782
-  - rid: 901148317194911783
-  - rid: 901148317194911784
-  - rid: 901148317194911785
-  - rid: 901148317194911786
-  - rid: 901148317194911787
-  - rid: 901148317194911788
-  - rid: 901148317194911789
-  - rid: 901148317194911790
-  - rid: 901148317194911791
-  - rid: 901148317194911792
+  - rid: 901148319480546143
+  - rid: 901148319480546144
+  - rid: 901148319480546145
+  - rid: 901148319480546146
+  - rid: 901148319480546147
+  - rid: 901148319480546148
+  - rid: 901148319480546149
+  - rid: 901148319480546150
+  - rid: 901148319480546151
+  - rid: 901148319480546152
+  - rid: 901148319480546153
+  - rid: 901148319480546154
+  - rid: 901148319480546155
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911780
+    - rid: 901148319480546143
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
         speaker: Brenhilda
         line: Voids Blessing!  And welcome squire to the hall of the Fate's Hand!
-    - rid: 901148317194911781
+    - rid: 901148319480546144
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -48,7 +48,7 @@ MonoBehaviour:
         speaker: Brenhilda
         line: I'm Brenhilda Blackwell the receptionist here and if you have a minute
           this guild could really use your help
-    - rid: 901148317194911782
+    - rid: 901148319480546145
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 2
@@ -58,7 +58,7 @@ MonoBehaviour:
         speaker: Brenhilda
         line: As much as I hate to admitt it most of our hunters have been gone longer
           than expected.
-    - rid: 901148317194911783
+    - rid: 901148319480546146
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: 3
@@ -74,7 +74,7 @@ MonoBehaviour:
           nextNode: a2
         - line: I got more important buisness.
           nextNode: a3
-    - rid: 901148317194911784
+    - rid: 901148319480546147
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: a1
@@ -84,7 +84,7 @@ MonoBehaviour:
         speaker: Brenhilda
         line: About a week back we got word from the Mages that a bigger haul was
           gonna be coming soon from the void.
-    - rid: 901148317194911785
+    - rid: 901148319480546148
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: a2
@@ -94,7 +94,7 @@ MonoBehaviour:
         speaker: Brenhilda
         line: Because they agreed to easily to a joint hunt.  Roderic though that
           Ortel was planning something
-    - rid: 901148317194911786
+    - rid: 901148319480546149
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: a3
@@ -104,7 +104,7 @@ MonoBehaviour:
         speaker: Brenhilda
         line: Fate forgive my rudeness.  Still if you could find out what happened
           to them the Fate's Hand would be in your debt.
-    - rid: 901148317194911787
+    - rid: 901148319480546150
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: a1_2
@@ -114,7 +114,7 @@ MonoBehaviour:
         speaker: Brenhilda
         line: So big infact that a joint hunting party was put together between both
           the Fate's Hand and the D.R.A.G.O.N.S.
-    - rid: 901148317194911788
+    - rid: 901148319480546151
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: a1_3
@@ -123,7 +123,7 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
         speaker: Brenhilda
         line: After all you can't profit off a hunt if you can't survive it.
-    - rid: 901148317194911789
+    - rid: 901148319480546152
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: a1_4
@@ -132,7 +132,7 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
         speaker: Brenhilda
         line: But we know they aren't dead yet, else the Mages would have felt it.
-    - rid: 901148317194911790
+    - rid: 901148319480546153
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: a1_5
@@ -142,19 +142,19 @@ MonoBehaviour:
         speaker: Brenhilda
         line: Please can you go and find out what happened to them?  All our other
           hunters are to scared they'll share the same fate.
-    - rid: 901148317194911791
+    - rid: 901148319480546154
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 4
+        ID: e1
         LocKey: 
         nextNode: 
-        nextConversationToLoadOnFinish: {fileID: 11400000, guid: 9b0303f4167300645acf5165a91dc090, type: 2}
-    - rid: 901148317194911792
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148319480546155
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: q1
         LocKey: 
-        nextNode: 4
+        nextNode: e1
         questToGive: {fileID: 0}
         questProgressToGive:
           objectiveName: 

@@ -13,223 +13,278 @@ MonoBehaviour:
   m_Name: Squire1_Inn_Farmer_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148312823398400
-  - rid: 901148312823398401
-  - rid: 901148312823398402
-  - rid: 901148312823398403
-  - rid: 901148312823398404
-  - rid: 901148312823398405
-  - rid: 901148312823398406
-  - rid: 901148312823398407
-  - rid: 901148312823398408
-  - rid: 901148312823398409
-  - rid: 901148312823398410
-  - rid: 901148312823398411
-  - rid: 901148312823398412
-  - rid: 901148312823398413
-  - rid: 901148312823398414
-  - rid: 901148312823398415
-  - rid: 901148312823398416
-  - rid: 901148312823398417
-  - rid: 901148312823398418
-  - rid: 901148312823398419
-  - rid: 901148312823398420
-  - rid: 901148312823398421
+  - rid: 901148319480546181
+  - rid: 901148319480546182
+  - rid: 901148319480546183
+  - rid: 901148319480546184
+  - rid: 901148319480546185
+  - rid: 901148319480546186
+  - rid: 901148319480546187
+  - rid: 901148319480546188
+  - rid: 901148319480546189
+  - rid: 901148319480546190
+  - rid: 901148319480546191
+  - rid: 901148319480546192
+  - rid: 901148319480546193
+  - rid: 901148319480546194
+  - rid: 901148319480546195
+  - rid: 901148319480546196
+  - rid: 901148319480546197
+  - rid: 901148319480546198
+  - rid: 901148319480546199
+  - rid: 901148319480546200
+  - rid: 901148319480546201
+  - rid: 901148319480546202
+  - rid: 901148319480546203
+  - rid: 901148319480546204
+  - rid: 901148319480546205
   references:
     version: 2
     RefIds:
-    - rid: 901148312823398400
+    - rid: 901148319480546181
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
         LocKey: Squire1_Inn_Farmer_1_0
         nextNode: 1
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398401
+        line: What in the rippling voids arse are the hunters good for?
+    - rid: 901148319480546182
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
         LocKey: Squire1_Inn_Farmer_1_1
         nextNode: 2
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398402
+        line: I thought they hunted the void dropped monsters wandering these hills?
+    - rid: 901148319480546183
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_Inn_Farmer_1_2
+        nextNode: 
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Timoleon
+        line: Yet the other day Sida saw a shadow wandering her fields
+        options:
+        - line: What did the shadow look like?
+          nextNode: a1
+        - line: Keep listening
+          nextNode: a2
+    - rid: 901148319480546184
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 3
-        LocKey: Squire1_Inn_Farmer_1_3
-        nextNode: 5
-        icon: {fileID: 0}
+        ID: a1
+        LocKey: Squire1_Inn_Farmer_1_a1
+        nextNode: a1_2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398403
+        line: Aw... A squire!  You startled me to my freedom!
+    - rid: 901148319480546185
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 4
-        LocKey: Squire1_Inn_Farmer_1_4
-        nextNode: 6
-        icon: {fileID: 0}
+        ID: a2
+        LocKey: Squire1_Inn_Farmer_1_a2
+        nextNode: a2_2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398404
+        line: And the hunters claimed they wouldn't hunt it!
+    - rid: 901148319480546186
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_2
+        LocKey: Squire1_Inn_Farmer_1_a1_2
+        nextNode: 
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Timoleon
+        line: Though now that my heart has settled, could you hunt this shadow for
+          us?
+        options:
+        - line: Yes
+          nextNode: b2
+        - line: No
+          nextNode: b3
+        - line: Tell me more about it
+          nextNode: b1
+    - rid: 901148319480546187
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 6
-        LocKey: Squire1_Inn_Farmer_1_6
-        nextNode: 7
-        icon: {fileID: 0}
+        ID: a2_2
+        LocKey: Squire1_Inn_Farmer_1_a2_2
+        nextNode: a2_3
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398405
+        line: Said it wasn't profitable!
+    - rid: 901148319480546188
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 7
-        LocKey: Squire1_Inn_Farmer_1_7
-        nextNode: 8
-        icon: {fileID: 0}
+        ID: a2_3
+        LocKey: Squire1_Inn_Farmer_1_a2_3
+        nextNode: a2_4
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398406
+        line: Sure as a storm one of those mages should be able to find a use for
+          it
+    - rid: 901148319480546189
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 8
-        LocKey: Squire1_Inn_Farmer_1_8
-        nextNode: 10
-        icon: {fileID: 0}
+        ID: a2_4
+        LocKey: Squire1_Inn_Farmer_1_a2_4
+        nextNode: q1
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398407
+        line: I just hope the thing doesn't start stalking my field
+    - rid: 901148319480546190
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 9
+        ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148312823398408
+    - rid: 901148319480546191
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
-        ID: 10
+        ID: q1
         LocKey: 
-        nextNode: 9
+        nextNode: e1
         questToGive: {fileID: 0}
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148312823398409
+    - rid: 901148319480546192
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 11
-        LocKey: Squire1_Inn_Farmer_1_11
-        nextNode: 14
-        icon: {fileID: 0}
+        ID: b2
+        LocKey: Squire1_Inn_Farmer_1_b2
+        nextNode: q3
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398410
+        line: Voids Blessing!  What would we do without you gears!
+    - rid: 901148319480546193
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 12
-        LocKey: Squire1_Inn_Farmer_1_12
-        nextNode: 16
-        icon: {fileID: 0}
+        ID: b3
+        LocKey: Squire1_Inn_Farmer_1_b3
+        nextNode: b3_3
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398411
+        line: What! ... but ....
+    - rid: 901148319480546194
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: b1
+        LocKey: Squire1_Inn_Farmer_1_b1
+        nextNode: 
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
+        speaker: Timoleon
+        line: Certianly!  What do you wish to know?
+        options:
+        - line: Where did you see it last?
+          nextNode: c3
+        - line: What did it look like?
+          nextNode: c2
+        - line: Any idea what it might be?
+          nextNode: c1
+        - line: Thats all.
+          nextNode: b2
+    - rid: 901148319480546195
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
-        ID: 14
+        ID: q3
         LocKey: 
-        nextNode: 15
+        nextNode: e3
         questToGive: {fileID: 0}
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148312823398412
+    - rid: 901148319480546196
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 15
+        ID: e3
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148312823398413
+    - rid: 901148319480546197
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 16
-        LocKey: Squire1_Inn_Farmer_1_16
-        nextNode: 17
-        icon: {fileID: 0}
+        ID: b3_3
+        LocKey: Squire1_Inn_Farmer_1_b3_3
+        nextNode: b3_4
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398414
+        line: Rippling void gears...
+    - rid: 901148319480546198
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 17
-        LocKey: Squire1_Inn_Farmer_1_17
-        nextNode: 18
-        icon: {fileID: 0}
+        ID: b3_4
+        LocKey: Squire1_Inn_Farmer_1_b3_4
+        nextNode: q2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398415
+        line: Well don't mind me and my drink then
+    - rid: 901148319480546199
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
-        ID: 18
+        ID: q2
         LocKey: 
-        nextNode: 19
+        nextNode: e2
         questToGive: {fileID: 0}
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148312823398416
+    - rid: 901148319480546200
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 19
+        ID: e2
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148312823398417
+    - rid: 901148319480546201
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 21
-        LocKey: Squire1_Inn_Farmer_1_21
-        nextNode: 24
-        icon: {fileID: 0}
+        ID: c3
+        LocKey: Squire1_Inn_Farmer_1_c3
+        nextNode: c3_2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398418
+        line: Sida claims she saw it last in her fields out in the forest
+    - rid: 901148319480546202
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 22
-        LocKey: Squire1_Inn_Farmer_1_22
-        nextNode: 13
-        icon: {fileID: 0}
+        ID: c2
+        LocKey: Squire1_Inn_Farmer_1_c2
+        nextNode: b1
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398419
+        line: Sida said it was large, had some kind of antlers, and green eyes.
+    - rid: 901148319480546203
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 23
-        LocKey: Squire1_Inn_Farmer_1_23
-        nextNode: 25
-        icon: {fileID: 0}
+        ID: c1
+        LocKey: Squire1_Inn_Farmer_1_c1
+        nextNode: c1_2
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398420
+        line: The void arse hunters said it's likely a Green-Eye.  Not worth their
+          time they said.
+    - rid: 901148319480546204
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 24
-        LocKey: Squire1_Inn_Farmer_1_24
-        nextNode: 13
-        icon: {fileID: 0}
+        ID: c3_2
+        LocKey: Squire1_Inn_Farmer_1_c3_2
+        nextNode: b1
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
-    - rid: 901148312823398421
+        line: And you can bet your fate it's still there.
+    - rid: 901148319480546205
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 25
-        LocKey: Squire1_Inn_Farmer_1_25
-        nextNode: 13
-        icon: {fileID: 0}
+        ID: c1_2
+        LocKey: Squire1_Inn_Farmer_1_c1_2
+        nextNode: b1
+        icon: {fileID: 21300000, guid: 3e7dc6f77cd91494896a7c10d6ccb8b4, type: 3}
         speaker: Timoleon
-        line: 
+        line: I'd love to see it stalk those tearing guild halls of theirs.  See
+          if it's worth their time then.

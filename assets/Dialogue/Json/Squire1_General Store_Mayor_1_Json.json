@@ -1,211 +1,211 @@
 {
-    "uuid": "87481c03-b2af-4c54-9e44-01b2a73e8b22",
-    "name": "Squire1_General Store_Mayor_1",
-    "creator": "Twine",
-    "creatorVersion": "2.10.0",
-    "schemaName": "Twine to JSON",
-    "schemaVersion": "0.0.6",
-    "createdAtMs": 1745979070765,
-    "passages": [
-      {
-        "name": "0",
-        "tags": "Options",
-        "id": "1",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nOh.. Squire!  May I have a moment of your time?\n//End_Body:\n\n//Option_1: What do you want?\n[[1]] \n\n//Option_2: No\n[[2]]",
-        "links": [
-          {
-            "linkText": "1",
-            "passageName": "1",
-            "original": "[[1]]"
-          },
-          {
-            "linkText": "2",
-            "passageName": "2",
-            "original": "[[2]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nOh.. Squire!  May I have a moment of your time?\n//End_Body:\n\n//Option_1: What do you want?\n \n\n//Option_2: No"
-      },
-      {
-        "name": "1",
-        "tags": "Line",
-        "id": "2",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nVoids blessing to have you vist Bostra!  Mayor Otos heard you would be arriving and is looking for you.\n//End_Body:\n\n[[1_Q]]",
-        "links": [
-          {
-            "linkText": "1_Q",
-            "passageName": "1_Q",
-            "original": "[[1_Q]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nVoids blessing to have you vist Bostra!  Mayor Otos heard you would be arriving and is looking for you.\n//End_Body:"
-      },
-      {
-        "name": "2",
-        "tags": "Line",
-        "id": "3",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nAppoligies I know your busy, but when your free Mayor Otos is looking for you in Old Bostra.\n//End_Body:\n\n[[2_Q]]",
-        "links": [
-          {
-            "linkText": "2_Q",
-            "passageName": "2_Q",
-            "original": "[[2_Q]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nAppoligies I know your busy, but when your free Mayor Otos is looking for you in Old Bostra.\n//End_Body:"
-      },
-      {
-        "name": "1_1",
-        "tags": "Line",
-        "id": "4",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nYou should be able to find him in Old Bostra.\n//End_Body:\n\n[[1_2]]",
-        "links": [
-          {
-            "linkText": "1_2",
-            "passageName": "1_2",
-            "original": "[[1_2]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nYou should be able to find him in Old Bostra.\n//End_Body:"
-      },
-      {
-        "name": "1_2",
-        "tags": "Options",
-        "id": "5",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nIf I may inquire what brings you to our town?  Have the mages predictions grown more dire?\n//End_Body:\n\n\n//Option_1: I'm hunting for a seperatist\n[[1_3]] \n\n//Option_2: My buisness is my own\n[[1_2_1]]",
-        "links": [
-          {
-            "linkText": "1_3",
-            "passageName": "1_3",
-            "original": "[[1_3]]"
-          },
-          {
-            "linkText": "1_2_1",
-            "passageName": "1_2_1",
-            "original": "[[1_2_1]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nIf I may inquire what brings you to our town?  Have the mages predictions grown more dire?\n//End_Body:\n\n\n//Option_1: I'm hunting for a seperatist\n \n\n//Option_2: My buisness is my own"
-      },
-      {
-        "name": "1_3",
-        "tags": "Line",
-        "id": "6",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nFate be with us!  A sepreatist here in Bostra!\n//End_Body:\n\n[[1_5]]",
-        "links": [
-          {
-            "linkText": "1_5",
-            "passageName": "1_5",
-            "original": "[[1_5]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nFate be with us!  A sepreatist here in Bostra!\n//End_Body:"
-      },
-      {
-        "name": "1_2_1",
-        "tags": "Line",
-        "id": "7",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nSo sorry please excuse my curiosity.  Well if you need anything you just see me or Mayor Otos.\n//End_Body:\n\n[[1_2_2]]",
-        "links": [
-          {
-            "linkText": "1_2_2",
-            "passageName": "1_2_2",
-            "original": "[[1_2_2]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nSo sorry please excuse my curiosity.  Well if you need anything you just see me or Mayor Otos.\n//End_Body:"
-      },
-      {
-        "name": "1_5",
-        "tags": "Line",
-        "id": "8",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nWell, now that you mention it many of the locals have been claiming they were seeing bandits in the forest.\n//End_Body:\n\n[[1_7]]",
-        "links": [
-          {
-            "linkText": "1_7",
-            "passageName": "1_7",
-            "original": "[[1_7]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nWell, now that you mention it many of the locals have been claiming they were seeing bandits in the forest.\n//End_Body:"
-      },
-      {
-        "name": "1_2_2",
-        "tags": "Line",
-        "id": "9",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nRegardless if you need anything you just see me or Mayor Otos in Old Bostra.\n//End_Body:\n\n[[1_2_3]]",
-        "links": [
-          {
-            "linkText": "1_2_3",
-            "passageName": "1_2_3",
-            "original": "[[1_2_3]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nRegardless if you need anything you just see me or Mayor Otos in Old Bostra.\n//End_Body:"
-      },
-      {
-        "name": "1_Q",
-        "tags": "QuestUpdate",
-        "id": "10",
-        "text": "//QuestName: Speak to the Mayor\n\n[[1_1]]",
-        "links": [
-          {
-            "linkText": "1_1",
-            "passageName": "1_1",
-            "original": "[[1_1]]"
-          }
-        ],
-        "cleanText": "//QuestName: Speak to the Mayor"
-      },
-      {
-        "name": "1_7",
-        "tags": "Line",
-        "id": "11",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nI had thought they were just getting jumpy about all the hunters about.\n//End_Body:\n\n[[1_8]]",
-        "links": [
-          {
-            "linkText": "1_8",
-            "passageName": "1_8",
-            "original": "[[1_8]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nI had thought they were just getting jumpy about all the hunters about.\n//End_Body:"
-      },
-      {
-        "name": "1_8",
-        "tags": "Line",
-        "id": "12",
-        "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nCan't they see how good they are for our town?  Bostra will be on the map for sure now!\n//End_Body:\n\n[[1_2_2]]",
-        "links": [
-          {
-            "linkText": "1_2_2",
-            "passageName": "1_2_2",
-            "original": "[[1_2_2]]"
-          }
-        ],
-        "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nCan't they see how good they are for our town?  Bostra will be on the map for sure now!\n//End_Body:"
-      },
-      {
-        "name": "1_2_3",
-        "tags": "End",
-        "id": "13",
-        "text": "//NextConversation: Squire1_General Store_Mayor_2",
-        "links": [],
-        "cleanText": "//NextConversation: Squire1_General Store_Mayor_2"
-      },
-      {
-        "name": "2_Q",
-        "tags": "Line",
-        "id": "14",
-        "text": "//QuestName: Speak to the Mayor\n\n[[1_2_3]]",
-        "links": [
-          {
-            "linkText": "1_2_3",
-            "passageName": "1_2_3",
-            "original": "[[1_2_3]]"
-          }
-        ],
-        "cleanText": "//QuestName: Speak to the Mayor"
-      }
-    ]
-  }
+  "uuid": "87481c03-b2af-4c54-9e44-01b2a73e8b22",
+  "name": "Squire1_General Store_Mayor_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1745988667902,
+  "passages": [
+    {
+      "name": "0",
+      "tags": "Options",
+      "id": "1",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nOh.. Squire!  May I have a moment of your time?\n//End_Body:\n\n//Option_1: What do you want?\n[[a1]] \n\n//Option_2: No\n[[a2]]",
+      "links": [
+        {
+          "linkText": "a1",
+          "passageName": "a1",
+          "original": "[[a1]]"
+        },
+        {
+          "linkText": "a2",
+          "passageName": "a2",
+          "original": "[[a2]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nOh.. Squire!  May I have a moment of your time?\n//End_Body:\n\n//Option_1: What do you want?\n \n\n//Option_2: No"
+    },
+    {
+      "name": "a1",
+      "tags": "Line",
+      "id": "2",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nVoids blessing to have you vist Bostra!  Mayor Otos heard you would be arriving and is looking for you.\n//End_Body:\n\n[[q1]]",
+      "links": [
+        {
+          "linkText": "q1",
+          "passageName": "q1",
+          "original": "[[q1]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nVoids blessing to have you vist Bostra!  Mayor Otos heard you would be arriving and is looking for you.\n//End_Body:"
+    },
+    {
+      "name": "a2",
+      "tags": "Line",
+      "id": "3",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nAppoligies I know your busy, but when your free Mayor Otos is looking for you in Old Bostra.\n//End_Body:\n\n[[q2]]",
+      "links": [
+        {
+          "linkText": "q2",
+          "passageName": "q2",
+          "original": "[[q2]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nAppoligies I know your busy, but when your free Mayor Otos is looking for you in Old Bostra.\n//End_Body:"
+    },
+    {
+      "name": "a1_2",
+      "tags": "Line",
+      "id": "4",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nYou should be able to find him in Old Bostra.\n//End_Body:\n\n[[a1_3]]",
+      "links": [
+        {
+          "linkText": "a1_3",
+          "passageName": "a1_3",
+          "original": "[[a1_3]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nYou should be able to find him in Old Bostra.\n//End_Body:"
+    },
+    {
+      "name": "a1_3",
+      "tags": "Options",
+      "id": "5",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nIf I may inquire what brings you to our town?  Have the mages predictions grown more dire?\n//End_Body:\n\n\n//Option_1: I'm hunting for a seperatist\n[[b1]] \n\n//Option_2: My buisness is my own\n[[b2]]",
+      "links": [
+        {
+          "linkText": "b1",
+          "passageName": "b1",
+          "original": "[[b1]]"
+        },
+        {
+          "linkText": "b2",
+          "passageName": "b2",
+          "original": "[[b2]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nIf I may inquire what brings you to our town?  Have the mages predictions grown more dire?\n//End_Body:\n\n\n//Option_1: I'm hunting for a seperatist\n \n\n//Option_2: My buisness is my own"
+    },
+    {
+      "name": "b1",
+      "tags": "Line",
+      "id": "6",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nFate be with us!  A sepreatist here in Bostra!\n//End_Body:\n\n[[b1_2]]",
+      "links": [
+        {
+          "linkText": "b1_2",
+          "passageName": "b1_2",
+          "original": "[[b1_2]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nFate be with us!  A sepreatist here in Bostra!\n//End_Body:"
+    },
+    {
+      "name": "b2",
+      "tags": "Line",
+      "id": "7",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nSo sorry please excuse my curiosity.  Well if you need anything you just see me or Mayor Otos.\n//End_Body:\n\n[[b1_5]]",
+      "links": [
+        {
+          "linkText": "b1_5",
+          "passageName": "b1_5",
+          "original": "[[b1_5]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nSo sorry please excuse my curiosity.  Well if you need anything you just see me or Mayor Otos.\n//End_Body:"
+    },
+    {
+      "name": "b1_2",
+      "tags": "Line",
+      "id": "8",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nWell, now that you mention it many of the locals have been claiming they were seeing bandits in the forest.\n//End_Body:\n\n[[b1_3]]",
+      "links": [
+        {
+          "linkText": "b1_3",
+          "passageName": "b1_3",
+          "original": "[[b1_3]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nWell, now that you mention it many of the locals have been claiming they were seeing bandits in the forest.\n//End_Body:"
+    },
+    {
+      "name": "b1_5",
+      "tags": "Line",
+      "id": "9",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nRegardless if you need anything you just see me or Mayor Otos in Old Bostra.\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nRegardless if you need anything you just see me or Mayor Otos in Old Bostra.\n//End_Body:"
+    },
+    {
+      "name": "q1",
+      "tags": "QuestUpdate",
+      "id": "10",
+      "text": "//QuestName: Speak to the Mayor\n\n[[a1_2]]",
+      "links": [
+        {
+          "linkText": "a1_2",
+          "passageName": "a1_2",
+          "original": "[[a1_2]]"
+        }
+      ],
+      "cleanText": "//QuestName: Speak to the Mayor"
+    },
+    {
+      "name": "b1_3",
+      "tags": "Line",
+      "id": "11",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nI had thought they were just getting jumpy about all the hunters about.\n//End_Body:\n\n[[b1_4]]",
+      "links": [
+        {
+          "linkText": "b1_4",
+          "passageName": "b1_4",
+          "original": "[[b1_4]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nI had thought they were just getting jumpy about all the hunters about.\n//End_Body:"
+    },
+    {
+      "name": "b1_4",
+      "tags": "Line",
+      "id": "12",
+      "text": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nCan't they see how good they are for our town?  Bostra will be on the map for sure now!\n//End_Body:\n\n[[b1_5]]",
+      "links": [
+        {
+          "linkText": "b1_5",
+          "passageName": "b1_5",
+          "original": "[[b1_5]]"
+        }
+      ],
+      "cleanText": "//Speaker: First Clerk Semele\n\n//Icon: Icon_Name\n\n//Body:\nCan't they see how good they are for our town?  Bostra will be on the map for sure now!\n//End_Body:"
+    },
+    {
+      "name": "e1",
+      "tags": "End",
+      "id": "13",
+      "text": "//NextConversation: Squire1_General Store_Mayor_2",
+      "links": [],
+      "cleanText": "//NextConversation: Squire1_General Store_Mayor_2"
+    },
+    {
+      "name": "q2",
+      "tags": "QuestUpdate",
+      "id": "14",
+      "text": "//QuestName: Speak to the Mayor\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//QuestName: Speak to the Mayor"
+    }
+  ]
+}

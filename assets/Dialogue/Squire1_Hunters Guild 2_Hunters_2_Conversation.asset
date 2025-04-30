@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Hunters Guild 2_Hunters_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911807
-  - rid: 901148317194911808
+  - rid: 901148319480546170
+  - rid: 901148319480546171
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911807
+    - rid: 901148319480546170
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
         speaker: Ludwig
         line: I ask of you, Squire.  Please find out what happened to the D.R.A.G.O.N.S.
           hunters.
-    - rid: 901148317194911808
+    - rid: 901148319480546171
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1

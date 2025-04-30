@@ -5,7 +5,7 @@
   "creatorVersion": "2.10.0",
   "schemaName": "Twine to JSON",
   "schemaVersion": "0.0.6",
-  "createdAtMs": 1745965287467,
+  "createdAtMs": 1745989732158,
   "passages": [
     {
       "name": "0",
@@ -39,117 +39,117 @@
       "name": "2",
       "tags": "Options",
       "id": "3",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nYet the other day Sida saw a shadow wandering her fields\n//End_Body:\n\n//Option_1: What did the shadow look like?\n[[3]] \n\n//Option_2: Keep listening\n[[4]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nYet the other day Sida saw a shadow wandering her fields\n//End_Body:\n\n//Option_1: What did the shadow look like?\n[[a1]] \n\n//Option_2: Keep listening\n[[a2]]",
       "links": [
         {
-          "linkText": "3",
-          "passageName": "3",
-          "original": "[[3]]"
+          "linkText": "a1",
+          "passageName": "a1",
+          "original": "[[a1]]"
         },
         {
-          "linkText": "4",
-          "passageName": "4",
-          "original": "[[4]]"
+          "linkText": "a2",
+          "passageName": "a2",
+          "original": "[[a2]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nYet the other day Sida saw a shadow wandering her fields\n//End_Body:\n\n//Option_1: What did the shadow look like?\n \n\n//Option_2: Keep listening"
     },
     {
-      "name": "3",
+      "name": "a1",
       "tags": "Line",
       "id": "4",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAw... A squire!  You startled me to my freedom!\n//End_Body:\n\n[[5]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAw... A squire!  You startled me to my freedom!\n//End_Body:\n\n[[a1_2]]",
       "links": [
         {
-          "linkText": "5",
-          "passageName": "5",
-          "original": "[[5]]"
+          "linkText": "a1_2",
+          "passageName": "a1_2",
+          "original": "[[a1_2]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAw... A squire!  You startled me to my freedom!\n//End_Body:"
     },
     {
-      "name": "4",
+      "name": "a2",
       "tags": "Line",
       "id": "5",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAnd the hunters claimed they wouldn't hunt it!\n//End_Body:\n\n[[6]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAnd the hunters claimed they wouldn't hunt it!\n//End_Body:\n\n[[a2_2]]",
       "links": [
         {
-          "linkText": "6",
-          "passageName": "6",
-          "original": "[[6]]"
+          "linkText": "a2_2",
+          "passageName": "a2_2",
+          "original": "[[a2_2]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAnd the hunters claimed they wouldn't hunt it!\n//End_Body:"
     },
     {
-      "name": "5",
+      "name": "a1_2",
       "tags": "Options",
       "id": "6",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nThough now that my heart has settled, could you hunt this shadow for us?\n//End_Body:\n\n//Option_1: Yes\n[[11]] \n\n//Option_2: No\n[[12]] \n\n//Option_3: Tell me more about it\n[[13]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nThough now that my heart has settled, could you hunt this shadow for us?\n//End_Body:\n\n//Option_1: Yes\n[[b2]] \n\n//Option_2: No\n[[b3]] \n\n//Option_3: Tell me more about it\n[[b1]]",
       "links": [
         {
-          "linkText": "11",
-          "passageName": "11",
-          "original": "[[11]]"
+          "linkText": "b2",
+          "passageName": "b2",
+          "original": "[[b2]]"
         },
         {
-          "linkText": "12",
-          "passageName": "12",
-          "original": "[[12]]"
+          "linkText": "b3",
+          "passageName": "b3",
+          "original": "[[b3]]"
         },
         {
-          "linkText": "13",
-          "passageName": "13",
-          "original": "[[13]]"
+          "linkText": "b1",
+          "passageName": "b1",
+          "original": "[[b1]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nThough now that my heart has settled, could you hunt this shadow for us?\n//End_Body:\n\n//Option_1: Yes\n \n\n//Option_2: No\n \n\n//Option_3: Tell me more about it"
     },
     {
-      "name": "6",
+      "name": "a2_2",
       "tags": "Line",
       "id": "7",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSaid it wasn't profitable!\n//End_Body:\n\n[[7]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSaid it wasn't profitable!\n//End_Body:\n\n[[a2_3]]",
       "links": [
         {
-          "linkText": "7",
-          "passageName": "7",
-          "original": "[[7]]"
+          "linkText": "a2_3",
+          "passageName": "a2_3",
+          "original": "[[a2_3]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSaid it wasn't profitable!\n//End_Body:"
     },
     {
-      "name": "7",
+      "name": "a2_3",
       "tags": "Line",
       "id": "8",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSure as a storm one of those mages should be able to find a use for it\n//End_Body:\n\n[[8]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSure as a storm one of those mages should be able to find a use for it\n//End_Body:\n\n[[a2_4]]",
       "links": [
         {
-          "linkText": "8",
-          "passageName": "8",
-          "original": "[[8]]"
+          "linkText": "a2_4",
+          "passageName": "a2_4",
+          "original": "[[a2_4]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSure as a storm one of those mages should be able to find a use for it\n//End_Body:"
     },
     {
-      "name": "8",
+      "name": "a2_4",
       "tags": "Line",
       "id": "9",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nI just hope the thing doesn't start stalking my field\n//End_Body:\n\n[[10]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nI just hope the thing doesn't start stalking my field\n//End_Body:\n\n[[q1]]",
       "links": [
         {
-          "linkText": "10",
-          "passageName": "10",
-          "original": "[[10]]"
+          "linkText": "q1",
+          "passageName": "q1",
+          "original": "[[q1]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nI just hope the thing doesn't start stalking my field\n//End_Body:"
     },
     {
-      "name": "9",
+      "name": "e1",
       "tags": "End",
       "id": "10",
       "text": "//NextConversation: Squire1_Inn_Farmer_2",
@@ -157,92 +157,92 @@
       "cleanText": "//NextConversation: Squire1_Inn_Farmer_2"
     },
     {
-      "name": "10",
+      "name": "q1",
       "tags": "QuestUpdate",
       "id": "11",
-      "text": "//QuestName: Hunting_The_Unprofitable\n\n[[9]]",
+      "text": "//QuestName: Hunting_The_Unprofitable\n\n[[e1]]",
       "links": [
         {
-          "linkText": "9",
-          "passageName": "9",
-          "original": "[[9]]"
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
         }
       ],
       "cleanText": "//QuestName: Hunting_The_Unprofitable"
     },
     {
-      "name": "11",
+      "name": "b2",
       "tags": "Line",
       "id": "12",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nVoids Blessing!  What would we do without you gears!\n//End_Body:\n\n[[14]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nVoids Blessing!  What would we do without you gears!\n//End_Body:\n\n[[q3]]",
       "links": [
         {
-          "linkText": "14",
-          "passageName": "14",
-          "original": "[[14]]"
+          "linkText": "q3",
+          "passageName": "q3",
+          "original": "[[q3]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nVoids Blessing!  What would we do without you gears!\n//End_Body:"
     },
     {
-      "name": "12",
+      "name": "b3",
       "tags": "Line",
       "id": "13",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nWhat! ... but ....\n//End_Body:\n\n[[16]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nWhat! ... but ....\n//End_Body:\n\n[[b3_3]]",
       "links": [
         {
-          "linkText": "16",
-          "passageName": "16",
-          "original": "[[16]]"
+          "linkText": "b3_3",
+          "passageName": "b3_3",
+          "original": "[[b3_3]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nWhat! ... but ....\n//End_Body:"
     },
     {
-      "name": "13",
+      "name": "b1",
       "tags": "Options",
       "id": "14",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nCertianly!  What do you wish to know?\n//End_Body:\n\n//Option_1: Where did you see it last?\n[[21]] \n\n//Option_2: What did it look like?\n[[22]] \n\n//Option_3: Any idea what it might be?\n[[23]] \n\n//Option_4: Thats all.\n[[11]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nCertianly!  What do you wish to know?\n//End_Body:\n\n//Option_1: Where did you see it last?\n[[c3]] \n\n//Option_2: What did it look like?\n[[c2]] \n\n//Option_3: Any idea what it might be?\n[[c1]] \n\n//Option_4: Thats all.\n[[b2]]",
       "links": [
         {
-          "linkText": "21",
-          "passageName": "21",
-          "original": "[[21]]"
+          "linkText": "c3",
+          "passageName": "c3",
+          "original": "[[c3]]"
         },
         {
-          "linkText": "22",
-          "passageName": "22",
-          "original": "[[22]]"
+          "linkText": "c2",
+          "passageName": "c2",
+          "original": "[[c2]]"
         },
         {
-          "linkText": "23",
-          "passageName": "23",
-          "original": "[[23]]"
+          "linkText": "c1",
+          "passageName": "c1",
+          "original": "[[c1]]"
         },
         {
-          "linkText": "11",
-          "passageName": "11",
-          "original": "[[11]]"
+          "linkText": "b2",
+          "passageName": "b2",
+          "original": "[[b2]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nCertianly!  What do you wish to know?\n//End_Body:\n\n//Option_1: Where did you see it last?\n \n\n//Option_2: What did it look like?\n \n\n//Option_3: Any idea what it might be?\n \n\n//Option_4: Thats all."
     },
     {
-      "name": "14",
+      "name": "q3",
       "tags": "QuestUpdate",
       "id": "15",
-      "text": "//QuestName: Hunting_The_Unprofitable\n\n[[15]]",
+      "text": "//QuestName: Hunting_The_Unprofitable\n\n[[e3]]",
       "links": [
         {
-          "linkText": "15",
-          "passageName": "15",
-          "original": "[[15]]"
+          "linkText": "e3",
+          "passageName": "e3",
+          "original": "[[e3]]"
         }
       ],
       "cleanText": "//QuestName: Hunting_The_Unprofitable"
     },
     {
-      "name": "15",
+      "name": "e3",
       "tags": "End",
       "id": "16",
       "text": "//NextConversation: Squire1_Inn_Farmer_4",
@@ -250,49 +250,49 @@
       "cleanText": "//NextConversation: Squire1_Inn_Farmer_4"
     },
     {
-      "name": "16",
+      "name": "b3_3",
       "tags": "Line",
       "id": "17",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nRippling void gears...\n//End_Body:\n\n[[17]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nRippling void gears...\n//End_Body:\n\n[[b3_4]]",
       "links": [
         {
-          "linkText": "17",
-          "passageName": "17",
-          "original": "[[17]]"
+          "linkText": "b3_4",
+          "passageName": "b3_4",
+          "original": "[[b3_4]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nRippling void gears...\n//End_Body:"
     },
     {
-      "name": "17",
+      "name": "b3_4",
       "tags": "Line",
       "id": "18",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nWell don't mind me and my drink then\n//End_Body:\n\n[[18]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nWell don't mind me and my drink then\n//End_Body:\n\n[[q2]]",
       "links": [
         {
-          "linkText": "18",
-          "passageName": "18",
-          "original": "[[18]]"
+          "linkText": "q2",
+          "passageName": "q2",
+          "original": "[[q2]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nWell don't mind me and my drink then\n//End_Body:"
     },
     {
-      "name": "18",
+      "name": "q2",
       "tags": "QuestUpdate",
       "id": "19",
-      "text": "//QuestName: Hunting_The_Unprofitable\n\n[[19]]",
+      "text": "//QuestName: Hunting_The_Unprofitable\n\n[[e2]]",
       "links": [
         {
-          "linkText": "19",
-          "passageName": "19",
-          "original": "[[19]]"
+          "linkText": "e2",
+          "passageName": "e2",
+          "original": "[[e2]]"
         }
       ],
       "cleanText": "//QuestName: Hunting_The_Unprofitable"
     },
     {
-      "name": "19",
+      "name": "e2",
       "tags": "End",
       "id": "20",
       "text": "//NextConversation: Squire1_Inn_Farmer_3",
@@ -300,71 +300,71 @@
       "cleanText": "//NextConversation: Squire1_Inn_Farmer_3"
     },
     {
-      "name": "21",
+      "name": "c3",
       "tags": "Line",
       "id": "21",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSida claims she saw it last in her fields out in the forest\n//End_Body:\n\n[[24]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSida claims she saw it last in her fields out in the forest\n//End_Body:\n\n[[c3_2]]",
       "links": [
         {
-          "linkText": "24",
-          "passageName": "24",
-          "original": "[[24]]"
+          "linkText": "c3_2",
+          "passageName": "c3_2",
+          "original": "[[c3_2]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSida claims she saw it last in her fields out in the forest\n//End_Body:"
     },
     {
-      "name": "22",
+      "name": "c2",
       "tags": "Line",
       "id": "22",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSida said it was large, had some kind of antlers, and green eyes.\n//End_Body:\n\n[[13]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSida said it was large, had some kind of antlers, and green eyes.\n//End_Body:\n\n[[b1]]",
       "links": [
         {
-          "linkText": "13",
-          "passageName": "13",
-          "original": "[[13]]"
+          "linkText": "b1",
+          "passageName": "b1",
+          "original": "[[b1]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nSida said it was large, had some kind of antlers, and green eyes.\n//End_Body:"
     },
     {
-      "name": "23",
+      "name": "c1",
       "tags": "Line",
       "id": "23",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nThe void arse hunters said it's likely a Green-Eye.  Not worth their time they said.\n//End_Body:\n\n[[25]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nThe void arse hunters said it's likely a Green-Eye.  Not worth their time they said.\n//End_Body:\n\n[[c1_2]]",
       "links": [
         {
-          "linkText": "25",
-          "passageName": "25",
-          "original": "[[25]]"
+          "linkText": "c1_2",
+          "passageName": "c1_2",
+          "original": "[[c1_2]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nThe void arse hunters said it's likely a Green-Eye.  Not worth their time they said.\n//End_Body:"
     },
     {
-      "name": "24",
+      "name": "c3_2",
       "tags": "Line",
       "id": "24",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAnd you can bet your fate it's still there.\n//End_Body:\n\n[[13]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAnd you can bet your fate it's still there.\n//End_Body:\n\n[[b1]]",
       "links": [
         {
-          "linkText": "13",
-          "passageName": "13",
-          "original": "[[13]]"
+          "linkText": "b1",
+          "passageName": "b1",
+          "original": "[[b1]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nAnd you can bet your fate it's still there.\n//End_Body:"
     },
     {
-      "name": "25",
+      "name": "c1_2",
       "tags": "Line",
       "id": "25",
-      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nI'd love to see it stalk those tearing guild halls of theirs.  See if it's worth their time then.\n//End_Body:\n\n[[13]]",
+      "text": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nI'd love to see it stalk those tearing guild halls of theirs.  See if it's worth their time then.\n//End_Body:\n\n[[b1]]",
       "links": [
         {
-          "linkText": "13",
-          "passageName": "13",
-          "original": "[[13]]"
+          "linkText": "b1",
+          "passageName": "b1",
+          "original": "[[b1]]"
         }
       ],
       "cleanText": "//Speaker: Timoleon\n\n//Icon: Invincible_Icon\n\n//Body:\nI'd love to see it stalk those tearing guild halls of theirs.  See if it's worth their time then.\n//End_Body:"

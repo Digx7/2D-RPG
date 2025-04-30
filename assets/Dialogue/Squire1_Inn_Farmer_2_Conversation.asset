@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Inn_Farmer_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148312823398698
-  - rid: 901148312823398699
+  - rid: 901148319480546206
+  - rid: 901148319480546207
   references:
     version: 2
     RefIds:
-    - rid: 901148312823398698
+    - rid: 901148319480546206
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
         speaker: Timoleon
         line: Those rippling void arse hunters are doing nothing about the monster
           in Sida's field
-    - rid: 901148312823398699
+    - rid: 901148319480546207
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 1

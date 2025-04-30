@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Squire1_General Store_Hunters_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911744
-  - rid: 901148317194911745
-  - rid: 901148317194911746
-  - rid: 901148317194911747
-  - rid: 901148317194911748
+  - rid: 901148319480546107
+  - rid: 901148319480546108
+  - rid: 901148319480546109
+  - rid: 901148319480546110
+  - rid: 901148319480546111
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911744
+    - rid: 901148319480546107
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Orxan
         line: Did you hear?  The hunters have all gone missing.
-    - rid: 901148317194911745
+    - rid: 901148319480546108
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -39,29 +39,29 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Orxan
         line: Who will Almas sell to if they don't return?
-    - rid: 901148317194911746
+    - rid: 901148319480546109
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 2
         LocKey: Squire1_General Store_Hunters_1_2
-        nextNode: 3
+        nextNode: q1
         icon: {fileID: 0}
         speaker: Orxan
         line: Maybe we'll have to move on to the next town
-    - rid: 901148317194911747
+    - rid: 901148319480546110
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
-        ID: 3
+        ID: q1
         LocKey: 
-        nextNode: 4
+        nextNode: e1
         questToGive: {fileID: 0}
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911748
+    - rid: 901148319480546111
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 4
+        ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}

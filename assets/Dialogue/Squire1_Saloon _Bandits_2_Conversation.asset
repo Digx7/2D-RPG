@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Squire1_Saloon _Bandits_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911865
-  - rid: 901148317194911866
-  - rid: 901148317194911867
-  - rid: 901148317194911868
-  - rid: 901148317194911869
-  - rid: 901148317194911870
+  - rid: 901148319480546259
+  - rid: 901148319480546260
+  - rid: 901148319480546261
+  - rid: 901148319480546262
+  - rid: 901148319480546263
+  - rid: 901148319480546264
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911865
+    - rid: 901148319480546259
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: LIne
@@ -31,14 +31,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: This is a line
-    - rid: 901148317194911866
+    - rid: 901148319480546260
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: End
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911867
+    - rid: 901148319480546261
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: Options
@@ -52,7 +52,7 @@ MonoBehaviour:
           nextNode: LIne
         - line: Option 2 Text
           nextNode: End
-    - rid: 901148317194911868
+    - rid: 901148319480546262
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: Quest Update
@@ -62,7 +62,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911869
+    - rid: 901148319480546263
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Engel
         line: Squire!  Can you find the bandits?
-    - rid: 901148317194911870
+    - rid: 901148319480546264
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1

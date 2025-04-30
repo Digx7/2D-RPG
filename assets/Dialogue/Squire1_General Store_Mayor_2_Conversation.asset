@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
-  m_Name: Squire1_HuntersGuild1_2_Conversation
+  m_Name: Squire1_General Store_Mayor_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148309550792905
-  - rid: 901148309550792906
+  - rid: 901148319480546128
+  - rid: 901148319480546129
   references:
     version: 2
     RefIds:
-    - rid: 901148309550792905
+    - rid: 901148319480546128
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
-        LocKey: Squire1_HuntersGuild1_2_0
-        nextNode: 1
-        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
-        speaker: Hunter
-        line: You've already spoken to me!
-    - rid: 901148309550792906
+        LocKey: Squire1_General Store_Mayor_2_0
+        nextNode: e1
+        icon: {fileID: 0}
+        speaker: First Clerk Semele
+        line: Mayor Otos is looking for you in Old Bostra
+    - rid: 901148319480546129
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1
+        ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}

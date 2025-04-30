@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Hunters Guild 1_Hunters_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911793
-  - rid: 901148317194911794
+  - rid: 901148319480546156
+  - rid: 901148319480546157
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911793
+    - rid: 901148319480546156
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
         speaker: Brenhilda
         line: Please look for the missing hunters out in the Forest
-    - rid: 901148317194911794
+    - rid: 901148319480546157
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 1

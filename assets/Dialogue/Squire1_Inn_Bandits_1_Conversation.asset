@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Squire1_Inn_Bandits_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911809
-  - rid: 901148317194911810
-  - rid: 901148317194911811
-  - rid: 901148317194911812
-  - rid: 901148317194911813
-  - rid: 901148317194911814
-  - rid: 901148317194911815
+  - rid: 901148319480546172
+  - rid: 901148319480546173
+  - rid: 901148319480546174
+  - rid: 901148319480546175
+  - rid: 901148319480546176
+  - rid: 901148319480546177
+  - rid: 901148319480546178
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911809
+    - rid: 901148319480546172
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
         speaker: Iseas
         line: Void's Blessing Squire!  Are you here for the bandits camped in the
           forest?
-    - rid: 901148317194911810
+    - rid: 901148319480546173
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -43,7 +43,7 @@ MonoBehaviour:
         speaker: Iseas
         line: Those rippling void hunters have taken care of a few of them.  Hung
           them on that tree.
-    - rid: 901148317194911811
+    - rid: 901148319480546174
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 2
@@ -53,7 +53,7 @@ MonoBehaviour:
         speaker: Iseas
         line: But they haven't taken care of enough of them.  I still see the slipping
           through the forest.
-    - rid: 901148317194911812
+    - rid: 901148319480546175
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 3
@@ -62,7 +62,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Iseas
         line: I keep telling the First Clerk Semele but she doesn't beleive me.
-    - rid: 901148317194911813
+    - rid: 901148319480546176
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 4
@@ -72,7 +72,7 @@ MonoBehaviour:
         speaker: Iseas
         line: I swear on my freedom that there's a large camp of them still in the
           forest.  Fate's wit their all seperatists too.
-    - rid: 901148317194911814
+    - rid: 901148319480546177
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: q1
@@ -82,7 +82,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911815
+    - rid: 901148319480546178
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Hanging Tree_Tree_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911778
-  - rid: 901148317194911779
+  - rid: 901148319480546141
+  - rid: 901148319480546142
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911778
+    - rid: 901148319480546141
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: The bodies of several criminals hangs from this tree
-    - rid: 901148317194911779
+    - rid: 901148319480546142
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 3

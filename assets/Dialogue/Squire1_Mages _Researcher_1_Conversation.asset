@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Squire1_Mages _Researcher_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911818
-  - rid: 901148317194911819
-  - rid: 901148317194911820
-  - rid: 901148317194911821
-  - rid: 901148317194911822
-  - rid: 901148317194911823
-  - rid: 901148317194911824
-  - rid: 901148317194911825
+  - rid: 901148319480546212
+  - rid: 901148319480546213
+  - rid: 901148319480546214
+  - rid: 901148319480546215
+  - rid: 901148319480546216
+  - rid: 901148319480546217
+  - rid: 901148319480546218
+  - rid: 901148319480546219
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911818
+    - rid: 901148319480546212
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: LIne
@@ -33,14 +33,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: This is a line
-    - rid: 901148317194911819
+    - rid: 901148319480546213
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: End
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911820
+    - rid: 901148319480546214
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: Options
@@ -54,7 +54,7 @@ MonoBehaviour:
           nextNode: LIne
         - line: Option 2 Text
           nextNode: End
-    - rid: 901148317194911821
+    - rid: 901148319480546215
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: Quest Update
@@ -64,7 +64,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911822
+    - rid: 901148319480546216
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -73,14 +73,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Marcus
         line: Fate guild you squire!  How can a humble scholar like myself help you?
-    - rid: 901148317194911823
+    - rid: 901148319480546217
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911824
+    - rid: 901148319480546218
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
         speaker: Marcus
         line: Would you be willing to help an expidition into some local ruins? 
           Apperently the hunters are indisposed at the moment.
-    - rid: 901148317194911825
+    - rid: 901148319480546219
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: q1

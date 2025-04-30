@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Inn_Farmer_4_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148312823398702
-  - rid: 901148312823398703
+  - rid: 901148319480546210
+  - rid: 901148319480546211
   references:
     version: 2
     RefIds:
-    - rid: 901148312823398702
+    - rid: 901148319480546210
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
         speaker: Timoleon
         line: Voids blessing Squire!  May your hunt for the monster in Sida's field
           find fortune!
-    - rid: 901148312823398703
+    - rid: 901148319480546211
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 15

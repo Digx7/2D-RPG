@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Squire1_Old Town_Farmer_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911839
-  - rid: 901148317194911840
-  - rid: 901148317194911841
-  - rid: 901148317194911842
-  - rid: 901148317194911843
-  - rid: 901148317194911844
+  - rid: 901148319480546233
+  - rid: 901148319480546234
+  - rid: 901148319480546235
+  - rid: 901148319480546236
+  - rid: 901148319480546237
+  - rid: 901148319480546238
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911839
+    - rid: 901148319480546233
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: LIne
@@ -31,14 +31,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: This is a line
-    - rid: 901148317194911840
+    - rid: 901148319480546234
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: End
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911841
+    - rid: 901148319480546235
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: Options
@@ -52,7 +52,7 @@ MonoBehaviour:
           nextNode: LIne
         - line: Option 2 Text
           nextNode: End
-    - rid: 901148317194911842
+    - rid: 901148319480546236
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: Quest Update
@@ -62,7 +62,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911843
+    - rid: 901148319480546237
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Lotis
         line: Squire!  Can you kill the thing in Sida's field?
-    - rid: 901148317194911844
+    - rid: 901148319480546238
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 1

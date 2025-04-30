@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Squire1_Old Town_Farmer_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911832
-  - rid: 901148317194911833
-  - rid: 901148317194911834
-  - rid: 901148317194911835
-  - rid: 901148317194911836
-  - rid: 901148317194911837
-  - rid: 901148317194911838
+  - rid: 901148319480546226
+  - rid: 901148319480546227
+  - rid: 901148319480546228
+  - rid: 901148319480546229
+  - rid: 901148319480546230
+  - rid: 901148319480546231
+  - rid: 901148319480546232
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911832
+    - rid: 901148319480546226
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: LIne
@@ -32,14 +32,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: This is a line
-    - rid: 901148317194911833
+    - rid: 901148319480546227
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: End
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911834
+    - rid: 901148319480546228
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: Options
@@ -53,7 +53,7 @@ MonoBehaviour:
           nextNode: LIne
         - line: Option 2 Text
           nextNode: End
-    - rid: 901148317194911835
+    - rid: 901148319480546229
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: Quest Update
@@ -63,7 +63,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911836
+    - rid: 901148319480546230
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -72,14 +72,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Lotis
         line: Squire!  Could you slay the moster stalking Sida's field?
-    - rid: 901148317194911837
+    - rid: 901148319480546231
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911838
+    - rid: 901148319480546232
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: q1

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_General Store_Hunters_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911749
-  - rid: 901148317194911750
+  - rid: 901148319480546112
+  - rid: 901148319480546113
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911749
+    - rid: 901148319480546112
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
         speaker: Orxan
         line: I hope someone finds the hunters.  Else Almas will have to move onto
           the next town.
-    - rid: 901148317194911750
+    - rid: 901148319480546113
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 1

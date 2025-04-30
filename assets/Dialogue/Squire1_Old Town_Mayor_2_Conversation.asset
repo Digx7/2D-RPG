@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Squire1_Old Town_Mayor_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911852
-  - rid: 901148317194911853
-  - rid: 901148317194911854
-  - rid: 901148317194911855
-  - rid: 901148317194911856
-  - rid: 901148317194911857
+  - rid: 901148319480546246
+  - rid: 901148319480546247
+  - rid: 901148319480546248
+  - rid: 901148319480546249
+  - rid: 901148319480546250
+  - rid: 901148319480546251
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911852
+    - rid: 901148319480546246
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: LIne
@@ -31,14 +31,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: This is a line
-    - rid: 901148317194911853
+    - rid: 901148319480546247
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: End
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911854
+    - rid: 901148319480546248
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: Options
@@ -52,7 +52,7 @@ MonoBehaviour:
           nextNode: LIne
         - line: Option 2 Text
           nextNode: End
-    - rid: 901148317194911855
+    - rid: 901148319480546249
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: Quest Update
@@ -62,7 +62,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911856
+    - rid: 901148319480546250
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Mayor Otos
         line: Hope you'll put in a good word for me!
-    - rid: 901148317194911857
+    - rid: 901148319480546251
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1

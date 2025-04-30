@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Hanging Tree_Bandits_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911771
-  - rid: 901148317194911772
+  - rid: 901148319480546134
+  - rid: 901148319480546135
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911771
+    - rid: 901148319480546134
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Aspar
         line: I wish someone would clear out the bandits encamped in the woods
-    - rid: 901148317194911772
+    - rid: 901148319480546135
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 1

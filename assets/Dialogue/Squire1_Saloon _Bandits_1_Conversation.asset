@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Squire1_Saloon _Bandits_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911858
-  - rid: 901148317194911859
-  - rid: 901148317194911860
-  - rid: 901148317194911861
-  - rid: 901148317194911862
-  - rid: 901148317194911863
-  - rid: 901148317194911864
+  - rid: 901148319480546252
+  - rid: 901148319480546253
+  - rid: 901148319480546254
+  - rid: 901148319480546255
+  - rid: 901148319480546256
+  - rid: 901148319480546257
+  - rid: 901148319480546258
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911858
+    - rid: 901148319480546252
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: LIne
@@ -32,14 +32,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: This is a line
-    - rid: 901148317194911859
+    - rid: 901148319480546253
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: End
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911860
+    - rid: 901148319480546254
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: Options
@@ -53,7 +53,7 @@ MonoBehaviour:
           nextNode: LIne
         - line: Option 2 Text
           nextNode: End
-    - rid: 901148317194911861
+    - rid: 901148319480546255
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: Quest Update
@@ -63,7 +63,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911862
+    - rid: 901148319480546256
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -72,14 +72,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Engel
         line: Squire!  Can you find the bandits?
-    - rid: 901148317194911863
+    - rid: 901148319480546257
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911864
+    - rid: 901148319480546258
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: q1

@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: Squire1_General Store_Mayor_1_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911751
-  - rid: 901148317194911752
-  - rid: 901148317194911753
-  - rid: 901148317194911754
-  - rid: 901148317194911755
-  - rid: 901148317194911756
-  - rid: 901148317194911757
-  - rid: 901148317194911758
-  - rid: 901148317194911759
-  - rid: 901148317194911760
-  - rid: 901148317194911761
-  - rid: 901148317194911762
-  - rid: 901148317194911763
-  - rid: 901148317194911764
+  - rid: 901148319480546114
+  - rid: 901148319480546115
+  - rid: 901148319480546116
+  - rid: 901148319480546117
+  - rid: 901148319480546118
+  - rid: 901148319480546119
+  - rid: 901148319480546120
+  - rid: 901148319480546121
+  - rid: 901148319480546122
+  - rid: 901148319480546123
+  - rid: 901148319480546124
+  - rid: 901148319480546125
+  - rid: 901148319480546126
+  - rid: 901148319480546127
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911751
+    - rid: 901148319480546114
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -41,43 +41,43 @@ MonoBehaviour:
         line: Oh.. Squire!  May I have a moment of your time?
         options:
         - line: What do you want?
-          nextNode: 1
+          nextNode: a1
         - line: No
-          nextNode: 2
-    - rid: 901148317194911752
+          nextNode: a2
+    - rid: 901148319480546115
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1
-        LocKey: Squire1_General Store_Mayor_1_1
-        nextNode: 1_Q
+        ID: a1
+        LocKey: Squire1_General Store_Mayor_1_a1
+        nextNode: q1
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: Voids blessing to have you vist Bostra!  Mayor Otos heard you would
           be arriving and is looking for you.
-    - rid: 901148317194911753
+    - rid: 901148319480546116
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 2
-        LocKey: Squire1_General Store_Mayor_1_2
-        nextNode: 2_Q
+        ID: a2
+        LocKey: Squire1_General Store_Mayor_1_a2
+        nextNode: q2
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: Appoligies I know your busy, but when your free Mayor Otos is looking
           for you in Old Bostra.
-    - rid: 901148317194911754
+    - rid: 901148319480546117
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_1
-        LocKey: Squire1_General Store_Mayor_1_1_1
-        nextNode: 1_2
+        ID: a1_2
+        LocKey: Squire1_General Store_Mayor_1_a1_2
+        nextNode: a1_3
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: You should be able to find him in Old Bostra.
-    - rid: 901148317194911755
+    - rid: 901148319480546118
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_2
-        LocKey: Squire1_General Store_Mayor_1_1_2
+        ID: a1_3
+        LocKey: Squire1_General Store_Mayor_1_a1_3
         nextNode: 
         icon: {fileID: 0}
         speaker: First Clerk Semele
@@ -85,90 +85,91 @@ MonoBehaviour:
           grown more dire?
         options:
         - line: I'm hunting for a seperatist
-          nextNode: 1_3
+          nextNode: b1
         - line: My buisness is my own
-          nextNode: 1_2_1
-    - rid: 901148317194911756
+          nextNode: b2
+    - rid: 901148319480546119
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_3
-        LocKey: Squire1_General Store_Mayor_1_1_3
-        nextNode: 1_5
+        ID: b1
+        LocKey: Squire1_General Store_Mayor_1_b1
+        nextNode: b1_2
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: Fate be with us!  A sepreatist here in Bostra!
-    - rid: 901148317194911757
+    - rid: 901148319480546120
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_2_1
-        LocKey: Squire1_General Store_Mayor_1_1_2_1
-        nextNode: 1_2_2
+        ID: b2
+        LocKey: Squire1_General Store_Mayor_1_b2
+        nextNode: b1_5
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: So sorry please excuse my curiosity.  Well if you need anything you
           just see me or Mayor Otos.
-    - rid: 901148317194911758
+    - rid: 901148319480546121
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_5
-        LocKey: Squire1_General Store_Mayor_1_1_5
-        nextNode: 1_7
+        ID: b1_2
+        LocKey: Squire1_General Store_Mayor_1_b1_2
+        nextNode: b1_3
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: Well, now that you mention it many of the locals have been claiming
           they were seeing bandits in the forest.
-    - rid: 901148317194911759
+    - rid: 901148319480546122
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_2_2
-        LocKey: Squire1_General Store_Mayor_1_1_2_2
-        nextNode: 1_2_3
+        ID: b1_5
+        LocKey: Squire1_General Store_Mayor_1_b1_5
+        nextNode: e1
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: Regardless if you need anything you just see me or Mayor Otos in Old
           Bostra.
-    - rid: 901148317194911760
+    - rid: 901148319480546123
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_Q
+        ID: q1
         LocKey: 
-        nextNode: 1_1
+        nextNode: a1_2
         questToGive: {fileID: 0}
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911761
+    - rid: 901148319480546124
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_7
-        LocKey: Squire1_General Store_Mayor_1_1_7
-        nextNode: 1_8
+        ID: b1_3
+        LocKey: Squire1_General Store_Mayor_1_b1_3
+        nextNode: b1_4
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: I had thought they were just getting jumpy about all the hunters about.
-    - rid: 901148317194911762
+    - rid: 901148319480546125
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_8
-        LocKey: Squire1_General Store_Mayor_1_1_8
-        nextNode: 1_2_2
+        ID: b1_4
+        LocKey: Squire1_General Store_Mayor_1_b1_4
+        nextNode: b1_5
         icon: {fileID: 0}
         speaker: First Clerk Semele
         line: Can't they see how good they are for our town?  Bostra will be on the
           map for sure now!
-    - rid: 901148317194911763
+    - rid: 901148319480546126
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
-        ID: 1_2_3
+        ID: e1
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911764
-      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+    - rid: 901148319480546127
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
-        ID: 2_Q
-        LocKey: Squire1_General Store_Mayor_1_2_Q
-        nextNode: 1_2_3
-        icon: {fileID: 0}
-        speaker: 
-        line: 
+        ID: q2
+        LocKey: 
+        nextNode: e1
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0

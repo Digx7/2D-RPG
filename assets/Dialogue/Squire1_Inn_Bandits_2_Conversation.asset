@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Squire1_Inn_Bandits_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911816
-  - rid: 901148317194911817
+  - rid: 901148319480546179
+  - rid: 901148319480546180
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911816
+    - rid: 901148319480546179
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Iseas
         line: I swear on my freedom that there's a bandit camp somewhere in the forest.
-    - rid: 901148317194911817
+    - rid: 901148319480546180
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: e1

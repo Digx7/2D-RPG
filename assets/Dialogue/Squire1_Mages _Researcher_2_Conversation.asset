@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Squire1_Mages _Researcher_2_Conversation
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 901148317194911826
-  - rid: 901148317194911827
-  - rid: 901148317194911828
-  - rid: 901148317194911829
-  - rid: 901148317194911830
-  - rid: 901148317194911831
+  - rid: 901148319480546220
+  - rid: 901148319480546221
+  - rid: 901148319480546222
+  - rid: 901148319480546223
+  - rid: 901148319480546224
+  - rid: 901148319480546225
   references:
     version: 2
     RefIds:
-    - rid: 901148317194911826
+    - rid: 901148319480546220
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: LIne
@@ -31,14 +31,14 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Narrator
         line: This is a line
-    - rid: 901148317194911827
+    - rid: 901148319480546221
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: End
         LocKey: 
         nextNode: 
         nextConversationToLoadOnFinish: {fileID: 0}
-    - rid: 901148317194911828
+    - rid: 901148319480546222
       type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
       data:
         ID: Options
@@ -52,7 +52,7 @@ MonoBehaviour:
           nextNode: LIne
         - line: Option 2 Text
           nextNode: End
-    - rid: 901148317194911829
+    - rid: 901148319480546223
       type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
       data:
         ID: Quest Update
@@ -62,7 +62,7 @@ MonoBehaviour:
         questProgressToGive:
           objectiveName: 
           addedAmount: 0
-    - rid: 901148317194911830
+    - rid: 901148319480546224
       type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
       data:
         ID: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
         icon: {fileID: 0}
         speaker: Marcus
         line: Can you help my collegues clear how some local ruins?
-    - rid: 901148317194911831
+    - rid: 901148319480546225
       type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
       data:
         ID: 1
