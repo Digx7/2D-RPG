@@ -273,17 +273,124 @@ This is a line
 [[End]] </tw-passagedata><tw-passagedata pid="4" name="Quest Update" tags="QuestUpdate" position="75,175" size="100,100">//QuestName: Name
 //QuestObjective: Objective
 
-[[End]] </tw-passagedata><tw-passagedata pid="5" name="0" tags="Line" position="800,25" size="100,100">//Speaker: Engel
+[[End]] </tw-passagedata><tw-passagedata pid="5" name="0" tags="Options" position="800,25" size="100,100">//Speaker: Engel
 
 //Icon: Icon_Name
 
 //Body:
-Squire!  Can you find the bandits?
+Squire!  Are you here to chase down the bandits?
 //End_Body:
 
-[[q1]]
-</tw-passagedata><tw-passagedata pid="6" name="e1" tags="End" position="800,300" size="100,100">//NextConversation: Squire1_Saloon _Bandits_2</tw-passagedata><tw-passagedata pid="7" name="q1" tags="QuestUpdate" position="800,150" size="100,100">//QuestName: Find the bandits
+//Option_1: Are there bandits nearby?
+[[q1]] 
 
+//Option_2: No, I&#39;m hunting a seperatist.
+[[q2]] 
+
+//Option_3: No, I&#39;ve got my own buisness (leave)
+[[q3]] </tw-passagedata><tw-passagedata pid="6" name="e1" tags="End" position="525,1000" size="100,100">//NextConversation: Squire1_Saloon _Bandits_2</tw-passagedata><tw-passagedata pid="7" name="q1" tags="QuestUpdate" position="450,175" size="100,100">//QuestName: Find the bandits
+
+[[a1_1]] </tw-passagedata><tw-passagedata pid="8" name="q2" tags="QuestUpdate" position="800,175" size="100,100">//QuestName: Find the bandits
+
+[[a2_1]]</tw-passagedata><tw-passagedata pid="9" name="q3" tags="QuestUpdate" position="975,175" size="100,100">//QuestName: Find the bandits
+
+[[e1]]</tw-passagedata><tw-passagedata pid="10" name="a1_1" tags="Line" position="450,300" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+Yes.  Word among the D.R.A.G.O.N. hunters is that some fate blasted hunters have camped nearby.
+//End_Body:
+
+[[a1_2]] </tw-passagedata><tw-passagedata pid="11" name="a1_2" tags="Line" position="450,425" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+I even heard one of them mention he recognized a bandit from a previous town a few years back.
+//End_Body:
+
+[[a1_3]]</tw-passagedata><tw-passagedata pid="12" name="a1_3" tags="Line" position="450,550" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+I thought bandits that followed hunter guilds around were just myths.  Ment to scare away would be hunters.
+//End_Body:
+
+[[a1_4]]</tw-passagedata><tw-passagedata pid="13" name="a1_4" tags="Line" position="450,675" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+But true or not it won&#39;t deter me!  I will become a hunter a fell great monsters from the Void.
+//End_Body:
+
+[[a1_5]]</tw-passagedata><tw-passagedata pid="14" name="a1_5" tags="Options" position="450,800" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+I don&#39;t know where in the forest they are camped.  But if you do take them out the D.R.A.G.O.N.S. would be super happy with you!
+//End_Body:
+
+//Option_1: (Leave)
+[[e1]] </tw-passagedata><tw-passagedata pid="15" name="a2_1" tags="Line" position="800,300" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+By Fate!  There&#39;s a seperatist in town!  Well guess the void storms do always attract more people.
+//End_Body:
+
+[[a2_2]]</tw-passagedata><tw-passagedata pid="16" name="a2_2" tags="Line" position="800,425" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+If I had to guess your seperatist is either with the Bandits or those void rippling Fate&#39;s Hand hunters.
+//End_Body:
+
+[[a2_3]]</tw-passagedata><tw-passagedata pid="17" name="a2_3" tags="Options" position="800,550" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+Fate knows their not to be trusted.  They have &#39;fate&#39; in their name.  What else should one expect.
+//End_Body:
+
+//Option_1: You mentioned bandits?
+[[a1_1]] 
+
+//Option_2: Where are the Fate&#39;s Hands hunters?
+[[b2_1]] </tw-passagedata><tw-passagedata pid="18" name="b2_1" tags="Line" position="800,675" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+The Fate&#39;s Hand guild hall can be found in New Bostra.  Next to the clearly infeariour D.R.A.G.O.N.S. hall.
+//End_Body:
+
+[[b2_2]]</tw-passagedata><tw-passagedata pid="19" name="b2_2" tags="Line" position="800,800" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+Unfornatly, most were on the joint hunting trip that dissapeared about a week back.
+//End_Body:
+
+[[b2_3]]</tw-passagedata><tw-passagedata pid="20" name="b2_3" tags="Options" position="800,925" size="100,100">//Speaker: Engel
+
+//Icon: Icon_Name
+
+//Body:
+Still not sure how Roderic convinced Stijntgen to agree to it.
+//End_Body:
+
+//Option_1: You mentioned bandits?
+[[a1_1]] 
+
+//Option_2: That&#39;s all (Leave)
 [[e1]] </tw-passagedata></tw-storydata></div>
         <script type='text/javascript'>document.getElementById('content').innerHTML = JSON.stringify(twineToJSON("twine"), null, 2);</script>
 	</body>

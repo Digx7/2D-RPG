@@ -278,7 +278,7 @@ This is a line
 //Icon: Icon_Name
 
 //Body:
-By Fate!  A Squire!  Hey you hear for the missing hunters?
+By Fate!  A Squire!  Hey you here for the missing hunters?
 //End_Body:
 
 //Option_1: Yes, what can you tell me about them?
@@ -291,13 +291,13 @@ By Fate!  A Squire!  Hey you hear for the missing hunters?
 [[q3]] 
 
 [[q1]]
-</tw-passagedata><tw-passagedata pid="6" name="e1" tags="End" position="1200,825" size="100,100">//NextConversation: Squire1_Tool Shop_Hunters_1</tw-passagedata><tw-passagedata pid="7" name="q1" tags="QuestUpdate" position="625,200" size="100,100">//QuestName: Find the Hunters
+</tw-passagedata><tw-passagedata pid="6" name="e1" tags="End" position="650,1725" size="100,100">//NextConversation: Squire1_Tool Shop_Hunters_1</tw-passagedata><tw-passagedata pid="7" name="q1" tags="QuestUpdate" position="625,200" size="100,100">//QuestName: Find the Hunters
 
 [[a1_1]] </tw-passagedata><tw-passagedata pid="8" name="q2" tags="QuestUpdate" position="1050,225" size="100,100">//QuestName: Find the Hunters
 
-[[e1]] </tw-passagedata><tw-passagedata pid="9" name="q3" tags="QuestUpdate" position="1275,225" size="100,100">//QuestName: Find the Hunters
+[[f1_1]] </tw-passagedata><tw-passagedata pid="9" name="q3" tags="QuestUpdate" position="1275,225" size="100,100">//QuestName: Find the Hunters
 
-[[e1]] </tw-passagedata><tw-passagedata pid="10" name="a1_1" tags="Options" position="625,325" size="100,100">//Speaker: Sidimund
+[[g2_1]] </tw-passagedata><tw-passagedata pid="10" name="a1_1" tags="Options" position="625,325" size="100,100">//Speaker: Sidimund
 
 //Icon: Icon_Name
 
@@ -314,8 +314,8 @@ Whats there to tell?  A bunch of my friends from the Fate&#39;s Hand and those r
 //Option_3: Are any of them a seperatist?
 [[b3_1]] 
 
-//Option_4: That&#39;s all for now
-[[e1]] </tw-passagedata><tw-passagedata pid="11" name="b1_1" tags="Options" position="550,475" size="100,100">//Speaker: Sidimund
+//Option_4: That&#39;s all for now (Leave)
+[[e3]] </tw-passagedata><tw-passagedata pid="11" name="b1_1" tags="Options" position="550,475" size="100,100">//Speaker: Sidimund
 
 //Icon: Icon_Name
 
@@ -329,8 +329,8 @@ By the fate I hope not.  We&#39;d have heard something from the mages if they ha
 //Option_2: Are any of them a seperatist?
 [[b3_1]] 
 
-//Option_3: That&#39;s all for now
-[[e1]] </tw-passagedata><tw-passagedata pid="12" name="b2_1" tags="Options" position="650,675" size="100,100">//Speaker: Sidimund
+//Option_3: That&#39;s all for now (Leave)
+[[e3]] </tw-passagedata><tw-passagedata pid="12" name="b2_1" tags="Options" position="650,675" size="100,100">//Speaker: Sidimund
 
 //Icon: Icon_Name
 
@@ -341,8 +341,8 @@ I guess the mages predicted a larger void activity and therefore a larger haul. 
 //Option_1: Who&#39;s Roderic and Stijnten?
 [[b2_2]] 
 
-//Option_1: That&#39;s all for now
-[[e1]] </tw-passagedata><tw-passagedata pid="13" name="b3_1" tags="Options" position="325,475" size="100,100">//Speaker: Sidimund
+//Option_1: That&#39;s all for now (Leave)
+[[e3]] </tw-passagedata><tw-passagedata pid="13" name="b3_1" tags="Options" position="325,475" size="100,100">//Speaker: Sidimund
 
 //Icon: Icon_Name
 
@@ -423,7 +423,7 @@ I don&#39;t ripplingly know.  But I bet my freedom its something foul.
 [[c1_1]] 
 
 //Option_2: Are any of them a seperatist?
-[[c2_1]] </tw-passagedata><tw-passagedata pid="21" name="c2_2" tags="Line" position="650,1575" size="100,100">//Speaker: Sidimund
+[[c2_1]] </tw-passagedata><tw-passagedata pid="21" name="c2_2" tags="Options" position="650,1575" size="100,100">//Speaker: Sidimund
 
 //Icon: Icon_Name
 
@@ -431,7 +431,8 @@ I don&#39;t ripplingly know.  But I bet my freedom its something foul.
 Voids blessing Squire!
 //End_Body:
 
-[[e1]]</tw-passagedata><tw-passagedata pid="22" name="d1_1" tags="Line" position="200,625" size="100,100">//Speaker: Sidimund
+//Option_1: (leave)
+[[e1]] </tw-passagedata><tw-passagedata pid="22" name="d1_1" tags="Line" position="200,625" size="100,100">//Speaker: Sidimund
 
 //Icon: Icon_Name
 
@@ -449,7 +450,85 @@ Else the mages would have seen it with that odd power of their&#39;s
 //End_Body:
 
 //Option_1: That&#39;s all for now
-[[c2_2]] </tw-passagedata></tw-storydata></div>
+[[c2_2]] </tw-passagedata><tw-passagedata pid="24" name="f1_1" tags="Options" position="1050,350" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+What!  What else could have drawn the attention of a Squire to this small of a town??
+Certianly there&#39;s not something worse going on in this town?
+//End_Body:
+
+//Option_1: I&#39;m looking for a seperatist
+[[g1_1]] 
+
+//Option_2: My buisness is my own
+[[g2_1]] </tw-passagedata><tw-passagedata pid="25" name="g1_1" tags="Line" position="1050,475" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Rippling void, there&#39;s a seperatist here?  Well my freedom says its one of the D.R.A.G.O.N.S.
+//End_Body:
+
+[[g1_2]]</tw-passagedata><tw-passagedata pid="26" name="g2_1" tags="Options" position="1175,475" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Of course, I ment no offense.  Though if you happen to discover the missing hunters the Fate&#39;s Hand would be every in your debt.
+//End_Body:
+
+//Option_1: (Leave)
+[[e2]] </tw-passagedata><tw-passagedata pid="27" name="g1_2" tags="Line" position="1050,600" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Fate knows they attract the worst kind of people.  
+//End_Body:
+
+[[g1_3]]</tw-passagedata><tw-passagedata pid="28" name="g1_3" tags="Options" position="1050,725" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Why I heard Stijntgen de Ortel, there head hunter, is known to spout seperatist ideas after he&#39;s had a few drinks at the saloon
+//End_Body:
+
+//Option_1: Where&#39;s this Stijntgen?
+[[h1_1]] 
+
+//Option_2: What if your the seperatist?
+[[h2_1]] 
+
+//Option_3: Enough talking. (Leave)
+[[e2]] </tw-passagedata><tw-passagedata pid="29" name="h1_1" tags="Options" position="950,850" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+Sadly he&#39;s with the missing hunters.  
+//End_Body:
+
+
+//Option_1: What can you tell me about these hunters?
+[[a1_1]] 
+
+//Option_2: I&#39;ll find the hunters then (Leave)
+[[e2]] </tw-passagedata><tw-passagedata pid="30" name="h2_1" tags="Options" position="1075,850" size="100,100">//Speaker: Sidimund
+
+//Icon: Icon_Name
+
+//Body:
+By my freedom and escape I tell you I am no seperatist!  I&#39;m a man of my country.
+//End_Body:
+
+//Option_1: Very well, where&#39;s this Stijntgen?
+[[h1_1]] 
+
+//Option_2: I&#39;ll look else where then (Leave)
+[[e2]] </tw-passagedata><tw-passagedata pid="31" name="e2" tags="End" position="1300,775" size="100,100">//NextConversation: Squire1_Tool Shop_Hunters_1</tw-passagedata><tw-passagedata pid="32" name="e3" tags="End" position="425,675" size="100,100">//NextConversation: Squire1_Tool Shop_Hunters_1</tw-passagedata></tw-storydata></div>
         <script type='text/javascript'>document.getElementById('content').innerHTML = JSON.stringify(twineToJSON("twine"), null, 2);</script>
 	</body>
 </html>
