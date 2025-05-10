@@ -1,0 +1,284 @@
+<p>Hello. I’m Everette, aka Digx7, and I’m looking for work in the games industry. In the meantime, I’m working on a 2D narrative-driven RPG under the working title of D2. This is my Dev Diary for 4/25 through 5/9.</p>
+
+<h2 id="426saturday">4/26 Saturday</h2>
+
+
+<p>I spent all of 4/26 writing out the last post.  What took most of the time was gathering all the images and the reformatting I needed to do.
+
+So I wrote out the drafts originally on Google Sheets with the plan of posting to both Itch.io (Itch.io, n.d.) and my project page.  Firstly the images and specifically the gifs took awhile to gather together since each was originally a video that I had to trim down then format into a gif.  Doing that for each one, even once I figured out the process, took a bit of time.</p>
+
+<p>Next when it came time to post on Itch.io I had to reformat everything.  This is because posts on Itch.io can take the form of plain text, markdown, or html.  The latter of the two help format your post.  So I needed to go back through the entire post and add in all the extra data for formatting.  I also had to upload and repost all the images.</p>
+
+<p>I’m hoping this is a process I can smooth out in the future.  In fact formatting and writing took so long that this was all I did for this day.</p>
+
+<p>I did however, stumble onto GitHub pages and will look into that as another place to post these blogs.  As with all things I’m sure the process will become smoother with time.</p>
+
+
+
+<h2 id="428monday">4/28 Monday</h2>
+
+
+<p>I spent the day looking into GitHub pages (GitHub, n.d.).  Turns out it's a static website builder that GitHub provides.  All you need at minimum are .html or even just .md files for your home page and posts.  Since Itch.io also takes the format of html or markdown (<i>.md is short for markdown</i>) this means I should be able to post to both with little reformatting needed between each.</p>
+
+<p>I ended up using a separate branch on my project for its GitHub pages website.  Turns out this is a common practice with the branch being called gh-pages most of the time.</p>
+
+<p>Since GitHub pages lets you host a site with your account name I may use this in the future to make my own basic website.</p>
+
+<p>In the future I may look into how to customize these sites even more.</p>
+<h2 id="429tuesday">4/29 Tuesday</h2>
+
+
+<p>After trying several different things to do to alter the layout I came back to the default github pages layout.  The problem is that changing anything visually required me to make a working _config.yml file (<i>a hidden default one is used if you don’t include one</i>).  Everytime I tried to make a _config.yml file the site would break and there was no clear way of debugging it.  
+
+Ultimately I may have to look at other Github pages' site code to see what they are doing.  At the end of the day I figured I could work with the default for now and revisit it as I make more blogs and have more content worth posting in the first place.</p>
+
+<p>Wanting to get something done I switched gears and implemented tags into my dialogue system.  
+
+I’ve talked in past blogs about my dialogue system (<i>see my previous blog for a full breakdown</i>).  The process basically involves using Twine (Twine, n.d.) to create node based conversations where the player can make choices.  Those conversations then get turned into Json files that then get imported into my game.</p>
+
+<p>As it stood my system let me just use the entire text of each node in Twine as the line of dialogue in a conversation.  However, I needed a way to pack more information into each node.  Information like: the current speaker, the profile image to use, any quests to trigger, etc.</p>
+
+<p>So I updated my custom importer to look for special tags in the text in each node and to treat the data inside those tags differently based on the given tag.</p>
+
+<p><b>Figure 1</b></p>
+<p>Tags Example</p>
+<figure><img src="https://d3gf5wsgt7m4.cloudfront.net/FREE_LICENSE/ACj_Image_1.png" alt="Enter image alt description"></figure>
+
+<p>As seen in the above image all tags use the format //<TAG>: so for example the //Speaker: tag tells the importer to use the rest of the line Orxan as the current speaker.  The //Icon: tag gives the file name of the speaker icon to show.  If one using that name does not exist then a fallback is used (<i>So Icon_Name does not break the game, the fallback is used instead</i>).  Lastly some tags have opening and closing tags, line //Body: and //End_Body:.  Using these allows the main body (<i>the actual dialogue line</i>) to be multiple lines in and of itself without breaking anything.  (<i>The [[1]] is Twine's way of linking passages and is irrelevant for this discussion</i>).</p>
+
+<p>This system of tags is flexible enough that it allows me to add more tags in the future if I need it.  The downside is that since all the writing is done in Twine, Twine has no way of knowing about or fixing any spelling mistakes in these tags.</p>
+
+<p>It means I really need to watch my spelling and naming of tags and external files.</p>
+
+<p>Even still it works and I’m quite happy with it.</p>
+
+<p>In fact I was so happy with it that I started writing out all the conversations for the first chapter of my game, the chapter I’m using as the vertical slice.  In writing even the placeholder dialogue I already found myself with 16 different conversations and named characters I would need to write.  Some of these conversations are more fleshed out than others.</p>
+
+<p>To help with naming all these npcs you can talk to I’m using a fantasy name generator (FantasyNameGenerator, n.d.).  But to keep the names consistent I used the same type of name generator for each faction in the first chapter.</p>
+
+<p>The first chapter will take place in a boom town that is experiencing an influx of hunters to hunt a new exotic animal in the area.  But the animal is much more clever than they all thought and has since captured most of the hunters.  You come in to help fix the problem.</p>
+
+<p>The main factions in the first chapter and the naming conventions I used are</p>
+<ol><li>The og towns folks: Hellenic (<i>greek</i>)</li>
+<li>The hunters: Gothic and Dutch Renaissance (<i>There two different groups of hunters</i>)</li>
+<li>The mages: German Renaissance</li>
+<li>Enterprising merchants: Azerbaijani</li></ol>
+
+<p>I was feeling good about the writing and also daunted by the large amounts of writing my game may end up having.  Writing is hard.</p>
+<h2 id="430wednesday">4/30 Wednesday</h2>
+
+
+<p>I didn’t have as much time to work today but spent it writing.  Ultimately I only really got about 2 conversations done.  At this point it’s taking me about 1 hour per conversation.  I haven’t looked at the word count to see how well that stacks up with the speed of professional writers.</p>
+
+<p>A big stumbling block is the fact that it's hard to write out the conversations for various quest lines when I’m not entirely sure where each quest will even go.</p>
+
+<p>So I spent some time diagraming out all the quests for the first chapter.  It turned out most of them were simpler than I thought in my head.  But having the structure on paper will help.</p>
+
+<p>It’s at this point I may need to do the same thing for the large scale story of my game.</p>
+<h2 id="losttime">?? Lost Time</h2>
+
+
+<p>Looking back it both makes sense and is surprising that this time was only a week.</p>
+
+<p>At this point I was in a bit of a slump realizing that I would need some more clear story direction to help guild my writing for the game.  I would need not just media analysis material but actually ‘how the sausage is made’ writing direction learning material.  
+
+It is during this time that I stumbled onto and finished <i>Way of Kings </i>(Sanderson, 2011)<i>, </i>a fantasy book by acclaimed author Brandon Sanderson.  I have been a fantasy reader for a long time and have been reading through the <i>Wheel of Time </i>(Jordan, 1990) series for a few years at this point (<i>at the time of writing I’m on Towers of Midnight</i>).  It is through those books that I discovered Brandon Sanderson and his books.  In Particular, I have read the first <i>Mistborn </i>(Sanderson, 2007)<i> </i>book and really loved it.</p>
+
+<p>But I bring all of this up because at some point during this week after finishing <i>Way of Kings </i>I found on YouTube a lecture series that Brandon had given at BYU on creative writing in fantasy and sci-fi (Sanderson, 2020).  And it was really informative.</p>
+
+<p>Most of it was geared toward books, but the way he was able to break down how he, a writer, thinks about and constructs plots and characters was incredibly helpful.</p>
+
+<p>Some notable advice was breaking down plots with the ideas of promises, progress, and payoff.  -</p>
+<ul><li><u>Promises</u>: what are you signaling to the audience at the start will or could happen (<i>Chekhov's Gun</i>).</li>
+<li><u>Progress</u>: how are you moving this plot along, how are we conveying movement towards some end.  This could be any type of movement.</li>
+<li><u>Payoffs</u>: how are you resolving plot lines?  This structure can be a good way to think of any plotlines big or small.</li></ul>
+
+<p>Advice I got for characters was to think of them in terms of likability, copentece, and proactivity.  Then to view their character arcs as them changing in terms of these fields.  I’m doing it injustice here but it was a really helpful framework to view my own writing and direction.</p>
+
+<p>In the process of doing all of this I was able to take a step back and nail down on a  more solid direction for the writing and story of my game.</p>
+
+<p>Well I’m still working out some details and may change a few things here’s what I have planned so far:</p>
+
+<h4 id="mystorysofar">My story so far</h4>
+
+
+<p>The game takes place in a world where storms of portals appear rather frequently.  These storms tend to deposit things from other worlds.  Anything.  Objects, treasures, rocks, animals, mountains, cities, and people.  Everything in this world can trace its origin to some portal that dumped it here at some point or another.  Some a few years ago some thousands of years ago.</p>
+
+<p>Yet rather than be landfill the world is a thriving ecosystem of societies and wildlife that has adapted and learned to thrive here.  The various cultures and nations each have different origins and different explanations as to why they are here.  But regardless they make due.  Entire societies appearing at once are not impossible, but are so rare that many view such an event as a myth.</p>
+
+<p>The game follows 3 different characters as they find their place in the world during one such event.</p>
+
+<p>Each of the characters will have key moments in their story where the player can make choices about the type of character they will end up being.  These choices have both narrative and gameplay consequences since these choices impact that character's combat build.</p>
+
+<p>The characters I have so far (<i>or their rough ideas</i>) are:</p>
+
+<p>Ion: A squire in training to become a knight.  A hero who protects his country and his people.  He is nearing the end of his training and must decide what it means to be a knight.  His possible arcs the player can experience revolve around this question as well as his relationship to his government and his mentor Six</p>
+
+<p>Ivi: A mage of some kind.  I have not developed the magic as much or the exact faction Ivi will belong to.  But I want her paths to explore the perspective of those trying to understand the portals and the exact science or questions raised by them.  I have ideas about making her story a more Lora Croft/ Indiana Jones styled story just to give the player more action or reason to be getting into combat.</p>
+
+<p>Omen: A parent of a family displaced by the society that will appear from a portal as part of the main story of this game.  I want their arcs to show the perspective of those who find themselves here for the first time.  Since most other people are born and raised here.  I am unsure if I want them to be a mother, a father, or a single parent.</p>
+
+<p>The game will contain multiple chapters where each chapter follows a different character through their story.  The plan at the moment is for each character to have 3 chapters giving the game 9 chapters in total.  The first chapter of each character is their introduction.  The second chapters will likely open with the new society appearing and each of their initial reactions.  The third and final chapters will all take place at the same location, a battlefield where the new society is fighting one of the existing societies.</p>
+
+<p>Overall I want the story to follow ‘ordinary’ characters as they deal with the changing world around them.  Characters who ultimately won’t be the ones changing history or the fate of the world, but will be changing who they are over the course of the game.</p>
+
+<p>Even though most of this story is still just in my head it feels like a huge weight off my shoulders having a clear direction to work towards in my future writing.</p>
+
+<h2 id="56tuesday">5/6 Tuesday</h2>
+
+
+<p>As part of developing D2 (<i>the working title for my current project</i>) I have been looking through various game assets.  Part of that process got me to look into what it would take to make my own game assets.  What kind of assets could be viable, how many I would need, and what kind of return I could expect.
+
+So part that last bit has been none.</p>
+
+<p>But regardless having made 2 asset packs now it's been good experience.  One of the big factors in selling art assets is volume.  Lots of similarly styled assets do better than one off assets.  A creator who has made 20 different but similar monster assets does better than someone who just did 1.  So I am making at least one asset pack a month and seeing where that gets me.  
+
+On 5/6 I spent the entire day working on my third asset pack.  And I’m getting faster at them.  The first asset pack I made took a week to make.  The second pack took 2 days.  This last one took 1 day.</p>
+
+<p>A big thing that's helped speed up the process has been my growing familiarity with the files and formats needed to upload assets to the various websites.  The three websites I’m currently selling on are Itch.io (Itch.io, n.d.), GameDevMarket (GameDev Market, n.d.), and the Unity Asset Store (Unity, n.d.).  Itch.io and GameDevMarket both need the assets to be uploaded as a <code>.zip</code> file whereas the Unity Asset Store needs you to upload the assets from inside the Unity Engine itself.  All three sites need key art (thumbnails) and screen shots but all three expect different resolutions.  Also Itch.io is the only site that accepts gifs in place of screenshots.</p>
+
+<p>Each website also takes a different amount of time to approve of the assets before letting them be shown to the public.  Itch.io lets you post instantly, GameDevMarket takes 3-7 business days, and Unity can take up to 2 weeks.</p>
+
+<p>I’ve also found a few scripts that speed up the process of exporting and naming all the files.  The reason the first pack took a week was partially due to me having to learn all the things and process I needed as I went.</p>
+
+<p>On the one hand it is discouraging that the packs haven’t sold at all.  On the other hand it is encouraging that I can at least see growth in my turnaround time decreasing for the art assets.  It also helps me to practice my art skills.</p>
+
+<p>Below are links to the 2 art assets I’ve made already.  At time of writing I’m still waiting for Unity to approve of this most recent asset pack.  When it does get approved I might go back and link it here:</p>
+<ul><li><iframe frameborder="0" src="https://itch.io/embed/3424091?bg_color=000000&amp;fg_color=ffffff" width="552" height="167"><a href="https://digx7.itch.io/robot-lowbit-animated-pixel-art-portraits">Robot Lowbit Animated Pixel Art Portraits by Digx7</a></iframe></li>
+<li><iframe frameborder="0" src="https://itch.io/embed/3459541?bg_color=000000&amp;fg_color=ffffff" width="552" height="167"><a href="https://digx7.itch.io/wizard-lowbit-animated-pixel-art-portraits">Wizard Lowbit Animated Pixel Art Portraits by Digx7</a></iframe></li></ul>
+<h2 id="58thursday">5/8 Thursday</h2>
+
+
+<p>Initially the plan was to finally do some artwork and level gray boxing.  It’s something I’ve needed to do and have been putting off for a while at this point.  So I got my workspace setup.  And I noticed I had many different applications I needed to set up. I need to open:</p>
+<ol><li>OBS and set the output to today’s directory (<i>to help record for blogs like this or future devlogs</i>)</li>
+<li>Google sheets to enter my starting time (<i>to track my work hours</i>)</li>
+<li>a notes app with todays note (to write down my thoughts so I can compile them here later)</li>
+<li>spotify open for music</li>
+<li>github desktop for version control</li>
+<li>vs code cause I always need it open</li>
+<li>opera gx cause i’ll be looking up stuff as I work</li>
+<li>Unity so I can work on my game.</li></ol>
+
+<p>That’s a lot.</p>
+
+<p>I remember it each time but still it would be nice to just press a button instead.  That’s when I remembered terminal scripts.  Honestly, they are not something I’m super familiar with, I only know about them because of some friends in college.  But they are super handy for these kinds of repetitive managerial tasks.</p>
+
+<p>So I started working on some.  It shouldn’t take too long, right?</p>
+
+<p>It took 8 hours.</p>
+
+<p>The first thing I tackled was OBS (OBS, n.d.), that was the most tedious one and the one I was the least sure was even possible.  In the past I tried making devlogs or blog posts about my projects as I worked on them.  The biggest challenge I’d always found was in gathering footage.  You need to be recording yourself as you work.  But not all the time.  Otherwise when editing later you have hours and hours of footage you need to comb through, all you're looking for are short few second moments.  All I needed in each video was footage that related to or was a few seconds on what I was talking about.  So I needed an easy way to record my screen at any moment AND organize the footage in a way it would be easy to look back through later.</p>
+
+<p>So I have a folder on an external hard drive that has a new sub folder created at the start of each day.  And each day OBS’s settings are changed to write directly to that new sub folder.</p>
+
+<p>Meaning the first question for this terminal script was: Could I automate that entire process from the terminal?  Could anything automate it?</p>
+
+<p>Creating a new sub folder is easy.  But modifying the setting from code?  That was the unknown.</p>
+
+<p>Looking around at first I found a few Repos of command line plugins for OBS (grigio, n.d.) (pschmitt, n.d.).  But according to their own docs none of them had any commands that would help me.  This made sense.  What I was looking for was admittedly something obscure.  I needed some way of having a script change a single setting in the settings of OBS.</p>
+
+<p>The exact setting I need to change can be found under <code>Settings/Output/Recording/Recording Path</code></p>
+
+<p>But I didn’t give up just yet.</p>
+
+<p>It turns out that in OBS if you go to File/Show Settings Folder it takes you straight to the folder where all the settings are stored.  Most are in a combination of .ini or .json files.  So I opened each file up in VS code and just used <code>CTRL + F</code> to find where the setting I was looking for was stored.  I didn’t know if it was stored in more than one place or not.</p>
+
+<p>It was stored in only one spot.  I found the setting I was looking for in<code> basic/profiles/Untitled/basic.ini</code></p>
+
+<p>Through trial and error I found it was best to manually change the values in this file well OBS was closed.  Changing the values well OBS was open led to strange results, like the value being immediately edited back to the previous value.
+
+So now that I could do it manually I just needed a script to edit this text file.  And that was indeed possible.
+
+After this I began coding a PowerShell script to run everything.  First I found a simple learning module by Microsoft on PowerShell scripting.  I had worked on small amounts of PowerShell scripting before but wanted a solid base to work with before I started (Microsoft, n.d.).</p>
+
+<p>The very first thing I had the script do was verify that the external hard drive is plugged in and if it is, create a new sub folder for the day.  Part of creating a new sub folder is adding in a text file that I can write my thoughts down.</p>
+
+<p>Now I needed to edit the OBS settings file from the script.  After some digging online I found a solution I could modify to my needs (mortalwombat-, 2019).  The solution used a <code>regex</code> expression to find the exact setting I was looking for and replace it with the new value.  I ran into a challenge in that the setting I was trying to change was named very similarly to 2 other settings that I did not want to change.  They were so close in naming that a normal find and replace would change all 3 when I only wanted to change the 1.  
+
+In that same post I was pointed to this really neat site that lets you test out different <code>regex</code> expressions to see how they would work (gskinner, n.d.).  It gave me a huge appreciation for how compact but flexible they are.  Even still it wasn’t quite working.</p>
+
+<p>It turned out that part of the solution I was following was treating the entire file as if it was one big string, but I was expecting the<code> regex</code> expressions to work using the multiline flag.  With that sorted out I could modify the <code>regex</code> expression to only change the 1 setting I needed.</p>
+
+<p>So at this point I’m feeling good about myself.</p>
+
+<p>My PowerShell script could create a new sub folder on my external hard drive for the day.  And it could change the settings of OBS to save all its recordings to the new sub folder.</p>
+
+<p>The next big thing I wanted to look at was Google Sheets.  Which straight up I knew would be impossible and that I would need to rethink if I wanted to automate it.</p>
+
+<p>See on Google Sheets I have one sheet I use as a work timesheet to track my hours.  When I start working I enter my start time and when I’m done for the day I enter my end time.  Then I can see how many hours I worked.</p>
+
+<p>I didn’t even bother looking to see if I could edit a Google Sheet on my Google Drive from my computer's terminal.</p>
+
+<p>But since I’m using windows I could use Microsoft Excel.  All the same formulas are there and the file lives as a local file on my computer.  So I wondered if I could modify an Microsoft Excel file from the terminal?</p>
+
+<p>Turns out I could.</p>
+
+<p>In fact I feel like I lucked out, in that I almost immediately found a form answer that gave just about all the pieces I would need to do it (signalhouse, 2020).  I don’t entirely understand how exactly it works.  But I’ll try to explain.</p>
+
+<p>Basically PowerShell is able to use something called COM objects to create custom class variables. Using this I could import a type of library that let me create variables for Microsoft Excel files and edit them.  The solution I found had me make an instance of Microsoft Excel, run that instance and then open up the individual  file and create a variable for each layer of the file as I worked my way down to modify the individual cells themselves (Microsoft, n.d.).</p>
+
+<p>Apparently Excel files have this structure:</p>
+<ul><li>Workbook: the top level file and contains all the sheets</li>
+<li>Worksheet: a single tab or sheet in excel contains all the cells.</li>
+<li>Cells: Contains the data</li></ul>
+
+<p>Ok now that I write that out it seems incredibly straight forward.  However, looking through the documentation it did not feel straight forward.  The challenge was that everything had at least 2 similar but slightly different documentation pages.  One for Microsoft’s .Net framework (working with C#) and one for the COM objects. Also the thing I cared about was trying to check the value of a cell (<i>I’ll explain why in a second</i>) so I had to dig through about 6+ pages of documentations to try and make sense of how it fit together.</p>
+
+<p>In the end it did work.  I simply have PowerShell open up the given Excel file, access the first worksheet, look down the rows to find the first empty row and insert the current date and time into that row.  This is why I needed to figure out how to check if a cell was empty or not.  Once I did the rest of the code fell into place.</p>
+
+<p>At this point my PowerShell script can set up the sub folder for my footage, change the settings of OBS, and add the current date and time to an excel sheet.  All with the click of a button on my end.</p>
+
+<p>The last thing I got it to do was open up all the applications I needed.</p>
+<ol><li>OBS</li>
+<li>Notepad</li>
+<li>Spotify</li>
+<li>Github Desktop</li>
+<li>VS Code</li>
+<li>Opera GX</li>
+<li>Unity Hub</li></ol>
+
+<p>Now whenever I need to clock in for the day I can just open up my terminal and run the <code>ClockIn.PS1</code> script.</p>
+
+<p>I also made a <code>ClockOut.PS1</code> script.  All it does is add the end date and time to my Excel sheet.  I thought about having it close out all the applications.  But honestly it’s really satisfying to me to manually close down all the applications at the end of the day.</p>
+
+<p>Just like I find it satisfying to close down all my browser tabs when I’m done researching a particular problem.</p>
+
+<p>Regardless it meant less coding on my part.  It was also at this point I realized I had just spent around 8 hours on this one thing.</p>
+
+<p>So maybe I’ll eventually start saving time after like a year or 2.  Either way I’m happy with how it turned out.</p>
+
+<p>I ended the day by starting to write this post</p>
+
+<h2 id="59friday">5/9 Friday</h2>
+
+<p>I spent the day writing all of this very post.  To help speed things along I found a Google Docs extension that lets me convert a Doc to a <code>.md</code> or to <code>html</code>.  This will help speed things up when I post it later (<i>Likely on 5/10</i>).</p>
+
+<p>I also found out that Docs has a way of managing Citations under Tools/Citations.  Well I am using it I’m ultimately unhappy with it.  The problem is that the only citation styles it offers are APA, MLA, and Chicago Author-Date.  All of which are great citation methods for academic environments.  But aren't super useful when all your references are actually just links to the homepages of other websites, or YouTube videos.  Also the style of in-text citation is not helpful.  For that specifically I would love the method that Wikipedia uses where the in-text citation block [cite] links to the reference in question.</p>
+
+<p>Regardless, for this post I’m using this citation method.  Though in the future I will likely look into alternative solutions.</p>
+
+<p>And that’s all for 4/25-5/9 thanks so much for reading and I hope to see you in the next one whenever that is.</p>
+
+
+
+<h3 id="references">References</h3>
+
+<p>FantasyNameGenerator. (n.d.). Fantasy name generators. Names for all your fantasy characters. Retrieved May 9, 2025, from https://www.fantasynamegenerators.com</p>
+<p>GameDev Market. (n.d.). GameDev Market: Game Assets for Indie Developers. Retrieved May 9, 2025, from https://www.gamedevmarket.net</p>
+<p>GitHub. (n.d.). GitHub Pages | Websites for you and your projects, hosted directly from your GitHub repository. Just edit, push, and your changes are live. Retrieved May 9, 2025, from https://pages.github.com</p>
+<p>grigio. (n.d.). <i>obs-cmd</i>. https://github.com/grigio/obs-cmd</p>
+<p>gskinner. (n.d.). <i>learn regex</i>. regexr. https://regexr.com</p>
+<p>Itch.io. (n.d.). itch.io: Download the latest indie games. Retrieved May 9, 2025, from https://itch.io</p>
+<p>Jordan, R. (1990). <i>The Eye of the World</i>. Tom Doherty Associates.</p>
+<p>Microsoft. (n.d.). <i>Introduction to scripting in PowerShell</i>. Microsoft Learn. https://learn.microsoft.com/en-us/training/modules/script-with-powershell/</p>
+<p>Microsoft. (n.d.). <i>Microsoft.Office.Interop.Excel Namespace</i>. Microsoft Lear. https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.excel?view=excel-pia</p>
+<p>mortalwombat-. (2019). <i>editing an ini with powershell</i>. reddit. Retrieved 2025, from https://www.reddit.com/r/PowerShell/comments/aldoup/editing_an_ini_with_powershell/</p>
+<p>OBS. (n.d.). <i>OBS Homepage</i>. OBS Homepage. https://obsproject.com</p>
+<p>pschmitt. (n.d.). <i>obs-cli</i>. obs-cli. https://github.com/pschmitt/obs-cli</p>
+<p>Sanderson, B. (2007). <i>The Final Empire (Mistborn, Book 1)</i>. Macmillan.</p>
+<p>Sanderson, B. (2011). <i>The Way of Kings: Book One of the Stormlight Archive</i>. Tor Publishing Group.</p>
+<p>Sanderson, B. (2020). 2020 Creative Writing Lectures at BYU. In <i>YouTube Playlist</i>. YouTube. Retrieved 2025, from https://youtube.com/playlist?list=PLSH_xM-KC3Zv-79sVZTTj-YA6IAqh8qeQ&si=LFEjCO8laZcXK5tG</p>
+<p>signalhouse. (2020). <i>update a cell in a excel sheet using powershell</i>. stack overflow. https://stackoverflow.com/questions/59402365/update-a-cell-in-a-excel-sheet-using-powershell</p>
+<p>Twine. (n.d.). Twine / An open-source tool for telling interactive, nonlinear stories. Retrieved May 9, 2025, from https://twinery.org</p>
+<p>Unity. (n.d.). <i>Asset Store</i>. Unity Asset Store: The Best Assets for Game Making. Retrieved May 9, 2025, from http://assetstore.unity.com</p>
+

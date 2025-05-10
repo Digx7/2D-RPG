@@ -6,4 +6,5 @@
 This project is a 2D narrative driven RPG that I've been working on since 2025.  Below you will find all the posts of my work on the project.
 
 ## Posts
-- [4_17 - 4_24 Post 1](https://digx7.github.io/2D-RPG/2025/04/26/Log1.html)
+- [April 17th - 24th, 2025: Post 1](https://digx7.github.io/2D-RPG/2025/04/26/Log1.html)
+- [April 25th - May 9th, 2025: Post 2](https://digx7.github.io/2D-RPG/2025/05/09/Log2.html)
