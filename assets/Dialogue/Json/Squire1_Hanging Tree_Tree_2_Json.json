@@ -1,0 +1,33 @@
+{
+    "uuid": "3845d5eb-0a08-4800-aeb4-5067096b9235",
+    "name": "Squire1_Hanging Tree_Tree_2",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979159015,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Narrator\n\n//Body:\nThe bodies of several criminals hangs from this tree\n//End_Body:\n\n[[3]]",
+        "links": [
+          {
+            "linkText": "3",
+            "passageName": "3",
+            "original": "[[3]]"
+          }
+        ],
+        "cleanText": "//Speaker: Narrator\n\n//Body:\nThe bodies of several criminals hangs from this tree\n//End_Body:"
+      },
+      {
+        "name": "3",
+        "tags": "End",
+        "id": "2",
+        "text": "",
+        "links": [],
+        "cleanText": ""
+      }
+    ]
+  }

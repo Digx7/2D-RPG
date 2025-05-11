@@ -1,0 +1,61 @@
+{
+  "uuid": "6eb45067-096b-4235-a620-2dca0baca318",
+  "name": "Squire1_Hanging Tree_Bandits_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1745988878625,
+  "passages": [
+    {
+      "name": "0",
+      "tags": "Line",
+      "id": "1",
+      "text": "//Speaker: Aspar\n\n//Body:\nBandits are so troublesome\n//End_Body:\n\n[[1]]",
+      "links": [
+        {
+          "linkText": "1",
+          "passageName": "1",
+          "original": "[[1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Aspar\n\n//Body:\nBandits are so troublesome\n//End_Body:"
+    },
+    {
+      "name": "1",
+      "tags": "Line",
+      "id": "2",
+      "text": "//Speaker: Aspar\n\n//Body:\nYou would think they would get the message after we hung a few of them\n//End_Body:\n\n[[2]]",
+      "links": [
+        {
+          "linkText": "2",
+          "passageName": "2",
+          "original": "[[2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Aspar\n\n//Body:\nYou would think they would get the message after we hung a few of them\n//End_Body:"
+    },
+    {
+      "name": "2",
+      "tags": "Line",
+      "id": "3",
+      "text": "//Speaker: Aspar\n\n//Body:\nBut word is theres still a large encampent of them somewhere out in the Forest.\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Aspar\n\n//Body:\nBut word is theres still a large encampent of them somewhere out in the Forest.\n//End_Body:"
+    },
+    {
+      "name": "e1",
+      "tags": "End",
+      "id": "4",
+      "text": "//NextConversation: Squire1_Hanging Tree_Bandits_2",
+      "links": [],
+      "cleanText": "//NextConversation: Squire1_Hanging Tree_Bandits_2"
+    }
+  ]
+}

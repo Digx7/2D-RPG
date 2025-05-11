@@ -1,0 +1,33 @@
+{
+    "uuid": "26202dca-0bac-4318-8e9e-fdb52262cf23",
+    "name": "Squire1_Hanging Tree_Bandits_2",
+    "creator": "Twine",
+    "creatorVersion": "2.10.0",
+    "schemaName": "Twine to JSON",
+    "schemaVersion": "0.0.6",
+    "createdAtMs": 1745979118380,
+    "passages": [
+      {
+        "name": "0",
+        "tags": "Line",
+        "id": "1",
+        "text": "//Speaker: Aspar\n\n//Body:\nI wish someone would clear out the bandits encamped in the woods\n//End_Body:\n\n[[1]]",
+        "links": [
+          {
+            "linkText": "1",
+            "passageName": "1",
+            "original": "[[1]]"
+          }
+        ],
+        "cleanText": "//Speaker: Aspar\n\n//Body:\nI wish someone would clear out the bandits encamped in the woods\n//End_Body:"
+      },
+      {
+        "name": "1",
+        "tags": "End",
+        "id": "2",
+        "text": "",
+        "links": [],
+        "cleanText": ""
+      }
+    ]
+  }

@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Inn_Bandits_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148319480546172
+  - rid: 901148319480546173
+  - rid: 901148319480546174
+  - rid: 901148319480546175
+  - rid: 901148319480546176
+  - rid: 901148319480546177
+  - rid: 901148319480546178
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148319480546172
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Inn_Bandits_1_0
+        nextNode: 1
+        icon: {fileID: 0}
+        speaker: Iseas
+        line: Void's Blessing Squire!  Are you here for the bandits camped in the
+          forest?
+    - rid: 901148319480546173
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_Inn_Bandits_1_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Iseas
+        line: Those rippling void hunters have taken care of a few of them.  Hung
+          them on that tree.
+    - rid: 901148319480546174
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_Inn_Bandits_1_2
+        nextNode: 3
+        icon: {fileID: 0}
+        speaker: Iseas
+        line: But they haven't taken care of enough of them.  I still see the slipping
+          through the forest.
+    - rid: 901148319480546175
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        LocKey: Squire1_Inn_Bandits_1_3
+        nextNode: 4
+        icon: {fileID: 0}
+        speaker: Iseas
+        line: I keep telling the First Clerk Semele but she doesn't beleive me.
+    - rid: 901148319480546176
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 4
+        LocKey: Squire1_Inn_Bandits_1_4
+        nextNode: q1
+        icon: {fileID: 0}
+        speaker: Iseas
+        line: I swear on my freedom that there's a large camp of them still in the
+          forest.  Fate's wit their all seperatists too.
+    - rid: 901148319480546177
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: q1
+        LocKey: 
+        nextNode: e1
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 901148319480546178
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

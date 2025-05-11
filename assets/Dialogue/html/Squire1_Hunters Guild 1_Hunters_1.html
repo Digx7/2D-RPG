@@ -1,0 +1,352 @@
+
+<html>
+	<head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<title>Harlowe To JSON</title>
+        <script type='text/javascript'>
+            /**
+* Twine To JSON
+*
+* Copyright (c) 2020 Jonathan Schoonhoven
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+* associated documentation files (the 'Software'), to deal in the Software without restriction,
+* including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+* and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+* subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all copies or substantial
+* portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+* LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+const STORY_TAG_NAME = 'tw-storydata';
+const PASSAGE_TAG_NAME = 'tw-passagedata';
+const FORMAT_TWINE = 'twine';
+const FORMAT_HARLOWE_3 = 'harlowe-3';
+const VALID_FORMATS = [FORMAT_TWINE, FORMAT_HARLOWE_3];
+
+
+/**
+ * Convert Twine story to JSON.
+ */
+function twineToJSON(format) {
+    const storyElement = document.getElementsByTagName(STORY_TAG_NAME)[0];
+    const storyMeta = getElementAttributes(storyElement);
+    const result = {
+        uuid: storyMeta.ifid,
+        name: storyMeta.name,
+        creator: storyMeta.creator,
+        creatorVersion: storyMeta['creator-version'],
+        schemaName: storyMeta.format,
+        schemaVersion: storyMeta['format-version'],
+        createdAtMs: Date.now(),
+    };
+    validate(format);
+    const passageElements = Array.from(storyElement.getElementsByTagName(PASSAGE_TAG_NAME));
+    result.passages = passageElements.map((passageElement) => {
+        return processPassageElement(passageElement, format);
+    });
+    return result;
+}
+
+
+/**
+ * Validate story and inputs. Currently this only validates the format arg. TODO: make this more robust.
+ */
+function validate(format) {
+    const isValidFormat = VALID_FORMATS.some(validFormat => validFormat === format);
+    if (!isValidFormat) {
+        throw new Error('Format is not valid.');
+    }
+}
+
+
+/**
+ * Convert the HTML element for a story passage to JSON.
+ */
+function processPassageElement(passageElement, format) {
+    const passageMeta = getElementAttributes(passageElement);
+    const result = {
+        name: passageMeta.name,
+        tags: passageMeta.tags,
+        id: passageMeta.pid,
+    };
+    result.text = passageElement.innerText.trim();
+    Object.assign(result, processPassageText(result.text, format));
+    result.cleanText = sanitizeText(result.text, result.links, result.hooks, format);
+    return result;
+}
+
+
+function processPassageText(passageText, format) {
+    const result = { links: [] };
+    if (format === FORMAT_HARLOWE_3) {
+        result.hooks = [];
+    }
+    let currentIndex = 0;
+    while (currentIndex < passageText.length) {
+        const maybeLink = extractLinksAtIndex(passageText, currentIndex);
+        if (maybeLink) {
+            result.links.push(maybeLink);
+            currentIndex += maybeLink.original.length;
+        }
+        if (format !== FORMAT_HARLOWE_3) {
+            currentIndex += 1;
+            continue;
+        }
+        const maybeLeftHook = extractLeftHooksAtIndex(passageText, currentIndex);
+        if (maybeLeftHook) {
+            result.hooks.push(maybeLeftHook);
+            currentIndex += maybeLeftHook.original.length;
+        }
+        currentIndex += 1;
+        const maybeHook = extractHooksAtIndex(passageText, currentIndex);
+        if (maybeHook) {
+            result.hooks.push(maybeHook);
+            currentIndex += maybeHook.original.length;
+        }
+    }
+    return result;
+}
+
+
+function extractLinksAtIndex(passageText, currentIndex) {
+    const currentChar = passageText[currentIndex];
+    const nextChar = passageText[currentIndex + 1];
+    if (currentChar === '[' && nextChar === '[') {
+        const link = getSubstringBetweenBrackets(passageText, currentIndex + 1);
+        const leftSplit = link.split('<-', 2);
+        const rightSplit = link.split('->', 2);
+        const original = passageText.substring(currentIndex, currentIndex + link.length + 4);
+        if (leftSplit.length === 2) {
+            return { linkText: leftSplit[1].trim(), passageName: leftSplit[0].trim(), original: original };
+        }
+        else if (rightSplit.length === 2) {
+            return { linkText: rightSplit[0].trim(), passageName: rightSplit[1].trim(), original: original };
+        }
+        else {
+            return { linkText: link.trim(), passageName: link.trim(), original: original };
+        }
+    }
+}
+
+
+function extractLeftHooksAtIndex(passageText, currentIndex) {
+    const regexAlphaNum = /[a-z0-9]+/i;
+    const currentChar = passageText[currentIndex];
+    if (currentChar === '|') {
+        const maybeHookName = getSubstringBetweenBrackets(passageText, currentIndex, '|', '>');
+        if (maybeHookName.match(regexAlphaNum)) {
+            const hookStartIndex = currentIndex + maybeHookName.length + 2; // advance to next char after ">"
+            const hookStartChar = passageText[hookStartIndex];
+            if (hookStartChar === '[') {
+                const hookText = getSubstringBetweenBrackets(passageText, hookStartIndex);
+                const hookEndIndex = hookStartIndex + hookText.length + 2;
+                const original = passageText.substring(currentIndex, hookEndIndex);
+                return { hookName: maybeHookName, hookText: hookText, original: original };
+            }
+        }
+    }
+}
+
+
+function extractHooksAtIndex(passageText, currentIndex) {
+    const regexAlphaNum = /[a-z0-9]+/i;
+    const currentChar = passageText[currentIndex];
+    const nextChar = passageText[currentIndex + 1];
+    const prevChar = currentIndex && passageText[currentIndex - 1];
+    if (currentChar === '[' && nextChar !== '[' && prevChar !== '[') {
+        const hookText = getSubstringBetweenBrackets(passageText, currentIndex);
+        const hookEndIndex = currentIndex + hookText.length + 2;
+        const hookEndChar = passageText[hookEndIndex];
+        if (hookEndChar === '<') {
+            const maybeHookName = getSubstringBetweenBrackets(passageText, hookEndIndex, '<', '|');
+            if (maybeHookName.match(regexAlphaNum)) {
+                const original = passageText.substring(currentIndex, hookEndIndex + maybeHookName.length + 2);
+                return { hookName: maybeHookName, hookText: hookText, original: original };
+            }
+        }
+        const original = passageText.substring(currentIndex, hookText.length + 2);
+        return { hookName: undefined, hookText: hookText, original: original };
+    }
+}
+
+
+function sanitizeText(passageText, links, hooks, format) {
+    links.forEach((link) => {
+        passageText = passageText.replace(link.original, '');
+    });
+    if (format === FORMAT_HARLOWE_3) {
+        hooks.forEach((hook) => {
+            passageText = passageText.replace(hook.original, '');
+        });
+    }
+    return passageText.trim();
+}
+
+
+/**
+ * Convert an HTML element to an object of attribute values.
+ */
+function getElementAttributes(element) {
+    const result = {};
+    const attributes = Array.from(element.attributes);
+    attributes.forEach((attribute) => {
+        result[attribute.name] = attribute.value;
+    });
+    return result;
+}
+
+
+/**
+ * True if string starts with the given substring.
+ */
+function stringStartsWith(string, startswith) {
+    return string.trim().substring(0, startswith.length) === startswith;
+}
+
+
+function getSubstringBetweenBrackets(string, startIndex, openBracket, closeBracket) {
+    openBracket = openBracket || '[';
+    closeBracket = closeBracket || ']';
+    const bracketStack = [];
+    let currentIndex = startIndex || 0;
+    let substring = '';
+    if (string[currentIndex] !== openBracket) {
+        throw new Error('startIndex of getSubstringBetweenBrackets must correspond to an open bracket');
+    }
+    while (currentIndex < string.length) {
+        const currentChar = string[currentIndex];
+        // pull top bracket from stack if we hit a close bracket
+        if (currentChar === closeBracket) {
+            bracketStack.pop();
+        }
+        // build substring so long as stack is populated
+        if (bracketStack.length) {
+            substring += currentChar;
+        }
+        // add open brackets to the top of the stack
+        if (currentChar === openBracket) {
+            bracketStack.push(currentChar);
+        }
+        // return if stack is empty and substring is set
+        if (!bracketStack.length) {
+            return substring;
+        }
+        currentIndex += 1;
+    }
+    return substring;
+}
+
+        </script>
+	</head>
+	<body>
+        <pre id='content'></pre>
+        <div id='storyData' style='display: none;'><tw-storydata name="Squire1_Hunters Guild 1_Hunters_1" startnode="1" creator="Twine" creator-version="2.10.0" format="Twine to JSON" format-version="0.0.6" ifid="b502f384-f5b3-4594-b0f4-e34af46efbcf" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Line" color="green"></tw-tag><tw-tag name="End" color="red"></tw-tag><tw-tag name="Option" color="purple"></tw-tag><tw-tag name="QuestUpdate" color="yellow"></tw-tag><tw-tag name="Options" color="purple"></tw-tag><tw-passagedata pid="1" name="0" tags="Line" position="600,350" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+Voids Blessing!  And welcome squire to the hall of the Fate&#39;s Hand!
+//End_Body:
+
+[[1]]
+</tw-passagedata><tw-passagedata pid="2" name="1" tags="Line" position="600,475" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+I&#39;m Brenhilda Blackwell the receptionist here and if you have a minute this guild could really use your help
+//End_Body:
+
+[[2]]</tw-passagedata><tw-passagedata pid="3" name="2" tags="Line" position="600,600" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+As much as I hate to admitt it most of our hunters have been gone longer than expected.
+//End_Body:
+
+[[3]]</tw-passagedata><tw-passagedata pid="4" name="3" tags="Options" position="600,725" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+I fear fowel play has occured, likly from those fate feigning D.R.A.G.O.N.S.
+//End_Body:
+
+//Option_1: What happened?
+[[a1]]
+
+//Option_2: What makes you think it was the D.R.A.G.O.N.S. ?
+[[a2]]
+
+//Option_3: I got more important buisness.
+[[a3]]</tw-passagedata><tw-passagedata pid="5" name="a1" tags="Line" position="450,850" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+About a week back we got word from the Mages that a bigger haul was gonna be coming soon from the void.
+//End_Body:
+
+[[a1_2]]</tw-passagedata><tw-passagedata pid="6" name="a2" tags="Line" position="600,1250" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+Because they agreed to easily to a joint hunt.  Roderic though that Ortel was planning something
+//End_Body:
+
+[[a1_5]]</tw-passagedata><tw-passagedata pid="7" name="a3" tags="Line" position="875,1250" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+Fate forgive my rudeness.  Still if you could find out what happened to them the Fate&#39;s Hand would be in your debt.
+//End_Body:
+
+[[q1]] </tw-passagedata><tw-passagedata pid="8" name="a1_2" tags="Line" position="450,975" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+So big infact that a joint hunting party was put together between both the Fate&#39;s Hand and the D.R.A.G.O.N.S.
+//End_Body:
+
+[[a1_3]]</tw-passagedata><tw-passagedata pid="9" name="a1_3" tags="Line" position="450,1100" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+After all you can&#39;t profit off a hunt if you can&#39;t survive it.
+//End_Body:
+
+[[a1_4]]</tw-passagedata><tw-passagedata pid="10" name="a1_4" tags="Line" position="450,1225" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+But we know they aren&#39;t dead yet, else the Mages would have felt it.
+//End_Body:
+
+[[a1_5]]</tw-passagedata><tw-passagedata pid="11" name="a1_5" tags="Line" position="450,1350" size="100,100">//Speaker: Brenhilda
+
+//Icon: Skeleton_Icon
+
+//Body:
+Please can you go and find out what happened to them?  All our other hunters are to scared they&#39;ll share the same fate.
+//End_Body:
+
+[[q1]]</tw-passagedata><tw-passagedata pid="12" name="e1" tags="End" position="625,1700" size="100,100">//NextConversation: Squire1_Hunters Guild 1_Hunters_2</tw-passagedata><tw-passagedata pid="13" name="q1" tags="QuestUpdate" position="625,1550" size="100,100">//QuestName: Find the Hunters
+
+[[e1]]</tw-passagedata></tw-storydata></div>
+        <script type='text/javascript'>document.getElementById('content').innerHTML = JSON.stringify(twineToJSON("twine"), null, 2);</script>
+	</body>
+</html>

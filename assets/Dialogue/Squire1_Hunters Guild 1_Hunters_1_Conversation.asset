@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Hunters Guild 1_Hunters_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 901148319480546143
+  - rid: 901148319480546144
+  - rid: 901148319480546145
+  - rid: 901148319480546146
+  - rid: 901148319480546147
+  - rid: 901148319480546148
+  - rid: 901148319480546149
+  - rid: 901148319480546150
+  - rid: 901148319480546151
+  - rid: 901148319480546152
+  - rid: 901148319480546153
+  - rid: 901148319480546154
+  - rid: 901148319480546155
+  references:
+    version: 2
+    RefIds:
+    - rid: 901148319480546143
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_0
+        nextNode: 1
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Voids Blessing!  And welcome squire to the hall of the Fate's Hand!
+    - rid: 901148319480546144
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_1
+        nextNode: 2
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: I'm Brenhilda Blackwell the receptionist here and if you have a minute
+          this guild could really use your help
+    - rid: 901148319480546145
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_2
+        nextNode: 3
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: As much as I hate to admitt it most of our hunters have been gone longer
+          than expected.
+    - rid: 901148319480546146
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_3
+        nextNode: 
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: I fear fowel play has occured, likly from those fate feigning D.R.A.G.O.N.S.
+        options:
+        - line: What happened?
+          nextNode: a1
+        - line: What makes you think it was the D.R.A.G.O.N.S. ?
+          nextNode: a2
+        - line: I got more important buisness.
+          nextNode: a3
+    - rid: 901148319480546147
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_a1
+        nextNode: a1_2
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: About a week back we got word from the Mages that a bigger haul was
+          gonna be coming soon from the void.
+    - rid: 901148319480546148
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a2
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_a2
+        nextNode: a1_5
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Because they agreed to easily to a joint hunt.  Roderic though that
+          Ortel was planning something
+    - rid: 901148319480546149
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a3
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_a3
+        nextNode: q1
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Fate forgive my rudeness.  Still if you could find out what happened
+          to them the Fate's Hand would be in your debt.
+    - rid: 901148319480546150
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_2
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_a1_2
+        nextNode: a1_3
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: So big infact that a joint hunting party was put together between both
+          the Fate's Hand and the D.R.A.G.O.N.S.
+    - rid: 901148319480546151
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_3
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_a1_3
+        nextNode: a1_4
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: After all you can't profit off a hunt if you can't survive it.
+    - rid: 901148319480546152
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_4
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_a1_4
+        nextNode: a1_5
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: But we know they aren't dead yet, else the Mages would have felt it.
+    - rid: 901148319480546153
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: a1_5
+        LocKey: Squire1_Hunters Guild 1_Hunters_1_a1_5
+        nextNode: q1
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Please can you go and find out what happened to them?  All our other
+          hunters are to scared they'll share the same fate.
+    - rid: 901148319480546154
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 901148319480546155
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: q1
+        LocKey: 
+        nextNode: e1
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0

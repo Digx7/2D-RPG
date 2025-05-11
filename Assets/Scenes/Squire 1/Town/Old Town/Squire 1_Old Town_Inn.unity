@@ -1853,7 +1853,7 @@ PrefabInstance:
     - target: {fileID: 4514963303475962288, guid: 9b8127af252f80c4993c7d6e69a9e7e2, type: 3}
       propertyPath: conversation
       value: 
-      objectReference: {fileID: 11400000, guid: 79238de9ef8245943a83ec0dcc0234ae, type: 2}
+      objectReference: {fileID: 11400000, guid: e7043491996373f479afcdcc1d9b6d85, type: 2}
     - target: {fileID: 4562433343724326882, guid: 9b8127af252f80c4993c7d6e69a9e7e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.12

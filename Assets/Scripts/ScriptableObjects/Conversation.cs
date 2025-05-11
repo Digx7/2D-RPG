@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Localization;
 using System;
 using System.Collections.Generic;
 
@@ -21,8 +22,9 @@ public class Conversation : ScriptableObject
 [System.Serializable]
 public class ConversationNode
 {
-    public int ID;
-    public int nextNode;
+    public string ID;
+    public string LocKey;
+    public string nextNode;
 
     public virtual void Print()
     {
@@ -79,29 +81,11 @@ public class ConversationNode_QuestUpdate : ConversationNode
     }
 }
 
-// [System.Serializable]
-// public struct ConversationNode
-// {
-//     public Sprite icon;
-//     public string speaker;
-    
-//     [TextAreaAttribute]
-//     public string line;
-//     public List<OptionPair> options;
-
-//     public int nextNode;
-
-//     public void Print()
-//     {
-//         Debug.Log(speaker + ":\n" + line);
-//     }
-// }
-
 [System.Serializable]
 public struct OptionPair
 {
     public string line;
-    public int nextNode;
+    public string nextNode;
 }
 
 [System.Serializable]

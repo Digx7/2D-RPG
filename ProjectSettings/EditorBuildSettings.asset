@@ -52,5 +52,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Squire 1/Squire 1_Ruins.unity
     guid: 21923c3d9fde93349a7c568a3b3039ca
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f4da65f3bbd918c4a9724dafaf263fad, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: ec1270090830d5545a1a9def503b0156, type: 2}
   m_UseUCBPForAssetBundles: 0
