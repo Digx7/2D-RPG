@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using TMPro;
 
 [System.Serializable]
 public enum PauseMenuMainTabs
@@ -21,10 +22,30 @@ public enum PauseMenuInventoryTabs
 
 public class PauseMenuWidget : UIMenu
 {
+    [Header("General")]
     [SerializeField] UIWidgetData optionsMenuWidgetData;
+    [SerializeField] private GameObject itemListEntryPrefab;
     
+    [Header("Journal")]
+    [SerializeField] private GameObject journalPage;
+    [SerializeField] private GameObject journalListContent;
+    [SerializeField] private TextMeshProUGUI description;
+    
+    [Header("Equipment")]
+    [SerializeField] private GameObject equipmentPage;
+
+    [Header("Stats")]
+    [SerializeField] private GameObject statsPage;
+
+    [Header("Abilities")]
+    [SerializeField] private GameObject abilitiesPage;
+
+    [Header("Inventory")]
+    [SerializeField] private GameObject inventoryPage;
+
     [Header("System")]
-    [SerializeField] SceneData mainMenuScene;
+    [SerializeField] private GameObject systemPage;
+    [SerializeField] private SceneData mainMenuScene;
     [SerializeField] SceneChannel requestChangeSceneChannel;
     [SerializeField] UIWidgetDataChannel requestLoadUIWidgetChannel;
     [SerializeField] UIWidgetDataChannel requestUnLoadUIWidgetChannel;
@@ -39,111 +60,202 @@ public class PauseMenuWidget : UIMenu
         base.Teardown();
     }
 
-    public void OnClickMainTab(PauseMenuMainTabs tab)
+    public void OnClick_Main_Tab(int tab)
     {
-        int _tab = (int) tab;
         
-        StartCoroutine(Delay(MainTabButton, _tab, 0.1f));
+        StartCoroutine(Delay(Main_TabButton, tab, 0.1f));
     }
 
-    private void MainTabButton(int _tab)
+    private void Main_TabButton(int _tab)
     {
+        if(_tab > Enum.GetNames(typeof(PauseMenuMainTabs)).Length)
+        {
+            Debug.LogWarning("PauseMenuWidget: MainTabButton() recieved a tab value out of range");
+            return;
+        }
+        
         PauseMenuMainTabs tab = (PauseMenuMainTabs) _tab;
+
+        // Deactivate all tabs
+        journalPage.SetActive(false);
+        equipmentPage.SetActive(false);
+        statsPage.SetActive(false);
+        abilitiesPage.SetActive(false);
+        inventoryPage.SetActive(false);
+        systemPage.SetActive(false);
+
+        // Activate the chosen tab
+        switch (tab)
+        {
+            case PauseMenuMainTabs.Journal:
+                journalPage.SetActive(true);
+                break;
+            case PauseMenuMainTabs.Equipment:
+                equipmentPage.SetActive(true);
+                break;
+            case PauseMenuMainTabs.Stats:
+                statsPage.SetActive(true);
+                break;
+            case PauseMenuMainTabs.Abilities:
+                abilitiesPage.SetActive(true);
+                break;
+            case PauseMenuMainTabs.Inventory:
+                inventoryPage.SetActive(true);
+                break;
+            case PauseMenuMainTabs.System:
+                systemPage.SetActive(true);
+                break;
+            default:
+                break;
+        }
     }
 
     // Journal ============================
 
-    public void OnClickJournalTab(PauseMenuJournalTabs tab)
-    {
-        int _tab = (int) tab;
-        
-        StartCoroutine(Delay(JournalTabButton, _tab, 0.1f));
+    public void OnClick_Journal_Tab(int tab)
+    {   
+        StartCoroutine(Delay(Journal_TabButton, tab, 0.1f));
     }
 
-    private void JournalTabButton(int _tab)
+    private void Journal_TabButton(int _tab)
     {
-        PauseMenuInventoryTabs tab = (PauseMenuInventoryTabs) _tab;
+        if(_tab > Enum.GetNames(typeof(PauseMenuJournalTabs)).Length)
+        {
+            Debug.LogWarning("PauseMenuWidget: JournalTabButton() recieved a tab value out of range");
+            return;
+        }
+        
+        PauseMenuJournalTabs tab = (PauseMenuJournalTabs) _tab;
+    }
+
+    public void OnClick_Journal_Entry()
+    {
+
     }
 
     // Equipment ============================
 
-    public void OnClickEquipmentTab(int partyIndex)
+    public void OnClick_Equipment_Tab(int partyIndex)
     {
-        StartCoroutine(Delay(EquipmentTabButton, partyIndex, 0.1f));
+        StartCoroutine(Delay(Equipment_TabButton, partyIndex, 0.1f));
     }
 
-    private void EquipmentTabButton(int partyIndex)
+    private void Equipment_TabButton(int partyIndex)
+    {
+
+    }
+
+    public void OnClick_Equipment_Slot()
+    {
+
+    }
+
+    public void OnClick_Equipment_NewGear()
     {
 
     }
 
     // Stats ============================
 
-    public void OnClickStatsTab(int partyIndex)
+    public void OnClick_Stats_Tab(int partyIndex)
     {
-        StartCoroutine(Delay(StatsTabButton, partyIndex, 0.1f));
+        StartCoroutine(Delay(Stats_TabButton, partyIndex, 0.1f));
     }
 
-    private void StatsTabButton(int partyIndex)
+    private void Stats_TabButton(int partyIndex)
     {
 
     }
 
     // Abilities ============================
 
-    public void OnClickAbilitiesTab(int partyIndex)
+    public void OnClick_Abilities_Tab(int partyIndex)
     {
-        StartCoroutine(Delay(AbilitiesTabButton, partyIndex, 0.1f));
+        StartCoroutine(Delay(Abilities_TabButton, partyIndex, 0.1f));
     }
 
-    private void AbilitiesTabButton(int partyIndex)
+    private void Abilities_TabButton(int partyIndex)
+    {
+
+    }
+
+    public void OnClick_Abilities_Entry()
     {
 
     }
 
     // Inventory ============================
 
-    public void OnClickInventoryTab(PauseMenuInventoryTabs tab)
-    {
-        int _tab = (int) tab;
-        
-        StartCoroutine(Delay(InventoryTabButton, _tab, 0.1f));
+    public void OnClick_Inventory_Tab(int tab)
+    {   
+        StartCoroutine(Delay(Inventory_TabButton, tab, 0.1f));
     }
 
-    private void InventoryTabButton(int tab)
+    private void Inventory_TabButton(int _tab)
+    {
+        if(_tab > Enum.GetNames(typeof(PauseMenuInventoryTabs)).Length)
+        {
+            Debug.LogWarning("PauseMenuWidget: JournalTabButton() recieved a tab value out of range");
+            return;
+        }
+
+        PauseMenuInventoryTabs tab = (PauseMenuInventoryTabs) _tab;
+    }
+
+    public void OnClick_Inventory_Entry()
     {
 
     }
 
     // System ============================
 
-    public void OnClickResume()
+    public void OnClick_System_Resume()
     {
-        StartCoroutine(Delay(ResumeButton, 0.1f));
+        StartCoroutine(Delay(System_ResumeButton, 0.1f));
     }
 
-    private void ResumeButton()
+    private void System_ResumeButton()
     {
         requestUnLoadUIWidgetChannel.Raise(ownUIWidgetData);
     }
 
-    public void OnClickOptions()
+    public void OnClick_System_Options()
     {
-        StartCoroutine(Delay(OptionsButton, 0.1f));
+        StartCoroutine(Delay(System_OptionsButton, 0.1f));
     }
 
-    private void OptionsButton()
+    private void System_OptionsButton()
     {
         requestLoadUIWidgetChannel.Raise(optionsMenuWidgetData);
         requestUnLoadUIWidgetChannel.Raise(ownUIWidgetData);
     }
 
-    public void OnClickQuit()
+    public void OnClick_System_Save()
     {
-        StartCoroutine(Delay(QuitButton, 0.1f));
+        StartCoroutine(Delay(System_SaveButton, 0.1f));
     }
 
-    private void QuitButton()
+    public void System_SaveButton()
+    {
+
+    }
+
+    public void OnClick_System_Load()
+    {
+        StartCoroutine(Delay(System_LoadButton, 0.1f));
+    }
+
+    public void System_LoadButton()
+    {
+
+    }
+
+    public void OnClick_System_Quit()
+    {
+        StartCoroutine(Delay(System_QuitButton, 0.1f));
+    }
+
+    private void System_QuitButton()
     {
         requestChangeSceneChannel.Raise(mainMenuScene);
         requestUnLoadUIWidgetChannel.Raise(ownUIWidgetData);
