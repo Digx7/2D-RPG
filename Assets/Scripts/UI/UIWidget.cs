@@ -28,4 +28,10 @@ public class UIWidget : MonoBehaviour
         yield return new WaitForSeconds(time);
         funcToCalAtEnd();
     }
+
+    protected IEnumerator Delay(IntDelegate funcToCalAtEnd, int value, float time)
+    {
+        yield return new WaitForSeconds(time);
+        funcToCalAtEnd(value);
+    }
 }
