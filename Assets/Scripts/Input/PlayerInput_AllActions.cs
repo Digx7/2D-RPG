@@ -180,6 +180,15 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""34aaca5c-05d6-45e4-9414-4d495ef4b027"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -411,6 +420,28 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": "";Keyboard and Mouse"",
                     ""action"": ""Interact_4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0097ffd6-22fa-46fa-928b-403a158b2c49"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard and Mouse"",
+                    ""action"": ""Drop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""058e95ca-696d-4321-bf3a-81b1afc1c117"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";GamePad"",
+                    ""action"": ""Drop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1138,6 +1169,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         m_Exploration_Interact_2 = m_Exploration.FindAction("Interact_2", throwIfNotFound: true);
         m_Exploration_Interact_3 = m_Exploration.FindAction("Interact_3", throwIfNotFound: true);
         m_Exploration_Interact_4 = m_Exploration.FindAction("Interact_4", throwIfNotFound: true);
+        m_Exploration_Drop = m_Exploration.FindAction("Drop", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Ability_1 = m_Combat.FindAction("Ability_1", throwIfNotFound: true);
@@ -1260,6 +1292,7 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_Exploration_Interact_2;
     private readonly InputAction m_Exploration_Interact_3;
     private readonly InputAction m_Exploration_Interact_4;
+    private readonly InputAction m_Exploration_Drop;
     /// <summary>
     /// Provides access to input actions defined in input action map "Exploration".
     /// </summary>
@@ -1311,6 +1344,10 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// Provides access to the underlying input action "Exploration/Interact_4".
         /// </summary>
         public InputAction @Interact_4 => m_Wrapper.m_Exploration_Interact_4;
+        /// <summary>
+        /// Provides access to the underlying input action "Exploration/Drop".
+        /// </summary>
+        public InputAction @Drop => m_Wrapper.m_Exploration_Drop;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1367,6 +1404,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Interact_4.started += instance.OnInteract_4;
             @Interact_4.performed += instance.OnInteract_4;
             @Interact_4.canceled += instance.OnInteract_4;
+            @Drop.started += instance.OnDrop;
+            @Drop.performed += instance.OnDrop;
+            @Drop.canceled += instance.OnDrop;
         }
 
         /// <summary>
@@ -1408,6 +1448,9 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
             @Interact_4.started -= instance.OnInteract_4;
             @Interact_4.performed -= instance.OnInteract_4;
             @Interact_4.canceled -= instance.OnInteract_4;
+            @Drop.started -= instance.OnDrop;
+            @Drop.performed -= instance.OnDrop;
+            @Drop.canceled -= instance.OnDrop;
         }
 
         /// <summary>
@@ -2000,6 +2043,13 @@ public partial class @PlayerInput_AllActions: IInputActionCollection2, IDisposab
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract_4(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Drop" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDrop(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Combat" which allows adding and removing callbacks.

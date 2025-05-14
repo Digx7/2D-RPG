@@ -68,6 +68,11 @@ public class PlayerCharacter : Character
 
     }
 
+    public virtual void Drop()
+    {
+
+    }
+
     public virtual void Fire1()
     {
         // Debug.Log("PlayerCharacter: Fire1()");
