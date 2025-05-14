@@ -20,22 +20,16 @@ public class OneWayPlatform : MonoBehaviour
 
     public void OnTryDrop()
     {
-        // collider2D.enabled = false;
-
         collider2D.excludeLayers = LayerMask.GetMask("Player");
     }
 
     public void OnPlayerEnter()
     {
-        // collider2D.enabled = true;
-
         collider2D.excludeLayers = 0;
     }
 
     public void OnPlayerLeave()
     {
-        // collider2D.enabled = false;
-
         collider2D.excludeLayers = LayerMask.GetMask("Player");
     }
 }
