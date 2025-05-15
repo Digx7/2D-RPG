@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Fates Hand_Mortimer_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 2026104504253415673
+  - rid: 2026104504253415674
+  - rid: 2026104504253415675
+  - rid: 2026104504253415676
+  - rid: 2026104504253415677
+  - rid: 2026104504253415678
+  - rid: 2026104504253415679
+  - rid: 2026104504253415680
+  - rid: 2026104504253415681
+  references:
+    version: 2
+    RefIds:
+    - rid: 2026104504253415673
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: LIne
+        LocKey: Squire1_Fates Hand_Mortimer_1_LIne
+        nextNode: End
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+    - rid: 2026104504253415674
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: End
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 2026104504253415675
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Options
+        LocKey: Squire1_Fates Hand_Mortimer_1_Options
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+        options:
+        - line: Option 1 Text
+          nextNode: LIne
+        - line: Option 2 Text
+          nextNode: End
+    - rid: 2026104504253415676
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Quest Update
+        LocKey: 
+        nextNode: End
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 2026104504253415677
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Fates Hand_Mortimer_1_0
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Mortimer
+        line: About time you showed up!  I was wondering when those steam heads in
+          New Shard would start listening.
+        options:
+        - line: You know about the missing hunters?
+          nextNode: 0a_1
+        - line: Came as fast as we could
+          nextNode: 0b_1
+        - line: Watch your tongue
+          nextNode: 0c_1
+    - rid: 2026104504253415678
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0a_1
+        LocKey: Squire1_Fates Hand_Mortimer_1_0a_1
+        nextNode: e1
+        icon: {fileID: 0}
+        speaker: Mortimer
+        line: The mages predicted a large storm..
+    - rid: 2026104504253415679
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0b_1
+        LocKey: Squire1_Fates Hand_Mortimer_1_0b_1
+        nextNode: e1
+        icon: {fileID: 0}
+        speaker: Mortimer
+        line: ...
+    - rid: 2026104504253415680
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0c_1
+        LocKey: Squire1_Fates Hand_Mortimer_1_0c_1
+        nextNode: e1
+        icon: {fileID: 0}
+        speaker: Mortimer
+        line: Or what!  Gonna lock me up over a little name?  Thought helping was
+          you Shardians whole thing?
+    - rid: 2026104504253415681
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

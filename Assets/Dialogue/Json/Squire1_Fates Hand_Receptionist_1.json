@@ -1,0 +1,169 @@
+{
+  "uuid": "b502f384-f5b3-4594-b0f4-e34af46efbcf",
+  "name": "Squire1_Fates Hand_Receptionist_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1747285241604,
+  "passages": [
+    {
+      "name": "0",
+      "tags": "Line",
+      "id": "1",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nVoids blessing Squire!  And welcome squire to Fate's Hand, the best hunters guild this side of the Carters!\n//End_Body:\n\n[[1]]",
+      "links": [
+        {
+          "linkText": "1",
+          "passageName": "1",
+          "original": "[[1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nVoids blessing Squire!  And welcome squire to Fate's Hand, the best hunters guild this side of the Carters!\n//End_Body:"
+    },
+    {
+      "name": "e1",
+      "tags": "End",
+      "id": "2",
+      "text": "//NextConversation: Squire1_Fates Hand_Receptionist_2",
+      "links": [],
+      "cleanText": "//NextConversation: Squire1_Fates Hand_Receptionist_2"
+    },
+    {
+      "name": "1",
+      "tags": "Line",
+      "id": "3",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nI'm Brenhilda Blackwell!  If you have any questions about our guild just ask.\n//End_Body:\n\n[[2]]",
+      "links": [
+        {
+          "linkText": "2",
+          "passageName": "2",
+          "original": "[[2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nI'm Brenhilda Blackwell!  If you have any questions about our guild just ask.\n//End_Body:"
+    },
+    {
+      "name": "2",
+      "tags": "Line",
+      "id": "4",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nIf you have a minute Head Hunter Mortimer is looking for you.\n//End_Body:\n\n[[2_1]]",
+      "links": [
+        {
+          "linkText": "2_1",
+          "passageName": "2_1",
+          "original": "[[2_1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nIf you have a minute Head Hunter Mortimer is looking for you.\n//End_Body:"
+    },
+    {
+      "name": "3",
+      "tags": "Options",
+      "id": "5",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nIf you have any questions feel free to ask.\n//End_Body:\n\n//Option_1: Where is Mortimer agian?\n[[3b_1]] \n\n//Option_2: What is this place?\n[[3a_1]] \n\n//Option_3: That's all (Leave)\n[[3c_1]]",
+      "links": [
+        {
+          "linkText": "3b_1",
+          "passageName": "3b_1",
+          "original": "[[3b_1]]"
+        },
+        {
+          "linkText": "3a_1",
+          "passageName": "3a_1",
+          "original": "[[3a_1]]"
+        },
+        {
+          "linkText": "3c_1",
+          "passageName": "3c_1",
+          "original": "[[3c_1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nIf you have any questions feel free to ask.\n//End_Body:\n\n//Option_1: Where is Mortimer agian?\n \n\n//Option_2: What is this place?\n \n\n//Option_3: That's all (Leave)"
+    },
+    {
+      "name": "3a_1",
+      "tags": "Line",
+      "id": "6",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nThis is the guild hall for the Fate's Hand, the best hunters this side of the Carters.\n//End_Body:\n\n[[3a_2]]",
+      "links": [
+        {
+          "linkText": "3a_2",
+          "passageName": "3a_2",
+          "original": "[[3a_2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nThis is the guild hall for the Fate's Hand, the best hunters this side of the Carters.\n//End_Body:"
+    },
+    {
+      "name": "3b_1",
+      "tags": "Line",
+      "id": "7",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nMortimer is upstairs.  Just follow the path to the right and jump accross the platforms.  Easy for any Hunter or Squire, such as yourself.\n//End_Body:\n\n[[3]]",
+      "links": [
+        {
+          "linkText": "3",
+          "passageName": "3",
+          "original": "[[3]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nMortimer is upstairs.  Just follow the path to the right and jump accross the platforms.  Easy for any Hunter or Squire, such as yourself.\n//End_Body:"
+    },
+    {
+      "name": "3a_2",
+      "tags": "Line",
+      "id": "8",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nThis tent happens is our latest model, boasting a bar, sparring pit, and up stairs balcony.\n//End_Body:\n\n[[3a_3]]",
+      "links": [
+        {
+          "linkText": "3a_3",
+          "passageName": "3a_3",
+          "original": "[[3a_3]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nThis tent happens is our latest model, boasting a bar, sparring pit, and up stairs balcony.\n//End_Body:"
+    },
+    {
+      "name": "3a_3",
+      "tags": "Line",
+      "id": "9",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nEven with its size it also holds the record for the fastest setup and teardown time of only 1 hour!  Allowing us to relocate at a moments notice to the latest portal storms.\n//End_Body:\n\n[[3]]",
+      "links": [
+        {
+          "linkText": "3",
+          "passageName": "3",
+          "original": "[[3]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nEven with its size it also holds the record for the fastest setup and teardown time of only 1 hour!  Allowing us to relocate at a moments notice to the latest portal storms.\n//End_Body:"
+    },
+    {
+      "name": "3c_1",
+      "tags": "Options",
+      "id": "10",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nCome back anytime!\n//End_Body:\n\n//Option_1: (Leave)\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nCome back anytime!\n//End_Body:\n\n//Option_1: (Leave)"
+    },
+    {
+      "name": "2_1",
+      "tags": "Line",
+      "id": "11",
+      "text": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nIt's about the missing hunters.  Has us all worried.  He's upstairs right now.\n//End_Body:\n\n[[3]]",
+      "links": [
+        {
+          "linkText": "3",
+          "passageName": "3",
+          "original": "[[3]]"
+        }
+      ],
+      "cleanText": "//Speaker: Brenhilda\n\n//Icon: Skeleton_Icon\n\n//Body:\nIt's about the missing hunters.  Has us all worried.  He's upstairs right now.\n//End_Body:"
+    }
+  ]
+}

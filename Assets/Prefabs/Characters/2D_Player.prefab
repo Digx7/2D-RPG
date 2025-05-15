@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 250
   isFlying: 0
-  jumpForce: 10
+  jumpForce: 15
   jumpBufferCheckDistance: 2
   groundedCheckDistance: 2
   jumpBufferContactFilter:

@@ -18,6 +18,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] protected Channel RequestStopFollowingUnitChannel;
     [SerializeField] protected Channel OnCombatStartChannel;
     [SerializeField] protected Channel OnCombatEndChannel;
+    [SerializeField] protected SceneContextChannel contextOnSceneSetupChannel;
 
     [SerializeField] private bool runSetupOnEnable = true;
     [SerializeField] private PlayerController controllerToConnectToOnEnable;
@@ -134,8 +135,13 @@ public class CameraManager : MonoBehaviour
 
         OnReachFocusLocation = new UnityEvent();
 
-        WarpCameraToTransform(playerCharacter.transform);
-        StartFollowingTransform(playerCharacter.transform);
+
+        if (contextOnSceneSetupChannel.lastValue.sceneCameraMode == SceneCameraMode.FollowPlayer)
+        {
+            WarpCameraToTransform(playerCharacter.transform);
+            StartFollowingTransform(playerCharacter.transform);
+        }
+            
 
 
 

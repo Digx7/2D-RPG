@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Fates Hand_Receptionist_2_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 2026104504253415541
+  - rid: 2026104504253415542
+  - rid: 2026104504253415543
+  - rid: 2026104504253415544
+  - rid: 2026104504253415545
+  - rid: 2026104504253415546
+  - rid: 2026104504253415547
+  - rid: 2026104504253415548
+  - rid: 2026104504253415549
+  - rid: 2026104504253415550
+  - rid: 2026104504253415551
+  - rid: 2026104504253415552
+  references:
+    version: 2
+    RefIds:
+    - rid: 2026104504253415541
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: LIne
+        LocKey: Squire1_Fates Hand_Receptionist_2_LIne
+        nextNode: End
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+    - rid: 2026104504253415542
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: End
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 2026104504253415543
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Options
+        LocKey: Squire1_Fates Hand_Receptionist_2_Options
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+        options:
+        - line: Option 1 Text
+          nextNode: LIne
+        - line: Option 2 Text
+          nextNode: End
+    - rid: 2026104504253415544
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Quest Update
+        LocKey: 
+        nextNode: End
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 2026104504253415545
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Fates Hand_Receptionist_2_0
+        nextNode: 3
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Voids blessing squire! And welcome to the Fate's Hand!
+    - rid: 2026104504253415546
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3
+        LocKey: Squire1_Fates Hand_Receptionist_2_3
+        nextNode: 
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: If you have any questions feel free to ask.
+        options:
+        - line: Where is Mortimer agian?
+          nextNode: 3a_1
+        - line: What is this place?
+          nextNode: 3b_1
+        - line: That's all (Leave)
+          nextNode: 3c_1
+    - rid: 2026104504253415547
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3a_1
+        LocKey: Squire1_Fates Hand_Receptionist_2_3a_1
+        nextNode: 3a_2
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: This is the guild hall for the Fate's Hand, the best hunters this side
+          of the Carters.
+    - rid: 2026104504253415548
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3b_1
+        LocKey: Squire1_Fates Hand_Receptionist_2_3b_1
+        nextNode: 3
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Mortimer is upstairs.  Just follow the path to the right and jump accross
+          the platforms.  Easy for any Hunter or Squire, such as yourself.
+    - rid: 2026104504253415549
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3a_2
+        LocKey: Squire1_Fates Hand_Receptionist_2_3a_2
+        nextNode: 3a_3
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: This tent happens is our latest model, boasting a bar, sparring pit,
+          and up stairs balcony.
+    - rid: 2026104504253415550
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3a_3
+        LocKey: Squire1_Fates Hand_Receptionist_2_3a_3
+        nextNode: 3
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Even with its size it also holds the record for the fastest setup and
+          teardown time of only 1 hour!  Allowing us to relocate at a moments notice
+          to the latest portal storms.
+    - rid: 2026104504253415551
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3c_1
+        LocKey: Squire1_Fates Hand_Receptionist_2_3c_1
+        nextNode: 
+        icon: {fileID: 21300000, guid: 5b01d93214c78a940a13a2d39e67c3f6, type: 3}
+        speaker: Brenhilda
+        line: Come back anytime!
+        options:
+        - line: (Leave)
+          nextNode: e1
+    - rid: 2026104504253415552
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

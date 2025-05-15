@@ -1,0 +1,140 @@
+{
+  "uuid": "a7818525-1a76-4738-a4c4-96aa8d8e5075",
+  "name": "Squire1_Fates Hand_Mortimer_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1747288977690,
+  "passages": [
+    {
+      "name": "LIne",
+      "tags": "Line",
+      "id": "1",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:"
+    },
+    {
+      "name": "End",
+      "tags": "End",
+      "id": "2",
+      "text": "//NextConversation: Next_Conversation_Name",
+      "links": [],
+      "cleanText": "//NextConversation: Next_Conversation_Name"
+    },
+    {
+      "name": "Options",
+      "tags": "Options",
+      "id": "3",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n[[LIne]] \n\n//Option_2: Option 2 Text\n[[End]]",
+      "links": [
+        {
+          "linkText": "LIne",
+          "passageName": "LIne",
+          "original": "[[LIne]]"
+        },
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n \n\n//Option_2: Option 2 Text"
+    },
+    {
+      "name": "Quest Update",
+      "tags": "QuestUpdate",
+      "id": "4",
+      "text": "//QuestName: Name\n//QuestObjective: Objective\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//QuestName: Name\n//QuestObjective: Objective"
+    },
+    {
+      "name": "0",
+      "tags": "Options",
+      "id": "5",
+      "text": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\nAbout time you showed up!  I was wondering when those steam heads in New Shard would start listening.\n//End_Body:\n\n//Option_1: You know about the missing hunters?\n[[0a_1]] \n\n//Option_2: Came as fast as we could\n[[0b_1]] \n\n//Option_3: Watch your tongue\n[[0c_1]]",
+      "links": [
+        {
+          "linkText": "0a_1",
+          "passageName": "0a_1",
+          "original": "[[0a_1]]"
+        },
+        {
+          "linkText": "0b_1",
+          "passageName": "0b_1",
+          "original": "[[0b_1]]"
+        },
+        {
+          "linkText": "0c_1",
+          "passageName": "0c_1",
+          "original": "[[0c_1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\nAbout time you showed up!  I was wondering when those steam heads in New Shard would start listening.\n//End_Body:\n\n//Option_1: You know about the missing hunters?\n \n\n//Option_2: Came as fast as we could\n \n\n//Option_3: Watch your tongue"
+    },
+    {
+      "name": "0a_1",
+      "tags": "Line",
+      "id": "6",
+      "text": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\nThe mages predicted a large storm..\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\nThe mages predicted a large storm..\n//End_Body:"
+    },
+    {
+      "name": "0b_1",
+      "tags": "Line",
+      "id": "7",
+      "text": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\n...\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\n...\n//End_Body:"
+    },
+    {
+      "name": "0c_1",
+      "tags": "Line",
+      "id": "8",
+      "text": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\nOr what!  Gonna lock me up over a little name?  Thought helping was you Shardians whole thing?\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Mortimer\n\n//Icon: Icon_Name\n\n//Body:\nOr what!  Gonna lock me up over a little name?  Thought helping was you Shardians whole thing?\n//End_Body:"
+    },
+    {
+      "name": "e1",
+      "tags": "End",
+      "id": "9",
+      "text": "",
+      "links": [],
+      "cleanText": ""
+    }
+  ]
+}

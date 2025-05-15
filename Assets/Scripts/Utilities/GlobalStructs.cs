@@ -37,10 +37,12 @@ public struct PlayerSpawnInfo
 public struct SceneContext
 {
     public int SpawnPointID;
+    public SceneCameraMode sceneCameraMode;
 
     public void Clear()
     {
         SpawnPointID = 0;
+        sceneCameraMode = SceneCameraMode.FollowPlayer;
     }
 }
 
