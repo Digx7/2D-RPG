@@ -1,0 +1,120 @@
+{
+  "uuid": "a74361af-09cf-44ab-b018-10674d0450c9",
+  "name": "Squire1_Tool Shop_Orxan_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1747336115298,
+  "passages": [
+    {
+      "name": "LIne",
+      "tags": "Line",
+      "id": "1",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:"
+    },
+    {
+      "name": "End",
+      "tags": "End",
+      "id": "2",
+      "text": "//NextConversation: Next_Conversation_Name",
+      "links": [],
+      "cleanText": "//NextConversation: Next_Conversation_Name"
+    },
+    {
+      "name": "Options",
+      "tags": "Options",
+      "id": "3",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n[[LIne]] \n\n//Option_2: Option 2 Text\n[[End]]",
+      "links": [
+        {
+          "linkText": "LIne",
+          "passageName": "LIne",
+          "original": "[[LIne]]"
+        },
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n \n\n//Option_2: Option 2 Text"
+    },
+    {
+      "name": "Quest Update",
+      "tags": "QuestUpdate",
+      "id": "4",
+      "text": "//QuestName: Name\n//QuestObjective: Objective\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//QuestName: Name\n//QuestObjective: Objective"
+    },
+    {
+      "name": "0",
+      "tags": "Options",
+      "id": "5",
+      "text": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nWelcome Squire!  Need any tools?\n//End_Body:\n\n//Option_1: (Shop)\n[[e1]] \n\n//Option_2: I to ask you somethings\n[[1]] \n\n//Option_3: Actually nevermind (Leave)\n[[e2]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        },
+        {
+          "linkText": "1",
+          "passageName": "1",
+          "original": "[[1]]"
+        },
+        {
+          "linkText": "e2",
+          "passageName": "e2",
+          "original": "[[e2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nWelcome Squire!  Need any tools?\n//End_Body:\n\n//Option_1: (Shop)\n \n\n//Option_2: I to ask you somethings\n \n\n//Option_3: Actually nevermind (Leave)"
+    },
+    {
+      "name": "1",
+      "tags": "Line",
+      "id": "6",
+      "text": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nAsk away!\n//End_Body:\n\n[[e2]]",
+      "links": [
+        {
+          "linkText": "e2",
+          "passageName": "e2",
+          "original": "[[e2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Orxan\n\n//Icon: Icon_Name\n\n//Body:\nAsk away!\n//End_Body:"
+    },
+    {
+      "name": "e1",
+      "tags": "End",
+      "id": "7",
+      "text": "",
+      "links": [],
+      "cleanText": ""
+    },
+    {
+      "name": "e2",
+      "tags": "End",
+      "id": "8",
+      "text": "",
+      "links": [],
+      "cleanText": ""
+    }
+  ]
+}

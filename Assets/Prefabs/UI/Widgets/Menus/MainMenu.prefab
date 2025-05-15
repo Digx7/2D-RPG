@@ -54,9 +54,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequestUnloadWidgetDataChannel: {fileID: 0}
   gamePlayScene:
-    sceneName: Squire 1_New Town
+    sceneName: Squire 1_New Bostra
     context:
       SpawnPointID: 0
+      sceneCameraMode: 0
   optionsMenuWidgetData: {fileID: 11400000, guid: af002535ef531ba4fbe9388c7faf5892, type: 2}
   creditsMenuWidgetData: {fileID: 11400000, guid: eeac0145889524944bc6ace503914fc3, type: 2}
   quitMenuWidgetData: {fileID: 11400000, guid: c217e0277253181489f7cdf831a12dea, type: 2}

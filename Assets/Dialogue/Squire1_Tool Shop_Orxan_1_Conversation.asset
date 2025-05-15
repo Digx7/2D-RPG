@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Tool Shop_Orxan_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 2026104518140493971
+  - rid: 2026104518140493972
+  - rid: 2026104518140493973
+  - rid: 2026104518140493974
+  - rid: 2026104518140493975
+  - rid: 2026104518140493976
+  - rid: 2026104518140493977
+  - rid: 2026104518140493978
+  references:
+    version: 2
+    RefIds:
+    - rid: 2026104518140493971
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: LIne
+        LocKey: Squire1_Tool Shop_Orxan_1_LIne
+        nextNode: End
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+    - rid: 2026104518140493972
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: End
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 2026104518140493973
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Options
+        LocKey: Squire1_Tool Shop_Orxan_1_Options
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+        options:
+        - line: Option 1 Text
+          nextNode: LIne
+        - line: Option 2 Text
+          nextNode: End
+    - rid: 2026104518140493974
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Quest Update
+        LocKey: 
+        nextNode: End
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 2026104518140493975
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Tool Shop_Orxan_1_0
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Orxan
+        line: Welcome Squire!  Need any tools?
+        options:
+        - line: (Shop)
+          nextNode: e1
+        - line: I to ask you somethings
+          nextNode: 1
+        - line: Actually nevermind (Leave)
+          nextNode: e2
+    - rid: 2026104518140493976
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_Tool Shop_Orxan_1_1
+        nextNode: e2
+        icon: {fileID: 0}
+        speaker: Orxan
+        line: Ask away!
+    - rid: 2026104518140493977
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 2026104518140493978
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e2
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

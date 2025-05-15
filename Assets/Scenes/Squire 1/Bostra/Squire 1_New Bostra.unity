@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: Old Town
+      value: Old Bostra
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506471977428215866, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: m_Name
-      value: Door_Old Town
+      value: Door_Old Bostra
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -258,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: New Town
+      value: New Bostra
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -343,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: New Town
+      value: New Bostra
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -351,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: subArea
-      value: Hunters Guild 2
+      value: DRAGONS
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: m_Data.sceneName
@@ -367,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506471977428215866, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: m_Name
-      value: Door_Hunter Guild 2
+      value: Door_Dragons
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13485,7 +13485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: New Town
+      value: New Bostra
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -13627,7 +13627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: Squatter Town
+      value: The Slums
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -13643,7 +13643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506471977428215866, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: m_Name
-      value: Door_Squater Town
+      value: Door_The Slums
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15080,7 +15080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: New Town
+      value: New Bostra
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -15088,7 +15088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: subArea
-      value: Hunters Guild 1
+      value: Fates Hand
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: context.SpawnPointID
@@ -15100,7 +15100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506471977428215866, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: m_Name
-      value: Door_Hunter Guild 1
+      value: Door_Fate's Hand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15115,6 +15115,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6153259136242447222, guid: b37a1e649a5440e4cba492a3926cca74, type: 3}
+      propertyPath: notification
+      value: New Bostra
+      objectReference: {fileID: 0}
     - target: {fileID: 6807802849859622565, guid: b37a1e649a5440e4cba492a3926cca74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

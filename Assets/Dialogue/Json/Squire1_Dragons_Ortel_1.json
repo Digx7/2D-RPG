@@ -1,0 +1,121 @@
+{
+  "uuid": "28f74ae2-3919-43b0-a32e-ee33967ca743",
+  "name": "Squire1_Dragons_Ortel_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1747334485976,
+  "passages": [
+    {
+      "name": "LIne",
+      "tags": "Line",
+      "id": "1",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:"
+    },
+    {
+      "name": "End",
+      "tags": "End",
+      "id": "2",
+      "text": "//NextConversation: Next_Conversation_Name",
+      "links": [],
+      "cleanText": "//NextConversation: Next_Conversation_Name"
+    },
+    {
+      "name": "Options",
+      "tags": "Options",
+      "id": "3",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n[[LIne]] \n\n//Option_2: Option 2 Text\n[[End]]",
+      "links": [
+        {
+          "linkText": "LIne",
+          "passageName": "LIne",
+          "original": "[[LIne]]"
+        },
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n \n\n//Option_2: Option 2 Text"
+    },
+    {
+      "name": "Quest Update",
+      "tags": "QuestUpdate",
+      "id": "4",
+      "text": "//QuestName: Name\n//QuestObjective: Objective\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//QuestName: Name\n//QuestObjective: Objective"
+    },
+    {
+      "name": "0",
+      "tags": "Options",
+      "id": "5",
+      "text": "//Speaker: Head Hunter Ortel\n\n//Icon: Icon_Name\n\n//Body:\nSquire!  Thank fate your finally here.\n//End_Body:\n\n//Option_1: What happened?\n[[0b_1]] \n\n//Option_2: Where are all the hunters?\n[[0a_1]]",
+      "links": [
+        {
+          "linkText": "0b_1",
+          "passageName": "0b_1",
+          "original": "[[0b_1]]"
+        },
+        {
+          "linkText": "0a_1",
+          "passageName": "0a_1",
+          "original": "[[0a_1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Head Hunter Ortel\n\n//Icon: Icon_Name\n\n//Body:\nSquire!  Thank fate your finally here.\n//End_Body:\n\n//Option_1: What happened?\n \n\n//Option_2: Where are all the hunters?"
+    },
+    {
+      "name": "0a_1",
+      "tags": "Line",
+      "id": "6",
+      "text": "//Speaker: Head Hunter Ortel\n\n//Icon: Icon_Name\n\n//Body:\nCaptured\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Head Hunter Ortel\n\n//Icon: Icon_Name\n\n//Body:\nCaptured\n//End_Body:"
+    },
+    {
+      "name": "0b_1",
+      "tags": "Line",
+      "id": "7",
+      "text": "//Speaker: Head Hunter Ortel\n\n//Icon: Icon_Name\n\n//Body:\nAll the hunters were captured.\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Head Hunter Ortel\n\n//Icon: Icon_Name\n\n//Body:\nAll the hunters were captured.\n//End_Body:"
+    },
+    {
+      "name": "e1",
+      "tags": "End",
+      "id": "8",
+      "text": "",
+      "links": [],
+      "cleanText": ""
+    }
+  ]
+}

@@ -1905,7 +1905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: Squatter Town
+      value: The Slums
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -2131,7 +2131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: area
-      value: New Town
+      value: New Bostra
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: chapter
@@ -2147,7 +2147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506471977428215866, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: m_Name
-      value: Door_New Town
+      value: Door_New Bostra
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Dragons_Receptionist_2_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 2026104518140493920
+  - rid: 2026104518140493921
+  - rid: 2026104518140493922
+  - rid: 2026104518140493923
+  - rid: 2026104518140493924
+  - rid: 2026104518140493925
+  - rid: 2026104518140493926
+  - rid: 2026104518140493927
+  - rid: 2026104518140493928
+  - rid: 2026104518140493929
+  references:
+    version: 2
+    RefIds:
+    - rid: 2026104518140493920
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: LIne
+        LocKey: Squire1_Dragons_Receptionist_2_LIne
+        nextNode: End
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+    - rid: 2026104518140493921
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: End
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 2026104518140493922
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Options
+        LocKey: Squire1_Dragons_Receptionist_2_Options
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+        options:
+        - line: Option 1 Text
+          nextNode: LIne
+        - line: Option 2 Text
+          nextNode: End
+    - rid: 2026104518140493923
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Quest Update
+        LocKey: 
+        nextNode: End
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 2026104518140493924
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Dragons_Receptionist_2_0
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: Welcome to the D.R.A.G.O.N.S. hall!
+    - rid: 2026104518140493925
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_Dragons_Receptionist_2_2
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: If you have any other questions about our guild, just ask.
+        options:
+        - line: That's all for now (Leave)
+          nextNode: 2a_1
+        - line: Where can I find Ortel again?
+          nextNode: 2b_1
+        - line: What is this place?
+          nextNode: 2c_1
+    - rid: 2026104518140493926
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2a_1
+        LocKey: Squire1_Dragons_Receptionist_2_2a_1
+        nextNode: e1
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: Very well, drop by anytime!
+    - rid: 2026104518140493927
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2b_1
+        LocKey: Squire1_Dragons_Receptionist_2_2b_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: Ortel is at the very back, all the way to the left.
+    - rid: 2026104518140493928
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2c_1
+        LocKey: Squire1_Dragons_Receptionist_2_2c_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: This is the guild hall for the D.R.A.G.O.N.S.
+    - rid: 2026104518140493929
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

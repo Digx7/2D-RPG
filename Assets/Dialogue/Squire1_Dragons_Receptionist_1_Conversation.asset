@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf65f13461a81f24c9d7d581aef9e081, type: 3}
+  m_Name: Squire1_Dragons_Receptionist_1_Conversation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 2026104518140493909
+  - rid: 2026104518140493910
+  - rid: 2026104518140493911
+  - rid: 2026104518140493912
+  - rid: 2026104518140493913
+  - rid: 2026104518140493914
+  - rid: 2026104518140493915
+  - rid: 2026104518140493916
+  - rid: 2026104518140493917
+  - rid: 2026104518140493918
+  - rid: 2026104518140493919
+  references:
+    version: 2
+    RefIds:
+    - rid: 2026104518140493909
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: LIne
+        LocKey: Squire1_Dragons_Receptionist_1_LIne
+        nextNode: End
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+    - rid: 2026104518140493910
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: End
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}
+    - rid: 2026104518140493911
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Options
+        LocKey: Squire1_Dragons_Receptionist_1_Options
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Narrator
+        line: This is a line
+        options:
+        - line: Option 1 Text
+          nextNode: LIne
+        - line: Option 2 Text
+          nextNode: End
+    - rid: 2026104518140493912
+      type: {class: ConversationNode_QuestUpdate, ns: , asm: Assembly-CSharp}
+      data:
+        ID: Quest Update
+        LocKey: 
+        nextNode: End
+        questToGive: {fileID: 0}
+        questProgressToGive:
+          objectiveName: 
+          addedAmount: 0
+    - rid: 2026104518140493913
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 0
+        LocKey: Squire1_Dragons_Receptionist_1_0
+        nextNode: 1
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: Squire!  Voids Blessing to you and welcome to the D.R.A.G.O.N.S. hall!
+    - rid: 2026104518140493914
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 1
+        LocKey: Squire1_Dragons_Receptionist_1_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: Head Hunter Ortel is waiting for you in the back.  She can tell you
+          about the missing hunters.
+    - rid: 2026104518140493915
+      type: {class: ConversationNode_Options, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2
+        LocKey: Squire1_Dragons_Receptionist_1_2
+        nextNode: 
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: If you have any other questions about our guild, just ask.
+        options:
+        - line: That's all for now (Leave)
+          nextNode: 2a_1
+        - line: Where can I find Ortel again?
+          nextNode: 2b_1
+        - line: What is this place?
+          nextNode: 2c_1
+    - rid: 2026104518140493916
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2a_1
+        LocKey: Squire1_Dragons_Receptionist_1_2a_1
+        nextNode: e1
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: Very well, drop by anytime!
+    - rid: 2026104518140493917
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2b_1
+        LocKey: Squire1_Dragons_Receptionist_1_2b_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: Ortel is at the very back, all the way to the left.
+    - rid: 2026104518140493918
+      type: {class: ConversationNode_Line, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 2c_1
+        LocKey: Squire1_Dragons_Receptionist_1_2c_1
+        nextNode: 2
+        icon: {fileID: 0}
+        speaker: Ludig van Beken
+        line: This is the guild hall for the D.R.A.G.O.N.S.
+    - rid: 2026104518140493919
+      type: {class: ConversationNode_End, ns: , asm: Assembly-CSharp}
+      data:
+        ID: e1
+        LocKey: 
+        nextNode: 
+        nextConversationToLoadOnFinish: {fileID: 0}

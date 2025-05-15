@@ -1,0 +1,168 @@
+{
+  "uuid": "20cc9d6d-9865-4567-aa2f-6f7bc1149bee",
+  "name": "Squire1_Dragons_Receptionist_1",
+  "creator": "Twine",
+  "creatorVersion": "2.10.0",
+  "schemaName": "Twine to JSON",
+  "schemaVersion": "0.0.6",
+  "createdAtMs": 1747333905266,
+  "passages": [
+    {
+      "name": "LIne",
+      "tags": "Line",
+      "id": "1",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:"
+    },
+    {
+      "name": "End",
+      "tags": "End",
+      "id": "2",
+      "text": "//NextConversation: Next_Conversation_Name",
+      "links": [],
+      "cleanText": "//NextConversation: Next_Conversation_Name"
+    },
+    {
+      "name": "Options",
+      "tags": "Options",
+      "id": "3",
+      "text": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n[[LIne]] \n\n//Option_2: Option 2 Text\n[[End]]",
+      "links": [
+        {
+          "linkText": "LIne",
+          "passageName": "LIne",
+          "original": "[[LIne]]"
+        },
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//Speaker: Narrator\n\n//Icon: Icon_Name\n\n//Body:\nThis is a line\n//End_Body:\n\n//Option_1: Option 1 Text\n \n\n//Option_2: Option 2 Text"
+    },
+    {
+      "name": "Quest Update",
+      "tags": "QuestUpdate",
+      "id": "4",
+      "text": "//QuestName: Name\n//QuestObjective: Objective\n\n[[End]]",
+      "links": [
+        {
+          "linkText": "End",
+          "passageName": "End",
+          "original": "[[End]]"
+        }
+      ],
+      "cleanText": "//QuestName: Name\n//QuestObjective: Objective"
+    },
+    {
+      "name": "0",
+      "tags": "Line",
+      "id": "5",
+      "text": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nSquire!  Voids Blessing to you and welcome to the D.R.A.G.O.N.S. hall!\n//End_Body:\n\n[[1]]",
+      "links": [
+        {
+          "linkText": "1",
+          "passageName": "1",
+          "original": "[[1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nSquire!  Voids Blessing to you and welcome to the D.R.A.G.O.N.S. hall!\n//End_Body:"
+    },
+    {
+      "name": "1",
+      "tags": "Line",
+      "id": "6",
+      "text": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nHead Hunter Ortel is waiting for you in the back.  She can tell you about the missing hunters.\n//End_Body:\n\n[[2]]",
+      "links": [
+        {
+          "linkText": "2",
+          "passageName": "2",
+          "original": "[[2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nHead Hunter Ortel is waiting for you in the back.  She can tell you about the missing hunters.\n//End_Body:"
+    },
+    {
+      "name": "2",
+      "tags": "Options",
+      "id": "7",
+      "text": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nIf you have any other questions about our guild, just ask.\n//End_Body:\n\n//Option_1: That's all for now (Leave)\n[[2a_1]] \n\n//Option_2: Where can I find Ortel again?\n[[2b_1]] \n\n//Option_3: What is this place?\n[[2c_1]]",
+      "links": [
+        {
+          "linkText": "2a_1",
+          "passageName": "2a_1",
+          "original": "[[2a_1]]"
+        },
+        {
+          "linkText": "2b_1",
+          "passageName": "2b_1",
+          "original": "[[2b_1]]"
+        },
+        {
+          "linkText": "2c_1",
+          "passageName": "2c_1",
+          "original": "[[2c_1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nIf you have any other questions about our guild, just ask.\n//End_Body:\n\n//Option_1: That's all for now (Leave)\n \n\n//Option_2: Where can I find Ortel again?\n \n\n//Option_3: What is this place?"
+    },
+    {
+      "name": "2a_1",
+      "tags": "Line",
+      "id": "8",
+      "text": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nVery well, drop by anytime!\n//End_Body:\n\n[[e1]]",
+      "links": [
+        {
+          "linkText": "e1",
+          "passageName": "e1",
+          "original": "[[e1]]"
+        }
+      ],
+      "cleanText": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nVery well, drop by anytime!\n//End_Body:"
+    },
+    {
+      "name": "2b_1",
+      "tags": "Line",
+      "id": "9",
+      "text": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nOrtel is at the very back, all the way to the left.\n//End_Body:\n\n[[2]]",
+      "links": [
+        {
+          "linkText": "2",
+          "passageName": "2",
+          "original": "[[2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nOrtel is at the very back, all the way to the left.\n//End_Body:"
+    },
+    {
+      "name": "2c_1",
+      "tags": "Line",
+      "id": "10",
+      "text": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nThis is the guild hall for the D.R.A.G.O.N.S.\n//End_Body:\n\n[[2]]",
+      "links": [
+        {
+          "linkText": "2",
+          "passageName": "2",
+          "original": "[[2]]"
+        }
+      ],
+      "cleanText": "//Speaker: Ludig van Beken\n\n//Icon: Icon_Name\n\n//Body:\nThis is the guild hall for the D.R.A.G.O.N.S.\n//End_Body:"
+    },
+    {
+      "name": "e1",
+      "tags": "End",
+      "id": "11",
+      "text": "//NextConversation: Squire1_Dragons_Receptionist_2",
+      "links": [],
+      "cleanText": "//NextConversation: Squire1_Dragons_Receptionist_2"
+    }
+  ]
+}
