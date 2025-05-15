@@ -272,22 +272,26 @@ public class CameraManager : MonoBehaviour
             
             Vector3 currentPosition = camera.transform.position;
 
-            float currentTimer = 0f;
-            float maxTime = 0.2f;
+            Vector3 smoothedPosition = Vector3.Lerp(currentPosition, targetPosition, 20 * Time.deltaTime);
 
-            while(currentTimer <= maxTime)
-            {
-                // Debug.Log("Follw 2");
+            camera.transform.position = smoothedPosition;
+
+            // float currentTimer = 0f;
+            // float maxTime = 0.2f;
+
+            // while(currentTimer <= maxTime)
+            // {
+            //     // Debug.Log("Follw 2");
                 
-                currentTimer += Time.deltaTime;
+            //     currentTimer += Time.deltaTime;
 
-                float i = currentTimer/maxTime;
+            //     float i = currentTimer/maxTime;
 
-                Vector3 position = Vector3.Slerp(currentPosition, targetPosition, i);
-                camera.transform.position = position;
+            //     Vector3 position = Vector3.Slerp(currentPosition, targetPosition, i);
+            //     camera.transform.position = position;
 
-                yield return null;
-            }
+            //     yield return null;
+            // }
 
             yield return null;
         }

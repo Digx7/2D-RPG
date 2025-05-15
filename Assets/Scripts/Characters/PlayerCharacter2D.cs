@@ -9,6 +9,7 @@ public class PlayerCharacter2D : PlayerCharacter
     [SerializeField] private GameObject playerSprite;
     [SerializeField] private Channel onStartInteractionChannel;
     [SerializeField] private Channel onStopInteractionChannel;
+    [SerializeField] private Channel onTryDropChannel;
     private bool isInInteraction = false;
 
     protected override void OnEnable()
@@ -110,7 +111,10 @@ public class PlayerCharacter2D : PlayerCharacter
         movement2D.tryToJump();
     }
 
-
+    public override void Drop()
+    {
+        onTryDropChannel.Raise();
+    }
 
     public void OnStartInteraction()
     {

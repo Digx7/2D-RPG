@@ -47,6 +47,13 @@ public class Movement2D : MonoBehaviour
         Move();
     }
 
+    // public void Update()
+    // {
+    //     if(wantsToJump && !isFlying) Jump();
+    //     if(!isFlying) RefreshAirBornState();
+    //     Move();
+    // }
+
     private void Move()
     {
         Vector3 startingVelocity = rb.linearVelocity;

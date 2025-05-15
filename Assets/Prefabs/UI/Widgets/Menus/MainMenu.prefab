@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequestUnloadWidgetDataChannel: {fileID: 0}
   gamePlayScene:
-    sceneName: New Town
+    sceneName: Squire 1_New Town
     context:
       SpawnPointID: 0
   optionsMenuWidgetData: {fileID: 11400000, guid: af002535ef531ba4fbe9388c7faf5892, type: 2}
