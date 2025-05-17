@@ -7,10 +7,10 @@ using System.Collections.Generic;
 public class CameraManager : MonoBehaviour
 {
     [SerializeField] protected int ID = 1;
-    [SerializeField] public Camera camera;
-    [SerializeField] public GameObject cameraPrefab;
-    [SerializeField] PlayerController connectedPlayerController;
-    [SerializeField] PlayerCharacter playerCharacter;
+    [HideInInspector][SerializeField] public Camera camera;
+    [HideInInspector][SerializeField] public GameObject cameraPrefab;
+    [HideInInspector][SerializeField] PlayerController connectedPlayerController;
+    [HideInInspector][SerializeField] PlayerCharacter playerCharacter;
 
     [SerializeField] protected IntChannel OnCameraManagerFinishedSetup;
     [SerializeField] protected Vector3Channel RequestFocusLocationChannel;
@@ -28,6 +28,7 @@ public class CameraManager : MonoBehaviour
     private bool isFocusing = false;
     private bool isFollowingUnit = false;
     private Transform m_transformToFollow;
+    private SceneCameraMode m_sceneCameraMode = SceneCameraMode.FollowPlayer;
 
     protected UnityEvent OnReachFocusLocation;
 
@@ -111,7 +112,7 @@ public class CameraManager : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        if(runSetupOnEnable)Setup(ID, controllerToConnectToOnEnable, playerCharacterToConnectToOnEnable);
+        if (runSetupOnEnable) Setup(ID, controllerToConnectToOnEnable, playerCharacterToConnectToOnEnable);
     }
 
     protected virtual void OnDisable()
@@ -132,16 +133,18 @@ public class CameraManager : MonoBehaviour
         RequestStopFollowingUnitChannel.channelEvent.AddListener(StopFollowing);
         OnCombatStartChannel.channelEvent.AddListener(OnStartCombat);
         OnCombatEndChannel.channelEvent.AddListener(OnEndCombat);
+        contextOnSceneSetupChannel.channelEvent.AddListener(OnSceneChange);
 
         OnReachFocusLocation = new UnityEvent();
 
 
-        if (contextOnSceneSetupChannel.lastValue.sceneCameraMode == SceneCameraMode.FollowPlayer)
-        {
-            WarpCameraToTransform(playerCharacter.transform);
-            StartFollowingTransform(playerCharacter.transform);
-        }
-            
+        // if (contextOnSceneSetupChannel.lastValue.sceneCameraMode == SceneCameraMode.FollowPlayer)
+        // {
+        //     WarpCameraToTransform(playerCharacter.transform);
+        //     StartFollowingTransform(playerCharacter.transform);
+        // }
+
+        OnSceneChange(contextOnSceneSetupChannel.lastValue);
 
 
 
@@ -155,13 +158,29 @@ public class CameraManager : MonoBehaviour
         RequestStopFollowingUnitChannel.channelEvent.RemoveListener(StopFollowing);
         OnCombatStartChannel.channelEvent.RemoveListener(OnStartCombat);
         OnCombatEndChannel.channelEvent.RemoveListener(OnEndCombat);
+        contextOnSceneSetupChannel.channelEvent.RemoveListener(OnSceneChange);
+    }
+
+    public virtual void OnSceneChange(SceneContext newSceneContext)
+    {
+        m_sceneCameraMode = newSceneContext.sceneCameraMode;
+
+        if (m_sceneCameraMode == SceneCameraMode.FollowPlayer)
+        {
+            WarpCameraToTransform(playerCharacter.transform);
+            StartFollowingTransform(playerCharacter.transform);
+        }
+        else if (m_sceneCameraMode == SceneCameraMode.Static)
+        {
+            WarpCameraToLocation(newSceneContext.cameraLocation);
+        }
     }
 
     protected virtual void FindOrSpawnCamera()
     {
         camera = GameObject.FindFirstObjectByType<Camera>();
 
-        if(camera == null)
+        if (camera == null)
         {
             GameObject obj = Instantiate(cameraPrefab);
             camera = obj.GetComponent<Camera>();
@@ -218,12 +237,30 @@ public class CameraManager : MonoBehaviour
 
     public void WarpCameraToTransform(Transform transformToWarpTo)
     {
+        // canMoveCameraManually = false;
+        // isFollowingUnit = false;
+
+        // StopAllCoroutines();
+
+        // Vector3 target = new Vector3(transformToWarpTo.position.x, transformToWarpTo.position.y, -10);
+        // camera.transform.position = target;
+
+        WarpCameraToLocation(new Vector2(transformToWarpTo.position.x, transformToWarpTo.position.y));
+    }
+
+    public void WarpCameraToLocation(Vector3 location)
+    {
+        WarpCameraToLocation(new Vector2(location.x, location.y));
+    }
+
+    public void WarpCameraToLocation(Vector2 location)
+    {
         canMoveCameraManually = false;
         isFollowingUnit = false;
 
         StopAllCoroutines();
 
-        Vector3 target = new Vector3(transformToWarpTo.position.x, transformToWarpTo.position.y, -10);
+        Vector3 target = new Vector3(location.x, location.y, -10);
         camera.transform.position = target;
     }
 

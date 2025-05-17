@@ -38,6 +38,7 @@ public struct SceneContext
 {
     public int SpawnPointID;
     public SceneCameraMode sceneCameraMode;
+    public Vector3 cameraLocation;
 
     public void Clear()
     {

@@ -23,7 +23,7 @@ public class SceneSetupManager : MonoBehaviour
 
     public void Setup()
     {
-        if(updateContextChannel.lastValue.SpawnPointID != 0) context = updateContextChannel.lastValue;
+        if(updateContextChannel.lastValue.SpawnPointID != 0) context.SpawnPointID = updateContextChannel.lastValue.SpawnPointID;
         
         if(changeGameModeOnSceneStart) onChangeGameModeChannel.Raise(gameModeToChangeToOnSetup);
         if(changeSongOnSceneStart) requestJumpToSongChannel.Raise(songToJumpTo);
