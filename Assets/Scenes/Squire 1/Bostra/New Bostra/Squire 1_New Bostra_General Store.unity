@@ -3120,7 +3120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193993525582412368, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: context.SpawnPointID
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8506471977428215866, guid: 95f79357c73e55b459ad35c899ed43b3, type: 3}
       propertyPath: m_Name
