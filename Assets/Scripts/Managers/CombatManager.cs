@@ -82,7 +82,7 @@ public class CombatManager : Singleton<CombatManager>
         
         combatInstance.SetInstanceActive(false);
 
-        // loads combat ui
+        // unloads combat ui
         if(combatWidgetDatas.Count > 0)
         {
             foreach (UIWidgetData data in combatWidgetDatas)
