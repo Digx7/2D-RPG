@@ -28,7 +28,12 @@ public class CameraManager : MonoBehaviour
     private bool isFocusing = false;
     private bool isFollowingUnit = false;
     private Transform m_transformToFollow;
+    private Vector2 m_followOffset;
     private SceneCameraMode m_sceneCameraMode = SceneCameraMode.FollowPlayer;
+
+    private static readonly Vector2 PLAYER_FOLLOW_OFFSET = new Vector2(0, 5);
+    private float m_xFollowDamping = 20;
+    private float m_yFollowDamping = 20;
 
     protected UnityEvent OnReachFocusLocation;
 
@@ -112,6 +117,7 @@ public class CameraManager : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        m_followOffset = new Vector2();
         if (runSetupOnEnable) Setup(ID, controllerToConnectToOnEnable, playerCharacterToConnectToOnEnable);
     }
 
@@ -161,14 +167,23 @@ public class CameraManager : MonoBehaviour
         contextOnSceneSetupChannel.channelEvent.RemoveListener(OnSceneChange);
     }
 
+    // MAIN FOLLOW FUNCTIONS =================================================================
+
     public virtual void OnSceneChange(SceneContext newSceneContext)
     {
         m_sceneCameraMode = newSceneContext.sceneCameraMode;
 
         if (m_sceneCameraMode == SceneCameraMode.FollowPlayer)
         {
-            WarpCameraToTransform(playerCharacter.transform);
-            StartFollowingTransform(playerCharacter.transform);
+            Vector3 playerLoc = new Vector3(
+                playerCharacter.transform.position.x + PLAYER_FOLLOW_OFFSET.x,
+                playerCharacter.transform.position.y + PLAYER_FOLLOW_OFFSET.y,
+                playerCharacter.transform.position.z
+            );
+
+            // WarpCameraToTransform(playerCharacter.transform);
+            WarpCameraToLocation(playerLoc);
+            StartFollowingTransform(playerCharacter.transform, PLAYER_FOLLOW_OFFSET, new Vector2(20,5));
         }
         else if (m_sceneCameraMode == SceneCameraMode.Static)
         {
@@ -213,38 +228,81 @@ public class CameraManager : MonoBehaviour
 
     public void StartFollowingUnit(CombatUnit unitToFollow)
     {
-        // canMoveCameraManually = false;
-        // isFollowingUnit = true;
-
-        // m_transformToFollow = unitToFollow.transform;
-
-        // OnReachFocusLocation.AddListener(StartFollowingLoop);
-        // MoveCameraToLocation(m_transformToFollow.transform.position);
-
         StartFollowingTransform(unitToFollow.transform);
+    }
+
+    public void StartFollowingUnit(CombatUnit unitToFollow, Vector2 offset)
+    {
+        StartFollowingTransform(unitToFollow.transform, offset);
+    }
+
+    public void StartFollowingUnit(CombatUnit unitToFollow, Vector2 offset, Vector2 damping)
+    {
+        StartFollowingTransform(unitToFollow.transform, offset, damping);
     }
 
     public void StartFollowingTransform(Transform transformToFollow)
     {
+        m_followOffset = Vector2.zero;
+        m_xFollowDamping = 20;
+        m_yFollowDamping = 20;
         canMoveCameraManually = false;
         isFollowingUnit = true;
 
         m_transformToFollow = transformToFollow;
 
+        Vector3 focusLoc = new Vector3(
+            m_transformToFollow.transform.position.x + m_followOffset.x,
+            m_transformToFollow.transform.position.y + m_followOffset.y,
+            m_transformToFollow.transform.position.z
+        );
+
         OnReachFocusLocation.AddListener(StartFollowingLoop);
-        MoveCameraToLocation(m_transformToFollow.transform.position);
+        MoveCameraToLocation(focusLoc);
+    }
+
+    public void StartFollowingTransform(Transform transformToFollow, Vector2 offset)
+    {
+        m_followOffset = offset;
+        m_xFollowDamping = 20;
+        m_yFollowDamping = 20;
+        canMoveCameraManually = false;
+        isFollowingUnit = true;
+
+        m_transformToFollow = transformToFollow;
+
+        Vector3 focusLoc = new Vector3(
+            m_transformToFollow.transform.position.x + m_followOffset.x,
+            m_transformToFollow.transform.position.y + m_followOffset.y,
+            m_transformToFollow.transform.position.z
+        );
+
+        OnReachFocusLocation.AddListener(StartFollowingLoop);
+        MoveCameraToLocation(focusLoc);
+    }
+
+    public void StartFollowingTransform(Transform transformToFollow, Vector2 offset, Vector2 damping)
+    {
+        m_followOffset = offset;
+        m_xFollowDamping = damping.x;
+        m_yFollowDamping = damping.y;
+        canMoveCameraManually = false;
+        isFollowingUnit = true;
+
+        m_transformToFollow = transformToFollow;
+
+        Vector3 focusLoc = new Vector3(
+            m_transformToFollow.transform.position.x + m_followOffset.x,
+            m_transformToFollow.transform.position.y + m_followOffset.y,
+            m_transformToFollow.transform.position.z
+        );
+
+        OnReachFocusLocation.AddListener(StartFollowingLoop);
+        MoveCameraToLocation(focusLoc);
     }
 
     public void WarpCameraToTransform(Transform transformToWarpTo)
     {
-        // canMoveCameraManually = false;
-        // isFollowingUnit = false;
-
-        // StopAllCoroutines();
-
-        // Vector3 target = new Vector3(transformToWarpTo.position.x, transformToWarpTo.position.y, -10);
-        // camera.transform.position = target;
-
         WarpCameraToLocation(new Vector2(transformToWarpTo.position.x, transformToWarpTo.position.y));
     }
 
@@ -282,7 +340,7 @@ public class CameraManager : MonoBehaviour
 
     public void OnEndCombat()
     {
-        StartFollowingTransform(playerCharacter.transform);
+        StartFollowingTransform(playerCharacter.transform, PLAYER_FOLLOW_OFFSET, new Vector2(20, 5));
     }
 
     IEnumerator FocusOnLocation(Vector3 focusLocation, Vector3 startLocation, float timeToTake)
@@ -309,32 +367,19 @@ public class CameraManager : MonoBehaviour
     {
         while(isFollowingUnit)
         {
-            // Debug.Log("Follow 1");
             
-            Vector3 targetPosition = new Vector3(m_transformToFollow.position.x, m_transformToFollow.position.y, -10);
+            Vector3 targetPosition = new Vector3(m_transformToFollow.position.x + m_followOffset.x, m_transformToFollow.position.y + m_followOffset.y, -10);
             
             Vector3 currentPosition = camera.transform.position;
 
-            Vector3 smoothedPosition = Vector3.Lerp(currentPosition, targetPosition, 20 * Time.deltaTime);
+            // Vector3 smoothedPosition = Vector3.Lerp(currentPosition, targetPosition, 20 * Time.deltaTime);
+
+            float smoothedXPos = Mathf.Lerp(currentPosition.x, targetPosition.x, m_xFollowDamping * Time.deltaTime);
+            float smoothedYPos = Mathf.Lerp(currentPosition.y, targetPosition.y, m_yFollowDamping * Time.deltaTime);
+
+            Vector3 smoothedPosition = new Vector3(smoothedXPos, smoothedYPos, -10);
 
             camera.transform.position = smoothedPosition;
-
-            // float currentTimer = 0f;
-            // float maxTime = 0.2f;
-
-            // while(currentTimer <= maxTime)
-            // {
-            //     // Debug.Log("Follw 2");
-                
-            //     currentTimer += Time.deltaTime;
-
-            //     float i = currentTimer/maxTime;
-
-            //     Vector3 position = Vector3.Slerp(currentPosition, targetPosition, i);
-            //     camera.transform.position = position;
-
-            //     yield return null;
-            // }
 
             yield return null;
         }
