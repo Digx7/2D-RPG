@@ -20,6 +20,9 @@ public class CameraManager : MonoBehaviour
     [SerializeField] protected Channel OnCombatEndChannel;
     [SerializeField] protected SceneContextChannel contextOnSceneSetupChannel;
 
+    [SerializeField] protected Channel RequestStartParallaxChannel;
+    [SerializeField] protected Vector3Channel OnUpdateCameraLocationChannel;
+
     [SerializeField] private bool runSetupOnEnable = true;
     [SerializeField] private PlayerController controllerToConnectToOnEnable;
     [SerializeField] private PlayerCharacter playerCharacterToConnectToOnEnable;
@@ -183,12 +186,14 @@ public class CameraManager : MonoBehaviour
 
             // WarpCameraToTransform(playerCharacter.transform);
             WarpCameraToLocation(playerLoc);
-            StartFollowingTransform(playerCharacter.transform, PLAYER_FOLLOW_OFFSET, new Vector2(20,5));
+            StartFollowingTransform(playerCharacter.transform, PLAYER_FOLLOW_OFFSET, new Vector2(20, 5));
         }
         else if (m_sceneCameraMode == SceneCameraMode.Static)
         {
             WarpCameraToLocation(newSceneContext.cameraLocation);
         }
+
+        RequestStartParallaxChannel.Raise();
     }
 
     protected virtual void FindOrSpawnCamera()
@@ -319,7 +324,9 @@ public class CameraManager : MonoBehaviour
         StopAllCoroutines();
 
         Vector3 target = new Vector3(location.x, location.y, -10);
+        
         camera.transform.position = target;
+        OnUpdateCameraLocationChannel.Raise(target);
     }
 
     private void StartFollowingLoop()
@@ -354,7 +361,9 @@ public class CameraManager : MonoBehaviour
             
             float i = currentTimer/timeToTake;
             Vector3 position = Vector3.Slerp(startLocation, focusLocation, i);
+
             camera.transform.position = position;
+            OnUpdateCameraLocationChannel.Raise(position);
 
             yield return null;   
         }
@@ -380,6 +389,7 @@ public class CameraManager : MonoBehaviour
             Vector3 smoothedPosition = new Vector3(smoothedXPos, smoothedYPos, -10);
 
             camera.transform.position = smoothedPosition;
+            OnUpdateCameraLocationChannel.Raise(smoothedPosition);
 
             yield return null;
         }
