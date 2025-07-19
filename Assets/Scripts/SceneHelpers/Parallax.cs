@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Parallax : MonoBehaviour
 {
     public Channel RequestStartParallaxChannel;
@@ -13,9 +14,12 @@ public class Parallax : MonoBehaviour
     public float minYdelta = -200;
     public float maxYdelta = 200;
 
-    protected Vector3 m_lastCameraPosition;
+    private Vector3 m_lastCameraPosition;
     private bool shouldParallax = false;
     private float minX, maxX, minY, maxY;
+
+    private Vector3 m_startingPos;
+    private bool isInEditorDebug = false;
 
     public void OnEnable()
     {
@@ -32,7 +36,8 @@ public class Parallax : MonoBehaviour
 
     public void Setup()
     {
-        m_lastCameraPosition = Camera.main.transform.position;
+        // m_lastCameraPosition = Camera.main.transform.position;
+        m_lastCameraPosition = transform.position;
 
         minX = transform.position.x - minXdelta;
         maxX = transform.position.x - maxXdelta;
@@ -66,37 +71,42 @@ public class Parallax : MonoBehaviour
         m_lastCameraPosition = cameraPosition;
 
         transform.position -= cameraDelta;
-
-        // Vector3 newPos = transform.position - cameraDelta;
-        // Vector3 truePos = new Vector3();
-
-        // if (newPos.x < minX)
-        // {
-        //     truePos.x = minX;
-        // }
-        // else if (newPos.x > maxX)
-        // {
-        //     truePos.x = maxX;
-        // }
-        // else
-        // {
-        //     truePos.x = newPos.x;
-        // }
-
-        // if (newPos.y < minY)
-        // {
-        //     truePos.y = minY;
-        // }
-        // else if (newPos.y > maxY)
-        // {
-        //     truePos.y = maxY;
-        // }
-        // else
-        // {
-        //     truePos.y = newPos.y;
-        // }
-
-
-        // transform.position = truePos;
     }
+
+#if UNITY_EDITOR
+
+    [ContextMenu("Start Edtior Visualizing")]
+    public void StartEditorVisualizing()
+    {
+        m_startingPos = transform.position;
+        isInEditorDebug = true;
+
+        Setup();
+    }
+
+    [ContextMenu("Stop Edtior Visualizing")]
+    public void StopEditorVisualizing()
+    {
+        transform.position = m_startingPos;
+        isInEditorDebug = false;
+
+        shouldParallax = false;
+    }
+
+    public void Awake()
+    {
+        StopEditorVisualizing();
+    }
+
+    public void Update()
+    {
+        if (Application.isEditor && !Application.isPlaying && isInEditorDebug)
+        {
+            Vector3 fakeCameraPos = Camera.main.transform.position;
+
+            ParallaxElement(fakeCameraPos);
+        }
+    }
+
+#endif
 }
